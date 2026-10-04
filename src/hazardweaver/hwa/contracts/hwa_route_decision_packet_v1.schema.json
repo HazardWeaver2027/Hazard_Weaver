@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hwa/contracts/hwa_route_decision_packet_v1.schema.json",
+  "title": "HWA_ROUTE_DECISION_PACKET_v1",
+  "type": "object",
+  "required": ["schema_version", "task_id", "candidates"],
+  "properties": {
+    "schema_version": { "const": "HWA_ROUTE_DECISION_PACKET_v1" },
+    "task_id": { "type": "string" },
+    "state_version": { "type": "string" },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["route_id", "A_sci", "A_cap", "admissible"],
+        "properties": {
+          "route_id": { "type": "string" },
+          "A_sci": { "type": "object" },
+          "A_cap": { "type": "object" },
+          "admissible": { "type": "boolean" },
+          "validation_utility": { "type": ["number", "null"] },
+          "pareto_dominated": { "type": "boolean" }
+        }
+      }
+    },
+    "pareto_frontier_ids": { "type": "array", "items": { "type": "string" } }
+  }
+}

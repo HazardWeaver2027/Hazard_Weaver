@@ -1,0 +1,61 @@
+{
+  "schema_version": "agent_bench_task/v1",
+  "task_id": "pfdf_compose_mw2_0001",
+  "domain": "pfdf",
+  "task_family": "factual_compose",
+  "diversity_bucket": "factual_compose",
+  "user_facing_goal": "For the listed USGS PFDF watershed record, estimate postfire debris-flow log-volume using the authorized burn-to-volume cascade tools, then submit a decision-ready answer with which models you used.",
+  "solver_visible": {
+    "inputs": {
+      "sample_refs": [
+        {
+          "dataset_id": "usgs_pfdf_inventory_v1",
+          "sample_id": "example_record_placeholder",
+          "notes": "sample_id carries PFDF record_id"
+        }
+      ],
+      "constraints": [],
+      "hints": ["Prefer burn_state_net_prithvi_v1 then pfdf_volume_gorr_v2."]
+    },
+    "allowed_inventory": {
+      "dataset_ids": ["usgs_pfdf_inventory_v1"],
+      "model_ids": ["burn_state_net_prithvi_v1", "pfdf_volume_gorr_v2"],
+      "tool_ids": [
+        "list_inventory",
+        "read_card",
+        "load_sample",
+        "run_burn_predictor",
+        "run_volume_predictor",
+        "compose_burn_to_volume",
+        "submit_answer"
+      ]
+    },
+    "pack_refs": [
+      "cards/tasks/pfdf_compose_burn_to_volume.md",
+      "cards/models/burn_state_net_prithvi_v1.md",
+      "cards/models/pfdf_volume_gorr_v2.md"
+    ]
+  },
+  "success_criteria": {
+    "answer_type": "log_volume",
+    "description": "Submit oracle-aligned log_volume from burn→volume cascade.",
+    "metric": "mae"
+  },
+  "gold": {
+    "answer": {"log_volume": 8.0},
+    "preferred_model_id": "pfdf_volume_gorr_v2",
+    "gold_type": "oracle_tool_result",
+    "eval_notes": "Fixture only; real gold from PfdfAgentTools oracle."
+  },
+  "theory_or_card_refs": [
+    "cards/tasks/pfdf_compose_burn_to_volume.md"
+  ],
+  "provenance": {
+    "generator_id": "hib_pfdf_factual_compose_mw2",
+    "generator_version": "1.0.0",
+    "created_utc": "2026-07-13T00:00:00Z",
+    "seed": 42,
+    "generation_mode": "pfdf_factual_compose",
+    "bootstrap_note": "Minimal schema fixture for pfdf domain / factual_compose."
+  }
+}

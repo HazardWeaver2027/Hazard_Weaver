@@ -1,0 +1,90 @@
+{
+  "schema_version": "agent_bench_task/v1",
+  "task_id": "hard_wf_postfire_risk_v1",
+  "domain": "wildfire",
+  "task_family": "hcg_composition",
+  "diversity_bucket": "hard_mhop_ge4",
+  "user_facing_goal": "Given FIRMS daily hotspots and LANDFIRE fuel (both required), compose an executable HCG path to wf_postfire_risk_index. Prefer the gold cascade that uses weekly activity \u2192 spread \u2192 HWA ASPP mask \u2192 severity \u2192 emission \u2192 risk. Submit the scalar risk index.",
+  "solver_visible": {
+    "inputs": {
+      "sample_refs": [
+        {
+          "dataset_id": "eval_wf_micro_v0",
+          "sample_id": "fixture_wf_hard",
+          "notes": "Synthetic micro handles via hcg.runtime.fixtures.wf_hard_initial_handles"
+        }
+      ],
+      "constraints": [
+        "Both wf_firms_hotspots and wf_landfire_fuel must be consumed on the path",
+        "Do not use metadata-only edges (null implementation_ref)"
+      ],
+      "hints": [
+        "Use tool_hcg_run_path / PathExecutor with pack graph_eval_v0",
+        "Gold edges include hw_wildfire_spread_aspp_bridge_v0 when checkpoint present"
+      ],
+      "goal_artifacts": [
+        "wf_postfire_risk_index"
+      ],
+      "source_artifacts": [
+        "wf_firms_hotspots",
+        "wf_landfire_fuel"
+      ]
+    },
+    "allowed_inventory": {
+      "dataset_ids": [
+        "eval_wf_micro_v0"
+      ],
+      "model_ids": [
+        "eval_wf_weekly_activity_v0",
+        "eval_wf_activity_to_spread_v0",
+        "hw_wildfire_spread_aspp_bridge_v0",
+        "eval_wf_severity_from_mask_v0",
+        "eval_wf_emission_from_severity_v0",
+        "eval_wf_risk_from_emission_v0"
+      ],
+      "tool_ids": [
+        "tool_hcg_find_paths",
+        "tool_hcg_run_path",
+        "tool_hcg_explain_edge",
+        "submit_answer"
+      ]
+    },
+    "pack_refs": [
+      "hcg/registry/packs/graph_eval_v0/pack.yaml"
+    ]
+  },
+  "success_criteria": {
+    "answer_type": "scalar",
+    "description": "wf_postfire_risk_index from PathExecutor gold path",
+    "metric": "abs_error_le_1e-3"
+  },
+  "gold": {
+    "answer": {
+      "wf_postfire_risk_index": 2.3999999975999997
+    },
+    "gold_type": "path_executor_oracle",
+    "gold_edges": [
+      "wf_firms_daily_to_weekly_v0",
+      "wf_landfire_to_spread_frame_v0",
+      "wf_weekly_tensor_to_activity_5d_v1",
+      "eval_wf_weekly_activity_v0",
+      "eval_wf_activity_to_spread_v0",
+      "hw_wildfire_spread_aspp_bridge_v0",
+      "eval_wf_severity_from_mask_v0",
+      "eval_wf_emission_from_severity_v0",
+      "eval_wf_risk_from_emission_v0"
+    ],
+    "eval_notes": "Oracle = PathExecutor on gold edges with wf_hard fixture. Tip severity/emission/risk are formula; spread\u2192mask uses HWA ASPP when available."
+  },
+  "theory_or_card_refs": [
+    "docs/engineering/hcg/GATE_CASE_PROTOCOL.md",
+    "docs/engineering/hcg/GATE3_CASE_AUDIT.md"
+  ],
+  "provenance": {
+    "generator_id": "hcg.cases.hard_wf",
+    "generator_version": "1.0.0",
+    "created_utc": "2026-08-23T06:58:32Z",
+    "seed": 42,
+    "generation_mode": "hcg_path_executor_oracle"
+  }
+}

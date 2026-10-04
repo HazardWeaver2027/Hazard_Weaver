@@ -1,0 +1,95 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_mh3_compound_fixture_v1",
+  "headline_target": "MH-3",
+  "coverage_tier": "W-covered",
+  "hib_is_grader": false,
+  "solver_view": {
+    "user_goal": "Execute a legal compound-flood DAG for CO-OPS/USGS operational alignment. Multiple accepted routes exist; do not assume only one workflow applies.",
+    "allowed_tools": [
+      "inspect_artifact",
+      "run_capability",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "align_coops_usgs_timeseries",
+      "persist_a_cf_coops_usgs_ops_v1",
+      "ridge_a_cf_coops_usgs_ops_v1",
+      "rf_a_cf_coops_usgs_ops_v1"
+    ]
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "accepted_witnesses": [
+      {
+        "witness_id": "w_dag_persist",
+        "route_id": "dag_persist",
+        "family": "operational_align",
+        "edges": [
+          "align_coops_usgs_timeseries",
+          "persist_a_cf_coops_usgs_ops_v1"
+        ],
+        "capability_ids": [
+          "persist_a_cf_coops_usgs_ops_v1"
+        ]
+      },
+      {
+        "witness_id": "w_dag_ridge",
+        "route_id": "dag_ridge",
+        "family": "temporal_ts",
+        "edges": [
+          "align_coops_usgs_timeseries",
+          "ridge_a_cf_coops_usgs_ops_v1"
+        ],
+        "capability_ids": [
+          "ridge_a_cf_coops_usgs_ops_v1"
+        ]
+      }
+    ],
+    "outputs": {
+      "reference_score": 0.06003285567838961,
+      "metric_name": "mae"
+    },
+    "tolerance": {
+      "metric": "mae",
+      "max_abs_error": 0.5,
+      "label_match": false
+    },
+    "trajectory_constraints": {
+      "required_adapters": [
+        "align_coops_usgs_timeseries"
+      ],
+      "forbidden_shortcuts": [
+        "skip_align_coops_usgs"
+      ],
+      "adapter_edges": {
+        "align_coops_usgs_timeseries": {
+          "adapter_id": "align_coops_usgs_timeseries",
+          "requires_explicit_adapter_id": true
+        }
+      },
+      "provenance": {
+        "crs": "EPSG:4326",
+        "units": "meters",
+        "time_window": "2017-08-25/2017-09-05"
+      }
+    },
+    "final_output_spec": {
+      "schema_id": "hwa.final_artifact/v1",
+      "metric": "mae",
+      "execution_mode": "scalar",
+      "label_match": false,
+      "output_keys": [
+        "metric_name",
+        "reference_score"
+      ],
+      "consumes": "final_artifact.value_or_uri"
+    }
+  },
+  "metadata": {
+    "fixture": true,
+    "generator": "hwb_phase_a_fixture",
+    "source_anchor": "A_CF_COOPS_USGS_OPS_V1",
+    "legacy": true
+  }
+}

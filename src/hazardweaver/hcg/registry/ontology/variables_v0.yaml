@@ -1,0 +1,59 @@
+# Atomic Variable ontology (Phase A / P3) — controlled vocabulary for HCG nodes.
+# Graph keys remain variable_id (== artifact_id during migration).
+# BundleView = semantic_role bundle_view only; not default user targets.
+
+version: variables_v0
+hazards: [wildfire, flood, earthquake, tc, forcing, multi]
+
+aliases:
+  burned_mask: wf_burned_mask
+  burn_mask: wf_burned_mask
+  burn_fraction: wf_basin_burn_fraction
+  firms: wf_firms_hotspots
+  landfire: wf_landfire_fuel
+  inundation_depth: fl_inundation_depth
+  peak_depth: fl_peak_depth
+  streamflow: fl_streamflow_next
+  waveform: eq_waveform_3c
+  picks: eq_ps_pick_indices
+  track_history: tc_track_history
+  track_forecast: tc_track_forecast
+
+variables:
+  # wildfire atomic
+  - {id: wf_lat, hazard: wildfire, role: observation, modality: scalar}
+  - {id: wf_lon, hazard: wildfire, role: observation, modality: scalar}
+  - {id: wf_discovery_doy, hazard: wildfire, role: observation, modality: scalar}
+  - {id: wf_firms_hotspots, hazard: wildfire, role: observation, modality: tabular}
+  - {id: wf_landfire_fuel, hazard: wildfire, role: observation, modality: raster}
+  - {id: wf_mtbs_severity, hazard: wildfire, role: observation, modality: raster}
+  - {id: wf_weekly_county_tensor, hazard: wildfire, role: latent, modality: tabular}
+  - {id: wf_weekly_activity_5d, hazard: wildfire, role: prediction, modality: tabular}
+  - {id: wf_spread_raster_frame, hazard: wildfire, role: latent, modality: raster}
+  - {id: wf_burned_mask, hazard: wildfire, role: prediction, modality: raster}
+  - {id: wf_basin_burn_fraction, hazard: wildfire, role: prediction, modality: scalar}
+  - {id: wf_burn_severity_class, hazard: wildfire, role: prediction, modality: tabular}
+  - {id: wf_smoke_emission, hazard: wildfire, role: prediction, modality: scalar}
+  - {id: wf_postfire_risk_index, hazard: wildfire, role: prediction, modality: scalar}
+  - {id: wf_incident_features_8d, hazard: wildfire, role: bundle_view, modality: tabular}
+  - {id: wf_danger_class_5, hazard: wildfire, role: prediction, modality: tabular}
+  # flood
+  - {id: fl_inundation_history, hazard: flood, role: observation, modality: raster}
+  - {id: fl_inundation_depth, hazard: flood, role: prediction, modality: raster}
+  - {id: fl_peak_depth, hazard: flood, role: prediction, modality: scalar}
+  - {id: fl_flood_extent_mask, hazard: flood, role: prediction, modality: raster}
+  - {id: fl_graph_temporal_x, hazard: flood, role: observation, modality: graph_temporal}
+  - {id: fl_graph_adj, hazard: flood, role: observation, modality: graph_temporal}
+  - {id: fl_streamflow_next, hazard: flood, role: prediction, modality: scalar}
+  # earthquake
+  - {id: eq_waveform_3c, hazard: earthquake, role: observation, modality: waveform}
+  - {id: eq_ps_pick_indices, hazard: earthquake, role: prediction, modality: tabular}
+  - {id: eq_magnitude_estimate, hazard: earthquake, role: prediction, modality: scalar}
+  - {id: eq_shakemap_proxy, hazard: earthquake, role: prediction, modality: raster}
+  - {id: eq_wavefield_history, hazard: earthquake, role: observation, modality: waveform}
+  - {id: eq_wavefield_forecast, hazard: earthquake, role: prediction, modality: waveform}
+  # tc
+  - {id: tc_track_history, hazard: tc, role: observation, modality: track}
+  - {id: tc_track_forecast, hazard: tc, role: prediction, modality: track}
+  - {id: tc_intensity_class, hazard: tc, role: prediction, modality: tabular}
+  - {id: tc_surge_proxy, hazard: tc, role: prediction, modality: scalar}

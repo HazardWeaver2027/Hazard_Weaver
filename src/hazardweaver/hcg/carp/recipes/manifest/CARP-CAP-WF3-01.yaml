@@ -1,0 +1,28 @@
+recipe_id: CARP-CAP-WF3-01
+capability_id: CAP-WF3-01
+taskpack_id: WF-3
+artifact_id: ART-CAP-WF3-01
+priority: P1 official_repo_replay
+fetch_or_checkout: checkout official release/commit and replay inference/configuration;
+  source=WildfireSpreadTS evaluator
+version_or_commit: UNKNOWN unless recorded in Evidence Registry; pin before execution
+environment: create isolated environment from official lock/requirements; record OS,
+  CUDA, container digest and package lock
+data_preparation: materialize only legal TaskPack inputs; freeze source versions/checksums;
+  apply train/validation/hidden split before fitting or calibration
+train_or_inference_command: "python src/train.py --config=cfgs/persistence --trainer=cfgs/trainer_single_gpu.yaml --data=cfgs/data_monotemporal_full_features.yaml --data.data_fold_id={FOLD} --data.data_dir=${WSTS_HDF5_DIR} --seed_everything=0 --do_train=false --do_test=True"
+expected_artifact: model/checkpoint or deterministic configuration plus raw native
+  predictions and canonical HWB artifact
+checksum: UNKNOWN until fetched/built; SHA-256 mandatory before acceptance
+canonicalization: convert with lossless unit/CRS/time/grid adapter; retain native
+  artifact and provenance
+evaluation: run anchor evaluator and HWB hidden evaluator; record metric, split, units,
+  runtime and hardware
+failure_conditions:
+- source/license inaccessible
+- checksum drift
+- illegal input
+- official test leakage
+- canonicalization semantic loss
+- compute exceeds priority envelope
+manifest_source: docs/final_four/HCG/manifests/carp_recipes.jsonl

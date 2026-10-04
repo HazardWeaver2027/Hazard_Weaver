@@ -1,0 +1,95 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_fl2_solver_parametric_v1",
+  "headline_target": "FL-2",
+  "coverage_tier": "W-covered",
+  "hib_is_grader": false,
+  "solver_view": {
+    "user_goal": "Given a FloodCastBench scenario, produce rmse_depth and csi_0.01 via a legal solver route (HAND, LISFLOOD-FP, or SFINCS). CAP-FL2-06 must not substitute for CAP-FL2-05.",
+    "parameters": {
+      "scenario_id": "pakistan_2022_test_000",
+      "split": "official_test"
+    },
+    "allowed_tools": [
+      "inspect_artifact",
+      "run_capability",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "CAP-FL2-04",
+      "CAP-FL2-05",
+      "CAP-FL2-06"
+    ],
+    "forbidden_substitutions": [
+      "CAP-FL2-06 for CAP-FL2-05"
+    ]
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "refs_sidecar": "hwb_fl2_solver_parametric_v1_refs.json",
+    "accepted_witnesses": [
+      {
+        "witness_id": "w_hand",
+        "route_id": "hand_official",
+        "family": "RF-TERRAIN-INDEX-BASELINE",
+        "edges": [
+          "CAP-FL2-06"
+        ],
+        "capability_ids": [
+          "CAP-FL2-06"
+        ]
+      },
+      {
+        "witness_id": "w_lisflood_blocked",
+        "route_id": "lisflood_blocked_official",
+        "family": "RF-HYDRODYNAMIC-SOLVER",
+        "edges": [
+          "CAP-FL2-05"
+        ],
+        "capability_ids": [
+          "CAP-FL2-05"
+        ]
+      },
+      {
+        "witness_id": "w_sfincs_blocked",
+        "route_id": "sfincs_blocked_official",
+        "family": "RF-REDUCED-PHYSICS-SHALLOW-WATE",
+        "edges": [
+          "CAP-FL2-04"
+        ],
+        "capability_ids": [
+          "CAP-FL2-04"
+        ]
+      }
+    ],
+    "outputs": {
+      "rmse_depth": 3.624643675611659,
+      "csi_0.01": 0.6386688502561518,
+      "metric_name": "rmse_depth",
+      "scenario_id": "pakistan_2022_test_000"
+    },
+    "tolerance": {
+      "metric": "rmse_depth",
+      "max_abs_error": 0.7249287351223318
+    },
+    "secondary_tolerance": {
+      "metric": "csi_0.01",
+      "min_score": 0.5
+    },
+    "trajectory_constraints": {
+      "required_adapters": [],
+      "required_capability_edges": [],
+      "forbidden_shortcuts": [
+        "direct_submit_without_floodcast_infer",
+        "hand_substitute_for_lisflood"
+      ],
+      "provenance": {
+        "scenario_id": "pakistan_2022_test_000",
+        "split": "official_test"
+      }
+    }
+  },
+  "metadata": {
+    "legacy": true
+  }
+}

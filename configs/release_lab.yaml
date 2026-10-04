@@ -1,0 +1,5 @@
+profile: lab
+strict_identity_scan: false
+license_holder: "HazardWeaver Authors"
+package_authors: "HazardWeaver Lab"
+# Replace license_holder with your institution before public lab release.

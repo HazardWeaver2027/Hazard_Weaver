@@ -1,0 +1,64 @@
+# g2 engineering anchor → 66-cap manifest bridge for Table A v2 reuse audit.
+# Authority: docs/engineering/benchmark/table_a_v2/
+schema_version: table_a_legacy_cap_bridge_v1
+anchors:
+  A_PFDF_ASSESS_V1:
+    track: MH-1
+    manifest_anchor_id: AN-MH1-USGS
+    capability_ids: [CAP-MH1-02, CAP-MH1-01]
+    reuse_verdict: KEEP
+    note: "PFDF tabular volume regression maps to USGS PWFDF caps"
+  A_DH_GHCND_SPI_V1:
+    track: DR-OUT
+    manifest_anchor_id: AN-DR-CPC
+    capability_ids: [CAP-DROUT-04, CAP-DROUT-05]
+    reuse_verdict: KEEP
+    note: "GHCN SPI regression maps to drought statistical caps"
+  A_LS_IT_SU_V1:
+    track: L2
+    manifest_anchor_id: AN-L-LHASA
+    capability_ids: [CAP-L2-03, CAP-L2-04]
+    reuse_verdict: REPLACE
+    note: "Italy SU tabular external expansion; formal L2 is LHASA"
+  A_WF_PORTUGAL_V1:
+    track: WF-3
+    manifest_anchor_id: AN-WF-WSTS
+    capability_ids: [CAP-WF3-02]
+    reuse_verdict: DROP
+    note: "Portugal tabular not in 66-cap; replace with WSTS native caps"
+  A_WF_ALGERIA_V1:
+    track: WF-3
+    manifest_anchor_id: AN-WF-WSTS
+    capability_ids: [CAP-WF3-02, CAP-WF3-03]
+    reuse_verdict: DROP
+    note: "Algeria tabular not in 66-cap"
+  A_WF_MTBS_EVENT_V1:
+    track: WF-3
+    manifest_anchor_id: AN-WF-WSTS
+    capability_ids: [CAP-WF3-01, CAP-WF3-04]
+    reuse_verdict: DROP
+    note: "MTBS tabular not in 66-cap"
+  A_TC_IBTRACS_V1:
+    track: TC-TRK
+    manifest_anchor_id: AN-TC-TCB
+    capability_ids: [CAP-TCTRK-01, CAP-TCTRK-06]
+    reuse_verdict: REPLACE
+    note: "g6 workflow persistence; Table A uses native TCBench caps"
+  A_CF_COOPS_USGS_OPS_V1:
+    track: MH-3
+    manifest_anchor_id: AN-MH3-SFINCS
+    capability_ids: [CAP-MH3-01]
+    reuse_verdict: REPLACE
+    note: "compound workflow; Table A uses single-cap SFINCS replay"
+  A_TCCF_CHARLESTON_HARVEY_V1:
+    track: MH-3
+    manifest_anchor_id: AN-MH3-SFINCS
+    capability_ids: [CAP-MH3-01, CAP-MH3-05]
+    reuse_verdict: REPLACE
+    note: "compound tide-flood workflow"
+  A_LS_INV_V3_HARMONIZE_V1:
+    track: L2
+    manifest_anchor_id: AN-L-LHASA
+    capability_ids: [CAP-L2-02, CAP-L2-05]
+    reuse_verdict: REPLACE
+    note: "harmonization workflow; replace with LHASA native caps"

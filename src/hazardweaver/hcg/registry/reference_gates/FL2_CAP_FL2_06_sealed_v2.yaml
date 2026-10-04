@@ -1,0 +1,88 @@
+# FL-2 CAP-FL2-06 sealed reference gate v2 (supersedes v1 UNVERIFIED_PLACEHOLDER)
+updated: 2026-08-29
+authority: DL-067 · DL-068 · DL-069 · HCG_FL2_REFERENCE_PROVENANCE_v2.md
+measurement_policy: record_only_no_parameter_tuning
+
+capability_id: CAP-FL2-06
+taskpack_id: FL-2
+family_id: RF-TERRAIN-INDEX-BASELINE
+
+# DL-069: gate pair sealed (Pakistan primary + Mozambique gate reference hold_015)
+provenance_sealed: true
+csi_primary_project_wide_sealed: true
+
+primary_scenario:
+  scenario_id: pakistan_2022_test_000
+  split: official_test
+  data_source: floodcastbench_official_test_v1
+  data_manifest: data/scientific/FL-2/official_test/manifest.json
+  zenodo_record: "14017092"
+  implementation: experiments.hcg.carp.native_eval.scientific.fl2_hand_faithful.compute_hand_depth_sequence
+  provenance_sealed: true
+  seal_script: scripts/audit/hcg_fl2_reference_seal_v2.py
+  summary_json: runs/carp/hcg_fl2_reference_seal_v2.json
+  replay_manifest: runs/carp/scientific/FL-2/CAP-FL2-06/reference_seal_v2/pakistan_2022_test_000/replay_manifest.json
+  metrics_json: runs/carp/scientific/FL-2/CAP-FL2-06/reference_seal_v2/pakistan_2022_test_000/metrics.json
+  sealed_outputs:
+    rmse_depth: 3.624643675611659
+    csi_0.01: 0.6386688502561518
+    metric_name: rmse_depth
+
+gate_policy:
+  primary_metric: csi_0.01
+  primary_min: 0.5
+  rmse_mode: advisory_record_only
+  rmse_advisory_max_abs_error: 0.7249287351223318
+  methodologically_permanent: true
+  applies_to_scenarios:
+    - pakistan_2022_test_000
+    - mozambique_2019_hold_015
+
+secondary_scenario:
+  scenario_id: mozambique_2019_hold_015
+  split: hwb_holdout
+  provenance_sealed: true
+  csi_primary_gate: active
+  materialization_mode: zenodo_tiff_v2_idai_timeline
+  window_provenance: data/scientific/FL-2/hwb_holdout/MOZAMBIQUE_WINDOW_PROVENANCE_v1.json
+  selection_rule: external Idai landfall timeline (sim_t_start >= 24h); NOT HAND oracle scores
+  sealed_outputs:
+    rmse_depth: 3.9355269625149707
+    csi_0.01: 0.6426792398502735
+  replay_manifest: runs/carp/scientific/FL-2/CAP-FL2-06/reference_seal_v2/mozambique_2019_hold_015/replay_manifest.json
+  metrics_json: runs/carp/scientific/FL-2/CAP-FL2-06/reference_seal_v2/mozambique_2019_hold_015/metrics.json
+
+hold_000_pre_inundation_record:
+  scenario_id: mozambique_2019_hold_000
+  split: hwb_holdout
+  inundation_phase: pre_inundation
+  csi_primary_gate: not_applicable
+  note: chronology slice; CSI@0.01=0 expected — not a HAND failure
+  sealed_outputs_record_only:
+    rmse_depth: 3.9997905497819524
+    csi_0.01: 0.0
+
+mozambique_anomaly:
+  status: RESOLVED_GATE_REFERENCE_REMATERIALIZED
+  diagnostic: runs/carp/hcg_fl2_mozambique_csi_diagnostic_v1.json
+  rematerialize_script: scripts/audit/hcg_fl2_mozambique_rematerialize_v2.py
+  doc: docs/engineering/hcg/HCG_FL2_MOZAMBIQUE_CSI_ANOMALY_v1.md
+  window_provenance_doc: docs/engineering/hcg/FL2_MOZAMBIQUE_WINDOW_PROVENANCE_v1.md
+
+supersedes_dead_placeholders:
+  - rmse_depth: 0.35
+    source: hwb_fl2_solver_parametric_v1_refs.json
+    verdict: unsourced_integer_placeholder_do_not_cite
+  - rmse_depth: 0.42
+    source: hwb_fl2_parametric_v1_refs.json
+    verdict: unsourced_integer_placeholder_do_not_cite
+
+hwb_handoff:
+  target_file: hwb/registry/taskpacks/hwb_fl2_solver_parametric_v1_refs.json
+  merge_policy: gate_pair_sealed_v2
+  required_fields:
+    provenance_sealed: true
+    csi_primary_project_wide_sealed: true
+    mozambique_gate_reference: mozambique_2019_hold_015
+    mozambique_anomaly_status: RESOLVED_GATE_REFERENCE_REMATERIALIZED
+  note: HCG fork does not edit HWB; see HCG_FL2_REFERENCE_PROVENANCE_v2.md handoff

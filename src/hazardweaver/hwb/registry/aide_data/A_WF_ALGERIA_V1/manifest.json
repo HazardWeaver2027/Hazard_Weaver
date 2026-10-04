@@ -1,0 +1,26 @@
+{
+  "anchor_id": "A_WF_ALGERIA_V1",
+  "dataset_key": "algeria",
+  "task_type": "classification",
+  "feature_columns": [
+    "Temperature",
+    "RH",
+    "Ws",
+    "Rain",
+    "FFMC",
+    "DMC",
+    "DC",
+    "ISI",
+    "BUI",
+    "FWI"
+  ],
+  "target_column": "target",
+  "original_ycol": "_y",
+  "group_column": "_region",
+  "split_seed": 0,
+  "n_train": 136,
+  "n_val": 46,
+  "n_test": 61,
+  "aide_eval": "accuracy",
+  "metric_name": "accuracy"
+}

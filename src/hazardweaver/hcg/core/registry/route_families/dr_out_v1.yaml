@@ -1,0 +1,114 @@
+version: dr_out_v1
+task_id: DR-OUT
+canonical_output: dr_outlook_bundle_v1
+families:
+- family_id: RF-EXPERT-OPERATIONAL-SYNTHESIS
+  task_id: DR-OUT
+  distinctness_axis: manifest_rf_rf_expert_operational_synthesis
+  canonical_output: dr_outlook_bundle_v1
+  description: Manifest-native route family (RF-EXPERT-OPERATIONAL-SYNTHESIS)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-DROUT-01
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-DROUT-01/ValidationReport.json
+- family_id: RF-OBJECTIVE-STATISTICAL-TENDEN
+  task_id: DR-OUT
+  distinctness_axis: manifest_rf_rf_objective_statistical_tenden
+  canonical_output: dr_outlook_bundle_v1
+  description: Manifest-native route family (RF-OBJECTIVE-STATISTICAL-TENDEN)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-DROUT-03
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-DROUT-03/ValidationReport.json
+- family_id: RF-ORDINAL-STATISTICAL-TRANSITI
+  task_id: DR-OUT
+  distinctness_axis: manifest_rf_rf_ordinal_statistical_transiti
+  canonical_output: dr_outlook_bundle_v1
+  description: Manifest-native route family (RF-ORDINAL-STATISTICAL-TRANSITI)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-DROUT-04
+  admission_level: L2
+  tier: C
+  validation_report: runs/carp/validation/CAP-DROUT-04/ValidationReport.json
+- family_id: RF-PERSISTENCE-BASELINE
+  task_id: DR-OUT
+  distinctness_axis: manifest_rf_rf_persistence_baseline
+  canonical_output: dr_outlook_bundle_v1
+  description: Manifest-native route family (RF-PERSISTENCE-BASELINE)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-DROUT-02
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-DROUT-02/ValidationReport.json
+- family_id: RF-SUBSEASONAL-ML-FORECAST
+  task_id: DR-OUT
+  distinctness_axis: manifest_rf_rf_subseasonal_ml_forecast
+  canonical_output: dr_outlook_bundle_v1
+  description: Manifest-native route family (RF-SUBSEASONAL-ML-FORECAST)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-DROUT-05
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-DROUT-05/ValidationReport.json

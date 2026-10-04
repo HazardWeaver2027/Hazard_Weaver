@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hwb/contracts/hwa_trajectory_v2.schema.json",
+  "title": "HWA_TRAJECTORY_v2",
+  "type": "object",
+  "required": ["schema_version", "task_id", "steps"],
+  "properties": {
+    "schema_version": { "enum": ["HWA_TRAJECTORY_v1", "HWA_TRAJECTORY_v2"] },
+    "task_id": { "type": "string" },
+    "steps": { "type": "array" },
+    "final_artifact": { "type": "object" },
+    "terminal_action": { "enum": ["solve", "abstain", "clarify"] },
+    "lease_id": { "type": "string" },
+    "route_id": { "type": "string" }
+  }
+}

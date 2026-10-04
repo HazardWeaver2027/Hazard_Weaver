@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hwa/contracts/hwa_execution_lease_v1.schema.json",
+  "title": "HWA_EXECUTION_LEASE_v1",
+  "type": "object",
+  "required": ["lease_id", "allowed_capability_ids"],
+  "properties": {
+    "lease_id": { "type": "string" },
+    "route_id": { "type": "string" },
+    "segment_id": { "type": "string" },
+    "certificate_version": { "type": "string" },
+    "state_version": { "type": "string" },
+    "allowed_capability_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "expires_at": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

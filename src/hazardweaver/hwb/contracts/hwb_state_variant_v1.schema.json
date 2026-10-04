@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hwb/contracts/hwb_state_variant_v1.schema.json",
+  "title": "HWB_STATE_VARIANT_v1",
+  "type": "object",
+  "required": ["schema_version", "variant_id", "scenario_id", "state_delta_kind"],
+  "properties": {
+    "schema_version": { "const": "HWB_STATE_VARIANT_v1" },
+    "variant_id": { "type": "string" },
+    "scenario_id": { "type": "string" },
+    "state_delta_kind": { "type": "string" },
+    "capability_snapshot_ref": { "type": "string" },
+    "solver_visible_delta": { "type": "object" }
+  }
+}

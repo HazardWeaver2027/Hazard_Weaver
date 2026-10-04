@@ -1,0 +1,52 @@
+# P1 CARP recipe manifest — one yaml per route under recipes/p1/
+
+domains:
+  wf3:
+    task_id: WF-3
+    families:
+      - family_id: wf3_process_v1
+      - family_id: wf3_cellular_empirical_v1
+        train: {}
+      - family_id: wf3_learned_eo_v1
+        train:
+          entrypoint: experiments.train.train_wf3_eo_spread_v1:main
+        checkpoint_glob: checkpoints/p1/wf3/wf3_eo_spread_v1/model.pt
+      - family_id: wf3_hybrid_assimilation_v1
+        train:
+          entrypoint: experiments.train.train_wf3_eo_spread_v1:main
+        checkpoint_glob: checkpoints/p1/wf3/wf3_eo_spread_v1/model.pt
+  eq:
+    task_id: E1-E3
+    families:
+      - family_id: eq_classical_v1
+      - family_id: eq_learned_picker_v1
+        train:
+          entrypoint: experiments.train.train_eq_picker_cnn_v1:main
+        checkpoint_glob: checkpoints/p1/eq/eq_picker_cnn_v1/picker.pt
+      - family_id: eq_template_v1
+      - family_id: eq_hybrid_modular_v1
+        train:
+          entrypoint: experiments.train.train_eq_picker_cnn_v1:main
+        checkpoint_glob: checkpoints/p1/eq/eq_picker_cnn_v1/picker.pt
+  mh3:
+    task_id: MH-3
+    acquire:
+      script: experiments/hcg/carp/acquire/build_mh3_proxy_grids.py
+    families:
+      - family_id: mh3_overlay_v1
+      - family_id: mh3_dependence_jpm_v1
+      - family_id: mh3_one_way_coupled_v1
+      - family_id: mh3_physics_surrogate_v1
+        train:
+          entrypoint: experiments.train.train_mh3_coupled_surrogate_v1:main
+        checkpoint_glob: checkpoints/p1/mh3/mh3_coupled_surrogate_v1/model.pt
+  mh1:
+    task_id: MH-1
+    families:
+      - family_id: mh1_marginal_v1
+      - family_id: mh1_usgs_empirical_v1
+      - family_id: mh1_dependence_v1
+        train:
+          entrypoint: experiments.train.train_mh1_dependence_rf_v1:main
+        checkpoint_glob: checkpoints/p1/mh1/mh1_dependence_rf_v1/model.pkl
+      - family_id: mh1_mechanistic_v1

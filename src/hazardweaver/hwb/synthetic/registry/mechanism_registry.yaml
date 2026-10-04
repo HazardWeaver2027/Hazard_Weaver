@@ -1,0 +1,117 @@
+mechanisms:
+  - mechanism_id: flood_wildfire_spatial_compound
+    name: Flood + Wildfire Spatial Compound Risk
+    source_hazard: flood
+    target_hazard: wildfire
+    relation_type: compound_overlap
+    compound_structure: spatially_compounding
+    mediators: [exposure_overlap]
+    source_variables: [flood_depth, fire_prob]
+    target_variables: [compound_risk]
+    context_variables: [exposure]
+    temporal_window: simultaneous
+    spatial_operator: overlap_decay
+    allowed_coupling_types: [additive, interaction]
+    counterfactual_types:
+      - shift_wildfire
+      - shift_flood
+      - remove_hazard
+      - shuffle_samples
+      - remove_interaction
+    citations:
+      - "Compound flood-wildfire spatial risk (synthetic benchmark; see mechanism card notes)"
+    evidence_strength: moderate
+    parameter_bounds:
+      w1: {min: 0.1, max: 2.0}
+      w2: {min: 0.1, max: 2.0}
+      w3: {min: 0.0, max: 1.5}
+      w4: {min: 0.0, max: 3.0}
+      noise_sigma: {min: 0.0, max: 0.3}
+    dependency_test_spec:
+      metric: interaction_label_correlation
+      compare_pairs:
+        - {left: original, right: remove_hazard, min_gap: 0.05}
+        - {left: original, right: shift_wildfire, min_gap: 0.03}
+    negative_control_spec:
+      coupling_strength_override: 0.0
+      description: w4=0 and w1=w2=0 for zero coupling control
+    notes: Flagship raster compound template; interaction term w4 tests overlap sensitivity.
+    proxy_only: false
+
+  - mechanism_id: tc_to_flood
+    name: TC to Flood Streamflow Risk
+    source_hazard: tropical_cyclone
+    target_hazard: flood
+    relation_type: conditioning
+    compound_structure: sequential
+    mediators: [storm_forcing_proxy]
+    source_variables: [tc_intensity, tc_proximity]
+    target_variables: [flood_risk]
+    context_variables: [basin_sensitivity]
+    temporal_window: lagged
+    spatial_operator: basin_proximity_decay
+    allowed_coupling_types: [monotonic_additive]
+    counterfactual_types:
+      - remove_source
+      - wrong_lag
+      - wrong_region
+      - shuffled_source
+      - removed_coupling
+    citations:
+      - "TC rainfall forcing and flood peak lag (synthetic; graph-streamflow proxy)"
+    evidence_strength: moderate
+    parameter_bounds:
+      alpha: {min: 0.2, max: 3.0}
+      lag_steps: {min: 1, max: 5}
+      distance_scale: {min: 0.5, max: 5.0}
+      noise_sigma: {min: 0.0, max: 0.2}
+    dependency_test_spec:
+      metric: source_target_correlation
+      compare_pairs:
+        - {left: original, right: remove_source, min_gap: 0.08}
+        - {left: original, right: wrong_lag, min_gap: 0.02}
+        - {left: original, right: wrong_region, min_gap: 0.02}
+    negative_control_spec:
+      coupling_strength_override: 0.0
+      description: alpha=0 for no TC coupling
+    notes: Uses synthetic_geography.json for TC track to basin distance alignment.
+    proxy_only: false
+
+  - mechanism_id: wildfire_to_postfire_flood_proxy
+    name: Wildfire to Post-fire Flood Susceptibility Proxy
+    source_hazard: wildfire
+    target_hazard: flood
+    relation_type: conditioning
+    compound_structure: sequential
+    mediators: [burn_severity, runoff_susceptibility]
+    source_variables: [burn_mask]
+    target_variables: [susceptibility_proxy]
+    context_variables: [rain_proxy, slope_proxy]
+    temporal_window: post_event
+    spatial_operator: raster_mask
+    allowed_coupling_types: [additive, interaction]
+    counterfactual_types:
+      - remove_source
+      - wrong_region
+      - shuffled_source
+      - weakened_mediator
+      - removed_coupling
+    citations:
+      - "Post-fire hydrologic response proxy (not debris-flow prediction)"
+    evidence_strength: moderate
+    parameter_bounds:
+      beta1: {min: 0.1, max: 2.0}
+      beta2: {min: 0.1, max: 2.0}
+      beta3: {min: 0.0, max: 1.5}
+      beta4: {min: 0.0, max: 3.0}
+      noise_sigma: {min: 0.0, max: 0.3}
+    dependency_test_spec:
+      metric: source_target_correlation
+      compare_pairs:
+        - {left: original, right: remove_source, min_gap: 0.08}
+        - {left: original, right: removed_coupling, min_gap: 0.05}
+    negative_control_spec:
+      coupling_strength_override: 0.0
+      description: beta2=beta4=0 for no burn coupling
+    notes: PROXY ONLY — do not claim real debris-flow or post-fire hydrology prediction.
+    proxy_only: true

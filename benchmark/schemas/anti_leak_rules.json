@@ -1,0 +1,79 @@
+{
+  "schema_version": "wb0.1",
+  "wave": "W-B0",
+  "authority": [
+    "docs/engineering/AAAI_SYSTEM_ULTIMATE_EXECUTION_PLAN.md#w-b0",
+    "docs/engineering/PROJECT_ULTIMATE_REBOOT_LOCK.md",
+    "docs/engineering/contracts/HONEST_TASK_SCHEMA.md"
+  ],
+  "solver_view_roots": [
+    "solver_view",
+    "solver_visible"
+  ],
+  "forbidden_keys": [
+    "gold",
+    "gold_answer",
+    "gold_value",
+    "gold_edges",
+    "gold_path",
+    "gold_paths",
+    "gold_total_hop",
+    "hcg_oracle",
+    "oracle_path",
+    "oracle_edges",
+    "oracle_answer"
+  ],
+  "forbidden_key_prefixes": [
+    "gold_",
+    "oracle_",
+    "test_",
+    "reported_test_"
+  ],
+  "forbidden_exact_keys_extra": [
+    "test_metric",
+    "n_test",
+    "test_used_for_selection",
+    "reported_test_metric",
+    "mae_test",
+    "test_accuracy"
+  ],
+  "forbidden_substrings_in_string_values": [
+    "gold_edges",
+    "hcg_oracle",
+    "unique gold path",
+    "oracle_volume_leak_request",
+    "forbid_fake_same_event_join",
+    "forbid_cross_basin_fake_join",
+    "no_legal_route_under_constraint",
+    "AbstentionChallenge",
+    "ClarificationChallenge"
+  ],
+  "solver_visible_task_id_pattern": "^T_\\d{6}$",
+  "p0_4_semantic_leakage": {
+    "authority": "docs/engineering/paper_expert/w1_case_audit_v1/expert_plan.md#P0-4",
+    "audit_module": "experiments/hcg/audit_semantic_leakage_v1.py"
+  },
+  "compose": {
+    "honest_default_forbid_compose_macros": true,
+    "forbidden_tool_id_prefixes": ["compose_"],
+    "ci_only_tags_allowing_compose": ["ci_only", "demo_smoke"]
+  },
+  "process_failure_codes": [
+    "skipped_inspect",
+    "skipped_adapter_on_mismatch",
+    "direct_predict_dirty_support",
+    "compose_used_when_forbidden",
+    "solver_view_gold_leak",
+    "should_abstain_but_submitted",
+    "timeout_or_budget"
+  ],
+  "claim_guard": {
+    "ds2_babysit_smoke_not_aaai_main": true,
+    "scripted_not_strength_pass": true
+  },
+  "examples_glob": "docs/engineering/contracts/examples/*solver*.json",
+  "same_tool_surface": {
+    "multi_role_extra_shortcut_tools_forbidden": true,
+    "note": "Permissions/prompts/profiles may differ; tool inventory identity must hold for fair ablation."
+  }
+}

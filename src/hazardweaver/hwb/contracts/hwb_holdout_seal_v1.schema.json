@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hwb/contracts/hwb_holdout_seal_v1.schema.json",
+  "title": "HWB_HOLDOUT_SEAL_v1",
+  "type": "object",
+  "required": ["schema_version", "status"],
+  "properties": {
+    "schema_version": { "const": "HWB_HOLDOUT_SEAL_v1" },
+    "status": { "enum": ["PENDING", "VERIFIED", "REVOKED"] },
+    "reviewer_role": { "type": "string" },
+    "solver_development_access": { "type": "boolean" },
+    "task_semantics_checked": { "type": "boolean" },
+    "decision_time_checked": { "type": "boolean" },
+    "reference_checked": { "type": "boolean" },
+    "leakage_checked": { "type": "boolean" },
+    "witness_replayed": { "type": "boolean" },
+    "seal_hash": { "type": "string" }
+  }
+}

@@ -1,0 +1,36 @@
+scenario_id: tc_flood_seed0
+mechanism_id: tc_to_flood
+seed: 42
+n_samples: 24
+output_modality: mixed
+coupling:
+  type: monotonic_additive
+  strength: 1.5
+  monotonicity: increasing
+temporal_operator:
+  lag_steps: 2
+  window: 2
+  alignment_mode: sequential
+spatial_operator:
+  type: distance_decay
+  distance_decay: 2.0
+label_rule:
+  type: binary
+  target: flood_risk
+  thresholds:
+    quantile: 0.65
+    noise_sigma: 0.05
+counterfactuals:
+  - {name: remove_source, operator: remove_source, params: {}}
+  - {name: wrong_lag, operator: wrong_lag, params: {lag_steps_wrong: 5}}
+  - {name: wrong_region, operator: wrong_region, params: {shift: 3}}
+  - {name: shuffled_source, operator: shuffle_source, params: {}}
+  - {name: removed_coupling, operator: remove_coupling, params: {}}
+exposed_fields: [flood_x, adj, tc_track]
+exposed_field_manifest:
+  - {name: flood_x, shape: [24, 4, 6, 2], dtype: float32}
+  - {name: adj, shape: [6, 6], dtype: float32}
+  - {name: tc_track, shape: [24, 6, 8], dtype: float32}
+hidden_fields: [compound_score, tc_effect]
+evaluation_metrics: [accuracy, f1, mae, counterfactual_gap]
+is_negative_control: false

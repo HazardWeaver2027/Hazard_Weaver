@@ -1,0 +1,7 @@
+{
+  "schema_version": "pi_adm_policy_v1",
+  "description": "Frozen benchmark-side A_sci admissibility policy (Π_adm^B). Does not read HWA/HKC certificates.",
+  "forbidden_when_abstain_required": ["direct_submit_without_inspection"],
+  "asci_unknown_triggers": ["missing_label_contract", "ambiguous_goal", "unsupported_anchor"],
+  "capability_manifest_ref": "hwb/registry/tool_manifest_v1.json"
+}

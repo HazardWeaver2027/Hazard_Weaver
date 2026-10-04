@@ -1,0 +1,132 @@
+{
+  "schema_version": "HWB_SEVEN_TRACK_PARAMETRIC_REFS_v1",
+  "taskpack_id": "hwb_hw_med_parametric_v1",
+  "scenarios": {
+    "CAP-HWMED-01": {
+      "capability_id": "CAP-HWMED-01",
+      "outputs": {
+        "metric_name": "max_mae",
+        "reference_score": 1.8841533660888672,
+        "scenario_id": "CAP-HWMED-01",
+        "max_mae": 1.8841533660888672
+      },
+      "tolerance": {
+        "metric": "max_mae",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-HWMED-01",
+        "hcg_scientific_dir": "runs/carp/scientific/HW-MED/CAP-HWMED-01",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-HWMED-02": {
+      "capability_id": "CAP-HWMED-02",
+      "outputs": {
+        "metric_name": "max_mae",
+        "reference_score": 2.280842777360977,
+        "scenario_id": "CAP-HWMED-02",
+        "max_mae": 2.280842777360977
+      },
+      "tolerance": {
+        "metric": "max_mae",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-HWMED-02",
+        "hcg_scientific_dir": "runs/carp/scientific/HW-MED/CAP-HWMED-02",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-HWMED-03": {
+      "capability_id": "CAP-HWMED-03",
+      "outputs": {
+        "metric_name": "max_mae",
+        "reference_score": 1.9920893211000672,
+        "scenario_id": "CAP-HWMED-03",
+        "max_mae": 1.9920893211000672
+      },
+      "tolerance": {
+        "metric": "max_mae",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-HWMED-03",
+        "hcg_scientific_dir": "runs/carp/scientific/HW-MED/CAP-HWMED-03",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-HWMED-04": {
+      "capability_id": "CAP-HWMED-04",
+      "outputs": {
+        "metric_name": "max_mae",
+        "reference_score": 2.3102066339586975,
+        "scenario_id": "CAP-HWMED-04",
+        "max_mae": 2.3102066339586975
+      },
+      "tolerance": {
+        "metric": "max_mae",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-HWMED-04",
+        "hcg_scientific_dir": "runs/carp/scientific/HW-MED/CAP-HWMED-04",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-HWMED-05": {
+      "capability_id": "CAP-HWMED-05",
+      "outputs": {
+        "metric_name": "max_mae",
+        "reference_score": 1.7723636627197266,
+        "scenario_id": "CAP-HWMED-05",
+        "max_mae": 1.7723636627197266
+      },
+      "tolerance": {
+        "metric": "max_mae",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-HWMED-05",
+        "hcg_scientific_dir": "runs/carp/scientific/HW-MED/CAP-HWMED-05",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-HWMED-06": {
+      "capability_id": "CAP-HWMED-06",
+      "outputs": {
+        "metric_name": "max_mae",
+        "reference_score": 4.833105148722882,
+        "scenario_id": "CAP-HWMED-06",
+        "max_mae": 4.833105148722882
+      },
+      "tolerance": {
+        "metric": "max_mae",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-HWMED-06",
+        "hcg_scientific_dir": "runs/carp/scientific/HW-MED/CAP-HWMED-06",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    }
+  }
+}

@@ -1,0 +1,159 @@
+datasets:
+- dataset_id: fpa_fod_tabular
+  hazard_family: wildfire
+  description: FPA-FOD incident tabular
+  provides:
+  - wf_incident_features_8d
+  - wf_lat
+  - wf_lon
+  - wf_discovery_doy
+  source_ref: PyHazards/dataset_cards/fpa_fod_tabular.yaml
+  synthetic_backed: false
+  namespaces:
+  - wildfire
+- dataset_id: fpa_fod_weekly
+  hazard_family: wildfire
+  description: FPA-FOD weekly county
+  provides:
+  - wf_weekly_county_tensor
+  source_ref: PyHazards/dataset_cards/fpa_fod_weekly.yaml
+  synthetic_backed: false
+  namespaces:
+  - wildfire
+- dataset_id: firms
+  hazard_family: wildfire
+  description: FIRMS hotspots
+  provides:
+  - wf_firms_hotspots
+  source_ref: PyHazards/dataset_cards/firms.yaml
+  synthetic_backed: true
+  namespaces:
+  - wildfire
+- dataset_id: landfire
+  hazard_family: wildfire
+  description: LANDFIRE fuels
+  provides:
+  - wf_landfire_fuel
+  source_ref: PyHazards/dataset_cards/landfire.yaml
+  synthetic_backed: true
+  namespaces:
+  - wildfire
+- dataset_id: mtbs
+  hazard_family: wildfire
+  description: MTBS severity
+  provides:
+  - wf_mtbs_severity
+  source_ref: PyHazards/dataset_cards/mtbs.yaml
+  synthetic_backed: true
+  namespaces:
+  - wildfire
+- dataset_id: caravan_streamflow
+  hazard_family: flood
+  description: Caravan streamflow
+  provides:
+  - fl_graph_temporal_x
+  - fl_graph_adj
+  - fl_streamflow_next
+  source_ref: PyHazards/dataset_cards/caravan_streamflow.yaml
+  synthetic_backed: true
+  namespaces:
+  - flood
+- dataset_id: waterbench_streamflow
+  hazard_family: flood
+  description: WaterBench
+  provides:
+  - fl_graph_temporal_x
+  - fl_graph_adj
+  - fl_streamflow_next
+  source_ref: PyHazards/dataset_cards/waterbench_streamflow.yaml
+  synthetic_backed: true
+  namespaces:
+  - flood
+- dataset_id: hydrobench_streamflow
+  hazard_family: flood
+  description: HydroBench
+  provides:
+  - fl_graph_temporal_x
+  - fl_graph_adj
+  - fl_streamflow_next
+  source_ref: PyHazards/dataset_cards/hydrobench_streamflow.yaml
+  synthetic_backed: true
+  namespaces:
+  - flood
+- dataset_id: floodcastbench_inundation
+  hazard_family: flood
+  description: FloodCastBench inundation
+  provides:
+  - fl_inundation_history
+  - fl_inundation_depth
+  source_ref: PyHazards/dataset_cards/floodcastbench_inundation.yaml
+  synthetic_backed: true
+  namespaces:
+  - flood
+- dataset_id: seisbench_waveforms
+  hazard_family: earthquake
+  description: SeisBench waveforms
+  provides:
+  - eq_waveform_3c
+  - eq_ps_pick_indices
+  source_ref: PyHazards/dataset_cards/seisbench_waveforms.yaml
+  synthetic_backed: true
+  namespaces:
+  - earthquake
+- dataset_id: pick_benchmark_waveforms
+  hazard_family: earthquake
+  description: Pick benchmark
+  provides:
+  - eq_waveform_3c
+  - eq_ps_pick_indices
+  source_ref: PyHazards/dataset_cards/pick_benchmark_waveforms.yaml
+  synthetic_backed: true
+  namespaces:
+  - earthquake
+- dataset_id: ibtracs_tracks
+  hazard_family: tc
+  description: IBTrACS tracks
+  provides:
+  - tc_track_history
+  - tc_track_forecast
+  source_ref: PyHazards/dataset_cards/ibtracs_tracks.yaml
+  synthetic_backed: true
+  namespaces:
+  - tc
+- dataset_id: tcbench_alpha
+  hazard_family: tc
+  description: TCBench alpha
+  provides:
+  - tc_track_history
+  - tc_track_forecast
+  source_ref: PyHazards/dataset_cards/tcbench_alpha.yaml
+  synthetic_backed: true
+  namespaces:
+  - tc
+- dataset_id: era5
+  hazard_family: forcing
+  description: ERA5
+  provides:
+  - forcing_era5_cube
+  source_ref: PyHazards/dataset_cards/era5.yaml
+  synthetic_backed: true
+  namespaces:
+  - forcing
+- dataset_id: merra2
+  hazard_family: forcing
+  description: MERRA-2
+  provides:
+  - forcing_merra2_cube
+  source_ref: PyHazards/dataset_cards/merra2.yaml
+  synthetic_backed: true
+  namespaces:
+  - forcing
+- dataset_id: goesr
+  hazard_family: forcing
+  description: GOES-R
+  provides:
+  - forcing_goesr_scene
+  source_ref: PyHazards/dataset_cards/goesr.yaml
+  synthetic_backed: true
+  namespaces:
+  - forcing

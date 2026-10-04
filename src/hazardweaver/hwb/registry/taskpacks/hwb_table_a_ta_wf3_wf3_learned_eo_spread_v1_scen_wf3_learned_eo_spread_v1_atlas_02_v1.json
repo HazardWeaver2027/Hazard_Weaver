@@ -1,0 +1,36 @@
+{
+  "taskpack_id": "hwb_table_a_ta_wf3_wf3_learned_eo_spread_v1_scen_wf3_learned_eo_spread_v1_atlas_02_v1",
+  "headline_target": "WF-3",
+  "metadata": {
+    "capability_fitting_only": true,
+    "difficulty_tier": "L0",
+    "generation_mode": "capability_native_v1",
+    "table_a_instance_id": "TA_WF3_wf3_learned_eo_spread_v1_scen_wf3_learned_eo_spread_v1_atlas_02",
+    "capability_id": "wf3_learned_eo_spread_v1",
+    "anchor_id": "AN-WF-WSTS",
+    "scenario_id": "scen_wf3_learned_eo_spread_v1_atlas_02",
+    "split": "atlas"
+  },
+  "source": {
+    "pack_id": "table_a_v2",
+    "instance_id": "TA_WF3_wf3_learned_eo_spread_v1_scen_wf3_learned_eo_spread_v1_atlas_02",
+    "capability_id": "wf3_learned_eo_spread_v1"
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "tolerance": {
+      "metric": "AP"
+    },
+    "baseline_eligibility": {
+      "aide": false,
+      "mle_star": false,
+      "rd_agent": false,
+      "automl_agent": false
+    }
+  },
+  "solver_view": {},
+  "provenance": {
+    "generation_mode": "capability_native_v1",
+    "emit_utc": "2026-09-04T01:59:48Z"
+  }
+}

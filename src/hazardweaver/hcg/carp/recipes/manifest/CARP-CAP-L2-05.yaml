@@ -1,0 +1,24 @@
+recipe_id: CARP-CAP-L2-05
+capability_id: CAP-L2-05
+taskpack_id: L2
+artifact_id: ART-CAP-L2-05
+priority: P1 official_repo_replay
+fetch_or_checkout: clone USGS TRIGRS v2.1.0 tag v2.1.0 commit 969c409f; compile Fortran
+  on HPG; DOI 10.5066/F7M044QS
+version_or_commit: v2.1.0 / 969c409f / 10.5066/F7M044QS
+environment: Fortran compiler (gfortran) on hpg-default; record OS and build digest
+data_preparation: rainfall, slope, soil depth, water table, hydraulic conductivity/diffusivity,
+  cohesion, friction angle, unit weight grids per USGS TRIGRS input contract
+train_or_inference_command: trigrs TRinput.txt  # faithful Fortran CLI; native factor_of_safety_grid
+expected_artifact: factor_of_safety_grid plus recipe_run.log and HWB AUPRC(-min_FoS) metrics
+checksum: SHA-256 of release archive recorded in TRIGRS_PIN.json after HPG download
+canonicalization: retain native FoS grid; route-neutral HWB evaluator AUPRC(-min_FoS)
+evaluation: primary AUPRC(-min_FoS); secondary FoS<1 binary skill; not TRIGRS official metric
+failure_conditions:
+- source/license inaccessible
+- checksum drift
+- illegal input
+- official test leakage
+- surrogate inference
+- Fortran build failure
+manifest_source: docs/final_four/HCG/manifests/carp_recipes.jsonl

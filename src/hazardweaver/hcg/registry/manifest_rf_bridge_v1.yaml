@@ -1,0 +1,535 @@
+version: manifest_rf_bridge_v1
+description: Maps manifest portfolio family_id (RF-*) to route_families YAML. Generated
+  by sync_manifest_rf_registry.py; task-scoped entries.
+entries_by_task:
+  WF-3:
+    RF-LINEAR-STATISTICAL:
+      task_id: WF-3
+      route_file: wf3_v1.yaml
+      legacy_family_id: wf3_learned_eo_v1
+      distinctness_axis: manifest_rf_rf_linear_statistical
+      canonical_output: wf_spread_grid_v1
+      capability_ids:
+      - CAP-WF3-02
+    RF-PERSISTENCE:
+      task_id: WF-3
+      route_file: wf3_v1.yaml
+      legacy_family_id: wf3_hybrid_assimilation_v1
+      distinctness_axis: manifest_rf_rf_persistence
+      canonical_output: wf_spread_grid_v1
+      capability_ids:
+      - CAP-WF3-01
+    RF-PROCESS-BASED-CELLULAR-SPREA:
+      task_id: WF-3
+      route_file: wf3_v1.yaml
+      legacy_family_id: wf3_cellular_empirical_v1
+      distinctness_axis: manifest_rf_rf_process_based_cellular_sprea
+      canonical_output: wf_spread_grid_v1
+      capability_ids:
+      - CAP-WF3-06
+    RF-RECURRENT-TEMPORAL-SEGMENTAT:
+      task_id: WF-3
+      route_file: wf3_v1.yaml
+      legacy_family_id: wf3_learned_eo_v1
+      distinctness_axis: manifest_rf_rf_recurrent_temporal_segmentat
+      canonical_output: wf_spread_grid_v1
+      capability_ids:
+      - CAP-WF3-04
+    RF-SPATIAL-CONVOLUTIONAL-SEGMEN:
+      task_id: WF-3
+      route_file: wf3_v1.yaml
+      legacy_family_id: wf3_learned_eo_v1
+      distinctness_axis: manifest_rf_rf_spatial_convolutional_segmen
+      canonical_output: wf_spread_grid_v1
+      capability_ids:
+      - CAP-WF3-03
+    RF-TEMPORAL-ATTENTION-SEGMENTAT:
+      task_id: WF-3
+      route_file: wf3_v1.yaml
+      legacy_family_id: wf3_learned_eo_v1
+      distinctness_axis: manifest_rf_rf_temporal_attention_segmentat
+      canonical_output: wf_spread_grid_v1
+      capability_ids:
+      - CAP-WF3-05
+  FL-2:
+    RF-FOUNDATION-PRETRAINED-NEURAL:
+      task_id: FL-2
+      route_file: fl2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_foundation_pretrained_neural
+      canonical_output: fl2_inundation_grid_v1
+      capability_ids:
+      - CAP-FL2-03
+    RF-HYDRODYNAMIC-SOLVER:
+      task_id: FL-2
+      route_file: fl2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_hydrodynamic_solver
+      canonical_output: fl2_inundation_grid_v1
+      capability_ids:
+      - CAP-FL2-05
+    RF-REDUCED-PHYSICS-SHALLOW-WATE:
+      task_id: FL-2
+      route_file: fl2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_reduced_physics_shallow_wate
+      canonical_output: fl2_inundation_grid_v1
+      capability_ids:
+      - CAP-FL2-04
+    RF-SPATIAL-CONVOLUTIONAL-SURROG:
+      task_id: FL-2
+      route_file: fl2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_spatial_convolutional_surrog
+      canonical_output: fl2_inundation_grid_v1
+      capability_ids:
+      - CAP-FL2-01
+    RF-SPECTRAL-NEURAL-OPERATOR:
+      task_id: FL-2
+      route_file: fl2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_spectral_neural_operator
+      canonical_output: fl2_inundation_grid_v1
+      capability_ids:
+      - CAP-FL2-02
+    RF-TERRAIN-INDEX-BASELINE:
+      task_id: FL-2
+      route_file: fl2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_terrain_index_baseline
+      canonical_output: fl2_inundation_grid_v1
+      capability_ids:
+      - CAP-FL2-06
+  L2:
+    RF-EMPIRICAL-THRESHOLD:
+      task_id: L2
+      route_file: l2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_empirical_threshold
+      canonical_output: l2_occurrence_grid_v1
+      capability_ids:
+      - CAP-L2-02
+    RF-GRADIENT-BOOSTED-OCCURRENCE-:
+      task_id: L2
+      route_file: l2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_gradient_boosted_occurrence
+      canonical_output: l2_occurrence_grid_v1
+      capability_ids:
+      - CAP-L2-01
+    RF-INFILTRATION-SLOPE-STABILITY:
+      task_id: L2
+      route_file: l2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_infiltration_slope_stability
+      canonical_output: l2_occurrence_grid_v1
+      capability_ids:
+      - CAP-L2-05
+    RF-INTERPRETABLE-STATISTICAL:
+      task_id: L2
+      route_file: l2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_interpretable_statistical
+      canonical_output: l2_occurrence_grid_v1
+      capability_ids:
+      - CAP-L2-03
+    RF-TREE-ENSEMBLE:
+      task_id: L2
+      route_file: l2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_tree_ensemble
+      canonical_output: l2_occurrence_grid_v1
+      capability_ids:
+      - CAP-L2-04
+  E1-E3:
+    RF-ATTENTION-RECURRENT-DETECTIO:
+      task_id: E1-E3
+      route_file: eq_e1e3_v1.yaml
+      legacy_family_id: eq_learned_picker_v1
+      distinctness_axis: manifest_rf_rf_attention_recurrent_detectio
+      canonical_output: eq_catalog_source_groundmotion_bundle_v1
+      capability_ids:
+      - CAP-E1E3-03
+    RF-CLASSICAL-SIGNAL-TO-CHAIN:
+      task_id: E1-E3
+      route_file: eq_e1e3_v1.yaml
+      legacy_family_id: eq_classical_v1
+      distinctness_axis: manifest_rf_rf_classical_signal_to_chain
+      canonical_output: eq_catalog_source_groundmotion_bundle_v1
+      capability_ids:
+      - CAP-E1E3-01
+    RF-CNN-PHASE-PICKING:
+      task_id: E1-E3
+      route_file: eq_e1e3_v1.yaml
+      legacy_family_id: eq_learned_picker_v1
+      distinctness_axis: manifest_rf_rf_cnn_phase_picking
+      canonical_output: eq_catalog_source_groundmotion_bundle_v1
+      capability_ids:
+      - CAP-E1E3-02
+    RF-GMPE--OBSERVATION-FUSION:
+      task_id: E1-E3
+      route_file: eq_e1e3_v1.yaml
+      legacy_family_id: eq_hybrid_modular_v1
+      distinctness_axis: manifest_rf_rf_gmpe_observation_fusion
+      canonical_output: eq_catalog_source_groundmotion_bundle_v1
+      capability_ids:
+      - CAP-E1E3-08
+    RF-GRID-SEARCH-ASSOCIATION:
+      task_id: E1-E3
+      route_file: eq_e1e3_v1.yaml
+      legacy_family_id: eq_template_v1
+      distinctness_axis: manifest_rf_rf_grid_search_association
+      canonical_output: eq_catalog_source_groundmotion_bundle_v1
+      capability_ids:
+      - CAP-E1E3-07
+    RF-OCTREE-TRAVEL-TIME-ASSOCIATI:
+      task_id: E1-E3
+      route_file: eq_e1e3_v1.yaml
+      legacy_family_id: eq_template_v1
+      distinctness_axis: manifest_rf_rf_octree_travel_time_associati
+      canonical_output: eq_catalog_source_groundmotion_bundle_v1
+      capability_ids:
+      - CAP-E1E3-05
+    RF-PROBABILISTIC-MIXTURE-ASSOCI:
+      task_id: E1-E3
+      route_file: eq_e1e3_v1.yaml
+      legacy_family_id: eq_hybrid_modular_v1
+      distinctness_axis: manifest_rf_rf_probabilistic_mixture_associ
+      canonical_output: eq_catalog_source_groundmotion_bundle_v1
+      capability_ids:
+      - CAP-E1E3-06
+    RF-WINDOW-CLASSIFIER-PICKER:
+      task_id: E1-E3
+      route_file: eq_e1e3_v1.yaml
+      legacy_family_id: eq_learned_picker_v1
+      distinctness_axis: manifest_rf_rf_window_classifier_picker
+      canonical_output: eq_catalog_source_groundmotion_bundle_v1
+      capability_ids:
+      - CAP-E1E3-04
+  TC-TRK:
+    RF-DETERMINISTIC-NEURAL-WEATHER:
+      task_id: TC-TRK
+      route_file: tc_tctrk_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_deterministic_neural_weather
+      canonical_output: tc_track_bundle_v1
+      capability_ids:
+      - CAP-TCTRK-03
+    RF-PHYSICS-BASED-ENSEMBLE-NWP:
+      task_id: TC-TRK
+      route_file: tc_tctrk_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_physics_based_ensemble_nwp
+      canonical_output: tc_track_bundle_v1
+      capability_ids:
+      - CAP-TCTRK-02
+    RF-PROBABILISTIC-DIFFUSION-WEAT:
+      task_id: TC-TRK
+      route_file: tc_tctrk_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_probabilistic_diffusion_weat
+      canonical_output: tc_track_bundle_v1
+      capability_ids:
+      - CAP-TCTRK-05
+    RF-SPECTRAL-NEURAL-WEATHER-MODE:
+      task_id: TC-TRK
+      route_file: tc_tctrk_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_spectral_neural_weather_mode
+      canonical_output: tc_track_bundle_v1
+      capability_ids:
+      - CAP-TCTRK-04
+    RF-STATISTICAL-BIAS-CORRECTION:
+      task_id: TC-TRK
+      route_file: tc_tctrk_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_statistical_bias_correction
+      canonical_output: tc_track_bundle_v1
+      capability_ids:
+      - CAP-TCTRK-06
+    RF-STATISTICAL-WEAK-BASELINE:
+      task_id: TC-TRK
+      route_file: tc_tctrk_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_statistical_weak_baseline
+      canonical_output: tc_track_bundle_v1
+      capability_ids:
+      - CAP-TCTRK-01
+  DR-OUT:
+    RF-EXPERT-OPERATIONAL-SYNTHESIS:
+      task_id: DR-OUT
+      route_file: dr_out_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_expert_operational_synthesis
+      canonical_output: dr_outlook_bundle_v1
+      capability_ids:
+      - CAP-DROUT-01
+    RF-OBJECTIVE-STATISTICAL-TENDEN:
+      task_id: DR-OUT
+      route_file: dr_out_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_objective_statistical_tenden
+      canonical_output: dr_outlook_bundle_v1
+      capability_ids:
+      - CAP-DROUT-03
+    RF-ORDINAL-STATISTICAL-TRANSITI:
+      task_id: DR-OUT
+      route_file: dr_out_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_ordinal_statistical_transiti
+      canonical_output: dr_outlook_bundle_v1
+      capability_ids:
+      - CAP-DROUT-04
+    RF-PERSISTENCE-BASELINE:
+      task_id: DR-OUT
+      route_file: dr_out_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_persistence_baseline
+      canonical_output: dr_outlook_bundle_v1
+      capability_ids:
+      - CAP-DROUT-02
+    RF-SUBSEASONAL-ML-FORECAST:
+      task_id: DR-OUT
+      route_file: dr_out_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_subseasonal_ml_forecast
+      canonical_output: dr_outlook_bundle_v1
+      capability_ids:
+      - CAP-DROUT-05
+  HW-MED:
+    RF-DETERMINISTIC-NEURAL-WEATHER:
+      task_id: HW-MED
+      route_file: hw_med_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_deterministic_neural_weather
+      canonical_output: hw_med_forecast_bundle_v1
+      capability_ids:
+      - CAP-HWMED-03
+    RF-GRAPH-NEURAL-WEATHER-MODEL:
+      task_id: HW-MED
+      route_file: hw_med_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_graph_neural_weather_model
+      canonical_output: hw_med_forecast_bundle_v1
+      capability_ids:
+      - CAP-HWMED-04
+    RF-OPERATIONAL-PHYSICS-NWP:
+      task_id: HW-MED
+      route_file: hw_med_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_operational_physics_nwp
+      canonical_output: hw_med_forecast_bundle_v1
+      capability_ids:
+      - CAP-HWMED-01
+    RF-PROBABILISTIC-DIFFUSION-WEAT:
+      task_id: HW-MED
+      route_file: hw_med_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_probabilistic_diffusion_weat
+      canonical_output: hw_med_forecast_bundle_v1
+      capability_ids:
+      - CAP-HWMED-05
+    RF-SPECTRAL-NEURAL-WEATHER-MODE:
+      task_id: HW-MED
+      route_file: hw_med_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_spectral_neural_weather_mode
+      canonical_output: hw_med_forecast_bundle_v1
+      capability_ids:
+      - CAP-HWMED-02
+    RF-STATISTICAL-BASELINE:
+      task_id: HW-MED
+      route_file: hw_med_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_statistical_baseline
+      canonical_output: hw_med_forecast_bundle_v1
+      capability_ids:
+      - CAP-HWMED-06
+  MH-1:
+    RF-EMPIRICAL-INITIATION--PROCES:
+      task_id: MH-1
+      route_file: mh1_v1.yaml
+      legacy_family_id: mh1_mechanistic_v1
+      distinctness_axis: manifest_rf_rf_empirical_initiation_proces
+      canonical_output: pfdf_runout_terminal_bundle_v1
+      capability_ids:
+      - CAP-MH1-05
+    RF-EMPIRICAL-LOGISTIC-PFDF-INIT:
+      task_id: MH-1
+      route_file: mh1_v1.yaml
+      legacy_family_id: mh1_usgs_empirical_v1
+      distinctness_axis: manifest_rf_rf_empirical_logistic_pfdf_init
+      canonical_output: pfdf_runout_terminal_bundle_v1
+      capability_ids:
+      - CAP-MH1-01
+    RF-EMPIRICAL-VOLUME-REGRESSION:
+      task_id: MH-1
+      route_file: mh1_v1.yaml
+      legacy_family_id: mh1_usgs_empirical_v1
+      distinctness_axis: manifest_rf_rf_empirical_volume_regression
+      canonical_output: pfdf_runout_terminal_bundle_v1
+      capability_ids:
+      - CAP-MH1-02
+    RF-INTENSITY-DURATION-THRESHOLD:
+      task_id: MH-1
+      route_file: mh1_v1.yaml
+      legacy_family_id: mh1_marginal_v1
+      distinctness_axis: manifest_rf_rf_intensity_duration_threshold
+      canonical_output: pfdf_runout_terminal_bundle_v1
+      capability_ids:
+      - CAP-MH1-03
+    RF-TREE-ENSEMBLE-OCCURRENCE:
+      task_id: MH-1
+      route_file: mh1_v1.yaml
+      legacy_family_id: mh1_dependence_v1
+      distinctness_axis: manifest_rf_rf_tree_ensemble_occurrence
+      canonical_output: pfdf_runout_terminal_bundle_v1
+      capability_ids:
+      - CAP-MH1-04
+  MH-2:
+    RF-BAYESIAN-CAUSAL-UPDATE:
+      task_id: MH-2
+      route_file: mh2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_bayesian_causal_update
+      canonical_output: mh2_landslide_bundle_v1
+      capability_ids:
+      - CAP-MH2-05
+    RF-EMPIRICAL-AREAL-COVERAGE-LOG:
+      task_id: MH-2
+      route_file: mh2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_empirical_areal_coverage_log
+      canonical_output: mh2_landslide_bundle_v1
+      capability_ids:
+      - CAP-MH2-01
+    RF-EMPIRICAL-AREAL-COVERAGE-MOD:
+      task_id: MH-2
+      route_file: mh2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_empirical_areal_coverage_mod
+      canonical_output: mh2_landslide_bundle_v1
+      capability_ids:
+      - CAP-MH2-03
+    RF-EMPIRICAL-CELL-OCCURRENCE-LO:
+      task_id: MH-2
+      route_file: mh2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_empirical_cell_occurrence_lo
+      canonical_output: mh2_landslide_bundle_v1
+      capability_ids:
+      - CAP-MH2-02
+    RF-HAZARD-TO-NETWORK-MODEL-CHAI:
+      task_id: MH-2
+      route_file: mh2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_hazard_to_network_model_chai
+      canonical_output: mh2_landslide_bundle_v1
+      capability_ids:
+      - CAP-MH2-06
+    RF-MECHANISTIC-SLOPE-DISPLACEME:
+      task_id: MH-2
+      route_file: mh2_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: manifest_rf_rf_mechanistic_slope_displaceme
+      canonical_output: mh2_landslide_bundle_v1
+      capability_ids:
+      - CAP-MH2-04
+  MH-3:
+    RF-HYDRAULIC-SHALLOW-WATER-SOLV:
+      task_id: MH-3
+      route_file: mh3_v1.yaml
+      legacy_family_id: mh3_overlay_v1
+      distinctness_axis: manifest_rf_rf_hydraulic_shallow_water_solv
+      canonical_output: mh3_inundation_grid_v1
+      capability_ids:
+      - CAP-MH3-02
+    RF-INERTIAL-HYDRODYNAMIC-SOLVER:
+      task_id: MH-3
+      route_file: mh3_v1.yaml
+      legacy_family_id: mh3_one_way_coupled_v1
+      distinctness_axis: manifest_rf_rf_inertial_hydrodynamic_solver
+      canonical_output: mh3_inundation_grid_v1
+      capability_ids:
+      - CAP-MH3-03
+    RF-MULTIVARIATE-STATISTICAL-EXT:
+      task_id: MH-3
+      route_file: mh3_v1.yaml
+      legacy_family_id: mh3_dependence_jpm_v1
+      distinctness_axis: manifest_rf_rf_multivariate_statistical_ext
+      canonical_output: mh3_inundation_grid_v1
+      capability_ids:
+      - CAP-MH3-05
+    RF-ONE-WAY-COUPLED-COASTAL-INLA:
+      task_id: MH-3
+      route_file: mh3_v1.yaml
+      legacy_family_id: mh3_one_way_coupled_v1
+      distinctness_axis: manifest_rf_rf_one_way_coupled_coastal_inla
+      canonical_output: mh3_inundation_grid_v1
+      capability_ids:
+      - CAP-MH3-04
+    RF-REDUCED-PHYSICS-COUPLED-INUN:
+      task_id: MH-3
+      route_file: mh3_v1.yaml
+      legacy_family_id: mh3_fully_coupled_v1
+      distinctness_axis: manifest_rf_rf_reduced_physics_coupled_inun
+      canonical_output: mh3_inundation_grid_v1
+      capability_ids:
+      - CAP-MH3-01
+    RF-VALIDATED-PHYSICS-SURROGATE:
+      task_id: MH-3
+      route_file: mh3_v1.yaml
+      legacy_family_id: mh3_physics_surrogate_v1
+      distinctness_axis: manifest_rf_rf_validated_physics_surrogate
+      canonical_output: mh3_inundation_grid_v1
+      capability_ids:
+      - CAP-MH3-06
+  MH-4:
+    substrate:
+      task_id: MH-4
+      route_file: mh4_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: nhc_hazard_substrate
+      canonical_output: mh4_building_structural_loss_usd_2023_v1
+      capability_ids:
+      - CAP-MH4-R01
+    RF-MH4-INDEPENDENT:
+      task_id: MH-4
+      route_file: mh4_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: ncei_marginal_independent
+      canonical_output: mh4_building_structural_loss_usd_2023_v1
+      capability_ids:
+      - CAP-MH4-R02
+    RF-MH4-DEPENDENCE:
+      task_id: MH-4
+      route_file: mh4_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: ncei_dependence_joint
+      canonical_output: mh4_building_structural_loss_usd_2023_v1
+      capability_ids:
+      - CAP-MH4-R03
+    RF-MH4-ENGINEERING-COMBINED:
+      task_id: MH-4
+      route_file: mh4_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: hazus_hurricane_combined
+      canonical_output: mh4_building_structural_loss_usd_2023_v1
+      capability_ids:
+      - CAP-MH4-R04
+    RF-MH4-DEFERRED-P2:
+      task_id: MH-4
+      route_file: mh4_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: deferred_p2_coupled_chain
+      canonical_output: mh4_building_structural_loss_usd_2023_v1
+      capability_ids:
+      - CAP-MH4-R05
+    RF-MH4-LEARNED-HYBRID:
+      task_id: MH-4
+      route_file: mh4_v1.yaml
+      legacy_family_id: null
+      distinctness_axis: climada_tc_framework
+      canonical_output: mh4_building_structural_loss_usd_2023_v1
+      capability_ids:
+      - CAP-MH4-R06

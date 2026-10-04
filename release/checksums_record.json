@@ -1,0 +1,9 @@
+{
+  "schema": "hazardweaver_release_checksums_v1",
+  "headline_n": 141,
+  "source_checksums_sha256": {
+    "benchmark/public/manifest.jsonl": "see benchmark/checksums.sha256",
+    "released_results/rq1_baselines/paper_stats_v1.json": "4fc6d46fe681b977f59664841f45eca4a9f5870f319f43121f193bf2a458d335"
+  },
+  "headline_llama_dca": {"k": 126, "n": 141}
+}

@@ -1,0 +1,132 @@
+{
+  "schema_version": "HWB_SEVEN_TRACK_PARAMETRIC_REFS_v1",
+  "taskpack_id": "hwb_wf3_parametric_v1",
+  "scenarios": {
+    "CAP-WF3-01": {
+      "capability_id": "CAP-WF3-01",
+      "outputs": {
+        "metric_name": "average_precision",
+        "reference_score": 0.1934470534324646,
+        "scenario_id": "CAP-WF3-01",
+        "average_precision": 0.1934470534324646
+      },
+      "tolerance": {
+        "metric": "average_precision",
+        "min_score": 0.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-WF3-01",
+        "hcg_scientific_dir": "runs/carp/scientific/WF-3/CAP-WF3-01",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-WF3-02": {
+      "capability_id": "CAP-WF3-02",
+      "outputs": {
+        "metric_name": "average_precision",
+        "reference_score": 0.2835741999248664,
+        "scenario_id": "CAP-WF3-02",
+        "average_precision": 0.2835741999248664
+      },
+      "tolerance": {
+        "metric": "average_precision",
+        "min_score": 0.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-WF3-02",
+        "hcg_scientific_dir": "runs/carp/scientific/WF-3/CAP-WF3-02",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-WF3-03": {
+      "capability_id": "CAP-WF3-03",
+      "outputs": {
+        "metric_name": "average_precision",
+        "reference_score": 0.35323379933834076,
+        "scenario_id": "CAP-WF3-03",
+        "average_precision": 0.35323379933834076
+      },
+      "tolerance": {
+        "metric": "average_precision",
+        "min_score": 0.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-WF3-03",
+        "hcg_scientific_dir": "runs/carp/scientific/WF-3/CAP-WF3-03",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-WF3-04": {
+      "capability_id": "CAP-WF3-04",
+      "outputs": {
+        "metric_name": "average_precision",
+        "reference_score": 0.3067842498421669,
+        "scenario_id": "CAP-WF3-04",
+        "average_precision": 0.3067842498421669
+      },
+      "tolerance": {
+        "metric": "average_precision",
+        "min_score": 0.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-WF3-04",
+        "hcg_scientific_dir": "runs/carp/scientific/WF-3/CAP-WF3-04",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-WF3-05": {
+      "capability_id": "CAP-WF3-05",
+      "outputs": {
+        "metric_name": "average_precision",
+        "reference_score": 0.4005400811632474,
+        "scenario_id": "CAP-WF3-05",
+        "average_precision": 0.4005400811632474
+      },
+      "tolerance": {
+        "metric": "average_precision",
+        "min_score": 0.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-WF3-05",
+        "hcg_scientific_dir": "runs/carp/scientific/WF-3/CAP-WF3-05",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-WF3-06": {
+      "capability_id": "CAP-WF3-06",
+      "outputs": {
+        "metric_name": "average_precision",
+        "reference_score": 1.0,
+        "scenario_id": "CAP-WF3-06",
+        "average_precision": 1.0
+      },
+      "tolerance": {
+        "metric": "average_precision",
+        "min_score": 0.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-WF3-06",
+        "hcg_scientific_dir": "runs/carp/scientific/WF-3/CAP-WF3-06",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    }
+  }
+}

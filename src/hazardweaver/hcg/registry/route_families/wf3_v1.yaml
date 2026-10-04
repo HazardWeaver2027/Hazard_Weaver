@@ -1,0 +1,295 @@
+version: wf3_v1
+task_id: WF-3
+canonical_output: wf_spread_grid_v1
+families:
+- family_id: wf3_process_v1
+  task_id: WF-3
+  distinctness_axis: process
+  canonical_output: wf_spread_grid_v1
+  description: Rothermel/FARSITE-class physical spread process model
+  assumptions:
+  - Rothermel_rate_based
+  - fuel_moisture_required
+  - local_wind_driven
+  applicability:
+    spatial: local
+    fuels: required
+    elevation: optional
+  slots:
+  - slot_id: ingest_eo
+    role: observation_source
+    produces:
+    - wf_eo_raster_v1
+    requires:
+      modality: raster
+      semantic_role: observation
+  - slot_id: spread_model
+    role: process_solver
+    consumes:
+    - wf_eo_raster_v1
+    - wf_landfire_fuel_v1
+    produces:
+    - wf_spread_grid_v1
+    requires:
+      modality: raster
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 180
+    ram_mb: 1024
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: wf3_cellular_empirical_v1
+  task_id: WF-3
+  distinctness_axis: cellular_empirical
+  canonical_output: wf_spread_grid_v1
+  description: Cellular automaton with empirical propagation rules
+  assumptions:
+  - cell_state_transition
+  - empirical_spread_rate
+  - neighborhood_coupling
+  applicability:
+    spatial: raster
+    fuels: required
+  slots:
+  - slot_id: ingest_eo
+    role: observation_source
+    produces:
+    - wf_eo_raster_v1
+    requires:
+      modality: raster
+      semantic_role: observation
+  - slot_id: spread_model
+    role: cellular_solver
+    consumes:
+    - wf_eo_raster_v1
+    - wf_landfire_fuel_v1
+    produces:
+    - wf_spread_grid_v1
+    requires:
+      modality: raster
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 90
+    ram_mb: 512
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: wf3_learned_eo_v1
+  task_id: WF-3
+  distinctness_axis: learned_eo
+  canonical_output: wf_spread_grid_v1
+  description: EO-driven learned spread model (estimator family, not backbone swap)
+  assumptions:
+  - eo_features
+  - learned_spread_mapping
+  - training_data_coverage
+  applicability:
+    spatial: raster
+    eo: required
+  slots:
+  - slot_id: ingest_eo
+    role: observation_source
+    produces:
+    - wf_eo_raster_v1
+    requires:
+      modality: raster
+      semantic_role: observation
+  - slot_id: spread_model
+    role: learned_predictor
+    consumes:
+    - wf_eo_raster_v1
+    - wf_landfire_fuel_v1
+    produces:
+    - wf_spread_grid_v1
+    requires:
+      modality: raster
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 60
+    typical_cpu_s: 30
+    ram_mb: 2048
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+  admission_level: L1
+  tier: A
+  notes: FireCastNet wf3_firecastnet_v1 REVOKED (TASK_MISMATCH); pending WildfireSpreadTS
+    anchor audit
+  capability_ids:
+  - wf3_learned_eo_spread_v1
+- family_id: wf3_hybrid_assimilation_v1
+  task_id: WF-3
+  distinctness_axis: hybrid
+  canonical_output: wf_spread_grid_v1
+  description: Physical prior with observation assimilation correction
+  assumptions:
+  - process_prior
+  - eo_assimilation
+  - uncertainty_aware_correction
+  applicability:
+    spatial: raster
+    fuels: required
+    eo: required
+  slots:
+  - slot_id: ingest_eo
+    role: observation_source
+    produces:
+    - wf_eo_raster_v1
+    requires:
+      modality: raster
+      semantic_role: observation
+  - slot_id: spread_model
+    role: hybrid_assimilator
+    consumes:
+    - wf_eo_raster_v1
+    - wf_landfire_fuel_v1
+    produces:
+    - wf_spread_grid_v1
+    requires:
+      modality: raster
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 30
+    typical_cpu_s: 120
+    ram_mb: 1536
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: RF-PERSISTENCE
+  task_id: WF-3
+  distinctness_axis: manifest_rf_persistence
+  canonical_output: wf_spread_grid_v1
+  description: Persistence mask baseline (manifest RF-PERSISTENCE; CAP-WF3-01)
+  assumptions:
+  - persistence_mask
+  - manifest_rf_v1_bridge
+  applicability:
+    spatial: raster
+    eo: required
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 30
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: wf3_hybrid_assimilation_v1
+  capability_ids:
+  - CAP-WF3-01
+  admission_level: L2
+  validation_report: runs/carp/validation/CAP-WF3-01/ValidationReport.json
+  tier: A
+- family_id: RF-LINEAR-STATISTICAL
+  task_id: WF-3
+  distinctness_axis: manifest_rf_rf_linear_statistical
+  canonical_output: wf_spread_grid_v1
+  description: Manifest-native route family (RF-LINEAR-STATISTICAL)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: wf3_learned_eo_v1
+  capability_ids:
+  - CAP-WF3-02
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-WF3-02/ValidationReport.json
+- family_id: RF-PROCESS-BASED-CELLULAR-SPREA
+  task_id: WF-3
+  distinctness_axis: manifest_rf_rf_process_based_cellular_sprea
+  canonical_output: wf_spread_grid_v1
+  description: Manifest-native route family (RF-PROCESS-BASED-CELLULAR-SPREA)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: wf3_cellular_empirical_v1
+  capability_ids:
+  - CAP-WF3-06
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-WF3-06/ValidationReport.json
+- family_id: RF-RECURRENT-TEMPORAL-SEGMENTAT
+  task_id: WF-3
+  distinctness_axis: manifest_rf_rf_recurrent_temporal_segmentat
+  canonical_output: wf_spread_grid_v1
+  description: Manifest-native route family (RF-RECURRENT-TEMPORAL-SEGMENTAT)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: wf3_learned_eo_v1
+  capability_ids:
+  - CAP-WF3-04
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-WF3-04/ValidationReport.json
+- family_id: RF-SPATIAL-CONVOLUTIONAL-SEGMEN
+  task_id: WF-3
+  distinctness_axis: manifest_rf_rf_spatial_convolutional_segmen
+  canonical_output: wf_spread_grid_v1
+  description: Manifest-native route family (RF-SPATIAL-CONVOLUTIONAL-SEGMEN)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: wf3_learned_eo_v1
+  capability_ids:
+  - CAP-WF3-03
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-WF3-03/ValidationReport.json
+- family_id: RF-TEMPORAL-ATTENTION-SEGMENTAT
+  task_id: WF-3
+  distinctness_axis: manifest_rf_rf_temporal_attention_segmentat
+  canonical_output: wf_spread_grid_v1
+  description: Manifest-native route family (RF-TEMPORAL-ATTENTION-SEGMENTAT)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: wf3_learned_eo_v1
+  capability_ids:
+  - CAP-WF3-05
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-WF3-05/ValidationReport.json

@@ -1,0 +1,99 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_fl2_parametric_v2_slice2",
+  "headline_target": "FL-2",
+  "coverage_tier": "W-covered",
+  "hib_is_grader": false,
+  "solver_view": {
+    "user_goal": "Given a FloodCastBench Slice 2 high-fidelity scenario (Australia official test or UK cross-regional holdout), produce rmse_depth and csi_0.01 via a legal G2 neural route.",
+    "parameters": {
+      "scenario_id": "australia_2022_test_000",
+      "split": "official_test_high"
+    },
+    "allowed_tools": [
+      "inspect_artifact",
+      "run_capability",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "CAP-FL2-01",
+      "CAP-FL2-02",
+      "CAP-FL2-03"
+    ]
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "refs_sidecar": "hwb_fl2_parametric_v2_slice2_refs.json",
+    "accepted_witnesses": [
+      {
+        "witness_id": "w_unet_slice2",
+        "route_id": "unet_official_high",
+        "family": "RF-SPATIAL-CONVOLUTIONAL-SURROG",
+        "edges": [
+          "CAP-FL2-01"
+        ],
+        "capability_ids": [
+          "CAP-FL2-01"
+        ]
+      },
+      {
+        "witness_id": "w_fno_slice2",
+        "route_id": "fno_blocked_official_high",
+        "family": "RF-SPECTRAL-NEURAL-OPERATOR",
+        "edges": [
+          "CAP-FL2-02"
+        ],
+        "capability_ids": [
+          "CAP-FL2-02"
+        ]
+      }
+    ],
+    "outputs": {
+      "rmse_depth": 0.44,
+      "csi_0.01": 0.63,
+      "metric_name": "rmse_depth",
+      "scenario_id": "australia_2022_test_000"
+    },
+    "tolerance": {
+      "metric": "rmse_depth",
+      "max_abs_error": 0.15
+    },
+    "secondary_tolerance": {
+      "metric": "csi_0.01",
+      "min_score": 0.5
+    },
+    "trajectory_constraints": {
+      "required_adapters": [],
+      "required_capability_edges": [],
+      "forbidden_shortcuts": [
+        "direct_submit_without_floodcast_infer",
+        "smoke_torch_rollout"
+      ],
+      "adapter_edges": {},
+      "provenance": {
+        "crs": "EPSG:4326",
+        "units": "meters_depth",
+        "scenario_id": "australia_2022_test_000",
+        "split": "official_test_high",
+        "fidelity": "high_30m"
+      }
+    },
+    "final_output_spec": {
+      "schema_id": "hwa.final_artifact/v1",
+      "metric": "rmse_depth",
+      "execution_mode": "scalar",
+      "output_keys": [
+        "rmse_depth",
+        "csi_0.01",
+        "metric_name",
+        "scenario_id"
+      ],
+      "consumes": [
+        "fl_inundation_depth"
+      ]
+    }
+  },
+  "metadata": {
+    "legacy": true
+  }
+}

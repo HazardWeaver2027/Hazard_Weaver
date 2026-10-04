@@ -1,0 +1,45 @@
+{
+  "schema_version": "HWB_TCTRK_PARAMETRIC_REFS_v1",
+  "taskpack_id": "hwb_tctrk_parametric_v1",
+  "scenarios": {
+    "2023020S18156": {
+      "capability_id": "CAP-TCTRK-01",
+      "outputs": {
+        "metric_name": "lead_error_km",
+        "reference_score": 342.61,
+        "lead_error_km": 342.61
+      },
+      "tolerance": {
+        "metric": "lead_error_km",
+        "max_abs_error": 50.0
+      },
+      "provenance": {
+        "split": "storms",
+        "storm_id": "2023020S18156",
+        "hwa_src_workdir": "runs/hwa/tctrk_src_pilot_v1/CAP-TCTRK-01",
+        "claim_tier": "pilot4_src_binding",
+        "not_headline_pass": true,
+        "persistence_fallback": true
+      }
+    },
+    "pilot_scenario_000": {
+      "capability_id": "CAP-TCTRK-01",
+      "outputs": {
+        "metric_name": "lead_error_km",
+        "reference_score": 342.61,
+        "lead_error_km": 342.61
+      },
+      "tolerance": {
+        "metric": "lead_error_km",
+        "max_abs_error": 50.0
+      },
+      "provenance": {
+        "split": "pilot",
+        "hwa_src_workdir": "runs/hwa/tctrk_src_pilot_v1/CAP-TCTRK-01",
+        "claim_tier": "pilot4_src_binding",
+        "not_headline_pass": true,
+        "persistence_fallback": true
+      }
+    }
+  }
+}

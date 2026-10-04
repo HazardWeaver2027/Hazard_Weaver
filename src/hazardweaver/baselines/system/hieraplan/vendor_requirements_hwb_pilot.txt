@@ -1,0 +1,7 @@
+# HieraPlan / TerraLogic HWB pilot — driver uses envs/pyhazards (torch present).
+# Optional envs/hieraplan full stack: HIERAPLAN_CREATE_VENV=1 bash scripts/benchmark/setup_hieraplan_vendor.sh
+python-dotenv>=1.0
+langchain-core>=0.3
+langchain-openai>=0.3
+langgraph>=0.2
+sentence-transformers>=2.2

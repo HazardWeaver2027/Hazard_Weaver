@@ -1,0 +1,107 @@
+{
+  "schema_version": "HWB_MH1_PARAMETRIC_REFS_v1",
+  "taskpack_id": "hwb_mh1_parametric_v1",
+  "scenarios": {
+    "CAP-MH1-01": {
+      "capability_id": "CAP-MH1-01",
+      "outputs": {
+        "metric_name": "brier",
+        "reference_score": 0.7240927506104399,
+        "brier": 0.7240927506104399,
+        "scenario_id": "CAP-MH1-01"
+      },
+      "tolerance": {
+        "metric": "brier",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test",
+        "scenario_id": "aggregate:official_test",
+        "hcg_scientific_dir": "runs/carp/scientific/MH-1/CAP-MH1-01",
+        "claim_tier": "mh1_finish_line_c_scientific",
+        "not_headline_pass": true
+      }
+    },
+    "CAP-MH1-02": {
+      "capability_id": "CAP-MH1-02",
+      "outputs": {
+        "metric_name": "volume_mae",
+        "reference_score": 0.4479500850233759,
+        "volume_mae": 0.4479500850233759,
+        "scenario_id": "CAP-MH1-02"
+      },
+      "tolerance": {
+        "metric": "volume_mae",
+        "min_score": 0.3
+      },
+      "provenance": {
+        "split": "official_test",
+        "scenario_id": "aggregate:official_test",
+        "hcg_scientific_dir": "runs/carp/scientific/MH-1/CAP-MH1-02",
+        "claim_tier": "mh1_finish_line_c_scientific",
+        "not_headline_pass": true
+      }
+    },
+    "CAP-MH1-03": {
+      "capability_id": "CAP-MH1-03",
+      "outputs": {
+        "metric_name": "threshold_accuracy",
+        "reference_score": 0.2608695652173913,
+        "threshold_accuracy": 0.2608695652173913,
+        "scenario_id": "CAP-MH1-03"
+      },
+      "tolerance": {
+        "metric": "threshold_accuracy",
+        "min_score": 0.2
+      },
+      "provenance": {
+        "split": "official_test",
+        "scenario_id": "aggregate:official_test",
+        "hcg_scientific_dir": "runs/carp/scientific/MH-1/CAP-MH1-03",
+        "claim_tier": "mh1_finish_line_c_scientific",
+        "not_headline_pass": true
+      }
+    },
+    "CAP-MH1-04": {
+      "capability_id": "CAP-MH1-04",
+      "outputs": {
+        "metric_name": "auprc",
+        "reference_score": 1.0,
+        "auprc": 1.0,
+        "scenario_id": "CAP-MH1-04"
+      },
+      "tolerance": {
+        "metric": "auprc",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "train_pool",
+        "scenario_id": "aggregate:official_test",
+        "hcg_scientific_dir": "runs/carp/scientific/MH-1/CAP-MH1-04",
+        "claim_tier": "mh1_finish_line_c_scientific",
+        "not_headline_pass": true
+      }
+    },
+    "CAP-MH1-05": {
+      "capability_id": "CAP-MH1-05",
+      "outputs": {
+        "metric_name": "threat_score",
+        "reference_score": 0.6805129336905937,
+        "threat_score": 0.6805129336905937,
+        "scenario_id": "CAP-MH1-05"
+      },
+      "tolerance": {
+        "metric": "threat_score",
+        "min_score": 0.6
+      },
+      "provenance": {
+        "split": "ursa_anchor",
+        "scenario_id": "ursa_anchor_reproduction",
+        "hcg_scientific_dir": "runs/carp/scientific/MH-1/CAP-MH1-05",
+        "claim_tier": "mh1_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "not_hwb_holdout": true
+      }
+    }
+  }
+}

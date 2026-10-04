@@ -1,0 +1,23 @@
+{
+  "baseline_id": "automl_agent",
+  "official_repo": "https://github.com/DeepAuto-AI/automl-agent",
+  "clone_root": "envs/vendor/automl-agent",
+  "license": "CC-BY-NC-4.0",
+  "paper": "arXiv:2410.02958",
+  "api_entry": "agent_manager.AgentManager.initiate_chat",
+  "runtime_env": {
+    "adapter_env": "envs/pyhazards (adapter/eval/pytest only)",
+    "vendor_env": "envs/automl_agent (auto-created from envs/rdagent if missing)",
+    "bootstrap_python": "envs/rdagent/bin/python",
+    "pilot_requirements": "experiments/benchmark/baselines/system/automl_agent/vendor_requirements_hwb_pilot.txt",
+    "setup_script": "scripts/benchmark/setup_automl_agent_env.sh"
+  },
+  "pin_policy": "Record vendor git SHA + pip freeze on first live in runs/benchmark/system_baselines/automl_agent/vendor_sha.txt",
+  "workspace_shim_root": "runs/benchmark/system_baselines/automl_agent/_hwb_workspaces",
+  "default_budget": {
+    "max_plans": 3,
+    "wall_time_s_max": 7200,
+    "llm_provider": "bedrock",
+    "llm_model": ""
+  }
+}

@@ -1,0 +1,136 @@
+version: fl2_v1
+task_id: FL-2
+canonical_output: fl2_inundation_grid_v1
+families:
+- family_id: RF-FOUNDATION-PRETRAINED-NEURAL
+  task_id: FL-2
+  distinctness_axis: manifest_rf_rf_foundation_pretrained_neural
+  canonical_output: fl2_inundation_grid_v1
+  description: Manifest-native route family (RF-FOUNDATION-PRETRAINED-NEURAL)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-FL2-03
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-FL2-03/ValidationReport.json
+- family_id: RF-HYDRODYNAMIC-SOLVER
+  task_id: FL-2
+  distinctness_axis: manifest_rf_rf_hydrodynamic_solver
+  canonical_output: fl2_inundation_grid_v1
+  description: Manifest-native route family (RF-HYDRODYNAMIC-SOLVER)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-FL2-05
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-FL2-05/ValidationReport.json
+- family_id: RF-REDUCED-PHYSICS-SHALLOW-WATE
+  task_id: FL-2
+  distinctness_axis: manifest_rf_rf_reduced_physics_shallow_wate
+  canonical_output: fl2_inundation_grid_v1
+  description: Manifest-native route family (RF-REDUCED-PHYSICS-SHALLOW-WATE)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-FL2-04
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-FL2-04/ValidationReport.json
+- family_id: RF-SPATIAL-CONVOLUTIONAL-SURROG
+  task_id: FL-2
+  distinctness_axis: manifest_rf_rf_spatial_convolutional_surrog
+  canonical_output: fl2_inundation_grid_v1
+  description: Manifest-native route family (RF-SPATIAL-CONVOLUTIONAL-SURROG)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-FL2-01
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-FL2-01/ValidationReport.json
+- family_id: RF-SPECTRAL-NEURAL-OPERATOR
+  task_id: FL-2
+  distinctness_axis: manifest_rf_rf_spectral_neural_operator
+  canonical_output: fl2_inundation_grid_v1
+  description: Manifest-native route family (RF-SPECTRAL-NEURAL-OPERATOR)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-FL2-02
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-FL2-02/ValidationReport.json
+- family_id: RF-TERRAIN-INDEX-BASELINE
+  task_id: FL-2
+  distinctness_axis: manifest_rf_rf_terrain_index_baseline
+  canonical_output: fl2_inundation_grid_v1
+  description: Manifest-native route family (RF-TERRAIN-INDEX-BASELINE)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-FL2-06
+  admission_level: L2
+  tier: C
+  validation_report: runs/carp/validation/CAP-FL2-06/ValidationReport.json

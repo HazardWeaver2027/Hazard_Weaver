@@ -1,0 +1,22 @@
+{
+  "schema_version": "HWB_MLE_STAR_VENDOR_PIN_v1",
+  "repo_url": "https://github.com/google/adk-samples",
+  "repo_subdir": "python/agents/machine-learning-engineering",
+  "license": "Apache-2.0 (adk-samples; verify on pin)",
+  "paper": "arXiv:2506.15692 — MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+  "pin_sha": "7d187b6f97522915a153b1cdc30a8f4a164c7b5a",
+  "pin_date": "2026-08-24",
+  "pin_note": "Last adk-samples commit before PR #2291 removed machine-learning-engineering from main (2026-07-23). Do not use git clone --depth 1 on main.",
+  "upstream_removal": {
+    "removed_commit": "63bfb33c4df5d00b6ef9e2e0e864fbcb01e37645",
+    "pr": 2291,
+    "message": "chore: remove deprecated agent samples and unused project files"
+  },
+  "pin_policy": "Checkout pin_sha exactly; do not fork or patch official agent modules for HWB",
+  "clone_root": "envs/vendor/adk-samples",
+  "agent_entry": {
+    "adk_run_name": "machine_learning_engineering",
+    "package_dir": "machine-learning-engineering"
+  },
+  "runtime_notes": "Requires google-adk CLI or pip package; Gemini-native with Google Search grounding in official loop"
+}

@@ -1,0 +1,137 @@
+version: tc_tctrk_v1
+task_id: TC-TRK
+canonical_output: tc_track_bundle_v1
+families:
+- family_id: RF-STATISTICAL-WEAK-BASELINE
+  task_id: TC-TRK
+  distinctness_axis: manifest_rf_statistical_weak
+  canonical_output: tc_track_bundle_v1
+  description: Climatology/persistence weak baseline (manifest RF-STATISTICAL-WEAK-BASELINE)
+  assumptions:
+  - persistence_track
+  - climatology_baseline
+  applicability:
+    track: required
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 30
+    ram_mb: 128
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  capability_ids:
+  - CAP-TCTRK-01
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-TCTRK-01/ValidationReport.json
+- family_id: RF-DETERMINISTIC-NEURAL-WEATHER
+  task_id: TC-TRK
+  distinctness_axis: manifest_rf_rf_deterministic_neural_weather
+  canonical_output: tc_track_bundle_v1
+  description: Manifest-native route family (RF-DETERMINISTIC-NEURAL-WEATHER)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-TCTRK-03
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-TCTRK-03/ValidationReport.json
+- family_id: RF-PHYSICS-BASED-ENSEMBLE-NWP
+  task_id: TC-TRK
+  distinctness_axis: manifest_rf_rf_physics_based_ensemble_nwp
+  canonical_output: tc_track_bundle_v1
+  description: Manifest-native route family (RF-PHYSICS-BASED-ENSEMBLE-NWP)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-TCTRK-02
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-TCTRK-02/ValidationReport.json
+- family_id: RF-PROBABILISTIC-DIFFUSION-WEAT
+  task_id: TC-TRK
+  distinctness_axis: manifest_rf_rf_probabilistic_diffusion_weat
+  canonical_output: tc_track_bundle_v1
+  description: Manifest-native route family (RF-PROBABILISTIC-DIFFUSION-WEAT)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-TCTRK-05
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-TCTRK-05/ValidationReport.json
+- family_id: RF-SPECTRAL-NEURAL-WEATHER-MODE
+  task_id: TC-TRK
+  distinctness_axis: manifest_rf_rf_spectral_neural_weather_mode
+  canonical_output: tc_track_bundle_v1
+  description: Manifest-native route family (RF-SPECTRAL-NEURAL-WEATHER-MODE)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-TCTRK-04
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-TCTRK-04/ValidationReport.json
+- family_id: RF-STATISTICAL-BIAS-CORRECTION
+  task_id: TC-TRK
+  distinctness_axis: manifest_rf_rf_statistical_bias_correction
+  canonical_output: tc_track_bundle_v1
+  description: Manifest-native route family (RF-STATISTICAL-BIAS-CORRECTION)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-TCTRK-06
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-TCTRK-06/ValidationReport.json

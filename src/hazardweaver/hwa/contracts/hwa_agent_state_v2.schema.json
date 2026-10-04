@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hwa/contracts/hwa_agent_state_v2.schema.json",
+  "title": "HWA_AGENT_STATE_v2",
+  "type": "object",
+  "required": ["schema_version", "task_id", "q", "s_k"],
+  "properties": {
+    "schema_version": { "const": "HWA_AGENT_STATE_v2" },
+    "task_id": { "type": "string" },
+    "q": {
+      "type": "object",
+      "description": "Task query: hazard, goal, constraints, solver_visible"
+    },
+    "s_k": {
+      "type": "object",
+      "properties": {
+        "checkpoint": { "type": "integer" },
+        "state_version": { "type": "string" },
+        "sources": { "type": "array", "items": { "type": "string" } },
+        "target": { "type": "string" },
+        "available_artifacts": { "type": "array", "items": { "type": "string" } },
+        "active_route_id": { "type": ["string", "null"] },
+        "active_lease": { "type": ["object", "null"] }
+      }
+    }
+  }
+}

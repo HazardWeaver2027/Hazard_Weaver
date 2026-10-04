@@ -1,0 +1,1463 @@
+{
+  "schema_version": "HWB_TABLE_A_ELIGIBILITY_v1",
+  "inventory_path": "docs/engineering/benchmark/table_a_v2/inventory_v1.jsonl",
+  "n_rows": 66,
+  "summary": {
+    "aide_eligible": 7,
+    "ds_agent_native_eligible": 66
+  },
+  "rows": [
+    {
+      "instance_id": "TA_FL2_CAP_FL2_05_scen_cap_fl2_05_official_test_00",
+      "capability_id": "CAP-FL2-05",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_FL2_CAP_FL2_06_scen_cap_fl2_06_official_test_00",
+      "capability_id": "CAP-FL2-06",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_FL2_CAP_FL2_05_scen_cap_fl2_05_hwb_holdout_01",
+      "capability_id": "CAP-FL2-05",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_FL2_CAP_FL2_06_scen_cap_fl2_06_hwb_holdout_01",
+      "capability_id": "CAP-FL2-06",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_FL2_CAP_FL2_05_scen_cap_fl2_05_atlas_02",
+      "capability_id": "CAP-FL2-05",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_FL2_CAP_FL2_06_scen_cap_fl2_06_atlas_02",
+      "capability_id": "CAP-FL2-06",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_TCTRK_CAP_TCTRK_01_scen_cap_tctrk_01_official_test_00",
+      "capability_id": "CAP-TCTRK-01",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_TCTRK_CAP_TCTRK_02_scen_cap_tctrk_02_official_test_00",
+      "capability_id": "CAP-TCTRK-02",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_TCTRK_CAP_TCTRK_03_scen_cap_tctrk_03_official_test_00",
+      "capability_id": "CAP-TCTRK-03",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_TCTRK_CAP_TCTRK_04_scen_cap_tctrk_04_official_test_00",
+      "capability_id": "CAP-TCTRK-04",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_TCTRK_CAP_TCTRK_05_scen_cap_tctrk_05_official_test_00",
+      "capability_id": "CAP-TCTRK-05",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_TCTRK_CAP_TCTRK_06_scen_cap_tctrk_06_official_test_00",
+      "capability_id": "CAP-TCTRK-06",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_DROUT_CAP_DROUT_04_scen_cap_drout_04_official_test_00",
+      "capability_id": "CAP-DROUT-04",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='CSI'."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='CSI'."
+      },
+      "rd_agent": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='CSI'."
+      },
+      "automl_agent": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='CSI'."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "CSI"
+    },
+    {
+      "instance_id": "TA_DROUT_CAP_DROUT_05_scen_cap_drout_05_official_test_00",
+      "capability_id": "CAP-DROUT-05",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "CSI"
+    },
+    {
+      "instance_id": "TA_DROUT_CAP_DROUT_04_scen_cap_drout_04_hwb_holdout_01",
+      "capability_id": "CAP-DROUT-04",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='CSI'."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='CSI'."
+      },
+      "rd_agent": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='CSI'."
+      },
+      "automl_agent": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='CSI'."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "CSI"
+    },
+    {
+      "instance_id": "TA_DROUT_CAP_DROUT_05_scen_cap_drout_05_hwb_holdout_01",
+      "capability_id": "CAP-DROUT-05",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "CSI"
+    },
+    {
+      "instance_id": "TA_DROUT_CAP_DROUT_04_scen_cap_drout_04_atlas_02",
+      "capability_id": "CAP-DROUT-04",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='CSI'."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='CSI'."
+      },
+      "rd_agent": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='CSI'."
+      },
+      "automl_agent": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='CSI'."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "CSI"
+    },
+    {
+      "instance_id": "TA_DROUT_CAP_DROUT_05_scen_cap_drout_05_atlas_02",
+      "capability_id": "CAP-DROUT-05",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "CSI"
+    },
+    {
+      "instance_id": "TA_MH1_CAP_MH1_01_scen_cap_mh1_01_official_test_00",
+      "capability_id": "CAP-MH1-01",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_MH1_CAP_MH1_02_scen_cap_mh1_02_official_test_00",
+      "capability_id": "CAP-MH1-02",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "rd_agent": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "automl_agent": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_MH1_CAP_MH1_01_scen_cap_mh1_01_hwb_holdout_01",
+      "capability_id": "CAP-MH1-01",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_MH1_CAP_MH1_02_scen_cap_mh1_02_hwb_holdout_01",
+      "capability_id": "CAP-MH1-02",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "rd_agent": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "automl_agent": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_MH1_CAP_MH1_01_scen_cap_mh1_01_atlas_02",
+      "capability_id": "CAP-MH1-01",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_MH1_CAP_MH1_02_scen_cap_mh1_02_atlas_02",
+      "capability_id": "CAP-MH1-02",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "rd_agent": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "automl_agent": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_WF3_CAP_WF3_04_scen_cap_wf3_04_official_test_00",
+      "capability_id": "CAP-WF3-04",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AP"
+    },
+    {
+      "instance_id": "TA_WF3_CAP_WF3_05_scen_cap_wf3_05_official_test_00",
+      "capability_id": "CAP-WF3-05",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AP"
+    },
+    {
+      "instance_id": "TA_WF3_wf3_learned_eo_spread_v1_scen_wf3_learned_eo_spread_v1_official_test_00",
+      "capability_id": "wf3_learned_eo_spread_v1",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AP"
+    },
+    {
+      "instance_id": "TA_WF3_CAP_WF3_04_scen_cap_wf3_04_hwb_holdout_01",
+      "capability_id": "CAP-WF3-04",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AP"
+    },
+    {
+      "instance_id": "TA_WF3_CAP_WF3_05_scen_cap_wf3_05_hwb_holdout_01",
+      "capability_id": "CAP-WF3-05",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AP"
+    },
+    {
+      "instance_id": "TA_WF3_wf3_learned_eo_spread_v1_scen_wf3_learned_eo_spread_v1_hwb_holdout_01",
+      "capability_id": "wf3_learned_eo_spread_v1",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AP"
+    },
+    {
+      "instance_id": "TA_L2_CAP_L2_01_scen_cap_l2_01_official_test_00",
+      "capability_id": "CAP-L2-01",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_L2_CAP_L2_02_scen_cap_l2_02_official_test_00",
+      "capability_id": "CAP-L2-02",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_L2_CAP_L2_03_scen_cap_l2_03_official_test_00",
+      "capability_id": "CAP-L2-03",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_L2_CAP_L2_04_scen_cap_l2_04_official_test_00",
+      "capability_id": "CAP-L2-04",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "rd_agent": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "automl_agent": {
+        "eligible": true,
+        "reason": "Eligible: tabular Table A row with metric='AUPRC'."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_L2_CAP_L2_05_scen_cap_l2_05_official_test_00",
+      "capability_id": "CAP-L2-05",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_L2_CAP_L2_01_scen_cap_l2_01_hwb_holdout_01",
+      "capability_id": "CAP-L2-01",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_E1E3_CAP_E1E3_02_scen_cap_e1e3_02_official_test_00",
+      "capability_id": "CAP-E1E3-02",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "F1"
+    },
+    {
+      "instance_id": "TA_E1E3_CAP_E1E3_03_scen_cap_e1e3_03_official_test_00",
+      "capability_id": "CAP-E1E3-03",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "F1"
+    },
+    {
+      "instance_id": "TA_E1E3_CAP_E1E3_04_scen_cap_e1e3_04_official_test_00",
+      "capability_id": "CAP-E1E3-04",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "F1"
+    },
+    {
+      "instance_id": "TA_E1E3_CAP_E1E3_08_scen_cap_e1e3_08_official_test_00",
+      "capability_id": "CAP-E1E3-08",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "F1"
+    },
+    {
+      "instance_id": "TA_E1E3_CAP_E1E3_02_scen_cap_e1e3_02_hwb_holdout_01",
+      "capability_id": "CAP-E1E3-02",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "F1"
+    },
+    {
+      "instance_id": "TA_E1E3_CAP_E1E3_03_scen_cap_e1e3_03_hwb_holdout_01",
+      "capability_id": "CAP-E1E3-03",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "F1"
+    },
+    {
+      "instance_id": "TA_HWMED_CAP_HWMED_02_scen_cap_hwmed_02_official_test_00",
+      "capability_id": "CAP-HWMED-02",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_HWMED_CAP_HWMED_02_scen_cap_hwmed_02_hwb_holdout_01",
+      "capability_id": "CAP-HWMED-02",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_HWMED_CAP_HWMED_02_scen_cap_hwmed_02_atlas_02",
+      "capability_id": "CAP-HWMED-02",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_HWMED_CAP_HWMED_03_scen_cap_hwmed_03_official_test_00",
+      "capability_id": "CAP-HWMED-03",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_HWMED_CAP_HWMED_04_scen_cap_hwmed_04_official_test_00",
+      "capability_id": "CAP-HWMED-04",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_HWMED_CAP_HWMED_03_scen_cap_hwmed_03_hwb_holdout_01",
+      "capability_id": "CAP-HWMED-03",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_MH2_CAP_MH2_01_scen_cap_mh2_01_official_test_00",
+      "capability_id": "CAP-MH2-01",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_MH2_CAP_MH2_02_scen_cap_mh2_02_official_test_00",
+      "capability_id": "CAP-MH2-02",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_MH2_CAP_MH2_03_scen_cap_mh2_03_official_test_00",
+      "capability_id": "CAP-MH2-03",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_MH2_CAP_MH2_04_scen_cap_mh2_04_official_test_00",
+      "capability_id": "CAP-MH2-04",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_MH2_CAP_MH2_05_scen_cap_mh2_05_official_test_00",
+      "capability_id": "CAP-MH2-05",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_MH2_CAP_MH2_01_scen_cap_mh2_01_hwb_holdout_01",
+      "capability_id": "CAP-MH2-01",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "AUPRC"
+    },
+    {
+      "instance_id": "TA_MH3_CAP_MH3_01_scen_cap_mh3_01_official_test_00",
+      "capability_id": "CAP-MH3-01",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_MH3_CAP_MH3_02_scen_cap_mh3_02_official_test_00",
+      "capability_id": "CAP-MH3-02",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_MH3_CAP_MH3_03_scen_cap_mh3_03_official_test_00",
+      "capability_id": "CAP-MH3-03",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_MH3_CAP_MH3_05_scen_cap_mh3_05_official_test_00",
+      "capability_id": "CAP-MH3-05",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_MH3_CAP_MH3_06_scen_cap_mh3_06_official_test_00",
+      "capability_id": "CAP-MH3-06",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_MH3_CAP_MH3_01_scen_cap_mh3_01_hwb_holdout_01",
+      "capability_id": "CAP-MH3-01",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "RMSE"
+    },
+    {
+      "instance_id": "TA_MH4_CAP_MH4_R02_scen_cap_mh4_r02_official_test_00",
+      "capability_id": "CAP-MH4-R02",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "MAE"
+    },
+    {
+      "instance_id": "TA_MH4_CAP_MH4_R03_scen_cap_mh4_r03_official_test_00",
+      "capability_id": "CAP-MH4-R03",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "MAE"
+    },
+    {
+      "instance_id": "TA_MH4_CAP_MH4_R02_scen_cap_mh4_r02_hwb_holdout_01",
+      "capability_id": "CAP-MH4-R02",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "MAE"
+    },
+    {
+      "instance_id": "TA_MH4_CAP_MH4_R03_scen_cap_mh4_r03_hwb_holdout_01",
+      "capability_id": "CAP-MH4-R03",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "MAE"
+    },
+    {
+      "instance_id": "TA_MH4_CAP_MH4_R02_scen_cap_mh4_r02_atlas_02",
+      "capability_id": "CAP-MH4-R02",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "MAE"
+    },
+    {
+      "instance_id": "TA_MH4_CAP_MH4_R03_scen_cap_mh4_r03_atlas_02",
+      "capability_id": "CAP-MH4-R03",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "rd_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "automl_agent": {
+        "eligible": false,
+        "reason": "N/A: scientific native replay; not tabular data_dir ML."
+      },
+      "ds_agent_native_eligible": true,
+      "metric": "MAE"
+    }
+  ]
+}

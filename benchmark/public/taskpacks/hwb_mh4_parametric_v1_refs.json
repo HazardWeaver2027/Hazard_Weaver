@@ -1,0 +1,90 @@
+{
+  "schema_version": "HWB_SEVEN_TRACK_PARAMETRIC_REFS_v1",
+  "taskpack_id": "hwb_mh4_parametric_v1",
+  "scenarios": {
+    "CAP-MH4-R01": {
+      "capability_id": "CAP-MH4-R01",
+      "outputs": {
+        "metric_name": "substrate_coverage",
+        "reference_score": 11.0,
+        "scenario_id": "CAP-MH4-R01",
+        "substrate_coverage": 11.0
+      },
+      "tolerance": {
+        "metric": "substrate_coverage",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-MH4-R01",
+        "hcg_scientific_dir": "runs/carp/scientific/MH-4/CAP-MH4-R01",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-MH4-R02": {
+      "capability_id": "CAP-MH4-R02",
+      "outputs": {
+        "metric_name": "log_mae",
+        "reference_score": 0.20425317458379702,
+        "scenario_id": "CAP-MH4-R02",
+        "log_mae": 0.20425317458379702
+      },
+      "tolerance": {
+        "metric": "log_mae",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-MH4-R02",
+        "hcg_scientific_dir": "runs/carp/scientific/MH-4/CAP-MH4-R02",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-MH4-R03": {
+      "capability_id": "CAP-MH4-R03",
+      "outputs": {
+        "metric_name": "log_mae",
+        "reference_score": 0.1935722882560081,
+        "scenario_id": "CAP-MH4-R03",
+        "log_mae": 0.1935722882560081
+      },
+      "tolerance": {
+        "metric": "log_mae",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-MH4-R03",
+        "hcg_scientific_dir": "runs/carp/scientific/MH-4/CAP-MH4-R03",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-MH4-R06": {
+      "capability_id": "CAP-MH4-R06",
+      "outputs": {
+        "metric_name": "log_mae",
+        "reference_score": 6.895601657691332,
+        "scenario_id": "CAP-MH4-R06",
+        "log_mae": 6.895601657691332
+      },
+      "tolerance": {
+        "metric": "log_mae",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-MH4-R06",
+        "hcg_scientific_dir": "runs/carp/scientific/MH-4/CAP-MH4-R06",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    }
+  }
+}

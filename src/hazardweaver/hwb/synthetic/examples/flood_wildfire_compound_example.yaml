@@ -1,0 +1,35 @@
+scenario_id: compound_seed0
+mechanism_id: flood_wildfire_spatial_compound
+seed: 0
+n_samples: 32
+output_modality: raster
+coupling:
+  type: interaction
+  strength: 1.0
+  monotonicity: increasing
+  interaction_terms: [flood_fire]
+label_rule:
+  type: raster_mask
+  target: compound_risk
+  thresholds:
+    quantile: 0.75
+    noise_sigma: 0.05
+  weights:
+    w1: 0.8
+    w2: 0.8
+    w3: 0.3
+    w4: 2.5
+counterfactuals:
+  - {name: shift_wildfire, operator: wrong_region, params: {dx: 8, dy: 8}}
+  - {name: shift_flood, operator: wrong_region, params: {dx: -3, dy: 3}}
+  - {name: remove_hazard, operator: remove_source, params: {which: fire}}
+  - {name: shuffle_samples, operator: shuffle_source, params: {}}
+  - {name: remove_interaction, operator: remove_coupling, params: {}}
+exposed_fields: [flood_depth, fire_prob, exposure]
+exposed_field_manifest:
+  - {name: flood_depth, shape: [32, 1, 16, 16], dtype: float32}
+  - {name: fire_prob, shape: [32, 1, 16, 16], dtype: float32}
+  - {name: exposure, shape: [32, 1, 16, 16], dtype: float32}
+hidden_fields: [risk_continuous]
+evaluation_metrics: [iou, f1, pixel_mae, counterfactual_gap]
+is_negative_control: false

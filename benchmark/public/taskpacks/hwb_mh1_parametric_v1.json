@@ -1,0 +1,76 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_mh1_parametric_v1",
+  "headline_target": "MH-1",
+  "coverage_tier": "W-covered",
+  "hib_is_grader": false,
+  "solver_view": {
+    "user_goal": "Given an MH-1 scientific capability anchor (CAP-MH1-01~05), produce the native metric via HCG scientific replay authority.",
+    "parameters": {
+      "scenario_id": "CAP-MH1-01",
+      "split": "official_test"
+    },
+    "allowed_tools": [
+      "inspect_artifact",
+      "run_capability",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "CAP-MH1-01",
+      "CAP-MH1-02",
+      "CAP-MH1-03",
+      "CAP-MH1-04",
+      "CAP-MH1-05"
+    ],
+    "forbidden_substitutions": [
+      "mh1_crc_substitute_for_mh1_main_table",
+      "direct_submit_without_capability"
+    ]
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "refs_sidecar": "hwb_mh1_parametric_v1_refs.json",
+    "accepted_witnesses": [
+      {
+        "witness_id": "w_mh1_scientific_hcg",
+        "route_id": "route:mh1:scientific:CAP-MH1-01",
+        "family": "RF-EMPIRICAL-LOGISTIC-PFDF-INIT",
+        "edges": [
+          "CAP-MH1-01"
+        ],
+        "capability_ids": [
+          "CAP-MH1-01"
+        ]
+      }
+    ],
+    "outputs": {
+      "metric_name": "brier",
+      "reference_score": 0.7240927506104399,
+      "brier": 0.7240927506104399,
+      "scenario_id": "CAP-MH1-01"
+    },
+    "tolerance": {
+      "metric": "brier",
+      "min_score": 0.5
+    },
+    "trajectory_constraints": {
+      "required_adapters": [],
+      "required_capability_edges": [],
+      "forbidden_shortcuts": [
+        "direct_submit_without_capability",
+        "mh1_crc_substitute"
+      ],
+      "provenance": {
+        "scenario_id": "CAP-MH1-01",
+        "split": "official_test",
+        "claim_tier": "mh1_finish_line_c_scientific",
+        "not_headline_pass": true
+      }
+    }
+  },
+  "metadata": {
+    "mh1_finish_line_c": true,
+    "not_headline_pass": true,
+    "hcg_scientific_authority": true
+  }
+}

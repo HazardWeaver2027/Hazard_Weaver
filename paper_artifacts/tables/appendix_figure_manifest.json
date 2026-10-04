@@ -1,0 +1,13 @@
+{
+  "schema": "appendix_figure_suite_v1",
+  "data": "/workspace/hazardweaver",
+  "figures": [
+    "/workspace/hazardweaver",
+    "/workspace/hazardweaver",
+    "/workspace/hazardweaver",
+    "/workspace/hazardweaver",
+    "/workspace/hazardweaver"
+  ],
+  "rq2_ablation": "paper_figures/unified_141/rq2_fig4a_scientific_constraints.pdf",
+  "track_matrix": "paper_figures/unified_141/rq3_fig6_track_dca_heatmap.pdf"
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_g6_h_a_tccf_charleston_harvey_v1_abstain_pad_021_v1",
+  "headline_target": "MH-3",
+  "coverage_tier": "abstention",
+  "hib_is_grader": false,
+  "source": {
+    "pack_id": "g6_hard_v1",
+    "g6_task_id": "H_A_TCCF_CHARLESTON_HARVEY_V1_ABSTAIN_PAD_021",
+    "anchor_id": "A_TCCF_CHARLESTON_HARVEY_V1",
+    "stratum": "AbstentionChallenge"
+  },
+  "solver_view": {
+    "user_goal": "Evaluate a request that may conflict with the support/label contract; abstain rather than force an illegal path. No dual-route witness is required to abstain.",
+    "allowed_tools": [
+      "inspect_artifact",
+      "ask_user",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "persist_a_tccf_charleston_harvey_v1",
+      "ridge_a_tccf_charleston_harvey_v1",
+      "rf_a_tccf_charleston_harvey_v1"
+    ]
+  },
+  "reference_view": {
+    "expected_action": "abstain",
+    "no_path_certificate": {
+      "reason": "forbid_fake_same_event_join",
+      "anchor_id": "A_TCCF_CHARLESTON_HARVEY_V1",
+      "certified_utc": "2026-07-27T09:13:18Z",
+      "dual_witness_required": false
+    },
+    "checker": {
+      "structure": {
+        "checker_id": "hard_checker_g6_v1"
+      },
+      "execution": {
+        "mode": "abstain",
+        "forbid_reference_score_fallback": true
+      }
+    },
+    "certificate_ref": "docs/engineering/hcg/certificates_v1/A_TCCF_CHARLESTON_HARVEY_V1/ExecutableAnchorCertificate.json",
+    "path_log_ref": "docs/engineering/hcg/g2_path_logs/A_TCCF_CHARLESTON_HARVEY_V1.json",
+    "baseline_eligibility": {
+      "aide": false,
+      "aide_reason": "N/A: abstention task (expected_action=abstain); not supervised ML training.",
+      "mle_star": false,
+      "mle_star_reason": "N/A: abstention task (expected_action=abstain); not supervised ML training.",
+      "rd_agent": false,
+      "rd_agent_reason": "N/A: abstention task (expected_action=abstain); not supervised ML training.",
+      "automl_agent": false,
+      "automl_agent_reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+    },
+    "source_g6_task_id": "H_A_TCCF_CHARLESTON_HARVEY_V1_ABSTAIN_PAD_021",
+    "source_pack": "g6_hard_v1"
+  },
+  "metadata": {
+    "generator": "hwb_g6_hard_taskpack_v1",
+    "g6_task_id": "H_A_TCCF_CHARLESTON_HARVEY_V1_ABSTAIN_PAD_021",
+    "g6_stratum": "AbstentionChallenge",
+    "legacy": false,
+    "scale_pad": true
+  }
+}

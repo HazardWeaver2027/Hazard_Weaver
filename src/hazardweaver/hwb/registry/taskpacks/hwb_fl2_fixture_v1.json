@@ -1,0 +1,93 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_fl2_fixture_v1",
+  "headline_target": "FL-2",
+  "coverage_tier": "W-covered",
+  "hib_is_grader": false,
+  "solver_view": {
+    "user_goal": "Given FloodCastBench official_test scenario pakistan_2022_test_000 (DEM + initial depth), produce rmse_depth and csi_0.01 via CAP-FL2-01 U-Net scientific inference. Do not use smoke rollouts or engineering eval_subset.",
+    "allowed_tools": [
+      "inspect_artifact",
+      "run_capability",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "CAP-FL2-01"
+    ]
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "accepted_witnesses": [
+      {
+        "witness_id": "w_unet_official",
+        "route_id": "unet_official",
+        "family": "RF-SPATIAL-CONVOLUTIONAL-SURROG",
+        "edges": [
+          "CAP-FL2-01"
+        ],
+        "capability_ids": [
+          "CAP-FL2-01"
+        ]
+      },
+      {
+        "witness_id": "w_unet_blocked_official",
+        "route_id": "unet_blocked_official",
+        "family": "RF-SPATIAL-CONVOLUTIONAL-SURROG",
+        "edges": [
+          "CAP-FL2-01"
+        ],
+        "capability_ids": [
+          "CAP-FL2-01"
+        ]
+      }
+    ],
+    "outputs": {
+      "rmse_depth": 0.42,
+      "csi_0.01": 0.65,
+      "metric_name": "rmse_depth",
+      "scenario_id": "pakistan_2022_test_000"
+    },
+    "tolerance": {
+      "metric": "rmse_depth",
+      "max_abs_error": 0.15
+    },
+    "secondary_tolerance": {
+      "metric": "csi_0.01",
+      "min_score": 0.5
+    },
+    "trajectory_constraints": {
+      "required_adapters": [],
+      "required_capability_edges": [
+        "CAP-FL2-01"
+      ],
+      "forbidden_shortcuts": [
+        "direct_submit_without_floodcast_infer",
+        "smoke_torch_rollout"
+      ],
+      "adapter_edges": {},
+      "provenance": {
+        "crs": "EPSG:4326",
+        "units": "meters_depth",
+        "time_window": "pakistan_2022_test_000",
+        "scenario_id": "pakistan_2022_test_000"
+      }
+    },
+    "final_output_spec": {
+      "schema_id": "hwa.final_artifact/v1",
+      "metric": "rmse_depth",
+      "execution_mode": "scalar",
+      "output_keys": [
+        "rmse_depth",
+        "csi_0.01",
+        "metric_name",
+        "scenario_id"
+      ],
+      "consumes": [
+        "fl_inundation_depth"
+      ]
+    }
+  },
+  "metadata": {
+    "legacy": true
+  }
+}

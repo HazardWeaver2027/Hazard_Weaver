@@ -1,0 +1,27 @@
+recipe_id: CARP-CAP-HWMED-03
+capability_id: CAP-HWMED-03
+taskpack_id: HW-MED
+artifact_id: ART-CAP-HWMED-03
+priority: P0 vendor_fetch
+fetch_or_checkout: fetch immutable official artifact; source=official weights/archive
+version_or_commit: 2f37abd464eb339d3775e2e1537e2f823d87efad
+environment: create isolated environment from official lock/requirements; record OS,
+  CUDA, container digest and package lock
+data_preparation: materialize only legal TaskPack inputs; freeze source versions/checksums;
+  apply train/validation/hidden split before fitting or calibration
+train_or_inference_command: ewb.evaluation + inputs.get_cira_icechunk(PANG_v100_GFS) + metrics.MaximumMeanAbsoluteError
+expected_artifact: model/checkpoint or deterministic configuration plus raw native
+  predictions and canonical HWB artifact
+checksum: UNKNOWN until fetched/built; SHA-256 mandatory before acceptance
+canonicalization: convert with lossless unit/CRS/time/grid adapter; retain native
+  artifact and provenance
+evaluation: run anchor evaluator and HWB hidden evaluator; record metric, split, units,
+  runtime and hardware
+failure_conditions:
+- source/license inaccessible
+- checksum drift
+- illegal input
+- official test leakage
+- canonicalization semantic loss
+- compute exceeds priority envelope
+manifest_source: docs/final_four/HCG/manifests/carp_recipes.jsonl

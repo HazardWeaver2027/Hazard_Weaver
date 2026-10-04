@@ -1,0 +1,826 @@
+schema_version: pyhazards_variable_map_v1
+authority: VARIABLE_PACKING_POLICY_v1 + PYHAZARDS_G0_BRIDGE_v1
+claim_guard: mapped IO is proposed contract draft only; not HCG-G / E-Search gold
+n_entries: 48
+entries:
+- catalog_id: phasenet
+  kind: capability
+  hazard: earthquake
+  tier: A
+  inputs:
+  - eq_waveform_3c
+  outputs:
+  - eq_ps_pick_indices
+  provides: []
+  feature_schema:
+  - name: channels
+    values:
+    - E
+    - N
+    - Z
+  - name: window
+    note: multichannel waveform window
+  support_spec:
+    modality: waveform
+  io_draft_status: mapped
+  lexicon_aliases:
+  - phasenet
+  notes: Tier A phase picker
+- catalog_id: eqtransformer
+  kind: capability
+  hazard: earthquake
+  tier: A
+  inputs:
+  - eq_waveform_3c
+  outputs:
+  - eq_ps_pick_indices
+  provides: []
+  feature_schema:
+  - name: channels
+    values:
+    - E
+    - N
+    - Z
+  support_spec:
+    modality: waveform
+  io_draft_status: mapped
+  lexicon_aliases:
+  - eqtransformer
+  notes: Tier A joint pick
+- catalog_id: gpd
+  kind: capability
+  hazard: earthquake
+  tier: B
+  inputs:
+  - eq_waveform_3c
+  outputs:
+  - eq_ps_pick_indices
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: waveform
+  io_draft_status: mapped
+  lexicon_aliases:
+  - gpd
+  notes: Tier B CNN picker
+- catalog_id: eqnet
+  kind: capability
+  hazard: earthquake
+  tier: B
+  inputs:
+  - eq_waveform_3c
+  outputs:
+  - eq_ps_pick_indices
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: waveform
+  io_draft_status: mapped
+  lexicon_aliases:
+  - eqnet
+  notes: ''
+- catalog_id: wavecastnet
+  kind: capability
+  hazard: earthquake
+  tier: B
+  inputs:
+  - eq_wavefield_history
+  outputs:
+  - eq_wavefield_forecast
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: raster
+  io_draft_status: mapped
+  lexicon_aliases:
+  - wavecastnet
+  notes: wavefield seq2seq
+- catalog_id: neuralhydrology_lstm
+  kind: capability
+  hazard: flood
+  tier: A
+  inputs:
+  - fl_graph_temporal_x
+  outputs:
+  - fl_streamflow_next
+  provides: []
+  feature_schema:
+  - name: dynamic_forcings
+    note: basin forcings over history
+  - name: static_attributes
+    note: optional entity attrs
+  support_spec:
+    modality: graph_temporal
+  io_draft_status: mapped
+  lexicon_aliases:
+  - neuralhydrology_lstm
+  - neuralhydrology
+  notes: Tier A
+- catalog_id: neuralhydrology_ealstm
+  kind: capability
+  hazard: flood
+  tier: B
+  inputs:
+  - fl_graph_temporal_x
+  outputs:
+  - fl_streamflow_next
+  provides: []
+  feature_schema:
+  - name: static_gating
+    note: entity-aware static features
+  support_spec:
+    modality: graph_temporal
+  io_draft_status: mapped
+  lexicon_aliases:
+  - neuralhydrology_ealstm
+  notes: ''
+- catalog_id: hydrographnet
+  kind: capability
+  hazard: flood
+  tier: B
+  inputs:
+  - fl_graph_temporal_x
+  - fl_graph_adj
+  outputs:
+  - fl_streamflow_next
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: graph_temporal
+  io_draft_status: mapped
+  lexicon_aliases:
+  - hydrographnet
+  notes: ''
+- catalog_id: google_flood_forecasting
+  kind: capability
+  hazard: flood
+  tier: B
+  inputs:
+  - fl_graph_temporal_x
+  outputs:
+  - fl_streamflow_next
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: graph_temporal
+  io_draft_status: mapped
+  lexicon_aliases:
+  - google_flood_forecasting
+  notes: ''
+- catalog_id: floodcast
+  kind: capability
+  hazard: flood
+  tier: B
+  inputs:
+  - fl_inundation_history
+  - forcing_era5_cube
+  outputs:
+  - fl_inundation_depth
+  provides: []
+  feature_schema:
+  - name: meteo_channels
+    note: packed in forcing_era5_cube / feature_schema
+  support_spec:
+    modality: raster
+  io_draft_status: mapped
+  lexicon_aliases:
+  - floodcast
+  notes: consumes shared forcing cube
+- catalog_id: urbanfloodcast
+  kind: capability
+  hazard: flood
+  tier: B
+  inputs:
+  - fl_inundation_history
+  outputs:
+  - fl_inundation_depth
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: raster
+  io_draft_status: mapped
+  lexicon_aliases:
+  - urbanfloodcast
+  notes: ''
+- catalog_id: wildfire_aspp
+  kind: capability
+  hazard: wildfire
+  tier: B
+  inputs:
+  - wf_burned_mask
+  - wf_ndws_meteorology_stack
+  - wf_ndws_elevation_raster
+  - wf_ndws_vegetation_index
+  - wf_ndws_fuel_component
+  outputs:
+  - wf_spread_raster_frame
+  provides: []
+  feature_schema:
+  - name: input_channels
+    note: ASPP next-day spread stack; channels in feature_schema
+  support_spec:
+    modality: raster
+  io_draft_status: mapped
+  lexicon_aliases:
+  - wildfire_aspp
+  - aspp
+  notes: aligns Pilot NDWS packing
+- catalog_id: wildfirespreadts
+  kind: capability
+  hazard: wildfire
+  tier: B
+  inputs:
+  - wf_spread_raster_history
+  - wf_ndws_meteorology_stack
+  outputs:
+  - wf_spread_raster_frame
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: raster
+  io_draft_status: mapped
+  lexicon_aliases:
+  - wildfirespreadts
+  notes: ''
+- catalog_id: firecastnet
+  kind: capability
+  hazard: wildfire
+  tier: C
+  inputs:
+  - wf_spread_raster_history
+  - forcing_era5_cube
+  outputs:
+  - wf_spread_raster_frame
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: raster
+  io_draft_status: mapped
+  lexicon_aliases:
+  - firecastnet
+  notes: ''
+- catalog_id: forefire
+  kind: capability
+  hazard: wildfire
+  tier: C
+  inputs:
+  - wf_burned_mask
+  - wf_landfire_fuel
+  - forcing_era5_cube
+  outputs:
+  - wf_spread_raster_frame
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: raster
+  io_draft_status: mapped
+  lexicon_aliases:
+  - forefire
+  notes: front-propagation style
+- catalog_id: wrf_sfire
+  kind: capability
+  hazard: wildfire
+  tier: C
+  inputs:
+  - wf_burned_mask
+  - wf_landfire_fuel
+  - forcing_era5_cube
+  outputs:
+  - wf_spread_raster_frame
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: raster
+  io_draft_status: mapped
+  lexicon_aliases:
+  - wrf_sfire
+  notes: adapter; not full WRF claim
+- catalog_id: asufm
+  kind: capability
+  hazard: wildfire
+  tier: C
+  inputs:
+  - wf_weekly_county_tensor
+  outputs:
+  - wf_weekly_activity_5d
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: tabular
+  io_draft_status: mapped
+  lexicon_aliases:
+  - asufm
+  notes: ''
+- catalog_id: wildfire_forecasting
+  kind: capability
+  hazard: wildfire
+  tier: C
+  inputs:
+  - wf_weekly_county_tensor
+  outputs:
+  - wf_weekly_activity_5d
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: tabular
+  io_draft_status: mapped
+  lexicon_aliases:
+  - wildfire_forecasting
+  notes: ''
+- catalog_id: wildfire_fpa
+  kind: capability
+  hazard: wildfire
+  tier: C
+  inputs:
+  - wf_incident_features_8d
+  outputs:
+  - wf_danger_class_5
+  - wf_weekly_activity_5d
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: tabular
+  io_draft_status: mapped
+  lexicon_aliases:
+  - wildfire_fpa
+  notes: ''
+- catalog_id: wildfire_mamba
+  kind: capability
+  hazard: wildfire
+  tier: C
+  inputs:
+  - wf_weekly_county_tensor
+  outputs:
+  - wf_danger_class_5
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: graph_temporal
+  io_draft_status: mapped
+  lexicon_aliases:
+  - wildfire_mamba
+  notes: ''
+- catalog_id: tropicyclonenet
+  kind: capability
+  hazard: tc
+  tier: B
+  inputs:
+  - tc_track_history
+  - forcing_era5_cube
+  outputs:
+  - tc_track_forecast
+  - tc_intensity_forecast
+  provides: []
+  feature_schema:
+  - name: meteo_channels
+    note: in forcing_era5_cube feature_schema
+  support_spec:
+    modality: track
+  io_draft_status: mapped
+  lexicon_aliases:
+  - tropicyclonenet
+  notes: ''
+- catalog_id: hurricast
+  kind: capability
+  hazard: tc
+  tier: B
+  inputs:
+  - tc_track_history
+  - forcing_era5_cube
+  outputs:
+  - tc_track_forecast
+  - tc_intensity_forecast
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: track
+  io_draft_status: mapped
+  lexicon_aliases:
+  - hurricast
+  notes: ''
+- catalog_id: tropicalcyclone_mlp
+  kind: capability
+  hazard: tc
+  tier: B
+  inputs:
+  - tc_track_history
+  outputs:
+  - tc_track_forecast
+  - tc_intensity_forecast
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: track
+  io_draft_status: mapped
+  lexicon_aliases:
+  - tropicalcyclone_mlp
+  notes: ''
+- catalog_id: saf_net
+  kind: capability
+  hazard: tc
+  tier: C
+  inputs:
+  - tc_track_history
+  - forcing_era5_cube
+  outputs:
+  - tc_track_forecast
+  - tc_intensity_forecast
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: track
+  io_draft_status: mapped
+  lexicon_aliases:
+  - saf_net
+  notes: ''
+- catalog_id: tcif_fusion
+  kind: capability
+  hazard: tc
+  tier: C
+  inputs:
+  - tc_track_history
+  - forcing_era5_cube
+  outputs:
+  - tc_track_forecast
+  - tc_intensity_forecast
+  provides: []
+  feature_schema: []
+  support_spec:
+    modality: track
+  io_draft_status: mapped
+  lexicon_aliases:
+  - tcif_fusion
+  notes: ''
+- catalog_id: fourcastnet_tc
+  kind: capability
+  hazard: tc
+  tier: C
+  inputs:
+  - tc_track_history
+  - forcing_era5_cube
+  outputs:
+  - tc_track_forecast
+  provides: []
+  feature_schema: []
+  support_spec: {}
+  io_draft_status: needs_evidence
+  lexicon_aliases:
+  - fourcastnet_tc
+  notes: wrapper-style adapter; IO needs README/evidence pass before gold
+- catalog_id: graphcast_tc
+  kind: capability
+  hazard: tc
+  tier: C
+  inputs:
+  - tc_track_history
+  - forcing_era5_cube
+  outputs:
+  - tc_track_forecast
+  provides: []
+  feature_schema: []
+  support_spec: {}
+  io_draft_status: needs_evidence
+  lexicon_aliases:
+  - graphcast_tc
+  notes: wrapper-style adapter; IO needs README/evidence pass before gold
+- catalog_id: pangu_tc
+  kind: capability
+  hazard: tc
+  tier: C
+  inputs:
+  - tc_track_history
+  - forcing_era5_cube
+  outputs:
+  - tc_track_forecast
+  provides: []
+  feature_schema: []
+  support_spec: {}
+  io_draft_status: needs_evidence
+  lexicon_aliases:
+  - pangu_tc
+  notes: wrapper-style adapter; IO needs README/evidence pass before gold
+- catalog_id: firms
+  kind: dataset
+  hazard: wildfire
+  tier: A
+  inputs: []
+  outputs: []
+  provides:
+  - wf_firms_hotspots
+  feature_schema: []
+  support_spec:
+    modality: point
+    temporal: near_real_time
+  io_draft_status: mapped
+  lexicon_aliases:
+  - firms
+  notes: Tier A portal
+- catalog_id: mtbs
+  kind: dataset
+  hazard: wildfire
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - wf_mtbs_severity
+  - wf_modern_fire_perimeters
+  feature_schema: []
+  support_spec:
+    modality: raster
+  io_draft_status: mapped
+  lexicon_aliases:
+  - mtbs
+  notes: ''
+- catalog_id: landfire
+  kind: dataset
+  hazard: wildfire
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - wf_landfire_fuel
+  feature_schema: []
+  support_spec:
+    modality: raster
+  io_draft_status: mapped
+  lexicon_aliases:
+  - landfire
+  notes: ''
+- catalog_id: wfigs
+  kind: dataset
+  hazard: wildfire
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - wf_modern_fire_perimeters
+  feature_schema: []
+  support_spec:
+    modality: polygon
+  io_draft_status: mapped
+  lexicon_aliases:
+  - wfigs
+  - nifc_wfigs
+  notes: ''
+- catalog_id: fpa_fod_tabular
+  kind: dataset
+  hazard: wildfire
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - wf_incident_features_8d
+  feature_schema: []
+  support_spec:
+    modality: tabular
+  io_draft_status: mapped
+  lexicon_aliases:
+  - fpa_fod_tabular
+  - fpa_fod
+  notes: ''
+- catalog_id: fpa_fod_weekly
+  kind: dataset
+  hazard: wildfire
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - wf_weekly_county_tensor
+  feature_schema: []
+  support_spec:
+    modality: tabular
+  io_draft_status: mapped
+  lexicon_aliases:
+  - fpa_fod_weekly
+  notes: ''
+- catalog_id: era5
+  kind: dataset
+  hazard: multi
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - forcing_era5_cube
+  feature_schema:
+  - name: example_vars
+    values:
+    - tp
+    - t2m
+    - u10
+    - v10
+    note: channels not graph vars
+  support_spec:
+    modality: raster
+  io_draft_status: mapped
+  lexicon_aliases:
+  - era5
+  notes: shared forcing; hazard=multi in catalog
+- catalog_id: merra2
+  kind: dataset
+  hazard: multi
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - forcing_merra2_cube
+  feature_schema: []
+  support_spec:
+    modality: raster
+  io_draft_status: mapped
+  lexicon_aliases:
+  - merra2
+  notes: ''
+- catalog_id: goesr
+  kind: dataset
+  hazard: multi
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - forcing_goesr_scene
+  feature_schema: []
+  support_spec:
+    modality: raster
+  io_draft_status: mapped
+  lexicon_aliases:
+  - goesr
+  notes: ''
+- catalog_id: caravan_streamflow
+  kind: dataset
+  hazard: flood
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - fl_graph_temporal_x
+  - fl_streamflow_next
+  feature_schema: []
+  support_spec:
+    modality: graph_temporal
+  io_draft_status: mapped
+  lexicon_aliases:
+  - caravan_streamflow
+  - caravan
+  notes: provides history features + target streamflow labels as dataset contract
+- catalog_id: hydrobench_streamflow
+  kind: dataset
+  hazard: flood
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - fl_graph_temporal_x
+  - fl_streamflow_next
+  feature_schema: []
+  support_spec:
+    modality: graph_temporal
+  io_draft_status: mapped
+  lexicon_aliases:
+  - hydrobench_streamflow
+  - hydrobench
+  notes: ''
+- catalog_id: waterbench_streamflow
+  kind: dataset
+  hazard: flood
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - fl_graph_temporal_x
+  - fl_streamflow_next
+  feature_schema: []
+  support_spec:
+    modality: graph_temporal
+  io_draft_status: mapped
+  lexicon_aliases:
+  - waterbench_streamflow
+  - waterbench
+  notes: ''
+- catalog_id: floodcastbench_inundation
+  kind: dataset
+  hazard: flood
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - fl_inundation_history
+  - fl_inundation_depth
+  feature_schema: []
+  support_spec:
+    modality: raster
+  io_draft_status: mapped
+  lexicon_aliases:
+  - floodcastbench_inundation
+  - floodcastbench
+  notes: ''
+- catalog_id: noaa_flood
+  kind: dataset
+  hazard: flood
+  tier: C
+  inputs: []
+  outputs: []
+  provides:
+  - fl_inundation_history
+  feature_schema: []
+  support_spec: {}
+  io_draft_status: needs_evidence
+  lexicon_aliases:
+  - noaa_flood
+  notes: event records; exact Variable packaging needs evidence
+- catalog_id: ibtracs_tracks
+  kind: dataset
+  hazard: tc
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - tc_track_history
+  feature_schema: []
+  support_spec:
+    modality: track
+  io_draft_status: mapped
+  lexicon_aliases:
+  - ibtracs_tracks
+  - ibtracs
+  notes: Tier B
+- catalog_id: tcbench_alpha
+  kind: dataset
+  hazard: tc
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - tc_track_history
+  - tc_track_forecast
+  feature_schema: []
+  support_spec:
+    modality: track
+  io_draft_status: mapped
+  lexicon_aliases:
+  - tcbench_alpha
+  - tcbench
+  notes: ''
+- catalog_id: tropicyclonenet_dataset
+  kind: dataset
+  hazard: tc
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - tc_track_history
+  - tc_track_forecast
+  feature_schema: []
+  support_spec:
+    modality: track
+  io_draft_status: mapped
+  lexicon_aliases:
+  - tropicyclonenet_dataset
+  notes: ''
+- catalog_id: seisbench_waveforms
+  kind: dataset
+  hazard: earthquake
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - eq_waveform_3c
+  feature_schema: []
+  support_spec:
+    modality: waveform
+  io_draft_status: mapped
+  lexicon_aliases:
+  - seisbench_waveforms
+  - seisbench
+  notes: ''
+- catalog_id: pick_benchmark_waveforms
+  kind: dataset
+  hazard: earthquake
+  tier: B
+  inputs: []
+  outputs: []
+  provides:
+  - eq_waveform_3c
+  - eq_ps_pick_indices
+  feature_schema: []
+  support_spec:
+    modality: waveform
+  io_draft_status: mapped
+  lexicon_aliases:
+  - pick_benchmark_waveforms
+  - pick_benchmark
+  notes: ''
+- catalog_id: aefa_forecast
+  kind: dataset
+  hazard: earthquake
+  tier: C
+  inputs: []
+  outputs: []
+  provides:
+  - eq_wavefield_history
+  - eq_wavefield_forecast
+  feature_schema: []
+  support_spec: {}
+  io_draft_status: needs_evidence
+  lexicon_aliases:
+  - aefa_forecast
+  notes: synthetic-backed adapter; confirm IO before gold

@@ -1,0 +1,659 @@
+{
+  "schema_version": "HWB_G6_HARD_ELIGIBILITY_v1",
+  "pack_id": "g6_hard_v1",
+  "generated_utc": "2026-08-24T03:34:00Z",
+  "source_tasks_dir": "docs/engineering/hcg/reference_package/g6_hard_v1/tasks",
+  "n_tasks": 40,
+  "strata_counts": {
+    "AbstentionChallenge": 10,
+    "ClarificationChallenge": 10,
+    "CoreExec": 20
+  },
+  "summary": {
+    "aide_eligible": 12,
+    "mle_star_eligible": 12,
+    "aide_na": 28
+  },
+  "tasks": [
+    {
+      "g6_task_id": "H_A_CF_COOPS_USGS_OPS_V1_ABSTAIN_01",
+      "anchor_id": "A_CF_COOPS_USGS_OPS_V1",
+      "stratum": "AbstentionChallenge",
+      "headline_target": "MH-3",
+      "dataset_key": "coops",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_CF_COOPS_USGS_OPS_V1_CLARIFY_01",
+      "anchor_id": "A_CF_COOPS_USGS_OPS_V1",
+      "stratum": "ClarificationChallenge",
+      "headline_target": "MH-3",
+      "dataset_key": "coops",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_CF_COOPS_USGS_OPS_V1_COREEXEC_dag_persist_alt_family",
+      "anchor_id": "A_CF_COOPS_USGS_OPS_V1",
+      "stratum": "CoreExec",
+      "headline_target": "MH-3",
+      "dataset_key": "coops",
+      "metric_name": "mae",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: A_CF_COOPS_USGS_OPS_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: A_CF_COOPS_USGS_OPS_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      }
+    },
+    {
+      "g6_task_id": "H_A_CF_COOPS_USGS_OPS_V1_COREEXEC_dag_ridge_selected_path",
+      "anchor_id": "A_CF_COOPS_USGS_OPS_V1",
+      "stratum": "CoreExec",
+      "headline_target": "MH-3",
+      "dataset_key": "coops",
+      "metric_name": "mae",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: A_CF_COOPS_USGS_OPS_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: A_CF_COOPS_USGS_OPS_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      }
+    },
+    {
+      "g6_task_id": "H_A_DH_GHCND_SPI_V1_ABSTAIN_01",
+      "anchor_id": "A_DH_GHCND_SPI_V1",
+      "stratum": "AbstentionChallenge",
+      "headline_target": "DR-OUT",
+      "dataset_key": "ghcn",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_DH_GHCND_SPI_V1_CLARIFY_01",
+      "anchor_id": "A_DH_GHCND_SPI_V1",
+      "stratum": "ClarificationChallenge",
+      "headline_target": "DR-OUT",
+      "dataset_key": "ghcn",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_DH_GHCND_SPI_V1_COREEXEC_dag_rf_selected_path",
+      "anchor_id": "A_DH_GHCND_SPI_V1",
+      "stratum": "CoreExec",
+      "headline_target": "DR-OUT",
+      "dataset_key": "ghcn",
+      "metric_name": "mae",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular supervised mae task; exportable train/val/test via g2_tabular_common dataset='ghcn'; aide_goal and aide_eval defined."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='ghcn' with metric='MAE'."
+      }
+    },
+    {
+      "g6_task_id": "H_A_DH_GHCND_SPI_V1_COREEXEC_dag_spi_proxy_alt_family",
+      "anchor_id": "A_DH_GHCND_SPI_V1",
+      "stratum": "CoreExec",
+      "headline_target": "DR-OUT",
+      "dataset_key": "ghcn",
+      "metric_name": "mae",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular supervised mae task; exportable train/val/test via g2_tabular_common dataset='ghcn'; aide_goal and aide_eval defined."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='ghcn' with metric='MAE'."
+      }
+    },
+    {
+      "g6_task_id": "H_A_LS_INV_V3_HARMONIZE_V1_ABSTAIN_01",
+      "anchor_id": "A_LS_INV_V3_HARMONIZE_V1",
+      "stratum": "AbstentionChallenge",
+      "headline_target": "L2",
+      "dataset_key": "ls_inv",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_LS_INV_V3_HARMONIZE_V1_CLARIFY_01",
+      "anchor_id": "A_LS_INV_V3_HARMONIZE_V1",
+      "stratum": "ClarificationChallenge",
+      "headline_target": "L2",
+      "dataset_key": "ls_inv",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_LS_INV_V3_HARMONIZE_V1_COREEXEC_dag_rf_selected_path",
+      "anchor_id": "A_LS_INV_V3_HARMONIZE_V1",
+      "stratum": "CoreExec",
+      "headline_target": "L2",
+      "dataset_key": "ls_inv",
+      "metric_name": "accuracy",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: A_LS_INV_V3_HARMONIZE_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: A_LS_INV_V3_HARMONIZE_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      }
+    },
+    {
+      "g6_task_id": "H_A_LS_INV_V3_HARMONIZE_V1_COREEXEC_dag_schema_pass_alt_family",
+      "anchor_id": "A_LS_INV_V3_HARMONIZE_V1",
+      "stratum": "CoreExec",
+      "headline_target": "L2",
+      "dataset_key": "ls_inv",
+      "metric_name": "accuracy",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: A_LS_INV_V3_HARMONIZE_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: A_LS_INV_V3_HARMONIZE_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      }
+    },
+    {
+      "g6_task_id": "H_A_LS_IT_SU_V1_ABSTAIN_01",
+      "anchor_id": "A_LS_IT_SU_V1",
+      "stratum": "AbstentionChallenge",
+      "headline_target": "L2",
+      "dataset_key": "ls_it",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_LS_IT_SU_V1_CLARIFY_01",
+      "anchor_id": "A_LS_IT_SU_V1",
+      "stratum": "ClarificationChallenge",
+      "headline_target": "L2",
+      "dataset_key": "ls_it",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_LS_IT_SU_V1_COREEXEC_dag_logreg_alt_family",
+      "anchor_id": "A_LS_IT_SU_V1",
+      "stratum": "CoreExec",
+      "headline_target": "L2",
+      "dataset_key": "ls_it",
+      "metric_name": "accuracy",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular supervised accuracy task; exportable train/val/test via g2_tabular_common dataset='ls_it'; aide_goal and aide_eval defined."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='ls_it' with metric='accuracy'."
+      }
+    },
+    {
+      "g6_task_id": "H_A_LS_IT_SU_V1_COREEXEC_dag_rf_selected_path",
+      "anchor_id": "A_LS_IT_SU_V1",
+      "stratum": "CoreExec",
+      "headline_target": "L2",
+      "dataset_key": "ls_it",
+      "metric_name": "accuracy",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular supervised accuracy task; exportable train/val/test via g2_tabular_common dataset='ls_it'; aide_goal and aide_eval defined."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='ls_it' with metric='accuracy'."
+      }
+    },
+    {
+      "g6_task_id": "H_A_PFDF_ASSESS_V1_ABSTAIN_01",
+      "anchor_id": "A_PFDF_ASSESS_V1",
+      "stratum": "AbstentionChallenge",
+      "headline_target": "MH-1",
+      "dataset_key": "usgs_pfdf",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_PFDF_ASSESS_V1_CLARIFY_01",
+      "anchor_id": "A_PFDF_ASSESS_V1",
+      "stratum": "ClarificationChallenge",
+      "headline_target": "MH-1",
+      "dataset_key": "usgs_pfdf",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_PFDF_ASSESS_V1_COREEXEC_dag_gorr_alt_family",
+      "anchor_id": "A_PFDF_ASSESS_V1",
+      "stratum": "CoreExec",
+      "headline_target": "MH-1",
+      "dataset_key": "usgs_pfdf",
+      "metric_name": "mae",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular supervised mae task; exportable train/val/test via g2_tabular_common dataset='usgs_pfdf'; aide_goal and aide_eval defined."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='usgs_pfdf' with metric='MAE'."
+      }
+    },
+    {
+      "g6_task_id": "H_A_PFDF_ASSESS_V1_COREEXEC_dag_ridge_selected_path",
+      "anchor_id": "A_PFDF_ASSESS_V1",
+      "stratum": "CoreExec",
+      "headline_target": "MH-1",
+      "dataset_key": "usgs_pfdf",
+      "metric_name": "mae",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular supervised mae task; exportable train/val/test via g2_tabular_common dataset='usgs_pfdf'; aide_goal and aide_eval defined."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='usgs_pfdf' with metric='MAE'."
+      }
+    },
+    {
+      "g6_task_id": "H_A_TCCF_CHARLESTON_HARVEY_V1_ABSTAIN_01",
+      "anchor_id": "A_TCCF_CHARLESTON_HARVEY_V1",
+      "stratum": "AbstentionChallenge",
+      "headline_target": "MH-3",
+      "dataset_key": "tccf_dual",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_TCCF_CHARLESTON_HARVEY_V1_CLARIFY_01",
+      "anchor_id": "A_TCCF_CHARLESTON_HARVEY_V1",
+      "stratum": "ClarificationChallenge",
+      "headline_target": "MH-3",
+      "dataset_key": "tccf_dual",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_TCCF_CHARLESTON_HARVEY_V1_COREEXEC_dag_rf_alt_family",
+      "anchor_id": "A_TCCF_CHARLESTON_HARVEY_V1",
+      "stratum": "CoreExec",
+      "headline_target": "MH-3",
+      "dataset_key": "tccf_dual",
+      "metric_name": "mae",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: A_TCCF_CHARLESTON_HARVEY_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: A_TCCF_CHARLESTON_HARVEY_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      }
+    },
+    {
+      "g6_task_id": "H_A_TCCF_CHARLESTON_HARVEY_V1_COREEXEC_dag_ridge_selected_path",
+      "anchor_id": "A_TCCF_CHARLESTON_HARVEY_V1",
+      "stratum": "CoreExec",
+      "headline_target": "MH-3",
+      "dataset_key": "tccf_dual",
+      "metric_name": "mae",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: A_TCCF_CHARLESTON_HARVEY_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: A_TCCF_CHARLESTON_HARVEY_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      }
+    },
+    {
+      "g6_task_id": "H_A_TC_IBTRACS_V1_ABSTAIN_01",
+      "anchor_id": "A_TC_IBTRACS_V1",
+      "stratum": "AbstentionChallenge",
+      "headline_target": "TC-TRK",
+      "dataset_key": "ibtracs",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_TC_IBTRACS_V1_CLARIFY_01",
+      "anchor_id": "A_TC_IBTRACS_V1",
+      "stratum": "ClarificationChallenge",
+      "headline_target": "TC-TRK",
+      "dataset_key": "ibtracs",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_TC_IBTRACS_V1_COREEXEC_dag_persist_selected_path",
+      "anchor_id": "A_TC_IBTRACS_V1",
+      "stratum": "CoreExec",
+      "headline_target": "TC-TRK",
+      "dataset_key": "ibtracs",
+      "metric_name": "mae",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: A_TC_IBTRACS_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: A_TC_IBTRACS_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      }
+    },
+    {
+      "g6_task_id": "H_A_TC_IBTRACS_V1_COREEXEC_dag_rf_alt_family",
+      "anchor_id": "A_TC_IBTRACS_V1",
+      "stratum": "CoreExec",
+      "headline_target": "TC-TRK",
+      "dataset_key": "ibtracs",
+      "metric_name": "mae",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: A_TC_IBTRACS_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: A_TC_IBTRACS_V1 is compound/workflow DAG orchestration (time-series align, harmonize, or TC persistence); not Kaggle-style tabular ML."
+      }
+    },
+    {
+      "g6_task_id": "H_A_WF_ALGERIA_V1_ABSTAIN_01",
+      "anchor_id": "A_WF_ALGERIA_V1",
+      "stratum": "AbstentionChallenge",
+      "headline_target": "WF-3",
+      "dataset_key": "algeria",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_WF_ALGERIA_V1_CLARIFY_01",
+      "anchor_id": "A_WF_ALGERIA_V1",
+      "stratum": "ClarificationChallenge",
+      "headline_target": "WF-3",
+      "dataset_key": "algeria",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_WF_ALGERIA_V1_COREEXEC_dag_logreg_selected_path",
+      "anchor_id": "A_WF_ALGERIA_V1",
+      "stratum": "CoreExec",
+      "headline_target": "WF-3",
+      "dataset_key": "algeria",
+      "metric_name": "accuracy",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular supervised accuracy task; exportable train/val/test via g2_tabular_common dataset='algeria'; aide_goal and aide_eval defined."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='algeria' with metric='accuracy'."
+      }
+    },
+    {
+      "g6_task_id": "H_A_WF_ALGERIA_V1_COREEXEC_dag_rf_alt_family",
+      "anchor_id": "A_WF_ALGERIA_V1",
+      "stratum": "CoreExec",
+      "headline_target": "WF-3",
+      "dataset_key": "algeria",
+      "metric_name": "accuracy",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular supervised accuracy task; exportable train/val/test via g2_tabular_common dataset='algeria'; aide_goal and aide_eval defined."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='algeria' with metric='accuracy'."
+      }
+    },
+    {
+      "g6_task_id": "H_A_WF_MTBS_EVENT_V1_ABSTAIN_01",
+      "anchor_id": "A_WF_MTBS_EVENT_V1",
+      "stratum": "AbstentionChallenge",
+      "headline_target": "WF-3",
+      "dataset_key": "mtbs",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_WF_MTBS_EVENT_V1_CLARIFY_01",
+      "anchor_id": "A_WF_MTBS_EVENT_V1",
+      "stratum": "ClarificationChallenge",
+      "headline_target": "WF-3",
+      "dataset_key": "mtbs",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_WF_MTBS_EVENT_V1_COREEXEC_dag_logreg_selected_path",
+      "anchor_id": "A_WF_MTBS_EVENT_V1",
+      "stratum": "CoreExec",
+      "headline_target": "WF-3",
+      "dataset_key": "mtbs",
+      "metric_name": "accuracy",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular supervised accuracy task; exportable train/val/test via g2_tabular_common dataset='mtbs'; aide_goal and aide_eval defined."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='mtbs' with metric='accuracy'."
+      }
+    },
+    {
+      "g6_task_id": "H_A_WF_MTBS_EVENT_V1_COREEXEC_dag_rf_alt_family",
+      "anchor_id": "A_WF_MTBS_EVENT_V1",
+      "stratum": "CoreExec",
+      "headline_target": "WF-3",
+      "dataset_key": "mtbs",
+      "metric_name": "accuracy",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular supervised accuracy task; exportable train/val/test via g2_tabular_common dataset='mtbs'; aide_goal and aide_eval defined."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='mtbs' with metric='accuracy'."
+      }
+    },
+    {
+      "g6_task_id": "H_A_WF_PORTUGAL_V1_ABSTAIN_01",
+      "anchor_id": "A_WF_PORTUGAL_V1",
+      "stratum": "AbstentionChallenge",
+      "headline_target": "WF-3",
+      "dataset_key": "portugal",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: abstention task (expected_action=abstain); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_WF_PORTUGAL_V1_CLARIFY_01",
+      "anchor_id": "A_WF_PORTUGAL_V1",
+      "stratum": "ClarificationChallenge",
+      "headline_target": "WF-3",
+      "dataset_key": "portugal",
+      "metric_name": "unknown",
+      "aide": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      },
+      "mle_star": {
+        "eligible": false,
+        "reason": "N/A: clarification task (expected_action=clarify); not supervised ML training."
+      }
+    },
+    {
+      "g6_task_id": "H_A_WF_PORTUGAL_V1_COREEXEC_dag_ffmc_rule_alt_family",
+      "anchor_id": "A_WF_PORTUGAL_V1",
+      "stratum": "CoreExec",
+      "headline_target": "WF-3",
+      "dataset_key": "portugal",
+      "metric_name": "mae",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular supervised mae task; exportable train/val/test via g2_tabular_common dataset='portugal'; aide_goal and aide_eval defined."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='portugal' with metric='MAE'."
+      }
+    },
+    {
+      "g6_task_id": "H_A_WF_PORTUGAL_V1_COREEXEC_dag_ridge_selected_path",
+      "anchor_id": "A_WF_PORTUGAL_V1",
+      "stratum": "CoreExec",
+      "headline_target": "WF-3",
+      "dataset_key": "portugal",
+      "metric_name": "mae",
+      "aide": {
+        "eligible": true,
+        "reason": "Eligible: tabular supervised mae task; exportable train/val/test via g2_tabular_common dataset='portugal'; aide_goal and aide_eval defined."
+      },
+      "mle_star": {
+        "eligible": true,
+        "reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='portugal' with metric='MAE'."
+      }
+    }
+  ]
+}

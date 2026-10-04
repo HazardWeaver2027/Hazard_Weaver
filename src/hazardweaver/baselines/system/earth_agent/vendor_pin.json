@@ -1,0 +1,20 @@
+{
+  "baseline_id": "earth_agent",
+  "official_repo": "https://github.com/opendatalab/Earth-Agent.git",
+  "ref": "main",
+  "clone_root": "experiments/benchmark/baselines/system/earth_agent/vendor/Earth-Agent",
+  "default_architecture": "react_mcp",
+  "official_entry_candidates": [
+    "scripts/langchain_deepseek.py",
+    "langchain_deepseek_enhanced.py",
+    "agent/tools"
+  ],
+  "runtime_env": {
+    "vendor_python": "envs/earth_agent/bin/python",
+    "setup_script": "scripts/benchmark/setup_earth_agent_vendor.sh"
+  },
+  "default_budget": {
+    "wall_time_s_max": 3600,
+    "llm_model": "meta-llama/Llama-3.1-8B-Instruct"
+  }
+}

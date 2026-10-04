@@ -1,0 +1,42 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_mh4_r04_abstain_v1",
+  "headline_target": "MH-4",
+  "coverage_tier": "abstention",
+  "hib_is_grader": false,
+  "solver_view": {
+    "user_goal": "Capability CAP-MH4-R04 is PI-signed blocked or external acquisition blocked; abstain rather than fabricate native replay.",
+    "allowed_tools": [
+      "inspect_artifact",
+      "ask_user",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "CAP-MH4-R04"
+    ]
+  },
+  "reference_view": {
+    "expected_action": "abstain",
+    "no_path_certificate": {
+      "reason": "hcg_a_abstain",
+      "capability_id": "CAP-MH4-R04",
+      "hcg_a_verdict": "RUNTIME_BLOCKED",
+      "dual_witness_required": false
+    },
+    "checker": {
+      "structure": {
+        "checker_id": "seven_track_abstain_v1"
+      },
+      "execution": {
+        "mode": "abstain",
+        "forbid_reference_score_fallback": true
+      }
+    }
+  },
+  "metadata": {
+    "hcg_a_abstain": true,
+    "pi_signed": true,
+    "not_headline_pass": true,
+    "capability_id": "CAP-MH4-R04"
+  }
+}

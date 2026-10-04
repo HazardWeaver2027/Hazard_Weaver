@@ -1,0 +1,50 @@
+{
+  "schema": "appendix_figure_data_v1",
+  "denominator_sealed": 141,
+  "hwb_inventory": [
+    {"track": "WF-3", "label": "Active-fire spread", "n": 13, "hazard_class": "single"},
+    {"track": "FL-2", "label": "Dynamic flood inundation", "n": 12, "hazard_class": "single"},
+    {"track": "L2", "label": "Rainfall-triggered landslide", "n": 14, "hazard_class": "single"},
+    {"track": "E1-E3", "label": "Seismic phase, source, and motion", "n": 14, "hazard_class": "single"},
+    {"track": "TC-TRK", "label": "Tropical-cyclone trajectory", "n": 6, "hazard_class": "single"},
+    {"track": "DR-OUT", "label": "Drought outlook", "n": 14, "hazard_class": "single"},
+    {"track": "HW-MED", "label": "Medium-range heatwave", "n": 17, "hazard_class": "single"},
+    {"track": "MH-1", "label": "Post-fire debris-flow cascade", "n": 16, "hazard_class": "multi"},
+    {"track": "MH-2", "label": "Earthquake-triggered landslide", "n": 12, "hazard_class": "multi"},
+    {"track": "MH-3", "label": "Coastal compound flooding", "n": 11, "hazard_class": "multi"},
+    {"track": "MH-4", "label": "Multi-peril impact", "n": 12, "hazard_class": "multi"}
+  ],
+  "joint_strata_counts": {
+    "single_one_route": 29,
+    "single_multi_route": 61,
+    "multi_one_route": 16,
+    "multi_multi_route": 35
+  },
+  "joint_stratum_dca": [
+    {"stratum": "S × one route", "n": 29, "hwa_k": 24, "plan_k": 13, "aide_k": 7},
+    {"stratum": "S × multi-route", "n": 61, "hwa_k": 58, "plan_k": 24, "aide_k": 13},
+    {"stratum": "M × one route", "n": 16, "hwa_k": 12, "plan_k": 13, "aide_k": 6},
+    {"stratum": "M × multi-route", "n": 35, "hwa_k": 32, "plan_k": 8, "aide_k": 6}
+  ],
+  "mcnemar": [
+    {"baseline": "Plan-and-Solve", "hw_only": 75, "bl_only": 7, "p_value": 1.37e-13},
+    {"baseline": "Self-Consistency", "hw_only": 80, "bl_only": 4, "p_value": 2.76e-16},
+    {"baseline": "DisasterBench-ToT", "hw_only": 80, "bl_only": 4, "p_value": 2.76e-16},
+    {"baseline": "MLE-STAR", "hw_only": 80, "bl_only": 1, "p_value": 4.45e-18},
+    {"baseline": "AutoML-Agent", "hw_only": 93, "bl_only": 5, "p_value": 1.52e-18},
+    {"baseline": "Reflexion", "hw_only": 89, "bl_only": 8, "p_value": 4.56e-16},
+    {"baseline": "AIDE", "hw_only": 94, "bl_only": 0, "p_value": 8.62e-22},
+    {"baseline": "DS-Agent", "hw_only": 82, "bl_only": 3, "p_value": 2.67e-17},
+    {"baseline": "R&D-Agent", "hw_only": 82, "bl_only": 4, "p_value": 1.01e-16},
+    {"baseline": "ReAct", "hw_only": 84, "bl_only": 0, "p_value": 1.35e-19}
+  ],
+  "information_separation": [
+    {"item": "Task and initial state", "agent": true, "evaluator": true},
+    {"item": "Candidate routes", "agent": true, "evaluator": true},
+    {"item": "Capability interface", "agent": true, "evaluator": true},
+    {"item": "Public output contract", "agent": true, "evaluator": true},
+    {"item": "Reference artifact", "agent": false, "evaluator": true},
+    {"item": "Sealed route criterion", "agent": false, "evaluator": true},
+    {"item": "Construction workflow", "agent": false, "evaluator": true}
+  ]
+}

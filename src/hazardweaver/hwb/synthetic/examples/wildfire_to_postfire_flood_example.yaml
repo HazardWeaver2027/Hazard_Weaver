@@ -1,0 +1,34 @@
+scenario_id: wf_proxy_seed0
+mechanism_id: wildfire_to_postfire_flood_proxy
+seed: 7
+n_samples: 28
+output_modality: raster
+coupling:
+  type: interaction
+  strength: 1.0
+  monotonicity: increasing
+label_rule:
+  type: raster_mask
+  target: susceptibility_proxy
+  thresholds:
+    quantile: 0.7
+    noise_sigma: 0.06
+  weights:
+    beta1: 1.0
+    beta2: 1.2
+    beta3: 0.4
+    beta4: 1.5
+counterfactuals:
+  - {name: remove_source, operator: remove_source, params: {}}
+  - {name: wrong_region, operator: wrong_region, params: {dx: 5, dy: -4}}
+  - {name: shuffled_source, operator: shuffle_source, params: {}}
+  - {name: weakened_mediator, operator: weaken_mediator, params: {factor: 0.1}}
+  - {name: removed_coupling, operator: remove_coupling, params: {}}
+exposed_fields: [burn_mask, rain_proxy, slope_proxy]
+exposed_field_manifest:
+  - {name: burn_mask, shape: [28, 1, 16, 16], dtype: float32}
+  - {name: rain_proxy, shape: [28, 1, 16, 16], dtype: float32}
+  - {name: slope_proxy, shape: [28, 1, 16, 16], dtype: float32}
+hidden_fields: [susceptibility]
+evaluation_metrics: [iou, f1, pixel_mae, counterfactual_gap]
+is_negative_control: false

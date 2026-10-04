@@ -1,0 +1,260 @@
+version: mh1_v1
+task_id: MH-1
+canonical_output: log_volume_v1
+families:
+- family_id: mh1_marginal_v1
+  task_id: MH-1
+  distinctness_axis: marginal
+  canonical_output: log_volume_v1
+  description: Marginal WEST volume from inventory rainfall and area only
+  assumptions:
+  - inventory_fields
+  - west_empirical
+  - no_burn_state
+  applicability:
+    inventory: required
+  slots:
+  - slot_id: ingest_inventory
+    role: observation_source
+    produces:
+    - usgs_pfdf_record_v1
+    requires:
+      modality: record
+      semantic_role: observation
+  - slot_id: volume_model
+    role: empirical_solver
+    consumes:
+    - usgs_pfdf_record_v1
+    produces:
+    - log_volume_v1
+    requires:
+      modality: record
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 5
+    ram_mb: 128
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+  admission_level: L2
+  tier: C
+  validation_report: runs/carp/validation/mh1_marginal_weak_v1/ValidationReport.json
+  capability_ids:
+  - mh1_marginal_weak_v1
+- family_id: mh1_usgs_empirical_v1
+  task_id: MH-1
+  distinctness_axis: empirical
+  canonical_output: log_volume_v1
+  description: USGS Gorr WEST empirical volume with burn summary fields
+  assumptions:
+  - gorr_west
+  - burn_summary
+  - inventory_fields
+  applicability:
+    inventory: required
+    burn: required
+  slots:
+  - slot_id: ingest_inventory
+    role: observation_source
+    produces:
+    - usgs_pfdf_record_v1
+    requires:
+      modality: record
+      semantic_role: observation
+  - slot_id: volume_model
+    role: empirical_solver
+    consumes:
+    - usgs_pfdf_record_v1
+    produces:
+    - log_volume_v1
+    requires:
+      modality: record
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 10
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: mh1_dependence_v1
+  task_id: MH-1
+  distinctness_axis: dependence
+  canonical_output: log_volume_v1
+  description: Tabular RF volume model capturing rain-burn dependence
+  assumptions:
+  - tabular_ml
+  - grouped_split
+  - burn_rain_interaction
+  applicability:
+    inventory: required
+    burn: required
+  slots:
+  - slot_id: ingest_inventory
+    role: observation_source
+    produces:
+    - usgs_pfdf_record_v1
+    requires:
+      modality: record
+      semantic_role: observation
+  - slot_id: volume_model
+    role: learned_predictor
+    consumes:
+    - usgs_pfdf_record_v1
+    produces:
+    - log_volume_v1
+    requires:
+      modality: record
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 512
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: mh1_mechanistic_v1
+  task_id: MH-1
+  distinctness_axis: mechanistic
+  canonical_output: log_volume_v1
+  description: Mechanistic PWFDF-style runout volume surrogate
+  assumptions:
+  - pwfdf_surrogate
+  - slope_area_rain
+  applicability:
+    inventory: required
+  slots:
+  - slot_id: ingest_inventory
+    role: observation_source
+    produces:
+    - usgs_pfdf_record_v1
+    requires:
+      modality: record
+      semantic_role: observation
+  - slot_id: volume_model
+    role: mechanistic_solver
+    consumes:
+    - usgs_pfdf_record_v1
+    produces:
+    - log_volume_v1
+    requires:
+      modality: record
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 30
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: RF-EMPIRICAL-INITIATION--PROCES
+  task_id: MH-1
+  distinctness_axis: manifest_rf_rf_empirical_initiation_proces
+  canonical_output: pfdf_runout_terminal_bundle_v1
+  description: Manifest-native route family (RF-EMPIRICAL-INITIATION--PROCES)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: mh1_mechanistic_v1
+  capability_ids:
+  - CAP-MH1-05
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-MH1-05/ValidationReport.json
+- family_id: RF-EMPIRICAL-LOGISTIC-PFDF-INIT
+  task_id: MH-1
+  distinctness_axis: manifest_rf_rf_empirical_logistic_pfdf_init
+  canonical_output: pfdf_runout_terminal_bundle_v1
+  description: Manifest-native route family (RF-EMPIRICAL-LOGISTIC-PFDF-INIT)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: mh1_usgs_empirical_v1
+  capability_ids:
+  - CAP-MH1-01
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-MH1-01/ValidationReport.json
+- family_id: RF-EMPIRICAL-VOLUME-REGRESSION
+  task_id: MH-1
+  distinctness_axis: manifest_rf_rf_empirical_volume_regression
+  canonical_output: pfdf_runout_terminal_bundle_v1
+  description: Manifest-native route family (RF-EMPIRICAL-VOLUME-REGRESSION)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: mh1_usgs_empirical_v1
+  capability_ids:
+  - CAP-MH1-02
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-MH1-02/ValidationReport.json
+- family_id: RF-INTENSITY-DURATION-THRESHOLD
+  task_id: MH-1
+  distinctness_axis: manifest_rf_rf_intensity_duration_threshold
+  canonical_output: pfdf_runout_terminal_bundle_v1
+  description: Manifest-native route family (RF-INTENSITY-DURATION-THRESHOLD)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: mh1_marginal_v1
+  capability_ids:
+  - CAP-MH1-03
+  admission_level: L2
+  tier: C
+  validation_report: runs/carp/validation/CAP-MH1-03/ValidationReport.json
+- family_id: RF-TREE-ENSEMBLE-OCCURRENCE
+  task_id: MH-1
+  distinctness_axis: manifest_rf_rf_tree_ensemble_occurrence
+  canonical_output: pfdf_runout_terminal_bundle_v1
+  description: Manifest-native route family (RF-TREE-ENSEMBLE-OCCURRENCE)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: mh1_dependence_v1
+  capability_ids:
+  - CAP-MH1-04
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-MH1-04/ValidationReport.json

@@ -1,0 +1,34 @@
+version: manifest_rf_legacy_map_v1
+description: >-
+  Curated RF-* to legacy iclr_headline_v1 family_id for binding inheritance.
+  Tracks without legacy use registry stub bindings (see sync_manifest_rf_registry).
+mappings:
+  WF-3:
+    RF-PERSISTENCE: wf3_hybrid_assimilation_v1
+    RF-LINEAR-STATISTICAL: wf3_learned_eo_v1
+    RF-SPATIAL-CONVOLUTIONAL-SEGMEN: wf3_learned_eo_v1
+    RF-RECURRENT-TEMPORAL-SEGMENTAT: wf3_learned_eo_v1
+    RF-TEMPORAL-ATTENTION-SEGMENTAT: wf3_learned_eo_v1
+    RF-PROCESS-BASED-CELLULAR-SPREA: wf3_cellular_empirical_v1
+  E1-E3:
+    RF-CLASSICAL-SIGNAL-TO-CHAIN: eq_classical_v1
+    RF-CNN-PHASE-PICKING: eq_learned_picker_v1
+    RF-ATTENTION-RECURRENT-DETECTIO: eq_learned_picker_v1
+    RF-WINDOW-CLASSIFIER-PICKER: eq_learned_picker_v1
+    RF-OCTREE-TRAVEL-TIME-ASSOCIATI: eq_template_v1
+    RF-PROBABILISTIC-MIXTURE-ASSOCI: eq_hybrid_modular_v1
+    RF-GRID-SEARCH-ASSOCIATION: eq_template_v1
+    RF-GMPE--OBSERVATION-FUSION: eq_hybrid_modular_v1
+  MH-1:
+    RF-EMPIRICAL-LOGISTIC-PFDF-INIT: mh1_usgs_empirical_v1
+    RF-EMPIRICAL-VOLUME-REGRESSION: mh1_usgs_empirical_v1
+    RF-INTENSITY-DURATION-THRESHOLD: mh1_marginal_v1
+    RF-TREE-ENSEMBLE-OCCURRENCE: mh1_dependence_v1
+    RF-EMPIRICAL-INITIATION--PROCES: mh1_mechanistic_v1
+  MH-3:
+    RF-REDUCED-PHYSICS-COUPLED-INUN: mh3_fully_coupled_v1
+    RF-HYDRAULIC-SHALLOW-WATER-SOLV: mh3_overlay_v1
+    RF-INERTIAL-HYDRODYNAMIC-SOLVER: mh3_one_way_coupled_v1
+    RF-ONE-WAY-COUPLED-COASTAL-INLA: mh3_one_way_coupled_v1
+    RF-MULTIVARIATE-STATISTICAL-EXT: mh3_dependence_jpm_v1
+    RF-VALIDATED-PHYSICS-SURROGATE: mh3_physics_surrogate_v1

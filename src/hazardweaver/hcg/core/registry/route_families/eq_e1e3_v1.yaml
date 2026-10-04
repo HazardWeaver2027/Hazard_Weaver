@@ -1,0 +1,359 @@
+version: eq_e1e3_v1
+task_id: E1-E3
+canonical_output: eq_catalog_source_groundmotion_bundle_v1
+families:
+- family_id: eq_classical_v1
+  task_id: E1-E3
+  distinctness_axis: classical
+  canonical_output: eq_catalog_source_groundmotion_bundle_v1
+  description: Classical STA/LTA picker with template association catalog builder
+  assumptions:
+  - sta_lta_picking
+  - template_association
+  - magnitude_distance_relation
+  applicability:
+    waveform: required
+    station_count: '>=1'
+  slots:
+  - slot_id: ingest_waveform
+    role: observation_source
+    produces:
+    - eq_waveform_3c
+    requires:
+      modality: waveform
+      semantic_role: observation
+  - slot_id: picker
+    role: classical_picker
+    consumes:
+    - eq_waveform_3c
+    produces:
+    - eq_ps_pick_indices
+    requires:
+      modality: tabular
+      semantic_role: latent
+  - slot_id: catalog_builder
+    role: catalog_solver
+    consumes:
+    - eq_ps_pick_indices
+    produces:
+    - eq_catalog_source_groundmotion_bundle_v1
+    requires:
+      modality: record
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: eq_learned_picker_v1
+  task_id: E1-E3
+  distinctness_axis: learned_picker
+  canonical_output: eq_catalog_source_groundmotion_bundle_v1
+  description: Deep learning phase picker with learned association
+  assumptions:
+  - dl_phase_picking
+  - learned_association
+  - waveform_coverage
+  applicability:
+    waveform: required
+    dl_model: required
+  slots:
+  - slot_id: ingest_waveform
+    role: observation_source
+    produces:
+    - eq_waveform_3c
+    requires:
+      modality: waveform
+      semantic_role: observation
+  - slot_id: picker
+    role: learned_picker
+    consumes:
+    - eq_waveform_3c
+    produces:
+    - eq_ps_pick_indices
+    requires:
+      modality: tabular
+      semantic_role: latent
+  - slot_id: catalog_builder
+    role: catalog_solver
+    consumes:
+    - eq_ps_pick_indices
+    produces:
+    - eq_catalog_source_groundmotion_bundle_v1
+    requires:
+      modality: record
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 30
+    typical_cpu_s: 45
+    ram_mb: 1024
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: eq_template_v1
+  task_id: E1-E3
+  distinctness_axis: template
+  canonical_output: eq_catalog_source_groundmotion_bundle_v1
+  description: Template matching chain to catalog/source/ground-motion bundle
+  assumptions:
+  - gmpe_attenuation
+  - magnitude_estimation
+  - shakemap_proxy
+  applicability:
+    picks: required
+    gmpe: required
+  slots:
+  - slot_id: ingest_waveform
+    role: observation_source
+    produces:
+    - eq_waveform_3c
+    requires:
+      modality: waveform
+      semantic_role: observation
+  - slot_id: gm_chain
+    role: ground_motion_solver
+    consumes:
+    - eq_ps_pick_indices
+    produces:
+    - eq_catalog_source_groundmotion_bundle_v1
+    requires:
+      modality: record
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 90
+    ram_mb: 512
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: eq_hybrid_modular_v1
+  task_id: E1-E3
+  distinctness_axis: hybrid_modular
+  canonical_output: eq_catalog_source_groundmotion_bundle_v1
+  description: Modular hybrid chain combining learned picker and GMPE catalog stages
+  assumptions:
+  - modular_stages
+  - learned_picker
+  - gmpe_catalog
+  - uncertainty_propagation
+  applicability:
+    waveform: required
+    modular: true
+  slots:
+  - slot_id: ingest_waveform
+    role: observation_source
+    produces:
+    - eq_waveform_3c
+    requires:
+      modality: waveform
+      semantic_role: observation
+  - slot_id: picker
+    role: learned_picker
+    consumes:
+    - eq_waveform_3c
+    produces:
+    - eq_ps_pick_indices
+    requires:
+      modality: tabular
+      semantic_role: latent
+  - slot_id: catalog_builder
+    role: hybrid_catalog_solver
+    consumes:
+    - eq_ps_pick_indices
+    produces:
+    - eq_catalog_source_groundmotion_bundle_v1
+    requires:
+      modality: record
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 30
+    typical_cpu_s: 120
+    ram_mb: 1024
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: RF-CNN-PHASE-PICKING
+  task_id: E1-E3
+  distinctness_axis: manifest_rf_cnn_picking
+  canonical_output: eq_catalog_source_groundmotion_bundle_v1
+  description: CNN phase picker (manifest RF-CNN-PHASE-PICKING; CAP-E1E3-02)
+  assumptions:
+  - dl_phase_picking
+  - manifest_rf_v1_bridge
+  applicability:
+    waveform: required
+  slots: []
+  resources:
+    min_gpu_s: 30
+    typical_cpu_s: 45
+    ram_mb: 1024
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: eq_learned_picker_v1
+  capability_ids:
+  - CAP-E1E3-02
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-E1E3-02/ValidationReport.json
+- family_id: RF-ATTENTION-RECURRENT-DETECTIO
+  task_id: E1-E3
+  distinctness_axis: manifest_rf_attention_recurrent
+  canonical_output: eq_catalog_source_groundmotion_bundle_v1
+  description: Attention-recurrent picker (manifest RF-ATTENTION-RECURRENT-DETECTIO;
+    CAP-E1E3-03)
+  assumptions:
+  - dl_phase_picking
+  - manifest_rf_v1_bridge
+  applicability:
+    waveform: required
+  slots: []
+  resources:
+    min_gpu_s: 30
+    typical_cpu_s: 45
+    ram_mb: 1024
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: eq_learned_picker_v1
+  capability_ids:
+  - CAP-E1E3-03
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-E1E3-03/ValidationReport.json
+- family_id: RF-WINDOW-CLASSIFIER-PICKER
+  task_id: E1-E3
+  distinctness_axis: manifest_rf_window_classifier
+  canonical_output: eq_catalog_source_groundmotion_bundle_v1
+  description: Window classifier picker (manifest RF-WINDOW-CLASSIFIER-PICKER; CAP-E1E3-04)
+  assumptions:
+  - dl_phase_picking
+  - manifest_rf_v1_bridge
+  applicability:
+    waveform: required
+  slots: []
+  resources:
+    min_gpu_s: 30
+    typical_cpu_s: 45
+    ram_mb: 1024
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: eq_learned_picker_v1
+  capability_ids:
+  - CAP-E1E3-04
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-E1E3-04/ValidationReport.json
+- family_id: RF-CLASSICAL-SIGNAL-TO-CHAIN
+  task_id: E1-E3
+  distinctness_axis: manifest_rf_rf_classical_signal_to_chain
+  canonical_output: eq_catalog_source_groundmotion_bundle_v1
+  description: Manifest-native route family (RF-CLASSICAL-SIGNAL-TO-CHAIN)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: eq_classical_v1
+  capability_ids:
+  - CAP-E1E3-01
+  admission_level: L2
+  tier: C
+  validation_report: runs/carp/validation/CAP-E1E3-01/ValidationReport.json
+- family_id: RF-GMPE--OBSERVATION-FUSION
+  task_id: E1-E3
+  distinctness_axis: manifest_rf_rf_gmpe_observation_fusion
+  canonical_output: eq_catalog_source_groundmotion_bundle_v1
+  description: Manifest-native route family (RF-GMPE--OBSERVATION-FUSION)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: eq_hybrid_modular_v1
+  capability_ids:
+  - CAP-E1E3-08
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-E1E3-08/ValidationReport.json
+- family_id: RF-GRID-SEARCH-ASSOCIATION
+  task_id: E1-E3
+  distinctness_axis: manifest_rf_rf_grid_search_association
+  canonical_output: eq_catalog_source_groundmotion_bundle_v1
+  description: Manifest-native route family (RF-GRID-SEARCH-ASSOCIATION)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: eq_template_v1
+  capability_ids:
+  - CAP-E1E3-07
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-E1E3-07/ValidationReport.json
+- family_id: RF-OCTREE-TRAVEL-TIME-ASSOCIATI
+  task_id: E1-E3
+  distinctness_axis: manifest_rf_rf_octree_travel_time_associati
+  canonical_output: eq_catalog_source_groundmotion_bundle_v1
+  description: Manifest-native route family (RF-OCTREE-TRAVEL-TIME-ASSOCIATI)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: eq_template_v1
+  capability_ids:
+  - CAP-E1E3-05
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-E1E3-05/ValidationReport.json
+- family_id: RF-PROBABILISTIC-MIXTURE-ASSOCI
+  task_id: E1-E3
+  distinctness_axis: manifest_rf_rf_probabilistic_mixture_associ
+  canonical_output: eq_catalog_source_groundmotion_bundle_v1
+  description: Manifest-native route family (RF-PROBABILISTIC-MIXTURE-ASSOCI)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: eq_hybrid_modular_v1
+  capability_ids:
+  - CAP-E1E3-06
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-E1E3-06/ValidationReport.json

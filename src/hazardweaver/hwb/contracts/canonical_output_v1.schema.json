@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hwb/contracts/canonical_output_v1.schema.json",
+  "title": "hwa.final_artifact/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_id", "value"],
+  "properties": {
+    "schema_id": {
+      "const": "hwa.final_artifact/v1"
+    },
+    "value": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "artifact_keys": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

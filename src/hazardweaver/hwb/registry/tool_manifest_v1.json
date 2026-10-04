@@ -1,0 +1,114 @@
+{
+  "allowed_tool_names": [
+    "inspect_artifact",
+    "run_capability",
+    "submit"
+  ],
+  "forbidden_expansion": true,
+  "pack_id": "wildfire_agent_pack_v1",
+  "schema_version": "HWB_TOOL_MANIFEST_v1",
+  "source_pack": "configs/wildfire_agent_pack/tools.json",
+  "tools": [
+    {
+      "function": {
+        "description": "G1 unified inference entry: HWA CapabilityLoader id, wildfire model_id, or G2 train_runs/<anchor>/<cap>/ frozen metrics replay. Never trains (no compile_one).",
+        "name": "run_capability",
+        "parameters": {
+          "additionalProperties": false,
+          "properties": {
+            "anchor_id": {
+              "type": "string"
+            },
+            "artifact_refs": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "capability_id": {
+              "type": "string"
+            },
+            "dataset_id": {
+              "type": "string"
+            },
+            "handles": {
+              "type": "object"
+            },
+            "oracle": {
+              "default": false,
+              "type": "boolean"
+            },
+            "record": {
+              "type": "object"
+            },
+            "record_id": {
+              "type": "string"
+            },
+            "sample_id": {
+              "type": "string"
+            },
+            "split": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "capability_id"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "function"
+    },
+    {
+      "function": {
+        "description": "G1 unified inspect: pack card, sample schema, HCG edge detail, or train_runs metrics summary for Hard solver_view visible_artifacts.",
+        "name": "inspect_artifact",
+        "parameters": {
+          "additionalProperties": false,
+          "properties": {
+            "anchor_id": {
+              "type": "string"
+            },
+            "artifact_id": {
+              "description": "Card path, capability_id, dataset_id::sample_id, or edge:<id>",
+              "type": "string"
+            },
+            "split": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "function"
+    },
+    {
+      "function": {
+        "description": "Alias of submit_answer. Prefer typed terminals submit_solution / submit_clarification / submit_abstention.",
+        "name": "submit",
+        "parameters": {
+          "additionalProperties": false,
+          "properties": {
+            "answer": {
+              "type": "object"
+            },
+            "model_id_used": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "answer"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "function"
+    }
+  ]
+}

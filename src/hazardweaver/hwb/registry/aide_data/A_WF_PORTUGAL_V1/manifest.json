@@ -1,0 +1,24 @@
+{
+  "anchor_id": "A_WF_PORTUGAL_V1",
+  "dataset_key": "portugal",
+  "task_type": "regression",
+  "feature_columns": [
+    "FFMC",
+    "DMC",
+    "DC",
+    "ISI",
+    "temp",
+    "RH",
+    "wind",
+    "rain"
+  ],
+  "target_column": "target",
+  "original_ycol": "area",
+  "group_column": null,
+  "split_seed": 0,
+  "n_train": 290,
+  "n_val": 97,
+  "n_test": 130,
+  "aide_eval": "MAE",
+  "metric_name": "mae"
+}

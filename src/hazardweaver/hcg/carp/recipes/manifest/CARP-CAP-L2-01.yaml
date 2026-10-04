@@ -1,0 +1,28 @@
+recipe_id: CARP-CAP-L2-01
+capability_id: CAP-L2-01
+taskpack_id: L2
+artifact_id: ART-CAP-L2-01
+priority: P1 official_repo_replay
+fetch_or_checkout: checkout official release/commit and replay inference/configuration;
+  source=https://github.com/nasa/lhasa
+version_or_commit: 410cec005b2e037edc8f349c28815a59522c51be
+environment: create isolated environment from official lock/requirements; record OS,
+  CUDA, container digest and package lock
+data_preparation: materialize only legal TaskPack inputs; freeze source versions/checksums;
+  apply train/validation/hidden split before fitting or calibration
+train_or_inference_command: python lhasa.py --date YYYY-MM-DD
+expected_artifact: model/checkpoint or deterministic configuration plus raw native
+  predictions and canonical HWB artifact
+checksum: UNKNOWN until fetched/built; SHA-256 mandatory before acceptance
+canonicalization: convert with lossless unit/CRS/time/grid adapter; retain native
+  artifact and provenance
+evaluation: run anchor evaluator and HWB hidden evaluator; record metric, split, units,
+  runtime and hardware
+failure_conditions:
+- source/license inaccessible
+- checksum drift
+- illegal input
+- official test leakage
+- canonicalization semantic loss
+- compute exceeds priority envelope
+manifest_source: docs/final_four/HCG/manifests/carp_recipes.jsonl

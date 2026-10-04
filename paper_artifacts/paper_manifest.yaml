@@ -1,0 +1,17 @@
+schema: hazardweaver_paper_manifest_v1
+denominator: 141
+artifacts:
+  - id: rq1_hwa_llama_overall
+    label: "Table 1/2 HazardWeaver overall DCA (Llama)"
+    input: released_results/rq1_baselines/paper_stats_v1.json
+    checks:
+      - json_path: arms.hwa_llama70b.overall.k
+        expected: 126
+      - json_path: arms.hwa_llama70b.overall.n
+        expected: 141
+  - id: rq3_llama_dca
+    label: "RQ3 main table Llama DCA"
+    input: released_results/rq3_backbones/main_table_v1.json
+    checks:
+      - json_path: rows.arm_id=hwa_llama70b.dca.k
+        expected: 126

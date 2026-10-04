@@ -1,0 +1,1044 @@
+graph_id: hcg_v0_core
+artifacts:
+- artifact_id: wf_lat
+  description: Atomic field example
+  support:
+    modality: scalar
+    schema_id: wf_lat
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_lon
+  description: Atomic field example
+  support:
+    modality: scalar
+    schema_id: wf_lon
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_discovery_doy
+  description: Atomic field example
+  support:
+    modality: scalar
+    schema_id: wf_discovery_doy
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_incident_features_8d
+  description: Bundle view of incident features
+  support:
+    modality: tabular
+    schema_id: wf_incident_features_8d
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: event
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_danger_class_5
+  description: ''
+  support:
+    modality: scalar
+    schema_id: wf_danger_class_5
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_weekly_county_tensor
+  description: ''
+  support:
+    modality: tabular
+    schema_id: wf_weekly_county_tensor
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: weekly
+    history: T=12
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_weekly_activity_5d
+  description: ''
+  support:
+    modality: scalar
+    schema_id: wf_weekly_activity_5d
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: weekly
+    history: null
+    horizon: 1w
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_spread_raster_frame
+  description: ''
+  support:
+    modality: raster
+    schema_id: wf_spread_raster_frame
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: raster_patch
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_spread_raster_history
+  description: ''
+  support:
+    modality: temporal_raster
+    schema_id: wf_spread_raster_history
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: raster_patch
+    temporal_frequency: frame
+    history: T>=2
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_burned_mask
+  description: ''
+  support:
+    modality: raster
+    schema_id: wf_burned_mask
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: raster_patch
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_firms_hotspots
+  description: ''
+  support:
+    modality: tabular
+    schema_id: wf_firms_hotspots
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: daily
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_landfire_fuel
+  description: ''
+  support:
+    modality: raster
+    schema_id: wf_landfire_fuel
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: raster
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_mtbs_severity
+  description: ''
+  support:
+    modality: raster
+    schema_id: wf_mtbs_severity
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: raster
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_wfigs_incident
+  description: ''
+  support:
+    modality: record
+    schema_id: wf_wfigs_incident
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: event
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_basin_burn_fraction
+  description: Aggregated from burned mask (single-hazard multi-hop)
+  support:
+    modality: scalar
+    schema_id: wf_basin_burn_fraction
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_mamba_state
+  description: ''
+  support:
+    modality: scalar
+    schema_id: wf_mamba_state
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: fl_graph_temporal_x
+  description: ''
+  support:
+    modality: graph_temporal
+    schema_id: fl_graph_temporal_x
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: step
+    history: hist>=4
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - flood
+- artifact_id: fl_graph_adj
+  description: ''
+  support:
+    modality: graph_temporal
+    schema_id: fl_graph_adj
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - flood
+- artifact_id: fl_streamflow_next
+  description: ''
+  support:
+    modality: scalar
+    schema_id: fl_streamflow_next
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: step
+    history: null
+    horizon: '1'
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - flood
+- artifact_id: fl_inundation_history
+  description: ''
+  support:
+    modality: temporal_raster
+    schema_id: fl_inundation_history
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: raster_patch
+    temporal_frequency: null
+    history: T=4
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - flood
+- artifact_id: fl_inundation_depth
+  description: ''
+  support:
+    modality: raster
+    schema_id: fl_inundation_depth
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: raster_patch
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - flood
+- artifact_id: fl_peak_depth
+  description: Aggregate from inundation depth
+  support:
+    modality: scalar
+    schema_id: fl_peak_depth
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - flood
+- artifact_id: eq_waveform_3c
+  description: ''
+  support:
+    modality: waveform
+    schema_id: eq_waveform_3c
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: sample_index
+    history: '256'
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - earthquake
+- artifact_id: eq_ps_pick_indices
+  description: ''
+  support:
+    modality: scalar
+    schema_id: eq_ps_pick_indices
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: sample_index
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - earthquake
+- artifact_id: eq_wavefield_history
+  description: ''
+  support:
+    modality: temporal_raster
+    schema_id: eq_wavefield_history
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - earthquake
+- artifact_id: eq_wavefield_forecast
+  description: ''
+  support:
+    modality: temporal_raster
+    schema_id: eq_wavefield_forecast
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - earthquake
+- artifact_id: tc_track_history
+  description: ''
+  support:
+    modality: track
+    schema_id: tc_track_history
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: 6h
+    history: T=6
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - tc
+- artifact_id: tc_track_forecast
+  description: ''
+  support:
+    modality: track
+    schema_id: tc_track_forecast
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: 6h
+    history: null
+    horizon: T=5
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - tc
+- artifact_id: forcing_era5_cube
+  description: ''
+  support:
+    modality: temporal_raster
+    schema_id: forcing_era5_cube
+    dtype: null
+    units: null
+    crs: EPSG:4326
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: hourly
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - forcing
+- artifact_id: forcing_merra2_cube
+  description: ''
+  support:
+    modality: temporal_raster
+    schema_id: forcing_merra2_cube
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: hourly
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - forcing
+- artifact_id: forcing_goesr_scene
+  description: ''
+  support:
+    modality: raster
+    schema_id: forcing_goesr_scene
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: event
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - forcing
+datasets:
+- dataset_id: fpa_fod_tabular
+  hazard_family: wildfire
+  description: FPA-FOD incident tabular
+  provides:
+  - wf_incident_features_8d
+  - wf_lat
+  - wf_lon
+  - wf_discovery_doy
+  source_ref: PyHazards/dataset_cards/fpa_fod_tabular.yaml
+  synthetic_backed: false
+  namespaces:
+  - wildfire
+- dataset_id: fpa_fod_weekly
+  hazard_family: wildfire
+  description: FPA-FOD weekly county
+  provides:
+  - wf_weekly_county_tensor
+  source_ref: PyHazards/dataset_cards/fpa_fod_weekly.yaml
+  synthetic_backed: false
+  namespaces:
+  - wildfire
+- dataset_id: firms
+  hazard_family: wildfire
+  description: FIRMS hotspots
+  provides:
+  - wf_firms_hotspots
+  source_ref: PyHazards/dataset_cards/firms.yaml
+  synthetic_backed: true
+  namespaces:
+  - wildfire
+- dataset_id: landfire
+  hazard_family: wildfire
+  description: LANDFIRE fuels
+  provides:
+  - wf_landfire_fuel
+  source_ref: PyHazards/dataset_cards/landfire.yaml
+  synthetic_backed: true
+  namespaces:
+  - wildfire
+- dataset_id: mtbs
+  hazard_family: wildfire
+  description: MTBS severity
+  provides:
+  - wf_mtbs_severity
+  source_ref: PyHazards/dataset_cards/mtbs.yaml
+  synthetic_backed: true
+  namespaces:
+  - wildfire
+- dataset_id: caravan_streamflow
+  hazard_family: flood
+  description: Caravan streamflow
+  provides:
+  - fl_graph_temporal_x
+  - fl_graph_adj
+  - fl_streamflow_next
+  source_ref: PyHazards/dataset_cards/caravan_streamflow.yaml
+  synthetic_backed: true
+  namespaces:
+  - flood
+- dataset_id: waterbench_streamflow
+  hazard_family: flood
+  description: WaterBench
+  provides:
+  - fl_graph_temporal_x
+  - fl_graph_adj
+  - fl_streamflow_next
+  source_ref: PyHazards/dataset_cards/waterbench_streamflow.yaml
+  synthetic_backed: true
+  namespaces:
+  - flood
+- dataset_id: hydrobench_streamflow
+  hazard_family: flood
+  description: HydroBench
+  provides:
+  - fl_graph_temporal_x
+  - fl_graph_adj
+  - fl_streamflow_next
+  source_ref: PyHazards/dataset_cards/hydrobench_streamflow.yaml
+  synthetic_backed: true
+  namespaces:
+  - flood
+- dataset_id: floodcastbench_inundation
+  hazard_family: flood
+  description: FloodCastBench inundation
+  provides:
+  - fl_inundation_history
+  - fl_inundation_depth
+  source_ref: PyHazards/dataset_cards/floodcastbench_inundation.yaml
+  synthetic_backed: true
+  namespaces:
+  - flood
+- dataset_id: seisbench_waveforms
+  hazard_family: earthquake
+  description: SeisBench waveforms
+  provides:
+  - eq_waveform_3c
+  - eq_ps_pick_indices
+  source_ref: PyHazards/dataset_cards/seisbench_waveforms.yaml
+  synthetic_backed: true
+  namespaces:
+  - earthquake
+- dataset_id: pick_benchmark_waveforms
+  hazard_family: earthquake
+  description: Pick benchmark
+  provides:
+  - eq_waveform_3c
+  - eq_ps_pick_indices
+  source_ref: PyHazards/dataset_cards/pick_benchmark_waveforms.yaml
+  synthetic_backed: true
+  namespaces:
+  - earthquake
+- dataset_id: ibtracs_tracks
+  hazard_family: tc
+  description: IBTrACS tracks
+  provides:
+  - tc_track_history
+  - tc_track_forecast
+  source_ref: PyHazards/dataset_cards/ibtracs_tracks.yaml
+  synthetic_backed: true
+  namespaces:
+  - tc
+- dataset_id: tcbench_alpha
+  hazard_family: tc
+  description: TCBench alpha
+  provides:
+  - tc_track_history
+  - tc_track_forecast
+  source_ref: PyHazards/dataset_cards/tcbench_alpha.yaml
+  synthetic_backed: true
+  namespaces:
+  - tc
+- dataset_id: era5
+  hazard_family: forcing
+  description: ERA5
+  provides:
+  - forcing_era5_cube
+  source_ref: PyHazards/dataset_cards/era5.yaml
+  synthetic_backed: true
+  namespaces:
+  - forcing
+- dataset_id: merra2
+  hazard_family: forcing
+  description: MERRA-2
+  provides:
+  - forcing_merra2_cube
+  source_ref: PyHazards/dataset_cards/merra2.yaml
+  synthetic_backed: true
+  namespaces:
+  - forcing
+- dataset_id: goesr
+  hazard_family: forcing
+  description: GOES-R
+  provides:
+  - forcing_goesr_scene
+  source_ref: PyHazards/dataset_cards/goesr.yaml
+  synthetic_backed: true
+  namespaces:
+  - forcing
+capabilities:
+- capability_id: wildfire_fpa
+  hazard_family: wildfire
+  description: FPA DNN cause/size
+  consumes:
+  - wf_incident_features_8d
+  produces:
+  - wf_danger_class_5
+  kind: predictive_model
+  source_ref: model_cards/wildfire_fpa.yaml
+  namespaces:
+  - wildfire
+  training: null
+  implementation_ref: null
+- capability_id: wildfire_forecasting
+  hazard_family: wildfire
+  description: Weekly forecasting head
+  consumes:
+  - wf_weekly_county_tensor
+  produces:
+  - wf_weekly_activity_5d
+  kind: predictive_model
+  source_ref: model_cards/wildfire_forecasting.yaml
+  namespaces:
+  - wildfire
+  training: null
+  implementation_ref: null
+- capability_id: asufm
+  hazard_family: wildfire
+  description: ASUFM weekly TCN
+  consumes:
+  - wf_weekly_county_tensor
+  produces:
+  - wf_weekly_activity_5d
+  kind: predictive_model
+  source_ref: model_cards/asufm.yaml
+  namespaces:
+  - wildfire
+  training: null
+  implementation_ref: null
+- capability_id: wildfire_aspp
+  hazard_family: wildfire
+  description: ASPP spread
+  consumes:
+  - wf_spread_raster_frame
+  produces:
+  - wf_burned_mask
+  kind: predictive_model
+  source_ref: model_cards/wildfire_aspp.yaml
+  namespaces:
+  - wildfire
+  training: null
+  implementation_ref: null
+- capability_id: wildfirespreadts
+  hazard_family: wildfire
+  description: Temporal spread TCN
+  consumes:
+  - wf_spread_raster_history
+  produces:
+  - wf_burned_mask
+  kind: predictive_model
+  source_ref: model_cards/wildfirespreadts.yaml
+  namespaces:
+  - wildfire
+  training: null
+  implementation_ref: null
+- capability_id: firecastnet
+  hazard_family: wildfire
+  description: FireCastNet
+  consumes:
+  - wf_spread_raster_history
+  produces:
+  - wf_burned_mask
+  kind: predictive_model
+  source_ref: model_cards/firecastnet.yaml
+  namespaces:
+  - wildfire
+  training: null
+  implementation_ref: null
+- capability_id: neuralhydrology_lstm
+  hazard_family: flood
+  description: NH LSTM streamflow
+  consumes:
+  - fl_graph_temporal_x
+  produces:
+  - fl_streamflow_next
+  kind: predictive_model
+  source_ref: model_cards/neuralhydrology_lstm.yaml
+  namespaces:
+  - flood
+  training: null
+  implementation_ref: null
+- capability_id: neuralhydrology_ealstm
+  hazard_family: flood
+  description: NH EA-LSTM
+  consumes:
+  - fl_graph_temporal_x
+  produces:
+  - fl_streamflow_next
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - flood
+  training: null
+  implementation_ref: null
+- capability_id: google_flood_forecasting
+  hazard_family: flood
+  description: Google flood forecasting adapter
+  consumes:
+  - fl_graph_temporal_x
+  produces:
+  - fl_streamflow_next
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - flood
+  training: null
+  implementation_ref: null
+- capability_id: hydrographnet
+  hazard_family: flood
+  description: HydroGraphNet (needs adj)
+  consumes:
+  - fl_graph_temporal_x
+  - fl_graph_adj
+  produces:
+  - fl_streamflow_next
+  kind: predictive_model
+  source_ref: model_cards/hydrographnet.yaml
+  namespaces:
+  - flood
+  training: null
+  implementation_ref: null
+- capability_id: floodcast
+  hazard_family: flood
+  description: FloodCast inundation
+  consumes:
+  - fl_inundation_history
+  produces:
+  - fl_inundation_depth
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - flood
+  training: null
+  implementation_ref: null
+- capability_id: phasenet
+  hazard_family: earthquake
+  description: PhaseNet picks
+  consumes:
+  - eq_waveform_3c
+  produces:
+  - eq_ps_pick_indices
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - earthquake
+  training: null
+  implementation_ref: null
+- capability_id: eqtransformer
+  hazard_family: earthquake
+  description: EQTransformer
+  consumes:
+  - eq_waveform_3c
+  produces:
+  - eq_ps_pick_indices
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - earthquake
+  training: null
+  implementation_ref: null
+- capability_id: gpd
+  hazard_family: earthquake
+  description: GPD picks
+  consumes:
+  - eq_waveform_3c
+  produces:
+  - eq_ps_pick_indices
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - earthquake
+  training: null
+  implementation_ref: null
+- capability_id: wavecastnet
+  hazard_family: earthquake
+  description: WaveCastNet forecast
+  consumes:
+  - eq_wavefield_history
+  produces:
+  - eq_wavefield_forecast
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - earthquake
+  training: null
+  implementation_ref: null
+- capability_id: hurricast
+  hazard_family: tc
+  description: HurriCast
+  consumes:
+  - tc_track_history
+  produces:
+  - tc_track_forecast
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - tc
+  training: null
+  implementation_ref: null
+- capability_id: tropicalcyclone_mlp
+  hazard_family: tc
+  description: TC MLP
+  consumes:
+  - tc_track_history
+  produces:
+  - tc_track_forecast
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - tc
+  training: null
+  implementation_ref: null
+- capability_id: tcif_fusion
+  hazard_family: tc
+  description: TCIF fusion
+  consumes:
+  - tc_track_history
+  produces:
+  - tc_track_forecast
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - tc
+  training: null
+  implementation_ref: null
+- capability_id: saf_net
+  hazard_family: tc
+  description: SAF-Net
+  consumes:
+  - tc_track_history
+  produces:
+  - tc_track_forecast
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - tc
+  training: null
+  implementation_ref: null
+adapters:
+- adapter_id: wf_pack_atomic_to_incident_8d_v0
+  description: Pack atomic incident fields → 8d bundle (partial elevation demo; remaining
+    dims filled by dataset defaults)
+  consumes:
+  - wf_lat
+  - wf_lon
+  - wf_discovery_doy
+  produces:
+  - wf_incident_features_8d
+  adapter_type: feature_derivation
+  bridges:
+  - schema_id
+  source_ref: null
+  namespaces:
+  - wildfire
+  implementation_ref: null
+- adapter_id: wf_firms_daily_to_weekly_v0
+  description: Aggregate FIRMS daily hotspots → weekly county tensor (placeholder
+    executable TBD)
+  consumes:
+  - wf_firms_hotspots
+  produces:
+  - wf_weekly_county_tensor
+  adapter_type: temporal_aggregation
+  bridges:
+  - temporal_frequency
+  - history
+  - schema_id
+  source_ref: null
+  namespaces:
+  - wildfire
+  implementation_ref: null
+- adapter_id: wf_mask_to_burn_fraction_v0
+  description: Spatial aggregate burned mask → basin burn fraction
+  consumes:
+  - wf_burned_mask
+  produces:
+  - wf_basin_burn_fraction
+  adapter_type: spatial_aggregation
+  bridges:
+  - spatial_support
+  - schema_id
+  source_ref: null
+  namespaces:
+  - wildfire
+  implementation_ref: null
+- adapter_id: wf_landfire_to_spread_frame_v0
+  description: Resample LANDFIRE fuel to spread model raster frame (placeholder)
+  consumes:
+  - wf_landfire_fuel
+  produces:
+  - wf_spread_raster_frame
+  adapter_type: spatial_aggregation
+  bridges:
+  - spatial_support
+  - schema_id
+  source_ref: null
+  namespaces:
+  - wildfire
+  implementation_ref: null
+- adapter_id: fl_depth_to_peak_v0
+  description: Reduce inundation depth raster → peak depth scalar
+  consumes:
+  - fl_inundation_depth
+  produces:
+  - fl_peak_depth
+  adapter_type: spatial_aggregation
+  bridges:
+  - schema_id
+  - spatial_support
+  source_ref: null
+  namespaces:
+  - flood
+  implementation_ref: null
+recipes: []

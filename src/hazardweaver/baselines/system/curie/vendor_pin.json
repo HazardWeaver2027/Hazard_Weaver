@@ -1,0 +1,19 @@
+{
+  "schema_version": "HWB_CURIE_VENDOR_PIN_v1",
+  "baseline_id": "curie",
+  "repo_url": "https://github.com/Just-Curieous/Curie",
+  "pypi_package": "curie-ai",
+  "pypi_version": "0.1.3",
+  "license": "Apache-2.0",
+  "paper": "arXiv:2502.16069 — Curie: Rigorous Automated Scientific Experimentation",
+  "pin_sha": "db1b1f56159b591515f77e03c55bf473d5c1c201",
+  "pin_date": "2026-09-02",
+  "clone_root": "vendor/baselines/curie",
+  "official_entry": {
+    "experiment_api": "curie.experiment",
+    "dockerfile": "curie/ExpDockerfile_default"
+  },
+  "infra_requirements": ["docker", "gpu_optional", "openai_compatible_llm"],
+  "charter_note": "system_baseline.md §4 venue gate overridden by user directive 2026-09-02",
+  "pin_policy": "Vendor pin + feasibility evidence before HWB headline matrix"
+}

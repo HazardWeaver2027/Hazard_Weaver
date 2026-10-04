@@ -1,0 +1,16 @@
+{
+  "version": "0.1.0",
+  "description": "Synthetic basin node to spatial grid distance proxy for TC-to-Flood alignment",
+  "basin_nodes": 6,
+  "grid_height": 16,
+  "grid_width": 16,
+  "basin_to_grid_centroids": [
+    {"basin_id": 0, "row": 2, "col": 3},
+    {"basin_id": 1, "row": 4, "col": 5},
+    {"basin_id": 2, "row": 6, "col": 8},
+    {"basin_id": 3, "row": 8, "col": 10},
+    {"basin_id": 4, "row": 10, "col": 12},
+    {"basin_id": 5, "row": 12, "col": 14}
+  ],
+  "distance_scale_default": 2.0
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_drout_parametric_v1",
+  "headline_target": "DR-OUT",
+  "coverage_tier": "W-covered",
+  "hib_is_grader": false,
+  "solver_view": {
+    "user_goal": "Given a DR-OUT Atlas issue month, produce sdo_skill via a legal SRC-bound capability route selected from the allowed whitelist.",
+    "parameters": {
+      "scenario_id": "2021-07",
+      "split": "months"
+    },
+    "allowed_tools": [
+      "inspect_artifact",
+      "run_capability",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "CAP-DROUT-01",
+      "CAP-DROUT-02",
+      "CAP-DROUT-03"
+    ],
+    "forbidden_substitutions": [
+      "proxy_replay_for_CAP-DROUT-01"
+    ],
+    "contracts": {
+      "CAP-DROUT-01": {
+        "metric": "sdo_skill",
+        "modality": "expert_operational_synthesis",
+        "description": "CPC operational drought outlook synthesis via vendor_fetch (RF-EXPERT-OPERATIONAL-SYNTHESIS).",
+        "summary": "Expert operational CPC drought outlook synthesis"
+      },
+      "CAP-DROUT-02": {
+        "metric": "sdo_skill",
+        "modality": "persistence_baseline",
+        "description": "Persistence baseline from issue-time USDM category (RF-PERSISTENCE-BASELINE).",
+        "summary": "USDM persistence baseline forecast"
+      },
+      "CAP-DROUT-03": {
+        "metric": "sdo_skill",
+        "modality": "objective_statistical_tendency",
+        "description": "CPC objective drought tendency statistical forecast (RF-OBJECTIVE-STATISTICAL-TENDEN).",
+        "summary": "Objective CPC statistical drought tendency"
+      }
+    }
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "refs_sidecar": "hwb_drout_parametric_v1_refs.json",
+    "accepted_witnesses": [
+      {
+        "witness_id": "w_sdo_expert_src",
+        "route_id": "route:drout:terminal:CAP-DROUT-01",
+        "family": "RF-EXPERT-OPERATIONAL-SYNTHESIS",
+        "edges": [
+          "CAP-DROUT-01"
+        ],
+        "capability_ids": [
+          "CAP-DROUT-01"
+        ]
+      }
+    ],
+    "outputs": {
+      "metric_name": "sdo_skill",
+      "reference_score": 0.8,
+      "scenario_id": "2021-07"
+    },
+    "tolerance": {
+      "metric": "sdo_skill",
+      "min_score": 0.5
+    },
+    "trajectory_constraints": {
+      "required_adapters": [],
+      "required_capability_edges": [],
+      "forbidden_shortcuts": [
+        "direct_submit_without_capability",
+        "proxy_replay_substitute"
+      ],
+      "provenance": {
+        "scenario_id": "2021-07",
+        "split": "months",
+        "claim_tier": "pilot4_src_binding"
+      }
+    }
+  },
+  "metadata": {
+    "pilot4_src_binding": true,
+    "not_headline_pass": true
+  }
+}

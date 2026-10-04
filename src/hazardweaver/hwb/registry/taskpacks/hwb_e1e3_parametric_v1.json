@@ -1,0 +1,55 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_e1e3_parametric_v1",
+  "headline_target": "E1-E3",
+  "coverage_tier": "W-covered",
+  "hib_is_grader": false,
+  "solver_view": {
+    "user_goal": "Given a E1-E3 scientific capability anchor, produce the native metric via HCG scientific replay authority with HWA trajectory witness.",
+    "parameters": {
+      "scenario_id": "CAP-PLACEHOLDER",
+      "split": "official_test"
+    },
+    "allowed_tools": [
+      "inspect_artifact",
+      "run_capability",
+      "submit"
+    ],
+    "allowed_edge_ids": [],
+    "forbidden_substitutions": [
+      "direct_submit_without_capability"
+    ]
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "refs_sidecar": "hwb_e1e3_parametric_v1_refs.json",
+    "accepted_witnesses": [],
+    "outputs": {
+      "metric_name": "metric_value",
+      "reference_score": 0.0
+    },
+    "tolerance": {
+      "metric": "metric_value",
+      "max_abs_error": 1.0
+    },
+    "trajectory_constraints": {
+      "required_adapters": [],
+      "required_capability_edges": [],
+      "forbidden_shortcuts": [
+        "direct_submit_without_capability"
+      ],
+      "provenance": {
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    }
+  },
+  "metadata": {
+    "seven_track_finish_line_c": true,
+    "not_headline_pass": true,
+    "hcg_scientific_authority": true,
+    "hwa_trajectory_authority": true
+  }
+}

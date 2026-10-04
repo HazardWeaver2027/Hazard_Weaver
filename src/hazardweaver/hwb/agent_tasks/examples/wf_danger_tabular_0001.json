@@ -1,0 +1,61 @@
+{
+  "schema_version": "agent_bench_task/v1",
+  "task_id": "wf_danger_tabular_0001",
+  "domain": "wildfire",
+  "task_family": "danger",
+  "diversity_bucket": "A_single_danger",
+  "user_facing_goal": "Using only the Hazard Weaver Agent wildfire inventory and tools, load sample sample_000 of dataset hw_wildfire_danger_tabular_v1, run a compatible danger predictor from the allowed model list, and report the predicted cause class id for this fire event. Write a short justification of which model you used and why it matches the sample schema.",
+  "solver_visible": {
+    "inputs": {
+      "sample_refs": [
+        {
+          "dataset_id": "hw_wildfire_danger_tabular_v1",
+          "sample_id": "sample_000",
+          "split": "test",
+          "notes": "Tabular wildfire-danger features for one event."
+        }
+      ],
+      "constraints": [],
+      "hints": [
+        "Prefer a tabular danger classifier registered in the wildfire agent pack."
+      ]
+    },
+    "allowed_inventory": {
+      "dataset_ids": ["hw_wildfire_danger_tabular_v1"],
+      "model_ids": ["hw_wildfire_danger_mlp_v1"],
+      "tool_ids": [
+        "list_inventory",
+        "read_card",
+        "load_sample",
+        "run_predictor",
+        "submit_answer"
+      ]
+    },
+    "pack_refs": [
+      "cards/datasets/hw_wildfire_danger_tabular_v1.md",
+      "cards/models/hw_wildfire_danger_mlp_v1.md",
+      "cards/tasks/wildfire_danger.md"
+    ]
+  },
+  "success_criteria": {
+    "answer_type": "class_id",
+    "description": "Predicted cause class id matching the gold label for sample_000.",
+    "metric": "exact_match"
+  },
+  "gold": {
+    "answer": 2,
+    "label": 2,
+    "preferred_model_id": "hw_wildfire_danger_mlp_v1",
+    "eval_notes": "Illustrative gold for schema freeze; real gold materializes in W2 from HW-owned samples."
+  },
+  "theory_or_card_refs": [
+    "cards/tasks/wildfire_danger.md"
+  ],
+  "provenance": {
+    "generator_id": "hib_agent_task_handwrite_w0",
+    "generator_version": "0.0.1",
+    "created_utc": "2026-07-13T14:00:00Z",
+    "seed": 0,
+    "bootstrap_note": "Example only. Future samples/checkpoints may be bootstrapped offline; runtime ids are HW-owned."
+  }
+}

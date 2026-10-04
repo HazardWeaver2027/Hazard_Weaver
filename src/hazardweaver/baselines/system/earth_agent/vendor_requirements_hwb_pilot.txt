@@ -1,0 +1,14 @@
+# Earth-Agent HWB pilot — MCP + langchain (GDAL via conda on compute)
+python-dotenv>=1.1
+fastmcp>=2.11
+langchain>=0.3
+langchain-core>=0.3
+langchain-openai>=0.3
+langchain-mcp-adapters>=0.1
+langgraph>=0.6
+mcp>=1.12
+openai>=1.30
+numpy>=1.24
+pandas>=2.1
+rasterio>=1.3
+pyproj>=3.6

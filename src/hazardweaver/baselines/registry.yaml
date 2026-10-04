@@ -1,0 +1,166 @@
+# Baseline Owner registry — P0+
+# Authority:
+#   Line A: docs/engineering/benchmark/BASELINE_OWNER_CHARTER.md
+#   Line B: docs/engineering/benchmark/SYSTEM_BASELINE_MAIN_TABLE_v1.md
+
+# --- Line A: per-track scientific methods (11-track audit) ---
+scientific_baselines:
+  layer: scientific
+  WF-3:
+    - id: wf3_wildfirespreadts_persistence
+      portfolio_cap: TBD_anchor_audit
+      status: BLOCKED
+    - id: wf3_wildfirespreadts_utae
+      portfolio_cap: TBD_anchor_audit
+      status: BLOCKED
+  E1-E3:
+    - id: eq_phasenet_chain
+      portfolio_cap: eq_phasenet_chain_v1
+  MH-1:
+    - id: mh1_usgs_gorr
+      portfolio_cap: mh1_usgs_gorr_v1
+    - id: mh1_d8_runout
+      portfolio_cap: mh1_d8_runout_v1
+  MH-3:
+    - id: mh3_sfincs_oneway
+      portfolio_cap: mh3_sfincs_oneway_v1
+
+# --- Line B: main-paper system-level methods ---
+system_baselines:
+  layer: system
+  main_table_rows:
+    - id: best_native_scientific
+      display: Best Native Scientific Route
+      sprint: LATER
+      status: TODO
+    - id: validation_best_fixed_route
+      display: Validation-Best Fixed Route
+      sprint: LATER
+      status: TODO
+    - id: direct_llm
+      display: Direct LLM
+      sprint: LATER
+      status: TODO
+    - id: react_same_tool
+      display: Same-tool ReAct
+      sprint: P0
+      status: FIXTURE_SMOKE
+      implementation: pipeline_only
+      eligible_live: false
+      adapter: experiments/benchmark/baselines/system/react_same_tool/
+      research: docs/engineering/benchmark/REACT_SAME_TOOL_BASELINE_RESEARCH_v1.md
+    - id: deterministic_controller
+      display: Deterministic Constraint Planner
+      sprint: P1
+      status: IMPLEMENTED
+      implementation: pipeline_only
+      eligible_live: true
+      adapter: experiments/benchmark/baselines/system/deterministic_controller_v1/
+    - id: hkc_text_react
+      display: HKC-as-text ReAct
+      sprint: P1
+      status: IMPLEMENTED
+      implementation: pipeline_only
+      eligible_live: true
+      adapter: experiments/benchmark/baselines/system/hkc_text_react_v1/
+    - id: random_legal_route
+      display: Random Legal Route
+      sprint: P1
+      status: IMPLEMENTED
+      implementation: pipeline_only
+      eligible_live: true
+      adapter: experiments/benchmark/baselines/system/random_legal_route_v1/
+    - id: aide
+      display: AIDE
+      sprint: P1
+      status: FIXTURE_SMOKE
+      implementation: pipeline_only
+      eligible_live: false
+      adapter: experiments/benchmark/baselines/system/aide/
+      research: docs/engineering/benchmark/AIDE_BASELINE_RESEARCH_v1.md
+    - id: mle_star
+      display: MLE-STAR
+      sprint: P2
+      status: FIXTURE_SMOKE
+      implementation: pipeline_only
+      eligible_live: false
+      adapter: experiments/benchmark/baselines/system/mle_star/
+      research: docs/engineering/benchmark/MLE_STAR_BASELINE_RESEARCH_v1.md
+    - id: rd_agent
+      display: R&D-Agent
+      sprint: P3
+      status: FIXTURE_SMOKE
+      implementation: pipeline_only
+      eligible_live: false
+      priority: primary
+      adapter: experiments/benchmark/baselines/system/rd_agent/
+      research: docs/engineering/benchmark/RD_AGENT_BASELINE_RESEARCH_v1.md
+    - id: automl_agent
+      display: AutoML-Agent
+      sprint: P3
+      status: FIXTURE_SMOKE
+      implementation: pipeline_only
+      eligible_live: false
+      priority: backup
+      adapter: experiments/benchmark/baselines/system/automl_agent/
+      research: docs/engineering/benchmark/AUTOML_AGENT_BASELINE_RESEARCH_v1.md
+    - id: earth_agent
+      display: Earth-Agent
+      sprint: P0
+      status: FIXTURE_SMOKE
+      implementation: native_vendor_subset
+      eligible_live: false
+      adapter: experiments/benchmark/baselines/system/earth_agent/
+      research: docs/engineering/benchmark/EARTH_AGENT_BASELINE_RESEARCH_v1.md
+    - id: hieraplan
+      display: HieraPlan
+      sprint: P0
+      status: FIXTURE_SMOKE
+      implementation: native_vendor_subset
+      eligible_live: false
+      adapter: experiments/benchmark/baselines/system/hieraplan/
+      research: docs/engineering/benchmark/HIERAPLAN_BASELINE_RESEARCH_v1.md
+    - id: gisclaw
+      display: GISclaw
+      sprint: P0
+      status: FIXTURE_SMOKE
+      implementation: native_vendor_subset
+      eligible_live: false
+      adapter: experiments/benchmark/baselines/system/gisclaw/
+      research: docs/engineering/benchmark/GISCLAW_BASELINE_RESEARCH_v1.md
+    - id: hazardweaver
+      display: HazardWeaver
+      sprint: HWA
+      status: TODO
+    - id: mlzero
+      display: MLZero
+      sprint: OPTIONAL
+      status: TODO
+
+  ml_subset_appendix_only:
+    - AutoGluon
+    - H2O
+    - TabPFN
+    - tuned_GBDT
+
+adapter_contract: experiments/benchmark/baselines/system/adapter_contract.py
+main_table_contract: docs/engineering/benchmark/SYSTEM_BASELINE_MAIN_TABLE_v1.md
+window_prompt: docs/research/prompts/SYSTEM_BASELINE_WINDOWS_v1.md
+
+external_benchmarks:
+  - id: disasterbench
+    display: DisasterBench
+    sprint: P0
+    status: BRIDGE_SMOKE
+    adapter: experiments/benchmark/external/disasterbench/
+    total_tasks: 233
+  - id: earth_bench
+    display: Earth-Bench
+    sprint: P0
+    status: BRIDGE_SMOKE
+    adapter: experiments/benchmark/external/earth_bench/
+    total_tasks: 248
+    selection_note: "Selected over TerraLogic when HWB overlap tie-break; see baseline_compatibility_summary_v1.json"
+
+status: P0_BASELINE_EXPANSION_SCAFFOLD_DONE
+sprint_priority: native_baselines_compute

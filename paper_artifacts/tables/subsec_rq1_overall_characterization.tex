@@ -1,0 +1,45 @@
+% RQ1 overall characterization — sync with PM_PAPER_STATS_AUTHORITY.md (export_pm_paper_stats_v1.py --write-md)
+% 2026-09-25: Mixtral×telecom TC footnote; Qwen×retail TC=15.9% (full 1k gold cohort)
+
+\subsection{Overall Characterization of PM}
+\label{sec:overall-characterization}
+
+We answer RQ1 by testing whether Phantom Merge occurs across agent backbones, task domains, and benchmark interaction paradigms, and whether it persists when agents are judged task-correct by the benchmark's own reward; results are reported in Table~\ref{tab:rq1}.
+
+\begin{table}[t]
+\centering
+\caption{Phantom Merge prevalence across four domains and four backbone families. TC = task-correct rate, PM = trajectory-level PM rate; $X\mid Y$ denotes $P(X\mid Y)$. Mixtral×Telecom TC uses $\tau^2$ \texttt{official\_reward}$\ge 1$ with a minimal user-simulator \texttt{Excellent} fallback (Table footnote). Qwen×Retail TC is from the full 1k gold cohort (\texttt{official\_reward}$\ge 1$).}
+\label{tab:rq1}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrr}
+\toprule
+Domain & Backbone & TC\% & PM\% & PM$\mid$TC\% & TC$\mid$PM\% & CEM$\mid$PM\% & CAP$\mid$PM\% & ASF$\mid$PM\% \\
+\midrule
+\multirow{4}{*}{Retail}
+ & Mixtral & 8.7  & 16.5 & 18.4 & 9.7  & 4.2   & 1.6  & 94.2  \\
+ & Gemma   & 21.8 & 0.4  & 0.5  & 25.0 & 0.0   & 0.0  & 100.0 \\
+ & Llama   & 9.2  & 2.5  & 0.0  & 0.0  & 3.6   & 7.1  & 89.3  \\
+ & Qwen    & 15.9 & 3.1  & 1.3  & 6.5  & 69.0  & 0.0  & 31.0  \\
+\midrule
+\multirow{4}{*}{Airline}
+ & Mixtral & 35.6 & 34.0 & 32.0 & 33.5 & 0.0   & 0.3  & 99.7  \\
+ & Gemma   & 29.3 & 4.5  & 4.1  & 26.7 & 0.0   & 75.0 & 25.0  \\
+ & Llama   & 16.8 & 5.1  & 2.4  & 7.8  & 0.0   & 7.7  & 92.3  \\
+ & Qwen    & 13.7 & 18.6 & 5.1  & 3.8  & 26.4  & 30.6 & 43.1  \\
+\midrule
+\multirow{4}{*}{Telecom}
+ & Mixtral & 4.0  & 11.7 & 7.7  & 2.7  & 0.0   & 0.0  & 100.0 \\
+ & Gemma   & 11.6 & 0.6  & 0.9  & 16.7 & 62.5  & 0.0  & 37.5  \\
+ & Llama   & 3.6  & 27.4 & 5.6  & 0.7  & 100.0 & 0.0  & 0.0   \\
+ & Qwen    & 4.1  & 54.1 & 17.1 & 1.3  & 100.0 & 0.0  & 0.0   \\
+\midrule
+\multirow{4}{*}{Shopping}
+ & Mixtral & 41.0 & 33.0 & 37.1 & 46.0 & 10.9  & 85.2 & 3.9   \\
+ & Gemma   & 27.7 & 41.7 & 45.5 & 30.3 & 2.6   & 95.9 & 1.5   \\
+ & Llama   & 35.1 & 26.8 & 29.6 & 38.8 & 1.6   & 96.4 & 2.0   \\
+ & Qwen    & 20.7 & 46.8 & 55.6 & 24.6 & 29.5  & 63.3 & 7.2   \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+Four observations follow. (1) Phantom Merge is present in every backbone-domain combination we test. The effect does not concentrate in a single model family or a single domain, and it remains present when Shopping's enriched selection is excluded and only the three domains drawn from each benchmark's native task distribution are considered. (2) Phantom Merge does not track task failure. Across cells, the PM rate among task-correct trajectories is not lower than the PM rate among task-incorrect trajectories, and in several cells it is higher. Because task correctness is determined by the benchmark's own reward, a trajectory the benchmark accepts as successful is not thereby free of a misattributed or fabricated claim, so task accuracy cannot substitute for a direct check on this failure mode. (3) The three subtypes co-occur within the same corpus rather than one subtype accounting for nearly all instances. This indicates that Phantom Merge is not reducible to a single error pattern: a cross-entity merge reassigns a true attribute from one entity to another, while a fabrication introduces content with no basis in the trajectory's evidence at all. In either case, the error is not visible from the final response in isolation. (4) The pattern holds across models built on different architectures (dense and mixture-of-experts) and across two benchmarks with different interaction structures: ShoppingBench's single-turn, retrieval-driven recommendation task, and $\tau^2$-Bench's multi-turn, policy-constrained tool-use dialogue. Because Phantom Merge appears under both interaction structures and is not confined to one backbone family, we treat it as a general property of anchor-grounded agent generation rather than an artifact of a particular benchmark or model.

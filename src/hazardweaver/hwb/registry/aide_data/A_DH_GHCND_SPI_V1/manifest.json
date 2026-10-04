@@ -1,0 +1,18 @@
+{
+  "anchor_id": "A_DH_GHCND_SPI_V1",
+  "dataset_key": "ghcn",
+  "task_type": "regression",
+  "feature_columns": [
+    "prcp_lag1",
+    "prcp_roll30"
+  ],
+  "target_column": "target",
+  "original_ycol": "_y",
+  "group_column": "station",
+  "split_seed": 0,
+  "n_train": 166,
+  "n_val": 56,
+  "n_test": 75,
+  "aide_eval": "MAE",
+  "metric_name": "mae"
+}

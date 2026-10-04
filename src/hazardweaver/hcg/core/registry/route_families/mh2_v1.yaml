@@ -1,0 +1,136 @@
+version: mh2_v1
+task_id: MH-2
+canonical_output: mh2_landslide_bundle_v1
+families:
+- family_id: RF-BAYESIAN-CAUSAL-UPDATE
+  task_id: MH-2
+  distinctness_axis: manifest_rf_rf_bayesian_causal_update
+  canonical_output: mh2_landslide_bundle_v1
+  description: Manifest-native route family (RF-BAYESIAN-CAUSAL-UPDATE)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-MH2-05
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-MH2-05/ValidationReport.json
+- family_id: RF-EMPIRICAL-AREAL-COVERAGE-LOG
+  task_id: MH-2
+  distinctness_axis: manifest_rf_rf_empirical_areal_coverage_log
+  canonical_output: mh2_landslide_bundle_v1
+  description: Manifest-native route family (RF-EMPIRICAL-AREAL-COVERAGE-LOG)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-MH2-01
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-MH2-01/ValidationReport.json
+- family_id: RF-EMPIRICAL-AREAL-COVERAGE-MOD
+  task_id: MH-2
+  distinctness_axis: manifest_rf_rf_empirical_areal_coverage_mod
+  canonical_output: mh2_landslide_bundle_v1
+  description: Manifest-native route family (RF-EMPIRICAL-AREAL-COVERAGE-MOD)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-MH2-03
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-MH2-03/ValidationReport.json
+- family_id: RF-EMPIRICAL-CELL-OCCURRENCE-LO
+  task_id: MH-2
+  distinctness_axis: manifest_rf_rf_empirical_cell_occurrence_lo
+  canonical_output: mh2_landslide_bundle_v1
+  description: Manifest-native route family (RF-EMPIRICAL-CELL-OCCURRENCE-LO)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-MH2-02
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-MH2-02/ValidationReport.json
+- family_id: RF-HAZARD-TO-NETWORK-MODEL-CHAI
+  task_id: MH-2
+  distinctness_axis: manifest_rf_rf_hazard_to_network_model_chai
+  canonical_output: mh2_landslide_bundle_v1
+  description: Manifest-native route family (RF-HAZARD-TO-NETWORK-MODEL-CHAI)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-MH2-06
+  admission_level: L2
+  tier: C
+  validation_report: runs/carp/validation/CAP-MH2-06/ValidationReport.json
+- family_id: RF-MECHANISTIC-SLOPE-DISPLACEME
+  task_id: MH-2
+  distinctness_axis: manifest_rf_rf_mechanistic_slope_displaceme
+  canonical_output: mh2_landslide_bundle_v1
+  description: Manifest-native route family (RF-MECHANISTIC-SLOPE-DISPLACEME)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-MH2-04
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-MH2-04/ValidationReport.json

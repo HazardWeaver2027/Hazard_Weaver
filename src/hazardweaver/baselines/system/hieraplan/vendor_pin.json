@@ -1,0 +1,19 @@
+{
+  "baseline_id": "hieraplan",
+  "official_repo": "https://github.com/Ireliya/TerraLogic.git",
+  "ref": "main",
+  "clone_root": "experiments/benchmark/baselines/system/hieraplan/vendor/TerraLogic",
+  "default_architecture": "hieraplan",
+  "official_entry_candidates": [
+    "spatialreason/agent/agent.py",
+    "spatialreason/plan/plan.py"
+  ],
+  "runtime_env": {
+    "vendor_python": "envs/pyhazards/bin/python",
+    "setup_script": "scripts/benchmark/setup_hieraplan_vendor.sh"
+  },
+  "default_budget": {
+    "wall_time_s_max": 3600,
+    "llm_model": "meta-llama/Llama-3.3-70B-Instruct"
+  }
+}

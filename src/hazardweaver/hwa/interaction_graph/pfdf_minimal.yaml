@@ -1,0 +1,95 @@
+nodes:
+  - id: pre_fire_landscape
+    type: StateOrIndicator
+  - id: wildfire_burn_state
+    type: Hazard
+  - id: burn_severity
+    type: StateOrIndicator
+  - id: postfire_catchment_state
+    type: StateOrIndicator
+  - id: rainfall_forcing
+    type: StateOrIndicator
+  - id: terrain_soil_basin
+    type: StateOrIndicator
+  - id: debris_flow_volume
+    type: TaskTarget
+
+edges:
+  - edge_id: pfdf_pre_fire_conditions_burn
+    source: pre_fire_landscape
+    target: wildfire_burn_state
+    relation: conditions
+    conditions:
+      temporal: pre_fire_baseline
+      spatial: fire_perimeter
+    evidence:
+      - citation_key: mtbs_mapping_methods
+        url: https://www.mtbs.gov/mapping-methods
+        evidence_type: reviewed_literature
+    verification_status: human_verified
+
+  - edge_id: pfdf_burn_produces_severity
+    source: wildfire_burn_state
+    target: burn_severity
+    relation: produces
+    conditions:
+      temporal: post_fire_observation_window
+      spatial: burned_area
+    evidence:
+      - citation_key: mtbs_dnbr
+        url: https://burnseverity.cr.usgs.gov/products/mtbs
+        evidence_type: reviewed_literature
+    verification_status: human_verified
+
+  - edge_id: pfdf_severity_conditions_catchment
+    source: burn_severity
+    target: postfire_catchment_state
+    relation: conditions
+    conditions:
+      temporal: within_postfire_validity_window
+      spatial: burned_watershed
+      contextual: [terrain, soil]
+    evidence:
+      - citation_key: usgs_pfdf_assessment_2024
+        url: https://nhess.copernicus.org/articles/24/2093/2024/
+        evidence_type: reviewed_literature
+    verification_status: human_verified
+
+  - edge_id: pfdf_rainfall_triggers_volume
+    source: rainfall_forcing
+    target: debris_flow_volume
+    relation: triggers
+    conditions:
+      temporal: storm_event
+      spatial: same_watershed
+    evidence:
+      - citation_key: usgs_pfdf_assessment_2024
+        url: https://nhess.copernicus.org/articles/24/2093/2024/
+        evidence_type: reviewed_literature
+    verification_status: human_verified
+
+  - edge_id: pfdf_catchment_amplifies_volume
+    source: postfire_catchment_state
+    target: debris_flow_volume
+    relation: amplifies
+    conditions:
+      temporal: within_postfire_validity_window
+      spatial: hydrologically_connected
+    evidence:
+      - citation_key: usgs_pfdf_assessment_2024
+        url: https://nhess.copernicus.org/articles/24/2093/2024/
+        evidence_type: reviewed_literature
+    verification_status: human_verified
+
+  - edge_id: pfdf_terrain_conditions_volume
+    source: terrain_soil_basin
+    target: debris_flow_volume
+    relation: conditions
+    conditions:
+      spatial: watershed_scale
+      contextual: [slope, soil, basin_area]
+    evidence:
+      - citation_key: usgs_pfdf_assessment_2024
+        url: https://nhess.copernicus.org/articles/24/2093/2024/
+        evidence_type: reviewed_literature
+    verification_status: human_verified

@@ -1,0 +1,576 @@
+artifacts:
+- artifact_id: wf_lat
+  description: Atomic field example
+  support:
+    modality: scalar
+    schema_id: wf_lat
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_lon
+  description: Atomic field example
+  support:
+    modality: scalar
+    schema_id: wf_lon
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_discovery_doy
+  description: Atomic field example
+  support:
+    modality: scalar
+    schema_id: wf_discovery_doy
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_incident_features_8d
+  description: Bundle view of incident features
+  support:
+    modality: tabular
+    schema_id: wf_incident_features_8d
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: event
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_danger_class_5
+  description: ''
+  support:
+    modality: scalar
+    schema_id: wf_danger_class_5
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_weekly_county_tensor
+  description: ''
+  support:
+    modality: tabular
+    schema_id: wf_weekly_county_tensor
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: weekly
+    history: T=12
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_weekly_activity_5d
+  description: ''
+  support:
+    modality: scalar
+    schema_id: wf_weekly_activity_5d
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: weekly
+    history: null
+    horizon: 1w
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_fuel_spread_frame_v1
+  description: Fuel raster aligned to spread model frame
+  support:
+    modality: raster
+    schema_id: wf_fuel_spread_frame_v1
+    spatial_support: raster_patch
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_activity_features_v1
+  description: Normalized weekly activity features
+  support:
+    modality: tabular
+    schema_id: wf_activity_features_v1
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_spread_raster_frame
+  description: ''
+  support:
+    modality: raster
+    schema_id: wf_spread_raster_frame
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: raster_patch
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_spread_raster_history
+  description: ''
+  support:
+    modality: temporal_raster
+    schema_id: wf_spread_raster_history
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: raster_patch
+    temporal_frequency: frame
+    history: T>=2
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_burned_mask
+  description: ''
+  support:
+    modality: raster
+    schema_id: wf_burned_mask
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: raster_patch
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_firms_hotspots
+  description: ''
+  support:
+    modality: tabular
+    schema_id: wf_firms_hotspots
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: daily
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_landfire_fuel
+  description: ''
+  support:
+    modality: raster
+    schema_id: wf_landfire_fuel
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: raster
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_mtbs_severity
+  description: ''
+  support:
+    modality: raster
+    schema_id: wf_mtbs_severity
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: raster
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_wfigs_incident
+  description: ''
+  support:
+    modality: record
+    schema_id: wf_wfigs_incident
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: event
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_basin_burn_fraction
+  description: Aggregated from burned mask (single-hazard multi-hop)
+  support:
+    modality: scalar
+    schema_id: wf_basin_burn_fraction
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: wf_mamba_state
+  description: ''
+  support:
+    modality: scalar
+    schema_id: wf_mamba_state
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - wildfire
+- artifact_id: fl_graph_temporal_x
+  description: ''
+  support:
+    modality: graph_temporal
+    schema_id: fl_graph_temporal_x
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: step
+    history: hist>=4
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - flood
+- artifact_id: fl_graph_adj
+  description: ''
+  support:
+    modality: graph_temporal
+    schema_id: fl_graph_adj
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - flood
+- artifact_id: fl_streamflow_next
+  description: ''
+  support:
+    modality: scalar
+    schema_id: fl_streamflow_next
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: step
+    history: null
+    horizon: '1'
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - flood
+- artifact_id: fl_inundation_history
+  description: ''
+  support:
+    modality: temporal_raster
+    schema_id: fl_inundation_history
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: raster_patch
+    temporal_frequency: null
+    history: T=4
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - flood
+- artifact_id: fl_inundation_depth
+  description: ''
+  support:
+    modality: raster
+    schema_id: fl_inundation_depth
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: raster_patch
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - flood
+- artifact_id: fl_peak_depth
+  description: Aggregate from inundation depth
+  support:
+    modality: scalar
+    schema_id: fl_peak_depth
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - flood
+- artifact_id: eq_waveform_3c
+  description: ''
+  support:
+    modality: waveform
+    schema_id: eq_waveform_3c
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: sample_index
+    history: '256'
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - earthquake
+- artifact_id: eq_ps_pick_indices
+  description: ''
+  support:
+    modality: scalar
+    schema_id: eq_ps_pick_indices
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: sample_index
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - earthquake
+- artifact_id: eq_wavefield_history
+  description: ''
+  support:
+    modality: temporal_raster
+    schema_id: eq_wavefield_history
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - earthquake
+- artifact_id: eq_wavefield_forecast
+  description: ''
+  support:
+    modality: temporal_raster
+    schema_id: eq_wavefield_forecast
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: null
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - earthquake
+- artifact_id: tc_track_history
+  description: ''
+  support:
+    modality: track
+    schema_id: tc_track_history
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: 6h
+    history: T=6
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - tc
+- artifact_id: tc_track_forecast
+  description: ''
+  support:
+    modality: track
+    schema_id: tc_track_forecast
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: 6h
+    history: null
+    horizon: T=5
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - tc
+- artifact_id: forcing_era5_cube
+  description: ''
+  support:
+    modality: temporal_raster
+    schema_id: forcing_era5_cube
+    dtype: null
+    units: null
+    crs: EPSG:4326
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: hourly
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - forcing
+- artifact_id: forcing_merra2_cube
+  description: ''
+  support:
+    modality: temporal_raster
+    schema_id: forcing_merra2_cube
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: hourly
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - forcing
+- artifact_id: forcing_goesr_scene
+  description: ''
+  support:
+    modality: raster
+    schema_id: forcing_goesr_scene
+    dtype: null
+    units: null
+    crs: null
+    spatial_resolution: null
+    spatial_support: null
+    temporal_frequency: event
+    history: null
+    horizon: null
+    temporal_alignment: null
+    frame_rate: null
+  visibility: solver
+  namespaces:
+  - forcing

@@ -1,0 +1,71 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_tctrk_parametric_v1",
+  "headline_target": "TC-TRK",
+  "coverage_tier": "W-covered",
+  "hib_is_grader": false,
+  "solver_view": {
+    "user_goal": "Given a TC-TRK Atlas storm scenario, produce lead_error_km via a legal SRC-bound persistence route (CAP-TCTRK-01).",
+    "parameters": {
+      "scenario_id": "2023020S18156",
+      "split": "storms"
+    },
+    "allowed_tools": [
+      "inspect_artifact",
+      "run_capability",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "CAP-TCTRK-01",
+      "CAP-TCTRK-02",
+      "CAP-TCTRK-03"
+    ],
+    "forbidden_substitutions": [
+      "artifact_replay_for_CAP-TCTRK-01"
+    ]
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "refs_sidecar": "hwb_tctrk_parametric_v1_refs.json",
+    "accepted_witnesses": [
+      {
+        "witness_id": "w_persist_src",
+        "route_id": "route:tctrk:terminal:CAP-TCTRK-01",
+        "family": "RF-PERSISTENCE-BASELINE",
+        "edges": [
+          "CAP-TCTRK-01"
+        ],
+        "capability_ids": [
+          "CAP-TCTRK-01"
+        ]
+      }
+    ],
+    "outputs": {
+      "metric_name": "lead_error_km",
+      "reference_score": 342.61,
+      "scenario_id": "2023020S18156"
+    },
+    "tolerance": {
+      "metric": "lead_error_km",
+      "max_abs_error": 50.0
+    },
+    "trajectory_constraints": {
+      "required_adapters": [],
+      "required_capability_edges": [],
+      "forbidden_shortcuts": [
+        "direct_submit_without_capability",
+        "artifact_replay_substitute"
+      ],
+      "provenance": {
+        "scenario_id": "2023020S18156",
+        "split": "storms",
+        "claim_tier": "pilot4_src_binding",
+        "persistence_fallback": true
+      }
+    }
+  },
+  "metadata": {
+    "pilot4_src_binding": true,
+    "not_headline_pass": true
+  }
+}

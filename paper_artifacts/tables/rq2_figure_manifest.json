@@ -1,0 +1,1196 @@
+{
+  "denominator_m96": 96,
+  "y_axis_label": "DCA valid (%)",
+  "composite_rule": "hkc|dual \u2192 hkc_off OUT; hcg|dual \u2192 hcg_untyped OUT; else full_hwa (within Stratum M)",
+  "off_arm_valid_mode": "gold_match",
+  "scoring": {
+    "full_hwa": "dca_valid on all 96 @141 M cells (unified DCA v2)",
+    "hkc_off": "composite @141 M: off-arm challenge cells: picked == gold/witness capability; fallback \u2192 dca_valid",
+    "hcg_untyped": "composite @141 M: off-arm challenge cells: picked == gold/witness capability; fallback \u2192 dca_valid"
+  },
+  "rq2_fig4a_scientific_constraints": {
+    "denominator": 96,
+    "inventory": "runs/hwb/iclr_benchmark/unified_benchmark_v1_stratum_M.jsonl",
+    "metric": "dca_valid_rate_pct",
+    "y_axis_label": "DCA valid (%)",
+    "band_mode": "wilson",
+    "off_arm_valid_mode": "gold_match",
+    "full_hwa": "all 96 @141 M cells: dca_valid (unified DCA v2)",
+    "ablation_composite": "off-arm challenge cells: picked == gold/witness capability; fallback full_hwa cells: dca_valid (@141 M)",
+    "series": {
+      "hwa_olmo32b": [
+        {
+          "k": 38,
+          "n": 96,
+          "rate_pct": 39.58,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 16,
+          "ci_lo": 30.38,
+          "ci_hi": 49.59,
+          "sem_pct": 4.991,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 39,
+          "n": 96,
+          "rate_pct": 40.62,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 18,
+          "ci_lo": 31.35,
+          "ci_hi": 50.63,
+          "sem_pct": 5.013,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 49,
+          "n": 96,
+          "rate_pct": 51.04,
+          "score_mode": "dca_valid",
+          "ci_lo": 41.2,
+          "ci_hi": 60.81,
+          "sem_pct": 5.102,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_mixtral8x22": [
+        {
+          "k": 34,
+          "n": 96,
+          "rate_pct": 35.42,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 28,
+          "ci_lo": 26.58,
+          "ci_hi": 45.38,
+          "sem_pct": 4.881,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 32,
+          "n": 96,
+          "rate_pct": 33.33,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 27,
+          "ci_lo": 24.71,
+          "ci_hi": 43.24,
+          "sem_pct": 4.811,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 65,
+          "n": 96,
+          "rate_pct": 67.71,
+          "score_mode": "dca_valid",
+          "ci_lo": 57.83,
+          "ci_hi": 76.22,
+          "sem_pct": 4.772,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_gemma31b": [
+        {
+          "k": 50,
+          "n": 96,
+          "rate_pct": 52.08,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 31,
+          "ci_lo": 42.2,
+          "ci_hi": 61.8,
+          "sem_pct": 5.099,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 55,
+          "n": 96,
+          "rate_pct": 57.29,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 24,
+          "ci_lo": 47.3,
+          "ci_hi": 66.72,
+          "sem_pct": 5.049,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 76,
+          "n": 96,
+          "rate_pct": 79.17,
+          "score_mode": "dca_valid",
+          "ci_lo": 70.0,
+          "ci_hi": 86.09,
+          "sem_pct": 4.145,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_deepseek": [
+        {
+          "k": 68,
+          "n": 96,
+          "rate_pct": 70.83,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 5,
+          "ci_lo": 61.08,
+          "ci_hi": 78.98,
+          "sem_pct": 4.639,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 71,
+          "n": 96,
+          "rate_pct": 73.96,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 5,
+          "ci_lo": 64.38,
+          "ci_hi": 81.69,
+          "sem_pct": 4.479,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 86,
+          "n": 96,
+          "rate_pct": 89.58,
+          "score_mode": "dca_valid",
+          "ci_lo": 81.88,
+          "ci_hi": 94.24,
+          "sem_pct": 3.118,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_llama70b": [
+        {
+          "k": 44,
+          "n": 96,
+          "rate_pct": 45.83,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 37,
+          "ci_lo": 36.22,
+          "ci_hi": 55.77,
+          "sem_pct": 5.085,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 46,
+          "n": 96,
+          "rate_pct": 47.92,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 37,
+          "ci_lo": 38.2,
+          "ci_hi": 57.8,
+          "sem_pct": 5.099,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 90,
+          "n": 96,
+          "rate_pct": 93.75,
+          "score_mode": "dca_valid",
+          "ci_lo": 87.03,
+          "ci_hi": 97.1,
+          "sem_pct": 2.471,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ]
+    },
+    "legend_short_to_full": {
+      "hwa_olmo32b": "OLMo-3.1-32B",
+      "hwa_mixtral8x22": "Mixtral-8x22B",
+      "hwa_gemma31b": "Gemma-4-31B-it",
+      "hwa_deepseek": "DeepSeek-V4.1-Flash",
+      "hwa_llama70b": "Llama-3.3-70B"
+    },
+    "figure": "/workspace/hazardweaver"
+  },
+  "rq2_fig4a_scientific_constraints_sem196_preview": {
+    "denominator": 96,
+    "inventory": "runs/hwb/iclr_benchmark/unified_benchmark_v1_stratum_M.jsonl",
+    "metric": "dca_valid_rate_pct",
+    "y_axis_label": "DCA valid (%)",
+    "band_mode": "sem_196",
+    "off_arm_valid_mode": "gold_match",
+    "full_hwa": "all 96 @141 M cells: dca_valid (unified DCA v2)",
+    "ablation_composite": "off-arm challenge cells: picked == gold/witness capability; fallback full_hwa cells: dca_valid (@141 M)",
+    "series": {
+      "hwa_olmo32b": [
+        {
+          "k": 38,
+          "n": 96,
+          "rate_pct": 39.58,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 16,
+          "ci_lo": 29.8,
+          "ci_hi": 49.37,
+          "sem_pct": 4.991,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 39,
+          "n": 96,
+          "rate_pct": 40.62,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 18,
+          "ci_lo": 30.8,
+          "ci_hi": 50.45,
+          "sem_pct": 5.013,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 49,
+          "n": 96,
+          "rate_pct": 51.04,
+          "score_mode": "dca_valid",
+          "ci_lo": 41.04,
+          "ci_hi": 61.04,
+          "sem_pct": 5.102,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_mixtral8x22": [
+        {
+          "k": 34,
+          "n": 96,
+          "rate_pct": 35.42,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 28,
+          "ci_lo": 25.85,
+          "ci_hi": 44.98,
+          "sem_pct": 4.881,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 32,
+          "n": 96,
+          "rate_pct": 33.33,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 27,
+          "ci_lo": 23.9,
+          "ci_hi": 42.76,
+          "sem_pct": 4.811,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 65,
+          "n": 96,
+          "rate_pct": 67.71,
+          "score_mode": "dca_valid",
+          "ci_lo": 58.35,
+          "ci_hi": 77.06,
+          "sem_pct": 4.772,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_gemma31b": [
+        {
+          "k": 50,
+          "n": 96,
+          "rate_pct": 52.08,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 31,
+          "ci_lo": 42.09,
+          "ci_hi": 62.08,
+          "sem_pct": 5.099,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 55,
+          "n": 96,
+          "rate_pct": 57.29,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 24,
+          "ci_lo": 47.4,
+          "ci_hi": 67.19,
+          "sem_pct": 5.049,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 76,
+          "n": 96,
+          "rate_pct": 79.17,
+          "score_mode": "dca_valid",
+          "ci_lo": 71.04,
+          "ci_hi": 87.29,
+          "sem_pct": 4.145,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_deepseek": [
+        {
+          "k": 68,
+          "n": 96,
+          "rate_pct": 70.83,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 5,
+          "ci_lo": 61.74,
+          "ci_hi": 79.93,
+          "sem_pct": 4.639,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 71,
+          "n": 96,
+          "rate_pct": 73.96,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 5,
+          "ci_lo": 65.18,
+          "ci_hi": 82.74,
+          "sem_pct": 4.479,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 86,
+          "n": 96,
+          "rate_pct": 89.58,
+          "score_mode": "dca_valid",
+          "ci_lo": 83.47,
+          "ci_hi": 95.69,
+          "sem_pct": 3.118,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_llama70b": [
+        {
+          "k": 44,
+          "n": 96,
+          "rate_pct": 45.83,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 37,
+          "ci_lo": 35.87,
+          "ci_hi": 55.8,
+          "sem_pct": 5.085,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 46,
+          "n": 96,
+          "rate_pct": 47.92,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 37,
+          "ci_lo": 37.92,
+          "ci_hi": 57.91,
+          "sem_pct": 5.099,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 90,
+          "n": 96,
+          "rate_pct": 93.75,
+          "score_mode": "dca_valid",
+          "ci_lo": 88.91,
+          "ci_hi": 98.59,
+          "sem_pct": 2.471,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ]
+    },
+    "legend_short_to_full": {
+      "hwa_olmo32b": "OLMo-3.1-32B",
+      "hwa_mixtral8x22": "Mixtral-8x22B",
+      "hwa_gemma31b": "Gemma-4-31B-it",
+      "hwa_deepseek": "DeepSeek-V4.1-Flash",
+      "hwa_llama70b": "Llama-3.3-70B"
+    },
+    "figure": "/workspace/hazardweaver"
+  },
+  "rq2_fig4a_scientific_constraints_sem1_preview": {
+    "denominator": 96,
+    "inventory": "runs/hwb/iclr_benchmark/unified_benchmark_v1_stratum_M.jsonl",
+    "metric": "dca_valid_rate_pct",
+    "y_axis_label": "DCA valid (%)",
+    "band_mode": "sem_1",
+    "off_arm_valid_mode": "gold_match",
+    "full_hwa": "all 96 @141 M cells: dca_valid (unified DCA v2)",
+    "ablation_composite": "off-arm challenge cells: picked == gold/witness capability; fallback full_hwa cells: dca_valid (@141 M)",
+    "series": {
+      "hwa_olmo32b": [
+        {
+          "k": 38,
+          "n": 96,
+          "rate_pct": 39.58,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 16,
+          "ci_lo": 34.59,
+          "ci_hi": 44.57,
+          "sem_pct": 4.991,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 39,
+          "n": 96,
+          "rate_pct": 40.62,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 18,
+          "ci_lo": 35.61,
+          "ci_hi": 45.64,
+          "sem_pct": 5.013,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 49,
+          "n": 96,
+          "rate_pct": 51.04,
+          "score_mode": "dca_valid",
+          "ci_lo": 45.94,
+          "ci_hi": 56.14,
+          "sem_pct": 5.102,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_mixtral8x22": [
+        {
+          "k": 34,
+          "n": 96,
+          "rate_pct": 35.42,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 28,
+          "ci_lo": 30.54,
+          "ci_hi": 40.3,
+          "sem_pct": 4.881,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 32,
+          "n": 96,
+          "rate_pct": 33.33,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 27,
+          "ci_lo": 28.52,
+          "ci_hi": 38.14,
+          "sem_pct": 4.811,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 65,
+          "n": 96,
+          "rate_pct": 67.71,
+          "score_mode": "dca_valid",
+          "ci_lo": 62.94,
+          "ci_hi": 72.48,
+          "sem_pct": 4.772,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_gemma31b": [
+        {
+          "k": 50,
+          "n": 96,
+          "rate_pct": 52.08,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 31,
+          "ci_lo": 46.98,
+          "ci_hi": 57.18,
+          "sem_pct": 5.099,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 55,
+          "n": 96,
+          "rate_pct": 57.29,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 24,
+          "ci_lo": 52.24,
+          "ci_hi": 62.34,
+          "sem_pct": 5.049,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 76,
+          "n": 96,
+          "rate_pct": 79.17,
+          "score_mode": "dca_valid",
+          "ci_lo": 75.02,
+          "ci_hi": 83.31,
+          "sem_pct": 4.145,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_deepseek": [
+        {
+          "k": 68,
+          "n": 96,
+          "rate_pct": 70.83,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 5,
+          "ci_lo": 66.19,
+          "ci_hi": 75.47,
+          "sem_pct": 4.639,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 71,
+          "n": 96,
+          "rate_pct": 73.96,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 5,
+          "ci_lo": 69.48,
+          "ci_hi": 78.44,
+          "sem_pct": 4.479,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 86,
+          "n": 96,
+          "rate_pct": 89.58,
+          "score_mode": "dca_valid",
+          "ci_lo": 86.47,
+          "ci_hi": 92.7,
+          "sem_pct": 3.118,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_llama70b": [
+        {
+          "k": 44,
+          "n": 96,
+          "rate_pct": 45.83,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 37,
+          "ci_lo": 40.75,
+          "ci_hi": 50.92,
+          "sem_pct": 5.085,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 46,
+          "n": 96,
+          "rate_pct": 47.92,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 37,
+          "ci_lo": 42.82,
+          "ci_hi": 53.02,
+          "sem_pct": 5.099,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 90,
+          "n": 96,
+          "rate_pct": 93.75,
+          "score_mode": "dca_valid",
+          "ci_lo": 91.28,
+          "ci_hi": 96.22,
+          "sem_pct": 2.471,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ]
+    },
+    "legend_short_to_full": {
+      "hwa_olmo32b": "OLMo-3.1-32B",
+      "hwa_mixtral8x22": "Mixtral-8x22B",
+      "hwa_gemma31b": "Gemma-4-31B-it",
+      "hwa_deepseek": "DeepSeek-V4.1-Flash",
+      "hwa_llama70b": "Llama-3.3-70B"
+    },
+    "figure": "/workspace/hazardweaver"
+  },
+  "rq2_fig4b_route_updating": {
+    "format": "table",
+    "table_tex": "paper_figures/unified_141/rq2_fig4b_route_updating_table.tex",
+    "denominator": 40
+  },
+  "rq2_ablation_line": {
+    "denominator": 96,
+    "inventory": "runs/hwb/iclr_benchmark/unified_benchmark_v1_stratum_M.jsonl",
+    "metric": "dca_valid_rate_pct",
+    "y_axis_label": "DCA valid (%)",
+    "band_mode": "wilson",
+    "off_arm_valid_mode": "gold_match",
+    "full_hwa": "all 96 @141 M cells: dca_valid (unified DCA v2)",
+    "ablation_composite": "off-arm challenge cells: picked == gold/witness capability; fallback full_hwa cells: dca_valid (@141 M)",
+    "series": {
+      "hwa_olmo32b": [
+        {
+          "k": 38,
+          "n": 96,
+          "rate_pct": 39.58,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 16,
+          "ci_lo": 30.38,
+          "ci_hi": 49.59,
+          "sem_pct": 4.991,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 39,
+          "n": 96,
+          "rate_pct": 40.62,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 18,
+          "ci_lo": 31.35,
+          "ci_hi": 50.63,
+          "sem_pct": 5.013,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 49,
+          "n": 96,
+          "rate_pct": 51.04,
+          "score_mode": "dca_valid",
+          "ci_lo": 41.2,
+          "ci_hi": 60.81,
+          "sem_pct": 5.102,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_mixtral8x22": [
+        {
+          "k": 34,
+          "n": 96,
+          "rate_pct": 35.42,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 28,
+          "ci_lo": 26.58,
+          "ci_hi": 45.38,
+          "sem_pct": 4.881,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 32,
+          "n": 96,
+          "rate_pct": 33.33,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 27,
+          "ci_lo": 24.71,
+          "ci_hi": 43.24,
+          "sem_pct": 4.811,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 65,
+          "n": 96,
+          "rate_pct": 67.71,
+          "score_mode": "dca_valid",
+          "ci_lo": 57.83,
+          "ci_hi": 76.22,
+          "sem_pct": 4.772,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_gemma31b": [
+        {
+          "k": 50,
+          "n": 96,
+          "rate_pct": 52.08,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 31,
+          "ci_lo": 42.2,
+          "ci_hi": 61.8,
+          "sem_pct": 5.099,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 55,
+          "n": 96,
+          "rate_pct": 57.29,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 24,
+          "ci_lo": 47.3,
+          "ci_hi": 66.72,
+          "sem_pct": 5.049,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 76,
+          "n": 96,
+          "rate_pct": 79.17,
+          "score_mode": "dca_valid",
+          "ci_lo": 70.0,
+          "ci_hi": 86.09,
+          "sem_pct": 4.145,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_deepseek": [
+        {
+          "k": 68,
+          "n": 96,
+          "rate_pct": 70.83,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 5,
+          "ci_lo": 61.08,
+          "ci_hi": 78.98,
+          "sem_pct": 4.639,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 71,
+          "n": 96,
+          "rate_pct": 73.96,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 5,
+          "ci_lo": 64.38,
+          "ci_hi": 81.69,
+          "sem_pct": 4.479,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 86,
+          "n": 96,
+          "rate_pct": 89.58,
+          "score_mode": "dca_valid",
+          "ci_lo": 81.88,
+          "ci_hi": 94.24,
+          "sem_pct": 3.118,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ],
+      "hwa_llama70b": [
+        {
+          "k": 44,
+          "n": 96,
+          "rate_pct": 45.83,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 37,
+          "ci_lo": 36.22,
+          "ci_hi": 55.77,
+          "sem_pct": 5.085,
+          "key": "hkc",
+          "report_arm": "hkc_off",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 51,
+            "full_hwa_fallback": 45,
+            "missing": 0
+          }
+        },
+        {
+          "k": 46,
+          "n": 96,
+          "rate_pct": 47.92,
+          "score_mode": "off_gold_match_fallback_dca_valid",
+          "n_off_arm_decoy": 37,
+          "ci_lo": 38.2,
+          "ci_hi": 57.8,
+          "sem_pct": 5.099,
+          "key": "hcg",
+          "report_arm": "hcg_untyped",
+          "sources": {
+            "full_hwa": 0,
+            "off_arm": 48,
+            "full_hwa_fallback": 48,
+            "missing": 0
+          }
+        },
+        {
+          "k": 90,
+          "n": 96,
+          "rate_pct": 93.75,
+          "score_mode": "dca_valid",
+          "ci_lo": 87.03,
+          "ci_hi": 97.1,
+          "sem_pct": 2.471,
+          "key": "full",
+          "report_arm": "full_hwa",
+          "sources": {
+            "full_hwa": 96,
+            "off_arm": 0,
+            "full_hwa_fallback": 0,
+            "missing": 0
+          }
+        }
+      ]
+    },
+    "legend_short_to_full": {
+      "hwa_olmo32b": "OLMo-3.1-32B",
+      "hwa_mixtral8x22": "Mixtral-8x22B",
+      "hwa_gemma31b": "Gemma-4-31B-it",
+      "hwa_deepseek": "DeepSeek-V4.1-Flash",
+      "hwa_llama70b": "Llama-3.3-70B"
+    },
+    "figure": "/workspace/hazardweaver"
+  }
+}

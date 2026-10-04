@@ -1,0 +1,46 @@
+{
+  "schema_version": "HWB_FL2_PARAMETRIC_REFS_v1",
+  "taskpack_id": "hwb_fl2_parametric_v1",
+  "scenarios": {
+    "pakistan_2022_test_000": {
+      "outputs": {
+        "rmse_depth": 0.42,
+        "csi_0.01": 0.65,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.15
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test",
+        "region": "pakistan_2022"
+      }
+    },
+    "mozambique_2019_hold_000": {
+      "outputs": {
+        "rmse_depth": 0.38,
+        "csi_0.01": 0.68,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.15
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "cross_regional_test",
+        "physical_split_path": "hwb_holdout",
+        "region": "mozambique_2019",
+        "untouched_hwb_holdout": false
+      }
+    }
+  }
+}

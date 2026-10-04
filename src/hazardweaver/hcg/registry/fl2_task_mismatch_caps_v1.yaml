@@ -1,0 +1,20 @@
+# Engineering registry — CAP-FL2-01~03 TASK_MISMATCH (DL-075 / FOUR_MODULE §4.5).
+# Does not alter docs/final_four/HCG/manifests/ science fields.
+# Expansion paths (not headline unlock): hcg/registry/fl2_g2_task_expansion_v1.yaml (DL-123).
+schema_version: fl2_task_mismatch_caps_v1
+updated: "2026-09-01"
+decision: DL-075
+expansion_registry: hcg/registry/fl2_g2_task_expansion_v1.yaml
+expansion_audit_doc: docs/engineering/hcg/external_expansion/FL-2/FL2_G2_TASK_EXPANSION_AUDIT_v1.md
+headline_status: TASK_MISMATCH_RETIRED
+capabilities:
+  CAP-FL2-01:
+    blockers: [NO_INFER_ENTRY, NO_RELEASED_CKPT, TRAINING_CODE_DATA_GEN_ONLY]
+    note: "FloodCast U-Net; schema fix via enrich_fl2_zenodo_inputs.py (DL-124); infer still blocked"
+  CAP-FL2-02:
+    blockers: [NO_INFER_ENTRY, NO_RELEASED_CKPT, TRAINING_CODE_DATA_GEN_ONLY]
+    note: "FNO; schema via DL-124 enrich; no released checkpoint"
+  CAP-FL2-03:
+    blockers: [NO_INFER_ENTRY, NO_RELEASED_CKPT, TRAINING_CODE_DATA_GEN_ONLY]
+    note: "FNO+; schema via DL-124 enrich; no released checkpoint"
+paper_scope_note: "Headline count remains 31; 01-03 are UNREACHABLE(TASK_MISMATCH), not UNRESOLVED"

@@ -1,0 +1,4746 @@
+{
+  "schema": "unified_141_paper_stats_v1",
+  "built_utc": "2026-09-23T20:20:27Z",
+  "inventory": "runs/hwb/iclr_benchmark/unified_benchmark_v1_submit.jsonl",
+  "denominator": 141,
+  "excluded": {
+    "track": "PFDF",
+    "n_excluded": 2
+  },
+  "primary_metric": "dca_v2_unified",
+  "baseline_out_root": "runs/benchmark/unified_baselines_v4_1_vllm70b_v4_1",
+  "rq1_table1_order": [
+    "plan_execute_faithful_v1",
+    "self_consistency_faithful_v1",
+    "disasterbench_tot_faithful_v1",
+    "mle_star",
+    "automl_agent",
+    "reflexion_faithful_v1",
+    "hwa_llama70b"
+  ],
+  "rq1_table2_order": [
+    "aide",
+    "ds_agent",
+    "rd_agent",
+    "react_same_tool",
+    "hwa_llama70b"
+  ],
+  "rq3_backbone_arms": [
+    "hwa_mixtral8x22",
+    "hwa_gemma31b",
+    "hwa_llama70b",
+    "hwa_olmo32b",
+    "hwa_deepseek"
+  ],
+  "arms": {
+    "hwa_llama70b": {
+      "arm_id": "hwa_llama70b",
+      "label": "HazardWeaver (Llama-3.3-70B)",
+      "out_root": "runs/hwa/unified_benchmark_full_llama70b_unified_v1",
+      "overall": {
+        "k": 126,
+        "n": 141,
+        "rate_pct": 89.36,
+        "wilson_ci95_pct": [
+          83.19,
+          93.45
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 82,
+          "n": 90,
+          "rate_pct": 91.11,
+          "wilson_ci95_pct": [
+            83.43,
+            95.43
+          ]
+        },
+        "multi": {
+          "k": 44,
+          "n": 51,
+          "rate_pct": 86.27,
+          "wilson_ci95_pct": [
+            74.28,
+            93.19
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 36,
+          "n": 45,
+          "rate_pct": 80.0,
+          "wilson_ci95_pct": [
+            66.18,
+            89.1
+          ]
+        },
+        "multi_route": {
+          "k": 90,
+          "n": 96,
+          "rate_pct": 93.75,
+          "wilson_ci95_pct": [
+            87.03,
+            97.1
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 24,
+          "n": 29,
+          "rate_pct": 82.76,
+          "wilson_ci95_pct": [
+            65.45,
+            92.4
+          ]
+        },
+        "single_multi_route": {
+          "k": 58,
+          "n": 61,
+          "rate_pct": 95.08,
+          "wilson_ci95_pct": [
+            86.51,
+            98.31
+          ]
+        },
+        "multi_single_route": {
+          "k": 12,
+          "n": 16,
+          "rate_pct": 75.0,
+          "wilson_ci95_pct": [
+            50.5,
+            89.82
+          ]
+        },
+        "multi_multi_route": {
+          "k": 32,
+          "n": 35,
+          "rate_pct": 91.43,
+          "wilson_ci95_pct": [
+            77.62,
+            97.04
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 12,
+          "n": 13,
+          "rate_pct": 92.31,
+          "wilson_ci95_pct": [
+            66.69,
+            98.63
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 6,
+          "n": 12,
+          "rate_pct": 50.0,
+          "wilson_ci95_pct": [
+            25.38,
+            74.62
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 14,
+          "n": 14,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            78.47,
+            100.0
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 13,
+          "n": 14,
+          "rate_pct": 92.86,
+          "wilson_ci95_pct": [
+            68.53,
+            98.73
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 6,
+          "n": 6,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            60.97,
+            100.0
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 14,
+          "n": 14,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            78.47,
+            100.0
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 17,
+          "n": 17,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            81.57,
+            100.0
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 12,
+          "n": 16,
+          "rate_pct": 75.0,
+          "wilson_ci95_pct": [
+            50.5,
+            89.82
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 10,
+          "n": 12,
+          "rate_pct": 83.33,
+          "wilson_ci95_pct": [
+            55.2,
+            95.3
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 10,
+          "n": 11,
+          "rate_pct": 90.91,
+          "wilson_ci95_pct": [
+            62.26,
+            98.38
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 12,
+          "n": 12,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            75.75,
+            100.0
+          ]
+        }
+      ],
+      "execution_profile": {
+        "exit_reason_counts": {
+          "submitted": 139,
+          "ablation_integrity_fail": 2
+        },
+        "timeout_rate": {
+          "k": 0,
+          "n": 141,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            2.65
+          ]
+        },
+        "abstain_rate": {
+          "k": 0,
+          "n": 141,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            2.65
+          ]
+        },
+        "decision_steps": {
+          "all": [
+            4,
+            4,
+            4,
+            4,
+            3,
+            3,
+            3,
+            2,
+            3,
+            3,
+            3,
+            4,
+            3,
+            4,
+            3,
+            3,
+            3,
+            3,
+            4,
+            3,
+            1,
+            1,
+            1,
+            1,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            3,
+            3,
+            7,
+            3,
+            3,
+            1,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            30,
+            25,
+            3,
+            4,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            5,
+            3,
+            3,
+            3,
+            3,
+            5,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            3,
+            4,
+            4,
+            1,
+            1,
+            4,
+            1,
+            4,
+            1,
+            3,
+            3,
+            3,
+            4,
+            4,
+            1,
+            1,
+            4,
+            3,
+            1,
+            3,
+            3,
+            4,
+            3,
+            3,
+            3,
+            4,
+            7,
+            6,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            5,
+            3,
+            3,
+            3,
+            4,
+            1,
+            3
+          ],
+          "dca_valid": [
+            4,
+            4,
+            4,
+            4,
+            3,
+            3,
+            3,
+            2,
+            3,
+            4,
+            3,
+            3,
+            3,
+            3,
+            4,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            3,
+            3,
+            3,
+            3,
+            1,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            5,
+            3,
+            3,
+            3,
+            3,
+            5,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            3,
+            4,
+            4,
+            1,
+            1,
+            4,
+            1,
+            4,
+            1,
+            3,
+            3,
+            3,
+            4,
+            4,
+            1,
+            1,
+            4,
+            3,
+            3,
+            3,
+            4,
+            3,
+            3,
+            3,
+            4,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            5,
+            3,
+            3,
+            3,
+            1,
+            3
+          ],
+          "dca_invalid": [
+            3,
+            3,
+            3,
+            4,
+            1,
+            1,
+            1,
+            1,
+            7,
+            30,
+            25,
+            1,
+            7,
+            6,
+            4
+          ],
+          "median_all": 3,
+          "median_valid": 3,
+          "median_invalid": 3
+        }
+      },
+      "macro_dca_pct": 89.49,
+      "n_present": 141,
+      "n_missing": 0
+    },
+    "hwa_gemma31b": {
+      "arm_id": "hwa_gemma31b",
+      "label": "HazardWeaver (Gemma-4-31B-it)",
+      "out_root": "runs/hwa/unified_benchmark_full_gemma31b_unified_v1",
+      "overall": {
+        "k": 112,
+        "n": 141,
+        "rate_pct": 79.43,
+        "wilson_ci95_pct": [
+          72.02,
+          85.28
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 82,
+          "n": 90,
+          "rate_pct": 91.11,
+          "wilson_ci95_pct": [
+            83.43,
+            95.43
+          ]
+        },
+        "multi": {
+          "k": 30,
+          "n": 51,
+          "rate_pct": 58.82,
+          "wilson_ci95_pct": [
+            45.17,
+            71.25
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 36,
+          "n": 45,
+          "rate_pct": 80.0,
+          "wilson_ci95_pct": [
+            66.18,
+            89.1
+          ]
+        },
+        "multi_route": {
+          "k": 76,
+          "n": 96,
+          "rate_pct": 79.17,
+          "wilson_ci95_pct": [
+            70.0,
+            86.09
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 24,
+          "n": 29,
+          "rate_pct": 82.76,
+          "wilson_ci95_pct": [
+            65.45,
+            92.4
+          ]
+        },
+        "single_multi_route": {
+          "k": 58,
+          "n": 61,
+          "rate_pct": 95.08,
+          "wilson_ci95_pct": [
+            86.51,
+            98.31
+          ]
+        },
+        "multi_single_route": {
+          "k": 12,
+          "n": 16,
+          "rate_pct": 75.0,
+          "wilson_ci95_pct": [
+            50.5,
+            89.82
+          ]
+        },
+        "multi_multi_route": {
+          "k": 18,
+          "n": 35,
+          "rate_pct": 51.43,
+          "wilson_ci95_pct": [
+            35.57,
+            67.01
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 12,
+          "n": 13,
+          "rate_pct": 92.31,
+          "wilson_ci95_pct": [
+            66.69,
+            98.63
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 6,
+          "n": 12,
+          "rate_pct": 50.0,
+          "wilson_ci95_pct": [
+            25.38,
+            74.62
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 14,
+          "n": 14,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            78.47,
+            100.0
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 13,
+          "n": 14,
+          "rate_pct": 92.86,
+          "wilson_ci95_pct": [
+            68.53,
+            98.73
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 6,
+          "n": 6,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            60.97,
+            100.0
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 14,
+          "n": 14,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            78.47,
+            100.0
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 17,
+          "n": 17,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            81.57,
+            100.0
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 12,
+          "n": 16,
+          "rate_pct": 75.0,
+          "wilson_ci95_pct": [
+            50.5,
+            89.82
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 6,
+          "n": 12,
+          "rate_pct": 50.0,
+          "wilson_ci95_pct": [
+            25.38,
+            74.62
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 6,
+          "n": 11,
+          "rate_pct": 54.55,
+          "wilson_ci95_pct": [
+            28.01,
+            78.73
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 6,
+          "n": 12,
+          "rate_pct": 50.0,
+          "wilson_ci95_pct": [
+            25.38,
+            74.62
+          ]
+        }
+      ],
+      "execution_profile": {
+        "exit_reason_counts": {
+          "submitted": 141
+        },
+        "timeout_rate": {
+          "k": 0,
+          "n": 141,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            2.65
+          ]
+        },
+        "abstain_rate": {
+          "k": 0,
+          "n": 141,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            2.65
+          ]
+        },
+        "decision_steps": {
+          "all": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            9,
+            2,
+            2,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            2,
+            3,
+            30,
+            30,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            2,
+            3,
+            3,
+            2,
+            2,
+            3,
+            2,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            2,
+            3,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            2,
+            3,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            2,
+            3,
+            2,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3
+          ],
+          "dca_valid": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            2,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            2,
+            3,
+            3,
+            2,
+            2,
+            3,
+            2,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            2,
+            3,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            2,
+            4,
+            2,
+            2,
+            2,
+            2
+          ],
+          "dca_invalid": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            9,
+            30,
+            30,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            2,
+            3,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            2,
+            2,
+            3
+          ],
+          "median_all": 2,
+          "median_valid": 2,
+          "median_invalid": 2
+        }
+      },
+      "macro_dca_pct": 78.61,
+      "n_present": 141,
+      "n_missing": 0
+    },
+    "hwa_mixtral8x22": {
+      "arm_id": "hwa_mixtral8x22",
+      "label": "HazardWeaver (Mixtral-8x22B)",
+      "out_root": "runs/hwa/unified_benchmark_full_mixtral8x22_unified_v1",
+      "overall": {
+        "k": 99,
+        "n": 141,
+        "rate_pct": 70.21,
+        "wilson_ci95_pct": [
+          62.21,
+          77.14
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 74,
+          "n": 90,
+          "rate_pct": 82.22,
+          "wilson_ci95_pct": [
+            73.06,
+            88.75
+          ]
+        },
+        "multi": {
+          "k": 25,
+          "n": 51,
+          "rate_pct": 49.02,
+          "wilson_ci95_pct": [
+            35.86,
+            62.32
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 34,
+          "n": 45,
+          "rate_pct": 75.56,
+          "wilson_ci95_pct": [
+            61.33,
+            85.76
+          ]
+        },
+        "multi_route": {
+          "k": 65,
+          "n": 96,
+          "rate_pct": 67.71,
+          "wilson_ci95_pct": [
+            57.83,
+            76.22
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 23,
+          "n": 29,
+          "rate_pct": 79.31,
+          "wilson_ci95_pct": [
+            61.61,
+            90.15
+          ]
+        },
+        "single_multi_route": {
+          "k": 51,
+          "n": 61,
+          "rate_pct": 83.61,
+          "wilson_ci95_pct": [
+            72.39,
+            90.84
+          ]
+        },
+        "multi_single_route": {
+          "k": 11,
+          "n": 16,
+          "rate_pct": 68.75,
+          "wilson_ci95_pct": [
+            44.4,
+            85.84
+          ]
+        },
+        "multi_multi_route": {
+          "k": 14,
+          "n": 35,
+          "rate_pct": 40.0,
+          "wilson_ci95_pct": [
+            25.55,
+            56.43
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 8,
+          "n": 13,
+          "rate_pct": 61.54,
+          "wilson_ci95_pct": [
+            35.52,
+            82.29
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 6,
+          "n": 12,
+          "rate_pct": 50.0,
+          "wilson_ci95_pct": [
+            25.38,
+            74.62
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 12,
+          "n": 14,
+          "rate_pct": 85.71,
+          "wilson_ci95_pct": [
+            60.06,
+            95.99
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 12,
+          "n": 14,
+          "rate_pct": 85.71,
+          "wilson_ci95_pct": [
+            60.06,
+            95.99
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 6,
+          "n": 6,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            60.97,
+            100.0
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 14,
+          "n": 14,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            78.47,
+            100.0
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 16,
+          "n": 17,
+          "rate_pct": 94.12,
+          "wilson_ci95_pct": [
+            73.02,
+            98.95
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 6,
+          "n": 16,
+          "rate_pct": 37.5,
+          "wilson_ci95_pct": [
+            18.48,
+            61.36
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 6,
+          "n": 12,
+          "rate_pct": 50.0,
+          "wilson_ci95_pct": [
+            25.38,
+            74.62
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 8,
+          "n": 11,
+          "rate_pct": 72.73,
+          "wilson_ci95_pct": [
+            43.43,
+            90.25
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        }
+      ],
+      "execution_profile": {
+        "exit_reason_counts": {
+          "submitted": 127,
+          "limit_steps": 2,
+          "ablation_integrity_fail": 12
+        },
+        "timeout_rate": {
+          "k": 0,
+          "n": 141,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            2.65
+          ]
+        },
+        "abstain_rate": {
+          "k": 0,
+          "n": 141,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            2.65
+          ]
+        },
+        "decision_steps": {
+          "all": [
+            5,
+            3,
+            4,
+            4,
+            4,
+            3,
+            4,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            50,
+            4,
+            4,
+            6,
+            5,
+            9,
+            4,
+            50,
+            4,
+            29,
+            2,
+            6,
+            6,
+            6,
+            4,
+            4,
+            6,
+            5,
+            4,
+            5,
+            5,
+            4,
+            8,
+            5,
+            6,
+            8,
+            4,
+            7,
+            8,
+            50,
+            5,
+            4,
+            6,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            4,
+            5,
+            4,
+            4,
+            3,
+            50,
+            4,
+            6,
+            5,
+            25,
+            25,
+            3,
+            8,
+            6,
+            5,
+            6,
+            4,
+            25,
+            4,
+            4,
+            6,
+            7,
+            4,
+            4,
+            3,
+            4,
+            25,
+            4,
+            4,
+            40,
+            40,
+            40,
+            40,
+            40,
+            40,
+            4,
+            7,
+            4,
+            4,
+            5,
+            40,
+            40,
+            7,
+            40,
+            3,
+            4,
+            5,
+            4,
+            3,
+            5,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            4,
+            3,
+            4,
+            6,
+            4,
+            4,
+            25,
+            4,
+            4,
+            25,
+            50,
+            25,
+            25,
+            6,
+            6,
+            5,
+            4,
+            4,
+            6,
+            5,
+            25,
+            5,
+            25,
+            7,
+            4,
+            4,
+            4,
+            4,
+            5,
+            4
+          ],
+          "dca_valid": [
+            5,
+            3,
+            4,
+            4,
+            4,
+            3,
+            4,
+            3,
+            5,
+            4,
+            4,
+            6,
+            5,
+            9,
+            4,
+            6,
+            6,
+            6,
+            4,
+            4,
+            6,
+            5,
+            4,
+            5,
+            5,
+            8,
+            5,
+            6,
+            8,
+            4,
+            7,
+            8,
+            5,
+            4,
+            6,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            4,
+            5,
+            4,
+            4,
+            4,
+            6,
+            5,
+            25,
+            25,
+            3,
+            8,
+            6,
+            5,
+            6,
+            4,
+            25,
+            4,
+            4,
+            6,
+            7,
+            4,
+            4,
+            3,
+            4,
+            25,
+            4,
+            4,
+            4,
+            7,
+            4,
+            4,
+            5,
+            7,
+            3,
+            5,
+            4,
+            3,
+            5,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            4,
+            3,
+            4,
+            6,
+            4,
+            4,
+            5,
+            25,
+            4,
+            4,
+            4,
+            5
+          ],
+          "dca_invalid": [
+            4,
+            4,
+            4,
+            4,
+            50,
+            50,
+            4,
+            29,
+            2,
+            4,
+            50,
+            3,
+            50,
+            40,
+            40,
+            40,
+            40,
+            40,
+            40,
+            40,
+            40,
+            40,
+            4,
+            5,
+            4,
+            4,
+            25,
+            25,
+            50,
+            25,
+            25,
+            6,
+            6,
+            5,
+            4,
+            4,
+            6,
+            5,
+            25,
+            7,
+            4,
+            4
+          ],
+          "median_all": 5,
+          "median_valid": 5,
+          "median_invalid": 7
+        }
+      },
+      "macro_dca_pct": 70.82,
+      "n_present": 141,
+      "n_missing": 0
+    },
+    "hwa_olmo32b": {
+      "arm_id": "hwa_olmo32b",
+      "label": "HazardWeaver (OLMo-3.1-32B)",
+      "out_root": "runs/hwa/unified_benchmark_full_olmo32b_unified_v1",
+      "overall": {
+        "k": 85,
+        "n": 141,
+        "rate_pct": 60.28,
+        "wilson_ci95_pct": [
+          52.04,
+          67.98
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 57,
+          "n": 90,
+          "rate_pct": 63.33,
+          "wilson_ci95_pct": [
+            53.02,
+            72.55
+          ]
+        },
+        "multi": {
+          "k": 28,
+          "n": 51,
+          "rate_pct": 54.9,
+          "wilson_ci95_pct": [
+            41.38,
+            67.73
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 36,
+          "n": 45,
+          "rate_pct": 80.0,
+          "wilson_ci95_pct": [
+            66.18,
+            89.1
+          ]
+        },
+        "multi_route": {
+          "k": 49,
+          "n": 96,
+          "rate_pct": 51.04,
+          "wilson_ci95_pct": [
+            41.2,
+            60.81
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 24,
+          "n": 29,
+          "rate_pct": 82.76,
+          "wilson_ci95_pct": [
+            65.45,
+            92.4
+          ]
+        },
+        "single_multi_route": {
+          "k": 33,
+          "n": 61,
+          "rate_pct": 54.1,
+          "wilson_ci95_pct": [
+            41.72,
+            65.99
+          ]
+        },
+        "multi_single_route": {
+          "k": 12,
+          "n": 16,
+          "rate_pct": 75.0,
+          "wilson_ci95_pct": [
+            50.5,
+            89.82
+          ]
+        },
+        "multi_multi_route": {
+          "k": 16,
+          "n": 35,
+          "rate_pct": 45.71,
+          "wilson_ci95_pct": [
+            30.47,
+            61.81
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 7,
+          "n": 13,
+          "rate_pct": 53.85,
+          "wilson_ci95_pct": [
+            29.14,
+            76.79
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 6,
+          "n": 12,
+          "rate_pct": 50.0,
+          "wilson_ci95_pct": [
+            25.38,
+            74.62
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 10,
+          "n": 14,
+          "rate_pct": 71.43,
+          "wilson_ci95_pct": [
+            45.35,
+            88.28
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 8,
+          "n": 14,
+          "rate_pct": 57.14,
+          "wilson_ci95_pct": [
+            32.59,
+            78.62
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 6,
+          "n": 6,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            60.97,
+            100.0
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 9,
+          "n": 14,
+          "rate_pct": 64.29,
+          "wilson_ci95_pct": [
+            38.76,
+            83.66
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 11,
+          "n": 17,
+          "rate_pct": 64.71,
+          "wilson_ci95_pct": [
+            41.3,
+            82.69
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 9,
+          "n": 16,
+          "rate_pct": 56.25,
+          "wilson_ci95_pct": [
+            33.18,
+            76.9
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 6,
+          "n": 11,
+          "rate_pct": 54.55,
+          "wilson_ci95_pct": [
+            28.01,
+            78.73
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 8,
+          "n": 12,
+          "rate_pct": 66.67,
+          "wilson_ci95_pct": [
+            39.06,
+            86.19
+          ]
+        }
+      ],
+      "execution_profile": {
+        "exit_reason_counts": {
+          "submitted": 111,
+          "ablation_integrity_fail": 20,
+          "limit_steps": 8,
+          "exception": 2
+        },
+        "timeout_rate": {
+          "k": 0,
+          "n": 141,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            2.65
+          ]
+        },
+        "abstain_rate": {
+          "k": 0,
+          "n": 141,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            2.65
+          ]
+        },
+        "decision_steps": {
+          "all": [
+            2,
+            2,
+            1,
+            3,
+            2,
+            2,
+            17,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            50,
+            3,
+            2,
+            1,
+            1,
+            2,
+            3,
+            2,
+            2,
+            23,
+            23,
+            2,
+            6,
+            2,
+            1,
+            1,
+            6,
+            2,
+            1,
+            31,
+            21,
+            1,
+            1,
+            3,
+            2,
+            2,
+            2,
+            1,
+            2,
+            1,
+            50,
+            25,
+            1,
+            2,
+            2,
+            2,
+            1,
+            4,
+            3,
+            50,
+            19,
+            50,
+            1,
+            50,
+            3,
+            1,
+            50,
+            50,
+            2,
+            2,
+            50,
+            1,
+            2,
+            50,
+            2,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            4,
+            2,
+            25,
+            40,
+            2,
+            2,
+            1,
+            50,
+            1,
+            12,
+            2,
+            9,
+            1,
+            50,
+            1,
+            3,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            5,
+            2,
+            2,
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            50,
+            50,
+            2,
+            1,
+            2,
+            50,
+            2,
+            0,
+            2,
+            2,
+            2,
+            3,
+            50,
+            0
+          ],
+          "dca_valid": [
+            2,
+            2,
+            1,
+            3,
+            2,
+            2,
+            17,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            50,
+            3,
+            2,
+            1,
+            1,
+            2,
+            3,
+            2,
+            2,
+            23,
+            23,
+            2,
+            6,
+            2,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            3,
+            2,
+            2,
+            2,
+            1,
+            2,
+            1,
+            1,
+            2,
+            2,
+            1,
+            4,
+            3,
+            1,
+            3,
+            1,
+            2,
+            1,
+            2,
+            2,
+            1,
+            1,
+            2,
+            2,
+            2,
+            1,
+            1,
+            4,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "dca_invalid": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            6,
+            31,
+            21,
+            50,
+            25,
+            2,
+            50,
+            19,
+            50,
+            50,
+            50,
+            50,
+            2,
+            50,
+            50,
+            2,
+            2,
+            2,
+            25,
+            40,
+            2,
+            1,
+            50,
+            12,
+            2,
+            9,
+            50,
+            3,
+            2,
+            2,
+            2,
+            1,
+            5,
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            50,
+            50,
+            1,
+            50,
+            0,
+            3,
+            50,
+            0
+          ],
+          "median_all": 2,
+          "median_valid": 2,
+          "median_invalid": 2
+        }
+      },
+      "macro_dca_pct": 61.87,
+      "n_present": 141,
+      "n_missing": 0
+    },
+    "hwa_deepseek": {
+      "arm_id": "hwa_deepseek",
+      "label": "HazardWeaver (DeepSeek-V4.1-Flash)",
+      "out_root": "runs/hwa/unified_benchmark_full_deepseek_unified_v1",
+      "overall": {
+        "k": 122,
+        "n": 141,
+        "rate_pct": 86.52,
+        "wilson_ci95_pct": [
+          79.91,
+          91.2
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 81,
+          "n": 90,
+          "rate_pct": 90.0,
+          "wilson_ci95_pct": [
+            82.08,
+            94.65
+          ]
+        },
+        "multi": {
+          "k": 41,
+          "n": 51,
+          "rate_pct": 80.39,
+          "wilson_ci95_pct": [
+            67.54,
+            88.98
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 36,
+          "n": 45,
+          "rate_pct": 80.0,
+          "wilson_ci95_pct": [
+            66.18,
+            89.1
+          ]
+        },
+        "multi_route": {
+          "k": 86,
+          "n": 96,
+          "rate_pct": 89.58,
+          "wilson_ci95_pct": [
+            81.88,
+            94.24
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 24,
+          "n": 29,
+          "rate_pct": 82.76,
+          "wilson_ci95_pct": [
+            65.45,
+            92.4
+          ]
+        },
+        "single_multi_route": {
+          "k": 57,
+          "n": 61,
+          "rate_pct": 93.44,
+          "wilson_ci95_pct": [
+            84.32,
+            97.42
+          ]
+        },
+        "multi_single_route": {
+          "k": 12,
+          "n": 16,
+          "rate_pct": 75.0,
+          "wilson_ci95_pct": [
+            50.5,
+            89.82
+          ]
+        },
+        "multi_multi_route": {
+          "k": 29,
+          "n": 35,
+          "rate_pct": 82.86,
+          "wilson_ci95_pct": [
+            67.32,
+            91.9
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 12,
+          "n": 13,
+          "rate_pct": 92.31,
+          "wilson_ci95_pct": [
+            66.69,
+            98.63
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 6,
+          "n": 12,
+          "rate_pct": 50.0,
+          "wilson_ci95_pct": [
+            25.38,
+            74.62
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 14,
+          "n": 14,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            78.47,
+            100.0
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 12,
+          "n": 14,
+          "rate_pct": 85.71,
+          "wilson_ci95_pct": [
+            60.06,
+            95.99
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 6,
+          "n": 6,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            60.97,
+            100.0
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 14,
+          "n": 14,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            78.47,
+            100.0
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 17,
+          "n": 17,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            81.57,
+            100.0
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 12,
+          "n": 16,
+          "rate_pct": 75.0,
+          "wilson_ci95_pct": [
+            50.5,
+            89.82
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 10,
+          "n": 12,
+          "rate_pct": 83.33,
+          "wilson_ci95_pct": [
+            55.2,
+            95.3
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 10,
+          "n": 11,
+          "rate_pct": 90.91,
+          "wilson_ci95_pct": [
+            62.26,
+            98.38
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 9,
+          "n": 12,
+          "rate_pct": 75.0,
+          "wilson_ci95_pct": [
+            46.77,
+            91.11
+          ]
+        }
+      ],
+      "execution_profile": {
+        "exit_reason_counts": {
+          "submitted": 138,
+          "unknown": 1,
+          "ablation_integrity_fail": 1
+        },
+        "timeout_rate": {
+          "k": 0,
+          "n": 141,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            2.65
+          ]
+        },
+        "abstain_rate": {
+          "k": 0,
+          "n": 141,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            2.65
+          ]
+        },
+        "decision_steps": {
+          "all": [
+            4,
+            4,
+            5,
+            4,
+            2,
+            2,
+            2,
+            4,
+            5,
+            4,
+            4,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            4,
+            4,
+            4,
+            4,
+            4,
+            2,
+            22,
+            4,
+            2,
+            4,
+            2,
+            4,
+            4,
+            2,
+            2,
+            3,
+            2,
+            2,
+            4,
+            3,
+            30,
+            30,
+            2,
+            2,
+            2,
+            2,
+            2,
+            4,
+            2,
+            2,
+            2,
+            4,
+            2,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            5,
+            4,
+            2,
+            4,
+            2,
+            2,
+            5,
+            3,
+            4,
+            2,
+            4,
+            3,
+            4,
+            3,
+            6,
+            2,
+            2,
+            4,
+            4,
+            2,
+            2,
+            4,
+            2,
+            4,
+            2,
+            5,
+            2,
+            4,
+            2,
+            4,
+            6,
+            2,
+            2,
+            7,
+            5,
+            9,
+            2,
+            7,
+            4,
+            5,
+            5,
+            5,
+            5,
+            4,
+            5,
+            2,
+            2,
+            2,
+            7,
+            8,
+            6,
+            5,
+            4,
+            4,
+            5,
+            2,
+            2,
+            2,
+            3,
+            2,
+            2,
+            2,
+            6,
+            4
+          ],
+          "dca_valid": [
+            4,
+            4,
+            5,
+            4,
+            2,
+            2,
+            2,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            4,
+            4,
+            4,
+            4,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            4,
+            2,
+            2,
+            3,
+            2,
+            2,
+            4,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            4,
+            2,
+            2,
+            2,
+            4,
+            2,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            5,
+            4,
+            2,
+            4,
+            2,
+            2,
+            5,
+            3,
+            4,
+            2,
+            4,
+            3,
+            4,
+            3,
+            6,
+            2,
+            2,
+            4,
+            4,
+            2,
+            2,
+            4,
+            2,
+            4,
+            2,
+            5,
+            2,
+            4,
+            2,
+            4,
+            6,
+            2,
+            2,
+            7,
+            5,
+            9,
+            2,
+            7,
+            4,
+            5,
+            5,
+            5,
+            4,
+            5,
+            2,
+            2,
+            2,
+            7,
+            5,
+            4,
+            4,
+            2,
+            2,
+            2,
+            3,
+            2,
+            2
+          ],
+          "dca_invalid": [
+            5,
+            4,
+            4,
+            4,
+            2,
+            2,
+            2,
+            2,
+            22,
+            30,
+            30,
+            5,
+            8,
+            6,
+            5,
+            2,
+            6,
+            4
+          ],
+          "median_all": 2,
+          "median_valid": 2,
+          "median_invalid": 5
+        }
+      },
+      "macro_dca_pct": 86.57,
+      "n_present": 140,
+      "n_missing": 1
+    },
+    "plan_execute_faithful_v1": {
+      "arm_id": "plan_execute_faithful_v1",
+      "label": "Plan-and-Execute faithful",
+      "out_root": "runs/benchmark/unified_baselines_v4_1_vllm70b_v4_1/plan_execute_faithful_v1",
+      "overall": {
+        "k": 58,
+        "n": 141,
+        "rate_pct": 41.13,
+        "wilson_ci95_pct": [
+          33.35,
+          49.39
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 37,
+          "n": 90,
+          "rate_pct": 41.11,
+          "wilson_ci95_pct": [
+            31.51,
+            51.44
+          ]
+        },
+        "multi": {
+          "k": 21,
+          "n": 51,
+          "rate_pct": 41.18,
+          "wilson_ci95_pct": [
+            28.75,
+            54.83
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 26,
+          "n": 45,
+          "rate_pct": 57.78,
+          "wilson_ci95_pct": [
+            43.3,
+            71.03
+          ]
+        },
+        "multi_route": {
+          "k": 32,
+          "n": 96,
+          "rate_pct": 33.33,
+          "wilson_ci95_pct": [
+            24.71,
+            43.24
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 13,
+          "n": 29,
+          "rate_pct": 44.83,
+          "wilson_ci95_pct": [
+            28.41,
+            62.45
+          ]
+        },
+        "single_multi_route": {
+          "k": 24,
+          "n": 61,
+          "rate_pct": 39.34,
+          "wilson_ci95_pct": [
+            28.07,
+            51.88
+          ]
+        },
+        "multi_single_route": {
+          "k": 13,
+          "n": 16,
+          "rate_pct": 81.25,
+          "wilson_ci95_pct": [
+            56.99,
+            93.41
+          ]
+        },
+        "multi_multi_route": {
+          "k": 8,
+          "n": 35,
+          "rate_pct": 22.86,
+          "wilson_ci95_pct": [
+            12.07,
+            39.02
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 4,
+          "n": 13,
+          "rate_pct": 30.77,
+          "wilson_ci95_pct": [
+            12.68,
+            57.63
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 2,
+          "n": 12,
+          "rate_pct": 16.67,
+          "wilson_ci95_pct": [
+            4.7,
+            44.8
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 5,
+          "n": 14,
+          "rate_pct": 35.71,
+          "wilson_ci95_pct": [
+            16.34,
+            61.24
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 6,
+          "n": 6,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            60.97,
+            100.0
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 14,
+          "n": 14,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            78.47,
+            100.0
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 3,
+          "n": 17,
+          "rate_pct": 17.65,
+          "wilson_ci95_pct": [
+            6.19,
+            41.03
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 6,
+          "n": 16,
+          "rate_pct": 37.5,
+          "wilson_ci95_pct": [
+            18.48,
+            61.36
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 5,
+          "n": 11,
+          "rate_pct": 45.45,
+          "wilson_ci95_pct": [
+            21.27,
+            71.99
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        }
+      ],
+      "execution_profile": null,
+      "macro_dca_pct": 44.41,
+      "table_group": "adapted",
+      "n_present": 141,
+      "n_missing": 0
+    },
+    "self_consistency_faithful_v1": {
+      "arm_id": "self_consistency_faithful_v1",
+      "label": "Self-Consistency faithful",
+      "out_root": "runs/benchmark/unified_baselines_v4_1_vllm70b_v4_1/self_consistency_faithful_v1",
+      "overall": {
+        "k": 50,
+        "n": 141,
+        "rate_pct": 35.46,
+        "wilson_ci95_pct": [
+          28.05,
+          43.65
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 30,
+          "n": 90,
+          "rate_pct": 33.33,
+          "wilson_ci95_pct": [
+            24.45,
+            43.58
+          ]
+        },
+        "multi": {
+          "k": 20,
+          "n": 51,
+          "rate_pct": 39.22,
+          "wilson_ci95_pct": [
+            27.03,
+            52.92
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 19,
+          "n": 45,
+          "rate_pct": 42.22,
+          "wilson_ci95_pct": [
+            28.97,
+            56.7
+          ]
+        },
+        "multi_route": {
+          "k": 31,
+          "n": 96,
+          "rate_pct": 32.29,
+          "wilson_ci95_pct": [
+            23.78,
+            42.17
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 9,
+          "n": 29,
+          "rate_pct": 31.03,
+          "wilson_ci95_pct": [
+            17.28,
+            49.23
+          ]
+        },
+        "single_multi_route": {
+          "k": 21,
+          "n": 61,
+          "rate_pct": 34.43,
+          "wilson_ci95_pct": [
+            23.75,
+            46.95
+          ]
+        },
+        "multi_single_route": {
+          "k": 10,
+          "n": 16,
+          "rate_pct": 62.5,
+          "wilson_ci95_pct": [
+            38.64,
+            81.52
+          ]
+        },
+        "multi_multi_route": {
+          "k": 10,
+          "n": 35,
+          "rate_pct": 28.57,
+          "wilson_ci95_pct": [
+            16.33,
+            45.06
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 2,
+          "n": 13,
+          "rate_pct": 15.38,
+          "wilson_ci95_pct": [
+            4.33,
+            42.24
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 0,
+          "n": 6,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            39.03
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 14,
+          "n": 14,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            78.47,
+            100.0
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 3,
+          "n": 17,
+          "rate_pct": 17.65,
+          "wilson_ci95_pct": [
+            6.19,
+            41.03
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 8,
+          "n": 16,
+          "rate_pct": 50.0,
+          "wilson_ci95_pct": [
+            28.0,
+            72.0
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 5,
+          "n": 11,
+          "rate_pct": 45.45,
+          "wilson_ci95_pct": [
+            21.27,
+            71.99
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 2,
+          "n": 12,
+          "rate_pct": 16.67,
+          "wilson_ci95_pct": [
+            4.7,
+            44.8
+          ]
+        }
+      ],
+      "execution_profile": null,
+      "macro_dca_pct": 33.76,
+      "table_group": "adapted",
+      "n_present": 141,
+      "n_missing": 0
+    },
+    "disasterbench_tot_faithful_v1": {
+      "arm_id": "disasterbench_tot_faithful_v1",
+      "label": "DisasterBench-ToT faithful",
+      "out_root": "runs/benchmark/unified_baselines_v4_1_vllm70b_v4_1/disasterbench_tot_faithful_v1",
+      "overall": {
+        "k": 50,
+        "n": 141,
+        "rate_pct": 35.46,
+        "wilson_ci95_pct": [
+          28.05,
+          43.65
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 32,
+          "n": 90,
+          "rate_pct": 35.56,
+          "wilson_ci95_pct": [
+            26.44,
+            45.85
+          ]
+        },
+        "multi": {
+          "k": 18,
+          "n": 51,
+          "rate_pct": 35.29,
+          "wilson_ci95_pct": [
+            23.63,
+            49.01
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 19,
+          "n": 45,
+          "rate_pct": 42.22,
+          "wilson_ci95_pct": [
+            28.97,
+            56.7
+          ]
+        },
+        "multi_route": {
+          "k": 31,
+          "n": 96,
+          "rate_pct": 32.29,
+          "wilson_ci95_pct": [
+            23.78,
+            42.17
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 9,
+          "n": 29,
+          "rate_pct": 31.03,
+          "wilson_ci95_pct": [
+            17.28,
+            49.23
+          ]
+        },
+        "single_multi_route": {
+          "k": 23,
+          "n": 61,
+          "rate_pct": 37.7,
+          "wilson_ci95_pct": [
+            26.61,
+            50.25
+          ]
+        },
+        "multi_single_route": {
+          "k": 10,
+          "n": 16,
+          "rate_pct": 62.5,
+          "wilson_ci95_pct": [
+            38.64,
+            81.52
+          ]
+        },
+        "multi_multi_route": {
+          "k": 8,
+          "n": 35,
+          "rate_pct": 22.86,
+          "wilson_ci95_pct": [
+            12.07,
+            39.02
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 4,
+          "n": 13,
+          "rate_pct": 30.77,
+          "wilson_ci95_pct": [
+            12.68,
+            57.63
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 0,
+          "n": 6,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            39.03
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 14,
+          "n": 14,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            78.47,
+            100.0
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 3,
+          "n": 17,
+          "rate_pct": 17.65,
+          "wilson_ci95_pct": [
+            6.19,
+            41.03
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 6,
+          "n": 16,
+          "rate_pct": 37.5,
+          "wilson_ci95_pct": [
+            18.48,
+            61.36
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 5,
+          "n": 11,
+          "rate_pct": 45.45,
+          "wilson_ci95_pct": [
+            21.27,
+            71.99
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 2,
+          "n": 12,
+          "rate_pct": 16.67,
+          "wilson_ci95_pct": [
+            4.7,
+            44.8
+          ]
+        }
+      ],
+      "execution_profile": null,
+      "macro_dca_pct": 34.02,
+      "table_group": "adapted",
+      "n_present": 141,
+      "n_missing": 0
+    },
+    "mle_star": {
+      "arm_id": "mle_star",
+      "label": "MLE-STAR faithful",
+      "out_root": "runs/benchmark/unified_baselines_v4_1_vllm70b_v4_1/mle_star",
+      "overall": {
+        "k": 47,
+        "n": 141,
+        "rate_pct": 33.33,
+        "wilson_ci95_pct": [
+          26.09,
+          41.47
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 32,
+          "n": 90,
+          "rate_pct": 35.56,
+          "wilson_ci95_pct": [
+            26.44,
+            45.85
+          ]
+        },
+        "multi": {
+          "k": 15,
+          "n": 51,
+          "rate_pct": 29.41,
+          "wilson_ci95_pct": [
+            18.71,
+            43.0
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 16,
+          "n": 45,
+          "rate_pct": 35.56,
+          "wilson_ci95_pct": [
+            23.22,
+            50.16
+          ]
+        },
+        "multi_route": {
+          "k": 31,
+          "n": 96,
+          "rate_pct": 32.29,
+          "wilson_ci95_pct": [
+            23.78,
+            42.17
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 9,
+          "n": 29,
+          "rate_pct": 31.03,
+          "wilson_ci95_pct": [
+            17.28,
+            49.23
+          ]
+        },
+        "single_multi_route": {
+          "k": 23,
+          "n": 61,
+          "rate_pct": 37.7,
+          "wilson_ci95_pct": [
+            26.61,
+            50.25
+          ]
+        },
+        "multi_single_route": {
+          "k": 7,
+          "n": 16,
+          "rate_pct": 43.75,
+          "wilson_ci95_pct": [
+            23.1,
+            66.82
+          ]
+        },
+        "multi_multi_route": {
+          "k": 8,
+          "n": 35,
+          "rate_pct": 22.86,
+          "wilson_ci95_pct": [
+            12.07,
+            39.02
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 2,
+          "n": 13,
+          "rate_pct": 15.38,
+          "wilson_ci95_pct": [
+            4.33,
+            42.24
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 5,
+          "n": 14,
+          "rate_pct": 35.71,
+          "wilson_ci95_pct": [
+            16.34,
+            61.24
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 0,
+          "n": 6,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            39.03
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 14,
+          "n": 14,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            78.47,
+            100.0
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 3,
+          "n": 17,
+          "rate_pct": 17.65,
+          "wilson_ci95_pct": [
+            6.19,
+            41.03
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 2,
+          "n": 16,
+          "rate_pct": 12.5,
+          "wilson_ci95_pct": [
+            3.5,
+            36.02
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 4,
+          "n": 11,
+          "rate_pct": 36.36,
+          "wilson_ci95_pct": [
+            15.17,
+            64.62
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 4,
+          "n": 12,
+          "rate_pct": 33.33,
+          "wilson_ci95_pct": [
+            13.81,
+            60.94
+          ]
+        }
+      ],
+      "execution_profile": null,
+      "macro_dca_pct": 32.34,
+      "table_group": "adapted",
+      "n_present": 141,
+      "n_missing": 0
+    },
+    "automl_agent": {
+      "arm_id": "automl_agent",
+      "label": "AutoML-Agent faithful",
+      "out_root": "runs/benchmark/unified_baselines_v4_1_vllm70b_v4_1/automl_agent",
+      "overall": {
+        "k": 38,
+        "n": 141,
+        "rate_pct": 26.95,
+        "wilson_ci95_pct": [
+          20.31,
+          34.81
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 24,
+          "n": 90,
+          "rate_pct": 26.67,
+          "wilson_ci95_pct": [
+            18.62,
+            36.62
+          ]
+        },
+        "multi": {
+          "k": 14,
+          "n": 51,
+          "rate_pct": 27.45,
+          "wilson_ci95_pct": [
+            17.11,
+            40.95
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 11,
+          "n": 45,
+          "rate_pct": 24.44,
+          "wilson_ci95_pct": [
+            14.24,
+            38.67
+          ]
+        },
+        "multi_route": {
+          "k": 27,
+          "n": 96,
+          "rate_pct": 28.12,
+          "wilson_ci95_pct": [
+            20.11,
+            37.83
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 7,
+          "n": 29,
+          "rate_pct": 24.14,
+          "wilson_ci95_pct": [
+            12.22,
+            42.11
+          ]
+        },
+        "single_multi_route": {
+          "k": 17,
+          "n": 61,
+          "rate_pct": 27.87,
+          "wilson_ci95_pct": [
+            18.19,
+            40.17
+          ]
+        },
+        "multi_single_route": {
+          "k": 4,
+          "n": 16,
+          "rate_pct": 25.0,
+          "wilson_ci95_pct": [
+            10.18,
+            49.5
+          ]
+        },
+        "multi_multi_route": {
+          "k": 10,
+          "n": 35,
+          "rate_pct": 28.57,
+          "wilson_ci95_pct": [
+            16.33,
+            45.06
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 2,
+          "n": 13,
+          "rate_pct": 15.38,
+          "wilson_ci95_pct": [
+            4.33,
+            42.24
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 3,
+          "n": 12,
+          "rate_pct": 25.0,
+          "wilson_ci95_pct": [
+            8.89,
+            53.23
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 1,
+          "n": 14,
+          "rate_pct": 7.14,
+          "wilson_ci95_pct": [
+            1.27,
+            31.47
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 0,
+          "n": 6,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            39.03
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 14,
+          "n": 14,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            78.47,
+            100.0
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 1,
+          "n": 17,
+          "rate_pct": 5.88,
+          "wilson_ci95_pct": [
+            1.05,
+            26.98
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 2,
+          "n": 16,
+          "rate_pct": 12.5,
+          "wilson_ci95_pct": [
+            3.5,
+            36.02
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 6,
+          "n": 12,
+          "rate_pct": 50.0,
+          "wilson_ci95_pct": [
+            25.38,
+            74.62
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 4,
+          "n": 11,
+          "rate_pct": 36.36,
+          "wilson_ci95_pct": [
+            15.17,
+            64.62
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 2,
+          "n": 12,
+          "rate_pct": 16.67,
+          "wilson_ci95_pct": [
+            4.7,
+            44.8
+          ]
+        }
+      ],
+      "execution_profile": null,
+      "macro_dca_pct": 26.4,
+      "table_group": "adapted",
+      "n_present": 141,
+      "n_missing": 0
+    },
+    "reflexion_faithful_v1": {
+      "arm_id": "reflexion_faithful_v1",
+      "label": "Reflexion faithful",
+      "out_root": "runs/benchmark/unified_baselines_v4_1_vllm70b_v4_1/reflexion_faithful_v1",
+      "overall": {
+        "k": 45,
+        "n": 141,
+        "rate_pct": 31.91,
+        "wilson_ci95_pct": [
+          24.79,
+          40.0
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 27,
+          "n": 90,
+          "rate_pct": 30.0,
+          "wilson_ci95_pct": [
+            21.51,
+            40.13
+          ]
+        },
+        "multi": {
+          "k": 18,
+          "n": 51,
+          "rate_pct": 35.29,
+          "wilson_ci95_pct": [
+            23.63,
+            49.01
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 23,
+          "n": 45,
+          "rate_pct": 51.11,
+          "wilson_ci95_pct": [
+            37.0,
+            65.04
+          ]
+        },
+        "multi_route": {
+          "k": 22,
+          "n": 96,
+          "rate_pct": 22.92,
+          "wilson_ci95_pct": [
+            15.65,
+            32.27
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 13,
+          "n": 29,
+          "rate_pct": 44.83,
+          "wilson_ci95_pct": [
+            28.41,
+            62.45
+          ]
+        },
+        "single_multi_route": {
+          "k": 14,
+          "n": 61,
+          "rate_pct": 22.95,
+          "wilson_ci95_pct": [
+            14.19,
+            34.91
+          ]
+        },
+        "multi_single_route": {
+          "k": 10,
+          "n": 16,
+          "rate_pct": 62.5,
+          "wilson_ci95_pct": [
+            38.64,
+            81.52
+          ]
+        },
+        "multi_multi_route": {
+          "k": 8,
+          "n": 35,
+          "rate_pct": 22.86,
+          "wilson_ci95_pct": [
+            12.07,
+            39.02
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 4,
+          "n": 13,
+          "rate_pct": 30.77,
+          "wilson_ci95_pct": [
+            12.68,
+            57.63
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 0,
+          "n": 6,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            39.03
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 11,
+          "n": 14,
+          "rate_pct": 78.57,
+          "wilson_ci95_pct": [
+            52.41,
+            92.43
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 1,
+          "n": 17,
+          "rate_pct": 5.88,
+          "wilson_ci95_pct": [
+            1.05,
+            26.98
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 6,
+          "n": 16,
+          "rate_pct": 37.5,
+          "wilson_ci95_pct": [
+            18.48,
+            61.36
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 5,
+          "n": 11,
+          "rate_pct": 45.45,
+          "wilson_ci95_pct": [
+            21.27,
+            71.99
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 2,
+          "n": 12,
+          "rate_pct": 16.67,
+          "wilson_ci95_pct": [
+            4.7,
+            44.8
+          ]
+        }
+      ],
+      "execution_profile": null,
+      "macro_dca_pct": 31.0,
+      "table_group": "adapted",
+      "n_present": 141,
+      "n_missing": 0
+    },
+    "aide": {
+      "arm_id": "aide",
+      "label": "AIDE faithful",
+      "out_root": "runs/benchmark/unified_baselines_v4_1_vllm70b_v4_1/aide",
+      "overall": {
+        "k": 32,
+        "n": 141,
+        "rate_pct": 22.7,
+        "wilson_ci95_pct": [
+          16.56,
+          30.28
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 20,
+          "n": 90,
+          "rate_pct": 22.22,
+          "wilson_ci95_pct": [
+            14.87,
+            31.85
+          ]
+        },
+        "multi": {
+          "k": 12,
+          "n": 51,
+          "rate_pct": 23.53,
+          "wilson_ci95_pct": [
+            14.0,
+            36.76
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 13,
+          "n": 45,
+          "rate_pct": 28.89,
+          "wilson_ci95_pct": [
+            17.73,
+            43.37
+          ]
+        },
+        "multi_route": {
+          "k": 19,
+          "n": 96,
+          "rate_pct": 19.79,
+          "wilson_ci95_pct": [
+            13.05,
+            28.86
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 7,
+          "n": 29,
+          "rate_pct": 24.14,
+          "wilson_ci95_pct": [
+            12.22,
+            42.11
+          ]
+        },
+        "single_multi_route": {
+          "k": 13,
+          "n": 61,
+          "rate_pct": 21.31,
+          "wilson_ci95_pct": [
+            12.9,
+            33.12
+          ]
+        },
+        "multi_single_route": {
+          "k": 6,
+          "n": 16,
+          "rate_pct": 37.5,
+          "wilson_ci95_pct": [
+            18.48,
+            61.36
+          ]
+        },
+        "multi_multi_route": {
+          "k": 6,
+          "n": 35,
+          "rate_pct": 17.14,
+          "wilson_ci95_pct": [
+            8.1,
+            32.68
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 4,
+          "n": 13,
+          "rate_pct": 30.77,
+          "wilson_ci95_pct": [
+            12.68,
+            57.63
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 0,
+          "n": 12,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            24.25
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 4,
+          "n": 14,
+          "rate_pct": 28.57,
+          "wilson_ci95_pct": [
+            11.72,
+            54.65
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 1,
+          "n": 14,
+          "rate_pct": 7.14,
+          "wilson_ci95_pct": [
+            1.27,
+            31.47
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 0,
+          "n": 6,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            39.03
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 10,
+          "n": 14,
+          "rate_pct": 71.43,
+          "wilson_ci95_pct": [
+            45.35,
+            88.28
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 1,
+          "n": 17,
+          "rate_pct": 5.88,
+          "wilson_ci95_pct": [
+            1.05,
+            26.98
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 0,
+          "n": 16,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            19.36
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 5,
+          "n": 11,
+          "rate_pct": 45.45,
+          "wilson_ci95_pct": [
+            21.27,
+            71.99
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 2,
+          "n": 12,
+          "rate_pct": 16.67,
+          "wilson_ci95_pct": [
+            4.7,
+            44.8
+          ]
+        }
+      ],
+      "execution_profile": null,
+      "macro_dca_pct": 22.51,
+      "table_group": "control",
+      "n_present": 141,
+      "n_missing": 0
+    },
+    "ds_agent": {
+      "arm_id": "ds_agent",
+      "label": "DS-Agent faithful",
+      "out_root": "runs/benchmark/unified_baselines_v4_1_vllm70b_v4_1/ds_agent",
+      "overall": {
+        "k": 47,
+        "n": 141,
+        "rate_pct": 33.33,
+        "wilson_ci95_pct": [
+          26.09,
+          41.47
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 30,
+          "n": 90,
+          "rate_pct": 33.33,
+          "wilson_ci95_pct": [
+            24.45,
+            43.58
+          ]
+        },
+        "multi": {
+          "k": 17,
+          "n": 51,
+          "rate_pct": 33.33,
+          "wilson_ci95_pct": [
+            21.97,
+            47.03
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 18,
+          "n": 45,
+          "rate_pct": 40.0,
+          "wilson_ci95_pct": [
+            27.02,
+            54.55
+          ]
+        },
+        "multi_route": {
+          "k": 29,
+          "n": 96,
+          "rate_pct": 30.21,
+          "wilson_ci95_pct": [
+            21.93,
+            40.01
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 9,
+          "n": 29,
+          "rate_pct": 31.03,
+          "wilson_ci95_pct": [
+            17.28,
+            49.23
+          ]
+        },
+        "single_multi_route": {
+          "k": 21,
+          "n": 61,
+          "rate_pct": 34.43,
+          "wilson_ci95_pct": [
+            23.75,
+            46.95
+          ]
+        },
+        "multi_single_route": {
+          "k": 9,
+          "n": 16,
+          "rate_pct": 56.25,
+          "wilson_ci95_pct": [
+            33.18,
+            76.9
+          ]
+        },
+        "multi_multi_route": {
+          "k": 8,
+          "n": 35,
+          "rate_pct": 22.86,
+          "wilson_ci95_pct": [
+            12.07,
+            39.02
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 2,
+          "n": 13,
+          "rate_pct": 15.38,
+          "wilson_ci95_pct": [
+            4.33,
+            42.24
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 0,
+          "n": 6,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            39.03
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 14,
+          "n": 14,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            78.47,
+            100.0
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 3,
+          "n": 17,
+          "rate_pct": 17.65,
+          "wilson_ci95_pct": [
+            6.19,
+            41.03
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 5,
+          "n": 16,
+          "rate_pct": 31.25,
+          "wilson_ci95_pct": [
+            14.16,
+            55.6
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 5,
+          "n": 11,
+          "rate_pct": 45.45,
+          "wilson_ci95_pct": [
+            21.27,
+            71.99
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 2,
+          "n": 12,
+          "rate_pct": 16.67,
+          "wilson_ci95_pct": [
+            4.7,
+            44.8
+          ]
+        }
+      ],
+      "execution_profile": null,
+      "macro_dca_pct": 32.05,
+      "table_group": "control",
+      "n_present": 141,
+      "n_missing": 0
+    },
+    "rd_agent": {
+      "arm_id": "rd_agent",
+      "label": "R&D-Agent faithful",
+      "out_root": "runs/benchmark/unified_baselines_v4_1_vllm70b_v4_1/rd_agent",
+      "overall": {
+        "k": 48,
+        "n": 141,
+        "rate_pct": 34.04,
+        "wilson_ci95_pct": [
+          26.74,
+          42.19
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 30,
+          "n": 90,
+          "rate_pct": 33.33,
+          "wilson_ci95_pct": [
+            24.45,
+            43.58
+          ]
+        },
+        "multi": {
+          "k": 18,
+          "n": 51,
+          "rate_pct": 35.29,
+          "wilson_ci95_pct": [
+            23.63,
+            49.01
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 19,
+          "n": 45,
+          "rate_pct": 42.22,
+          "wilson_ci95_pct": [
+            28.97,
+            56.7
+          ]
+        },
+        "multi_route": {
+          "k": 29,
+          "n": 96,
+          "rate_pct": 30.21,
+          "wilson_ci95_pct": [
+            21.93,
+            40.01
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 9,
+          "n": 29,
+          "rate_pct": 31.03,
+          "wilson_ci95_pct": [
+            17.28,
+            49.23
+          ]
+        },
+        "single_multi_route": {
+          "k": 21,
+          "n": 61,
+          "rate_pct": 34.43,
+          "wilson_ci95_pct": [
+            23.75,
+            46.95
+          ]
+        },
+        "multi_single_route": {
+          "k": 10,
+          "n": 16,
+          "rate_pct": 62.5,
+          "wilson_ci95_pct": [
+            38.64,
+            81.52
+          ]
+        },
+        "multi_multi_route": {
+          "k": 8,
+          "n": 35,
+          "rate_pct": 22.86,
+          "wilson_ci95_pct": [
+            12.07,
+            39.02
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 2,
+          "n": 13,
+          "rate_pct": 15.38,
+          "wilson_ci95_pct": [
+            4.33,
+            42.24
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 0,
+          "n": 6,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            39.03
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 14,
+          "n": 14,
+          "rate_pct": 100.0,
+          "wilson_ci95_pct": [
+            78.47,
+            100.0
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 3,
+          "n": 17,
+          "rate_pct": 17.65,
+          "wilson_ci95_pct": [
+            6.19,
+            41.03
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 6,
+          "n": 16,
+          "rate_pct": 37.5,
+          "wilson_ci95_pct": [
+            18.48,
+            61.36
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 5,
+          "n": 11,
+          "rate_pct": 45.45,
+          "wilson_ci95_pct": [
+            21.27,
+            71.99
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 2,
+          "n": 12,
+          "rate_pct": 16.67,
+          "wilson_ci95_pct": [
+            4.7,
+            44.8
+          ]
+        }
+      ],
+      "execution_profile": null,
+      "macro_dca_pct": 32.62,
+      "table_group": "control",
+      "n_present": 141,
+      "n_missing": 0
+    },
+    "react_same_tool": {
+      "arm_id": "react_same_tool",
+      "label": "ReAct same-tool",
+      "out_root": "runs/benchmark/unified_baselines_v4_1_vllm70b_v4_1/react_same_tool",
+      "overall": {
+        "k": 42,
+        "n": 141,
+        "rate_pct": 29.79,
+        "wilson_ci95_pct": [
+          22.86,
+          37.79
+        ]
+      },
+      "by_hazard_scope": {
+        "single": {
+          "k": 26,
+          "n": 90,
+          "rate_pct": 28.89,
+          "wilson_ci95_pct": [
+            20.54,
+            38.96
+          ]
+        },
+        "multi": {
+          "k": 16,
+          "n": 51,
+          "rate_pct": 31.37,
+          "wilson_ci95_pct": [
+            20.33,
+            45.03
+          ]
+        }
+      },
+      "by_route_eligibility": {
+        "single_route": {
+          "k": 14,
+          "n": 45,
+          "rate_pct": 31.11,
+          "wilson_ci95_pct": [
+            19.53,
+            45.67
+          ]
+        },
+        "multi_route": {
+          "k": 28,
+          "n": 96,
+          "rate_pct": 29.17,
+          "wilson_ci95_pct": [
+            21.02,
+            38.92
+          ]
+        }
+      },
+      "hazard_route_cross": {
+        "single_single_route": {
+          "k": 8,
+          "n": 29,
+          "rate_pct": 27.59,
+          "wilson_ci95_pct": [
+            14.7,
+            45.72
+          ]
+        },
+        "single_multi_route": {
+          "k": 18,
+          "n": 61,
+          "rate_pct": 29.51,
+          "wilson_ci95_pct": [
+            19.55,
+            41.89
+          ]
+        },
+        "multi_single_route": {
+          "k": 6,
+          "n": 16,
+          "rate_pct": 37.5,
+          "wilson_ci95_pct": [
+            18.48,
+            61.36
+          ]
+        },
+        "multi_multi_route": {
+          "k": 10,
+          "n": 35,
+          "rate_pct": 28.57,
+          "wilson_ci95_pct": [
+            16.33,
+            45.06
+          ]
+        }
+      },
+      "by_track": [
+        {
+          "track": "WF-3",
+          "k": 2,
+          "n": 13,
+          "rate_pct": 15.38,
+          "wilson_ci95_pct": [
+            4.33,
+            42.24
+          ]
+        },
+        {
+          "track": "FL-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "L2",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "E1-E3",
+          "k": 3,
+          "n": 14,
+          "rate_pct": 21.43,
+          "wilson_ci95_pct": [
+            7.57,
+            47.59
+          ]
+        },
+        {
+          "track": "TC-TRK",
+          "k": 0,
+          "n": 6,
+          "rate_pct": 0.0,
+          "wilson_ci95_pct": [
+            0.0,
+            39.03
+          ]
+        },
+        {
+          "track": "DR-OUT",
+          "k": 11,
+          "n": 14,
+          "rate_pct": 78.57,
+          "wilson_ci95_pct": [
+            52.41,
+            92.43
+          ]
+        },
+        {
+          "track": "HW-MED",
+          "k": 2,
+          "n": 17,
+          "rate_pct": 11.76,
+          "wilson_ci95_pct": [
+            3.29,
+            34.34
+          ]
+        },
+        {
+          "track": "MH-1",
+          "k": 3,
+          "n": 16,
+          "rate_pct": 18.75,
+          "wilson_ci95_pct": [
+            6.59,
+            43.01
+          ]
+        },
+        {
+          "track": "MH-2",
+          "k": 5,
+          "n": 12,
+          "rate_pct": 41.67,
+          "wilson_ci95_pct": [
+            19.33,
+            68.05
+          ]
+        },
+        {
+          "track": "MH-3",
+          "k": 6,
+          "n": 11,
+          "rate_pct": 54.55,
+          "wilson_ci95_pct": [
+            28.01,
+            78.73
+          ]
+        },
+        {
+          "track": "MH-4",
+          "k": 2,
+          "n": 12,
+          "rate_pct": 16.67,
+          "wilson_ci95_pct": [
+            4.7,
+            44.8
+          ]
+        }
+      ],
+      "execution_profile": null,
+      "macro_dca_pct": 29.26,
+      "table_group": "control",
+      "n_present": 141,
+      "n_missing": 0
+    }
+  }
+}

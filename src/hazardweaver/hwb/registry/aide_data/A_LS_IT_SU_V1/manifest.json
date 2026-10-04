@@ -1,0 +1,22 @@
+{
+  "anchor_id": "A_LS_IT_SU_V1",
+  "dataset_key": "ls_it",
+  "task_type": "classification",
+  "feature_columns": [
+    "slope_aver",
+    "tcurv_aver",
+    "twi_stddev",
+    "CLYPPT_ave",
+    "SNDPPT_ave",
+    "BLDFIE_ave"
+  ],
+  "target_column": "target",
+  "original_ycol": "_y",
+  "group_column": null,
+  "split_seed": 0,
+  "n_train": 4140,
+  "n_val": 1380,
+  "n_test": 1840,
+  "aide_eval": "accuracy",
+  "metric_name": "accuracy"
+}

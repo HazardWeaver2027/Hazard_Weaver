@@ -1,0 +1,43 @@
+{
+  "schema_version": "HWB_DROUT_PARAMETRIC_REFS_v1",
+  "taskpack_id": "hwb_drout_parametric_v1",
+  "scenarios": {
+    "2021-07": {
+      "capability_id": "CAP-DROUT-01",
+      "outputs": {
+        "metric_name": "sdo_skill",
+        "reference_score": 0.8,
+        "sdo_skill": 0.8
+      },
+      "tolerance": {
+        "metric": "sdo_skill",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "months",
+        "issue_yyyymm": "2021-07",
+        "hwa_src_workdir": "runs/hwa/drout_src_pilot_v1/CAP-DROUT-01",
+        "claim_tier": "pilot4_src_binding",
+        "not_headline_pass": true
+      }
+    },
+    "pilot_scenario_000": {
+      "capability_id": "CAP-DROUT-01",
+      "outputs": {
+        "metric_name": "sdo_skill",
+        "reference_score": 0.8,
+        "sdo_skill": 0.8
+      },
+      "tolerance": {
+        "metric": "sdo_skill",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "pilot",
+        "hwa_src_workdir": "runs/hwa/drout_src_pilot_v1/CAP-DROUT-01",
+        "claim_tier": "pilot4_src_binding",
+        "not_headline_pass": true
+      }
+    }
+  }
+}

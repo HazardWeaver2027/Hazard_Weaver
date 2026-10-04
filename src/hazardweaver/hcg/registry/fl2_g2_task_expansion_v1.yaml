@@ -1,0 +1,128 @@
+# FL-2 G2 neural caps — task forensic + expansion paths (DL-123).
+# Does not alter docs/final_four/HCG/manifests/ science fields.
+schema_version: fl2_g2_task_expansion_v1
+updated: "2026-09-01"
+decision: DL-123
+audit_doc: docs/engineering/hcg/external_expansion/FL-2/FL2_G2_TASK_EXPANSION_AUDIT_v1.md
+
+misconception_zh: |
+  TASK_MISMATCH 不等于「模型做错了灾害任务」或「应该随便换个 task」。
+  CAP-FL2-01~03 在 manifest 上就是典型动态洪水淹没深度 20 步预报（COS-FL2 / FloodCastBench）。
+  阻塞来自：官方无 released ckpt、无可用推理入口、科学 bundle 缺 rainfall/landuse/BC——不是灾害域错误。
+
+manifest_task:
+  taskpack_id: FL-2
+  track_id: TR-FL2
+  anchor_id: AN-FL-FCB
+  anchor_name: FloodCastBench
+  canonical_output_schema_id: COS-FL2
+  hazard_domain: dynamic_inundation_depth_forecasting
+  is_typical_hazard_task: true
+  official_metric: "RMSE, NSE, CSI @ 0.001/0.01 m"
+  pi_decision: DL-089
+
+capabilities:
+  CAP-FL2-01:
+    model: unet
+    route_family: spatial convolutional surrogate
+    manifest_declared_inputs: "initial depth and static fields"
+    paper_full_inputs: [dem, rainfall_t1_20, landuse, boundary_conditions]
+    scientific_bundle_inputs: [dem.npy, initial_depth.npy, truth_depth.npy, rainfall.npy, landuse.npy, boundary_conditions.npy]
+    manifest_output: "20-step depth"
+    blockers: [NO_INFER_ENTRY, NO_RELEASED_CKPT, TRAINING_CODE_DATA_GEN_ONLY]
+    expansion_paths:
+      - path_id: PATH-A-COS-FL2-FULL
+        label: 官方 COS-FL2 全输入复现
+        unlock_requires: [runnable_infer_entry, author_or_p2_ckpt, rainfall_landuse_bc_materialized]
+        can_claim_l2_for_this_cap: true
+        priority: P1
+      - path_id: PATH-B-COS-FL2-REDUCED
+        label: manifest 口径 reduced-input light_train（dem+initial→depth）
+        unlock_requires: [real_arch_train_not_heuristic, train_split_only, DL_or_manifest_amendment]
+        can_claim_l2_for_this_cap: false_until_amended
+        priority: P2
+        note: "capabilities.jsonl 已写 static+initial；与 paper Table 配置不完全一致，需显式 reduced contract"
+      - path_id: PATH-C-ADJUNCT-WORLDFLOODS
+        label: WorldFloods S1/S2→二值 mask（邻接 EO 任务）
+        legal_taskpack: FL-3
+        can_substitute_this_cap: false
+        priority: adjunct_study_only
+
+  CAP-FL2-02:
+    model: fno
+    route_family: spectral neural operator
+    manifest_declared_inputs: "initial depth and static fields"
+    paper_full_inputs: [dem, rainfall_t1_20, landuse, boundary_conditions]
+    scientific_bundle_inputs: [dem.npy, initial_depth.npy, truth_depth.npy, rainfall.npy, landuse.npy, boundary_conditions.npy]
+    manifest_output: "20-step depth"
+    blockers: [NO_INFER_ENTRY, NO_RELEASED_CKPT, TRAINING_CODE_DATA_GEN_ONLY]
+    expansion_paths:
+      - path_id: PATH-A-COS-FL2-FULL
+        label: 官方 FNO + 全输入
+        unlock_requires: [runnable_infer_entry, author_or_p2_ckpt, rainfall_landuse_bc_materialized]
+        can_claim_l2_for_this_cap: true
+        priority: P1
+      - path_id: PATH-B-COS-FL2-REDUCED
+        label: reduced-input FNO light_train
+        unlock_requires: [real_fno_train, train_split_only, DL_or_manifest_amendment]
+        can_claim_l2_for_this_cap: false_until_amended
+        priority: P2
+
+  CAP-FL2-03:
+    model: fno_plus
+    route_family: foundation/pretrained neural operator
+    manifest_declared_inputs: "initial depth and static fields"
+    paper_full_inputs: [dem, rainfall_t1_20, landuse, boundary_conditions]
+    scientific_bundle_inputs: [dem.npy, initial_depth.npy, truth_depth.npy, rainfall.npy, landuse.npy, boundary_conditions.npy]
+    manifest_output: "20-step depth"
+    blockers: [NO_INFER_ENTRY, NO_RELEASED_CKPT, TRAINING_CODE_DATA_GEN_ONLY]
+    expansion_paths:
+      - path_id: PATH-A-COS-FL2-FULL
+        label: 官方 FNO+ + 全输入（含 rainfall t=1..20）
+        unlock_requires: [runnable_infer_entry, author_or_p2_ckpt, rainfall_landuse_bc_materialized]
+        can_claim_l2_for_this_cap: true
+        priority: P1
+      - path_id: PATH-B-COS-FL2-REDUCED
+        label: reduced-input FNO+ light_train
+        unlock_requires: [real_fno_plus_train, train_split_only, DL_or_manifest_amendment]
+        can_claim_l2_for_this_cap: false_until_amended
+        priority: P2
+
+adjacent_tasks_not_substitutes:
+  - method: GEOID-Flood
+    reject_id: REJ-FL-01
+    actual_task: EO flood segmentation (static mapping)
+    actual_output: flood mask
+    legal_taskpack: FL-3
+    reason: "Static mapping is not dynamic inundation forecasting."
+  - method: WorldFloods U-Net
+    reject_id: null
+    actual_task: EO flood segmentation
+    actual_input: Sentinel-1/2
+    actual_output: binary flood mask
+    legal_taskpack: FL-3
+    public_weights: "GCS WFV1_unet / HF isp-uv-es/WorldFloodsv2"
+    reason: "Different I/O contract; cannot stand in for COS-FL2 depth sequence (DL-075)."
+  - method: Any SAR post-event segmentation
+    reject_id: REJ-FL-02
+    reject_code: ILLEGAL_INPUT
+    legal_taskpack: FL-3
+
+forbidden_shortcuts:
+  - use_heuristic_train_fl2_floodcast_as_l2
+  - partial_weight_transfer_worldfloods_to_fl2
+  - relabel_task_mismatch_as_vendor_unavailable_only
+
+recommended_next_engineering:
+  - action: run_enrich_fl2_zenodo_inputs_all_splits
+    owner: FL-2 data plane
+    script: scripts/hpg/run_fl2_enrich_zenodo_inputs.sbatch
+    blocks: INPUT_SCHEMA_MISMATCH clearance
+  - action: implement_real_unet_fno_train_on_train_split
+    owner: CARP native_eval
+    blocks: PATH-B
+    script_hint: experiments/hcg/carp/native_eval/train_fl2_floodcast.py
+    fidelity_note: current script uses heuristic proxies — not L2 eligible
+  - action: propose_FL3_adjunct_cap_for_worldfloods
+    owner: paper-side manifest
+    blocks: PATH-C

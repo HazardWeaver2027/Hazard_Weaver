@@ -1,0 +1,14 @@
+# Recipe/documentation mirror of CAP-WF3-01 PersistenceModel settings.
+# NOT passed to vendor train.py (PersistenceModel is not registered in LightningCLI).
+seed_everything: 0
+model:
+  class_path: models.PersistenceModel
+  init_args:
+    n_channels: 40
+    flatten_temporal_dimension: true
+    pos_class_weight: 1.0
+    use_all_detections: true
+    loss_function: BCE
+do_train: false
+do_test: true
+do_predict: false

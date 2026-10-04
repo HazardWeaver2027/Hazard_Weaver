@@ -1,0 +1,785 @@
+{
+  "schema_version": "HWB_MH1_ATLAS_STATE_VARIANT_REFS_v1",
+  "taskpack_id": "hwb_mh1_atlas_state_variant_v1",
+  "scenarios": {
+    "mh1_thomas_montecito_2017_baseline": {
+      "variant_id": "thomas_montecito_2017_baseline",
+      "scenario_id": "thomas_montecito_2017",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 16.19778353912423,
+        "log_volume_v1": 16.19778353912423,
+        "scenario_id": "mh1_thomas_montecito_2017_baseline"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_exploratory",
+        "not_headline_pass": true,
+        "crc_job_id": "40648858"
+      }
+    },
+    "mh1_thomas_montecito_2017_burn_severity_plus_10pct": {
+      "variant_id": "thomas_montecito_2017_burn_severity_plus_10pct",
+      "scenario_id": "thomas_montecito_2017",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 16.83874189542756,
+        "log_volume_v1": 16.83874189542756,
+        "scenario_id": "mh1_thomas_montecito_2017_burn_severity_plus_10pct"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_exploratory",
+        "not_headline_pass": true,
+        "crc_job_id": "40648858"
+      }
+    },
+    "mh1_thomas_montecito_2017_burn_severity_minus_10pct": {
+      "variant_id": "thomas_montecito_2017_burn_severity_minus_10pct",
+      "scenario_id": "thomas_montecito_2017",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 16.197783539124234,
+        "log_volume_v1": 16.197783539124234,
+        "scenario_id": "mh1_thomas_montecito_2017_burn_severity_minus_10pct"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_exploratory",
+        "not_headline_pass": true,
+        "crc_job_id": "40648858"
+      }
+    },
+    "mh1_pipeline_copeland_2022_baseline": {
+      "variant_id": "pipeline_copeland_2022_baseline",
+      "scenario_id": "pipeline_copeland_2022",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 8.512293814798436,
+        "log_volume_v1": 8.512293814798436,
+        "scenario_id": "mh1_pipeline_copeland_2022_baseline"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_exploratory",
+        "not_headline_pass": true,
+        "crc_job_id": "40648858"
+      }
+    },
+    "mh1_pipeline_copeland_2022_burn_severity_plus_10pct": {
+      "variant_id": "pipeline_copeland_2022_burn_severity_plus_10pct",
+      "scenario_id": "pipeline_copeland_2022",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 8.553311336194367,
+        "log_volume_v1": 8.553311336194367,
+        "scenario_id": "mh1_pipeline_copeland_2022_burn_severity_plus_10pct"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_exploratory",
+        "not_headline_pass": true,
+        "crc_job_id": "40648858"
+      }
+    },
+    "mh1_pipeline_copeland_2022_burn_severity_minus_10pct": {
+      "variant_id": "pipeline_copeland_2022_burn_severity_minus_10pct",
+      "scenario_id": "pipeline_copeland_2022",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 8.434361467723027,
+        "log_volume_v1": 8.434361467723027,
+        "scenario_id": "mh1_pipeline_copeland_2022_burn_severity_minus_10pct"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_exploratory",
+        "not_headline_pass": true,
+        "crc_job_id": "40648858"
+      }
+    },
+    "mh1_el_dorado_apple_birch_2020_baseline": {
+      "variant_id": "el_dorado_apple_birch_2020_baseline",
+      "scenario_id": "el_dorado_apple_birch_2020",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 11.958387707462547,
+        "log_volume_v1": 11.958387707462547,
+        "scenario_id": "mh1_el_dorado_apple_birch_2020_baseline"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_exploratory",
+        "not_headline_pass": true,
+        "crc_job_id": "40648858"
+      }
+    },
+    "mh1_el_dorado_apple_birch_2020_burn_severity_plus_10pct": {
+      "variant_id": "el_dorado_apple_birch_2020_burn_severity_plus_10pct",
+      "scenario_id": "el_dorado_apple_birch_2020",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 11.958387707462547,
+        "log_volume_v1": 11.958387707462547,
+        "scenario_id": "mh1_el_dorado_apple_birch_2020_burn_severity_plus_10pct"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_exploratory",
+        "not_headline_pass": true,
+        "crc_job_id": "40648858"
+      }
+    },
+    "mh1_el_dorado_apple_birch_2020_burn_severity_minus_10pct": {
+      "variant_id": "el_dorado_apple_birch_2020_burn_severity_minus_10pct",
+      "scenario_id": "el_dorado_apple_birch_2020",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 11.643,
+        "log_volume_v1": 11.643,
+        "scenario_id": "mh1_el_dorado_apple_birch_2020_burn_severity_minus_10pct"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_exploratory",
+        "not_headline_pass": true,
+        "crc_job_id": "40648858"
+      }
+    },
+    "Apple_Apple1_0": {
+      "record_id": "Apple_Apple1_0",
+      "scenario_id": "Apple_Apple1_0",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 15.003651406437369,
+        "log_volume_v1": 15.003651406437369,
+        "scenario_id": "Apple_Apple1_0"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Apple_Apple1_0"
+      }
+    },
+    "Bush_Bush1_1": {
+      "record_id": "Bush_Bush1_1",
+      "scenario_id": "Bush_Bush1_1",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 6.455787994204168,
+        "log_volume_v1": 6.455787994204168,
+        "scenario_id": "Bush_Bush1_1"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Bush_Bush1_1"
+      }
+    },
+    "Bush_Bush2_2": {
+      "record_id": "Bush_Bush2_2",
+      "scenario_id": "Bush_Bush2_2",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 5.777443389040142,
+        "log_volume_v1": 5.777443389040142,
+        "scenario_id": "Bush_Bush2_2"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Bush_Bush2_2"
+      }
+    },
+    "Bush_Bush3_3": {
+      "record_id": "Bush_Bush3_3",
+      "scenario_id": "Bush_Bush3_3",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 7.970218812382679,
+        "log_volume_v1": 7.970218812382679,
+        "scenario_id": "Bush_Bush3_3"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Bush_Bush3_3"
+      }
+    },
+    "Buzzard_Buzzard1_4": {
+      "record_id": "Buzzard_Buzzard1_4",
+      "scenario_id": "Buzzard_Buzzard1_4",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 6.047370386027937,
+        "log_volume_v1": 6.047370386027937,
+        "scenario_id": "Buzzard_Buzzard1_4"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Buzzard_Buzzard1_4"
+      }
+    },
+    "Buzzard_Buzzard2_5": {
+      "record_id": "Buzzard_Buzzard2_5",
+      "scenario_id": "Buzzard_Buzzard2_5",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 5.858800709959768,
+        "log_volume_v1": 5.858800709959768,
+        "scenario_id": "Buzzard_Buzzard2_5"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Buzzard_Buzzard2_5"
+      }
+    },
+    "Buzzard_Buzzard3_6": {
+      "record_id": "Buzzard_Buzzard3_6",
+      "scenario_id": "Buzzard_Buzzard3_6",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 6.782255923253316,
+        "log_volume_v1": 6.782255923253316,
+        "scenario_id": "Buzzard_Buzzard3_6"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Buzzard_Buzzard3_6"
+      }
+    },
+    "Buzzard_Buzzard4_7": {
+      "record_id": "Buzzard_Buzzard4_7",
+      "scenario_id": "Buzzard_Buzzard4_7",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 6.676923175024782,
+        "log_volume_v1": 6.676923175024782,
+        "scenario_id": "Buzzard_Buzzard4_7"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Buzzard_Buzzard4_7"
+      }
+    },
+    "Buzzard_Buzzard5_8": {
+      "record_id": "Buzzard_Buzzard5_8",
+      "scenario_id": "Buzzard_Buzzard5_8",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 5.767075761433945,
+        "log_volume_v1": 5.767075761433945,
+        "scenario_id": "Buzzard_Buzzard5_8"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Buzzard_Buzzard5_8"
+      }
+    },
+    "Cameron Peak_CameronPeak10_18": {
+      "record_id": "Cameron Peak_CameronPeak10_18",
+      "scenario_id": "Cameron Peak_CameronPeak10_18",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 6.165518196680513,
+        "log_volume_v1": 6.165518196680513,
+        "scenario_id": "Cameron Peak_CameronPeak10_18"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Cameron Peak_CameronPeak10_18"
+      }
+    },
+    "Cameron Peak_CameronPeak11_19": {
+      "record_id": "Cameron Peak_CameronPeak11_19",
+      "scenario_id": "Cameron Peak_CameronPeak11_19",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 6.873868409626982,
+        "log_volume_v1": 6.873868409626982,
+        "scenario_id": "Cameron Peak_CameronPeak11_19"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Cameron Peak_CameronPeak11_19"
+      }
+    },
+    "Cameron Peak_CameronPeak12_20": {
+      "record_id": "Cameron Peak_CameronPeak12_20",
+      "scenario_id": "Cameron Peak_CameronPeak12_20",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 7.479896743257903,
+        "log_volume_v1": 7.479896743257903,
+        "scenario_id": "Cameron Peak_CameronPeak12_20"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Cameron Peak_CameronPeak12_20"
+      }
+    },
+    "Cameron Peak_CameronPeak13_21": {
+      "record_id": "Cameron Peak_CameronPeak13_21",
+      "scenario_id": "Cameron Peak_CameronPeak13_21",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 11.73783786202143,
+        "log_volume_v1": 11.73783786202143,
+        "scenario_id": "Cameron Peak_CameronPeak13_21"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Cameron Peak_CameronPeak13_21"
+      }
+    },
+    "Cameron Peak_CameronPeak14_22": {
+      "record_id": "Cameron Peak_CameronPeak14_22",
+      "scenario_id": "Cameron Peak_CameronPeak14_22",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 7.576450953418662,
+        "log_volume_v1": 7.576450953418662,
+        "scenario_id": "Cameron Peak_CameronPeak14_22"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Cameron Peak_CameronPeak14_22"
+      }
+    },
+    "Cameron Peak_CameronPeak1_9": {
+      "record_id": "Cameron Peak_CameronPeak1_9",
+      "scenario_id": "Cameron Peak_CameronPeak1_9",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 6.942066747647241,
+        "log_volume_v1": 6.942066747647241,
+        "scenario_id": "Cameron Peak_CameronPeak1_9"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Cameron Peak_CameronPeak1_9"
+      }
+    },
+    "Cameron Peak_CameronPeak2_10": {
+      "record_id": "Cameron Peak_CameronPeak2_10",
+      "scenario_id": "Cameron Peak_CameronPeak2_10",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 6.18711903693319,
+        "log_volume_v1": 6.18711903693319,
+        "scenario_id": "Cameron Peak_CameronPeak2_10"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Cameron Peak_CameronPeak2_10"
+      }
+    },
+    "Cameron Peak_CameronPeak3_11": {
+      "record_id": "Cameron Peak_CameronPeak3_11",
+      "scenario_id": "Cameron Peak_CameronPeak3_11",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 4.302844740075336,
+        "log_volume_v1": 4.302844740075336,
+        "scenario_id": "Cameron Peak_CameronPeak3_11"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Cameron Peak_CameronPeak3_11"
+      }
+    },
+    "Cameron Peak_CameronPeak4_12": {
+      "record_id": "Cameron Peak_CameronPeak4_12",
+      "scenario_id": "Cameron Peak_CameronPeak4_12",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 11.026837078996197,
+        "log_volume_v1": 11.026837078996197,
+        "scenario_id": "Cameron Peak_CameronPeak4_12"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Cameron Peak_CameronPeak4_12"
+      }
+    },
+    "Cameron Peak_CameronPeak5_13": {
+      "record_id": "Cameron Peak_CameronPeak5_13",
+      "scenario_id": "Cameron Peak_CameronPeak5_13",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 8.869912594182953,
+        "log_volume_v1": 8.869912594182953,
+        "scenario_id": "Cameron Peak_CameronPeak5_13"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Cameron Peak_CameronPeak5_13"
+      }
+    },
+    "Cameron Peak_CameronPeak6_14": {
+      "record_id": "Cameron Peak_CameronPeak6_14",
+      "scenario_id": "Cameron Peak_CameronPeak6_14",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 6.178519463245127,
+        "log_volume_v1": 6.178519463245127,
+        "scenario_id": "Cameron Peak_CameronPeak6_14"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Cameron Peak_CameronPeak6_14"
+      }
+    },
+    "Cameron Peak_CameronPeak7_15": {
+      "record_id": "Cameron Peak_CameronPeak7_15",
+      "scenario_id": "Cameron Peak_CameronPeak7_15",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 5.680858421314452,
+        "log_volume_v1": 5.680858421314452,
+        "scenario_id": "Cameron Peak_CameronPeak7_15"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Cameron Peak_CameronPeak7_15"
+      }
+    },
+    "Cameron Peak_CameronPeak8_16": {
+      "record_id": "Cameron Peak_CameronPeak8_16",
+      "scenario_id": "Cameron Peak_CameronPeak8_16",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 6.657285464667054,
+        "log_volume_v1": 6.657285464667054,
+        "scenario_id": "Cameron Peak_CameronPeak8_16"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Cameron Peak_CameronPeak8_16"
+      }
+    },
+    "Cameron Peak_CameronPeak9_17": {
+      "record_id": "Cameron Peak_CameronPeak9_17",
+      "scenario_id": "Cameron Peak_CameronPeak9_17",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 5.996135266625428,
+        "log_volume_v1": 5.996135266625428,
+        "scenario_id": "Cameron Peak_CameronPeak9_17"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Cameron Peak_CameronPeak9_17"
+      }
+    },
+    "Carmel_Carmel10_32": {
+      "record_id": "Carmel_Carmel10_32",
+      "scenario_id": "Carmel_Carmel10_32",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 6.197896954149695,
+        "log_volume_v1": 6.197896954149695,
+        "scenario_id": "Carmel_Carmel10_32"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Carmel_Carmel10_32"
+      }
+    },
+    "Carmel_Carmel11_33": {
+      "record_id": "Carmel_Carmel11_33",
+      "scenario_id": "Carmel_Carmel11_33",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 5.601998103843056,
+        "log_volume_v1": 5.601998103843056,
+        "scenario_id": "Carmel_Carmel11_33"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Carmel_Carmel11_33"
+      }
+    },
+    "Carmel_Carmel1_23": {
+      "record_id": "Carmel_Carmel1_23",
+      "scenario_id": "Carmel_Carmel1_23",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 4.907401867612848,
+        "log_volume_v1": 4.907401867612848,
+        "scenario_id": "Carmel_Carmel1_23"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Carmel_Carmel1_23"
+      }
+    },
+    "Carmel_Carmel2_24": {
+      "record_id": "Carmel_Carmel2_24",
+      "scenario_id": "Carmel_Carmel2_24",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 5.220600315888254,
+        "log_volume_v1": 5.220600315888254,
+        "scenario_id": "Carmel_Carmel2_24"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Carmel_Carmel2_24"
+      }
+    },
+    "Carmel_Carmel3_25": {
+      "record_id": "Carmel_Carmel3_25",
+      "scenario_id": "Carmel_Carmel3_25",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 5.601998103843056,
+        "log_volume_v1": 5.601998103843056,
+        "scenario_id": "Carmel_Carmel3_25"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Carmel_Carmel3_25"
+      }
+    },
+    "Carmel_Carmel4_26": {
+      "record_id": "Carmel_Carmel4_26",
+      "scenario_id": "Carmel_Carmel4_26",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 4.907401867612848,
+        "log_volume_v1": 4.907401867612848,
+        "scenario_id": "Carmel_Carmel4_26"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Carmel_Carmel4_26"
+      }
+    },
+    "Carmel_Carmel5_27": {
+      "record_id": "Carmel_Carmel5_27",
+      "scenario_id": "Carmel_Carmel5_27",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 5.875665843699684,
+        "log_volume_v1": 5.875665843699684,
+        "scenario_id": "Carmel_Carmel5_27"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Carmel_Carmel5_27"
+      }
+    },
+    "Carmel_Carmel6_28": {
+      "record_id": "Carmel_Carmel6_28",
+      "scenario_id": "Carmel_Carmel6_28",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 5.220600315888254,
+        "log_volume_v1": 5.220600315888254,
+        "scenario_id": "Carmel_Carmel6_28"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Carmel_Carmel6_28"
+      }
+    },
+    "Carmel_Carmel7_29": {
+      "record_id": "Carmel_Carmel7_29",
+      "scenario_id": "Carmel_Carmel7_29",
+      "outputs": {
+        "metric_name": "log_volume_v1",
+        "reference_score": 5.864597173634122,
+        "log_volume_v1": 5.864597173634122,
+        "scenario_id": "Carmel_Carmel7_29"
+      },
+      "tolerance": {
+        "metric": "log_volume_v1",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "claim_tier": "mh1_atlas_headline_record",
+        "gold_source": "gorr_2026_west_formula",
+        "record_id": "Carmel_Carmel7_29"
+      }
+    }
+  }
+}

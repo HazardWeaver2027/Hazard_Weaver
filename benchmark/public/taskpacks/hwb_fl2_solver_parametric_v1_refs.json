@@ -1,0 +1,591 @@
+{
+  "schema_version": "HWB_FL2_SOLVER_PARAMETRIC_REFS_v2",
+  "taskpack_id": "hwb_fl2_solver_parametric_v1",
+  "scenarios": {
+    "pakistan_2022_test_000": {
+      "outputs": {
+        "rmse_depth": 3.624643675611659,
+        "csi_0.01": 0.6386688502561518,
+        "metric_name": "rmse_depth"
+      },
+      "gate_policy": {
+        "primary_metric": "csi_0.01",
+        "rmse_mode": "advisory_record_only",
+        "methodologically_permanent": true,
+        "decision": "DL-067",
+        "applies_to_scenarios": [
+          "pakistan_2022_test_000",
+          "mozambique_2019_hold_015"
+        ]
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.7249287351223318,
+        "note": "advisory band only; not primary gate"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test",
+        "region": "pakistan_2022",
+        "provenance_sealed": true,
+        "csi_primary_project_wide_sealed": true,
+        "reference_rmse_status": "SEALED_V2_GATE_PAIR",
+        "data_source": "floodcastbench_official_test_v1",
+        "replay_manifest": "runs/carp/scientific/FL-2/CAP-FL2-06/reference_seal_v2/pakistan_2022_test_000/replay_manifest.json",
+        "hcg_registry": "hcg/registry/reference_gates/FL2_CAP_FL2_06_sealed_v2.yaml",
+        "measurement_policy": "record_only_no_parameter_tuning",
+        "supersedes_dead_rmse": [
+          0.35,
+          0.42
+        ]
+      },
+      "mozambique_gate_reference": {
+        "scenario_id": "mozambique_2019_hold_015",
+        "split": "hwb_holdout",
+        "rmse_depth": 3.9355269625149707,
+        "csi_0.01": 0.6426792398502735,
+        "replay_manifest": "runs/carp/scientific/FL-2/CAP-FL2-06/reference_seal_v2/mozambique_2019_hold_015/replay_manifest.json",
+        "window_provenance": "data/scientific/FL-2/hwb_holdout/MOZAMBIQUE_WINDOW_PROVENANCE_v1.json",
+        "selection_rule": "external Idai timeline; not HAND oracle"
+      },
+      "mozambique_anomaly": {
+        "status": "RESOLVED_GATE_REFERENCE_REMATERIALIZED",
+        "hold_000_note": "pre_inundation chronology; CSI=0 expected",
+        "doc": "docs/engineering/hcg/HCG_FL2_MOZAMBIQUE_CSI_ANOMALY_v1.md"
+      }
+    },
+    "mozambique_2019_hold_015": {
+      "outputs": {
+        "rmse_depth": 3.9355269625149707,
+        "csi_0.01": 0.6426792398502735,
+        "metric_name": "rmse_depth"
+      },
+      "gate_policy": {
+        "primary_metric": "csi_0.01",
+        "rmse_mode": "advisory_record_only",
+        "methodologically_permanent": true,
+        "decision": "DL-069",
+        "applies_to_scenarios": [
+          "pakistan_2022_test_000",
+          "mozambique_2019_hold_015"
+        ]
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.787105392502994,
+        "note": "advisory band only; not primary gate"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "hwb_holdout",
+        "region": "mozambique_2019",
+        "provenance_sealed": true,
+        "csi_primary_project_wide_sealed": true,
+        "reference_rmse_status": "SEALED_V2_GATE_PAIR",
+        "role": "gate_reference",
+        "replay_manifest": "runs/carp/scientific/FL-2/CAP-FL2-06/reference_seal_v2/mozambique_2019_hold_015/replay_manifest.json",
+        "window_provenance": "data/scientific/FL-2/hwb_holdout/MOZAMBIQUE_WINDOW_PROVENANCE_v1.json",
+        "hcg_registry": "hcg/registry/reference_gates/FL2_CAP_FL2_06_sealed_v2.yaml",
+        "selection_rule": "external Idai timeline; not HAND oracle"
+      }
+    },
+    "mozambique_2019_hold_000": {
+      "outputs": {
+        "rmse_depth": 3.9997905497819524,
+        "csi_0.01": 0.0,
+        "metric_name": "rmse_depth"
+      },
+      "gate_policy": {
+        "csi_primary_gate": "not_applicable",
+        "rmse_mode": "advisory_record_only",
+        "decision": "DL-069",
+        "note": "pre_inundation chronology; CSI@0.01=0 expected \u2014 not a HAND failure"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.7999581099563905,
+        "note": "record-only chronology slice"
+      },
+      "provenance": {
+        "split": "hwb_holdout",
+        "region": "mozambique_2019",
+        "role": "pre_inundation_chronology_record",
+        "inundation_phase": "pre_inundation",
+        "provenance_sealed": true
+      },
+      "mozambique_anomaly": {
+        "status": "RESOLVED_GATE_REFERENCE_REMATERIALIZED",
+        "hold_000_note": "pre_inundation chronology; CSI=0 expected",
+        "doc": "docs/engineering/hcg/HCG_FL2_MOZAMBIQUE_CSI_ANOMALY_v1.md"
+      }
+    },
+    "australia_2022_test_001": {
+      "outputs": {
+        "rmse_depth": 2.717678307346742,
+        "csi_0.01": 0.05382251483578151,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.5435356614693484,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      }
+    },
+    "australia_2022_test_002": {
+      "outputs": {
+        "rmse_depth": 2.7176264067186726,
+        "csi_0.01": 0.05399791437058866,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.5435252813437346,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      }
+    },
+    "australia_2022_test_006": {
+      "outputs": {
+        "rmse_depth": 2.7473307464610897,
+        "csi_0.01": 0.19388167053943944,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.5494661492922179,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      }
+    },
+    "australia_2022_test_007": {
+      "outputs": {
+        "rmse_depth": 2.7684575743224324,
+        "csi_0.01": 0.19288174311529352,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.5536915148644865,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      }
+    },
+    "mozambique_2019_hold_001": {
+      "outputs": {
+        "rmse_depth": 3.9995457844452362,
+        "csi_0.01": 0.0001751607639888665,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.7999091568890473,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.0
+      },
+      "provenance": {
+        "split": "hwb_holdout",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      },
+      "gate_policy": {
+        "csi_primary_gate": "not_applicable",
+        "rmse_mode": "advisory_record_only",
+        "note": "low-CSI chronology slice; CSI@0.01 not primary"
+      }
+    },
+    "mozambique_2019_hold_005": {
+      "outputs": {
+        "rmse_depth": 3.9968698418132584,
+        "csi_0.01": 0.03294701986754967,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.7993739683626517,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.0
+      },
+      "provenance": {
+        "split": "hwb_holdout",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      },
+      "gate_policy": {
+        "csi_primary_gate": "not_applicable",
+        "rmse_mode": "advisory_record_only",
+        "note": "low-CSI chronology slice; CSI@0.01 not primary"
+      }
+    },
+    "australia_2022_test_000": {
+      "outputs": {
+        "rmse_depth": 2.7177286316659557,
+        "csi_0.01": 0.053674163796719535,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.5435457263331912,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      }
+    },
+    "australia_2022_test_003": {
+      "outputs": {
+        "rmse_depth": 2.717604533883186,
+        "csi_0.01": 0.054528039713603135,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.5435209067766372,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      }
+    },
+    "australia_2022_test_004": {
+      "outputs": {
+        "rmse_depth": 2.7174483045563775,
+        "csi_0.01": 0.06080817642906844,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.5434896609112755,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      }
+    },
+    "australia_2022_test_005": {
+      "outputs": {
+        "rmse_depth": 2.722776024389886,
+        "csi_0.01": 0.14730505954238957,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.5445552048779773,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      }
+    },
+    "australia_2022_test_008": {
+      "outputs": {
+        "rmse_depth": 2.7747090855992385,
+        "csi_0.01": 0.1926745941960732,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.5549418171198477,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      }
+    },
+    "australia_2022_test_009": {
+      "outputs": {
+        "rmse_depth": 2.7775940528734044,
+        "csi_0.01": 0.19271760586446682,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.5555188105746809,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      }
+    },
+    "australia_2022_test_010": {
+      "outputs": {
+        "rmse_depth": 2.7792326417066047,
+        "csi_0.01": 0.19525322661310388,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.555846528341321,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      }
+    },
+    "australia_2022_test_011": {
+      "outputs": {
+        "rmse_depth": 2.780994261813891,
+        "csi_0.01": 0.1963398521709009,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.5561988523627782,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      }
+    },
+    "australia_2022_test_012": {
+      "outputs": {
+        "rmse_depth": 2.7825273880574866,
+        "csi_0.01": 0.1966553472930511,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.5565054776114974,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      }
+    },
+    "australia_2022_test_013": {
+      "outputs": {
+        "rmse_depth": 2.783748116578419,
+        "csi_0.01": 0.1967574961651776,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.5567496233156838,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      }
+    },
+    "mozambique_2019_hold_002": {
+      "outputs": {
+        "rmse_depth": 3.9990062408877414,
+        "csi_0.01": 0.001979556579326231,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.7998012481775483,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.0
+      },
+      "provenance": {
+        "split": "hwb_holdout",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      },
+      "gate_policy": {
+        "csi_primary_gate": "not_applicable",
+        "rmse_mode": "advisory_record_only",
+        "note": "low-CSI chronology slice; CSI@0.01 not primary"
+      }
+    },
+    "mozambique_2019_hold_003": {
+      "outputs": {
+        "rmse_depth": 3.998368317511384,
+        "csi_0.01": 0.00633937997888473,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.7996736635022769,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.0
+      },
+      "provenance": {
+        "split": "hwb_holdout",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      },
+      "gate_policy": {
+        "csi_primary_gate": "not_applicable",
+        "rmse_mode": "advisory_record_only",
+        "note": "low-CSI chronology slice; CSI@0.01 not primary"
+      }
+    },
+    "mozambique_2019_hold_004": {
+      "outputs": {
+        "rmse_depth": 3.9975175544395123,
+        "csi_0.01": 0.017528073711488627,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.7995035108879025,
+        "note": "HAND witness reference; 20% band"
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.0
+      },
+      "provenance": {
+        "split": "hwb_holdout",
+        "reference_witness": "CAP-FL2-06",
+        "reference_mode": "hand_faithful_scenario_replay",
+        "provenance_sealed": false,
+        "source": "patch_l3_fl2_solver_inventory_v1"
+      },
+      "gate_policy": {
+        "csi_primary_gate": "not_applicable",
+        "rmse_mode": "advisory_record_only",
+        "note": "low-CSI chronology slice; CSI@0.01 not primary"
+      }
+    }
+  }
+}

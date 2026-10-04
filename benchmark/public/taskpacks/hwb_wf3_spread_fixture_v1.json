@@ -1,0 +1,94 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_wf3_spread_fixture_v1",
+  "headline_target": "WF-3",
+  "coverage_tier": "W-covered",
+  "hib_is_grader": false,
+  "solver_view": {
+    "user_goal": "Given FIRMS weekly activity and LANDFIRE fuel, produce a wildfire spread mask summary (IoU proxy) using only executable HCG edges. Multiple scientifically valid routes exist; do not assume only one workflow applies.",
+    "allowed_tools": [
+      "inspect_artifact",
+      "run_capability",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "wf_firms_daily_to_weekly_v0",
+      "eval_wf_weekly_activity_v0",
+      "eval_wf_activity_to_spread_v0",
+      "hw_wildfire_spread_aspp_bridge_v0",
+      "eval_wf_spread_to_mask_v0"
+    ]
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "accepted_witnesses": [
+      {
+        "witness_id": "w_spread_aspp",
+        "route_id": "spread_aspp",
+        "family": "learned_eo",
+        "edges": [
+          "eval_wf_weekly_activity_v0",
+          "eval_wf_activity_to_spread_v0",
+          "hw_wildfire_spread_aspp_bridge_v0",
+          "eval_wf_spread_to_mask_v0"
+        ],
+        "capability_ids": [
+          "hw_wildfire_spread_aspp_bridge_v0"
+        ]
+      },
+      {
+        "witness_id": "w_spread_formula",
+        "route_id": "spread_formula",
+        "family": "process_empirical",
+        "edges": [
+          "eval_wf_weekly_activity_v0",
+          "eval_wf_activity_to_spread_v0",
+          "eval_wf_spread_to_mask_v0"
+        ],
+        "capability_ids": [
+          "eval_wf_spread_to_mask_v0"
+        ]
+      }
+    ],
+    "outputs": {
+      "reference_score": 0.82,
+      "metric_name": "iou"
+    },
+    "tolerance": {
+      "metric": "iou",
+      "min_score": 0.75,
+      "label_match": false
+    },
+    "trajectory_constraints": {
+      "required_adapters": [],
+      "required_capability_edges": [
+        "eval_wf_weekly_activity_v0"
+      ],
+      "forbidden_shortcuts": [
+        "direct_submit_without_spread"
+      ],
+      "adapter_edges": {},
+      "provenance": {
+        "crs": "EPSG:4326",
+        "units": "fraction_0_1",
+        "time_window": "2020-01-01/2020-12-31"
+      }
+    },
+    "final_output_spec": {
+      "schema_id": "hwa.final_artifact/v1",
+      "metric": "iou",
+      "execution_mode": "scalar",
+      "label_match": false,
+      "output_keys": [
+        "metric_name",
+        "reference_score"
+      ],
+      "consumes": "final_artifact.value_or_uri"
+    }
+  },
+  "metadata": {
+    "fixture": true,
+    "generator": "hwb_phase_a_fixture",
+    "legacy": true
+  }
+}

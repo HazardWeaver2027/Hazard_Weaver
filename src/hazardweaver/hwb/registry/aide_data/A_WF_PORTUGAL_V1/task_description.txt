@@ -1,0 +1,38 @@
+# HWB MLE-STAR task (binding)
+
+TaskPack: hwb_g6_h_a_wf_portugal_v1_coreexec_dag_ridge_selected_path_v1
+Data directory (absolute): hwb/registry/aide_data/A_WF_PORTUGAL_V1
+Goal: Build a regressor to predict log1p burned area from weather and fire index features for the Portugal forest fires dataset.
+Evaluation metric: MAE
+
+CRITICAL: Use ONLY the CSV files in the data directory above for this TaskPack.
+Do NOT use California housing or any other public tabular benchmark dataset.
+Web search is for modeling ideas only — never substitute another dataset.
+
+Budget (fixed — do not exceed):
+- refinement_rounds: 8
+- web_search_calls: 10
+
+# HWB tabular baseline task protocol (fixed split — do not reshuffle)
+
+Use the CSV files in this directory exactly as provided:
+
+- `train.csv` — training only
+- `val.csv` — validation / model selection / hyperparameter tuning
+- `test.csv` — held-out test; report final metric here only once
+
+Target column: `target`
+Features: FFMC, DMC, DC, ISI, temp, RH, wind, rain
+Evaluation metric: MAE
+
+Rules (binding for fair HWB comparison):
+1. Do NOT merge splits or re-split the data.
+2. Fit only on train.csv; tune on val.csv; final score on test.csv.
+3. Print the validation metric during development and the test metric at the end.
+4. Match metric definition: MAE = mean absolute error; accuracy = classification accuracy.
+
+
+Deliverables:
+1. Train on train.csv only; tune on val.csv; report test metric once on test.csv.
+2. Print lines: "Validation MAE: <value>" and "Test MAE: <value>".
+3. Save final predictions or metric summary in the run working directory.

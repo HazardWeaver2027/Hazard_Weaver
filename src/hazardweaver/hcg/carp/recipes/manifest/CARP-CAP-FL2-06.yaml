@@ -1,0 +1,29 @@
+recipe_id: CARP-CAP-FL2-06
+capability_id: CAP-FL2-06
+taskpack_id: FL-2
+artifact_id: ART-CAP-FL2-06
+priority: P1 official_repo_replay
+fetch_or_checkout: checkout official release/commit and replay inference/configuration;
+  source=local faithful implementation
+version_or_commit: UNKNOWN unless recorded in Evidence Registry; pin before execution
+environment: create isolated environment from official lock/requirements; record OS,
+  CUDA, container digest and package lock
+data_preparation: materialize only legal TaskPack inputs; freeze source versions/checksums;
+  apply train/validation/hidden split before fitting or calibration
+train_or_inference_command: "UNKNOWN\u2014resolve from official README/config; CARP\
+  \ execution must save the exact command without shell interpolation"
+expected_artifact: model/checkpoint or deterministic configuration plus raw native
+  predictions and canonical HWB artifact
+checksum: UNKNOWN until fetched/built; SHA-256 mandatory before acceptance
+canonicalization: convert with lossless unit/CRS/time/grid adapter; retain native
+  artifact and provenance
+evaluation: run anchor evaluator and HWB hidden evaluator; record metric, split, units,
+  runtime and hardware
+failure_conditions:
+- source/license inaccessible
+- checksum drift
+- illegal input
+- official test leakage
+- canonicalization semantic loss
+- compute exceeds priority envelope
+manifest_source: docs/final_four/HCG/manifests/carp_recipes.jsonl

@@ -1,0 +1,126 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_g6_h_a_wf_portugal_v1_coreexec_dag_ffmc_rule_alt_family_v1",
+  "headline_target": "WF-3",
+  "coverage_tier": "W-covered",
+  "hib_is_grader": false,
+  "source": {
+    "pack_id": "g6_hard_v1",
+    "g6_task_id": "H_A_WF_PORTUGAL_V1_COREEXEC_dag_ffmc_rule_alt_family",
+    "anchor_id": "A_WF_PORTUGAL_V1",
+    "stratum": "CoreExec"
+  },
+  "solver_view": {
+    "user_goal": "Execute a legal short DAG to solve the wildfire burned-area regression for the Portugal fires record task for anchor A_WF_PORTUGAL_V1. Multiple accepted routes exist under the validation-selected protocol; do not assume there is a unique gold edge.",
+    "allowed_tools": [
+      "inspect_artifact",
+      "run_capability",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "schema_map_portugal_v1",
+      "ridge_a_wf_portugal_v1",
+      "rf_a_wf_portugal_v1",
+      "ffmc_rule_a_wf_portugal_v1"
+    ],
+    "data_dir": "hwb/registry/aide_data/A_WF_PORTUGAL_V1",
+    "aide_goal": "Build a regressor to predict log1p burned area from weather and fire index features for the Portugal forest fires dataset.",
+    "aide_eval": "MAE"
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "accepted_witnesses": [
+      {
+        "witness_id": "w_dag_ridge",
+        "route_id": "dag_ridge",
+        "family": "tabular_linear",
+        "edges": [
+          "schema_map_portugal_v1",
+          "ridge_a_wf_portugal_v1"
+        ],
+        "capability_ids": [
+          "ridge_a_wf_portugal_v1"
+        ]
+      },
+      {
+        "witness_id": "w_dag_rf",
+        "route_id": "dag_rf",
+        "family": "tabular_tree",
+        "edges": [
+          "schema_map_portugal_v1",
+          "rf_a_wf_portugal_v1"
+        ],
+        "capability_ids": [
+          "rf_a_wf_portugal_v1"
+        ]
+      },
+      {
+        "witness_id": "w_dag_ffmc_rule",
+        "route_id": "dag_ffmc_rule",
+        "family": "rule_index",
+        "edges": [
+          "schema_map_portugal_v1",
+          "ffmc_rule_a_wf_portugal_v1"
+        ],
+        "capability_ids": [
+          "ffmc_rule_a_wf_portugal_v1"
+        ]
+      }
+    ],
+    "outputs": {
+      "reference_score": 7.738525165177342,
+      "metric_name": "mae"
+    },
+    "tolerance": {
+      "metric": "mae",
+      "max_abs_error": 2.407805016821283,
+      "label_match": false
+    },
+    "checker": {
+      "structure": {
+        "checker_id": "hard_checker_g6_v1"
+      },
+      "execution": {
+        "mode": "scalar",
+        "forbid_reference_score_fallback": true
+      }
+    },
+    "certificate_ref": "docs/engineering/hcg/certificates_v1/A_WF_PORTUGAL_V1/ExecutableAnchorCertificate.json",
+    "multidag_certificate_ref": "docs/engineering/hcg/certificates_v1/A_WF_PORTUGAL_V1/MultiDAGAnchorCertificate.json",
+    "reference_run_ref": "docs/engineering/hcg/reference_runs/A_WF_PORTUGAL_V1/reference_run.json",
+    "path_log_ref": "docs/engineering/hcg/g2_path_logs/A_WF_PORTUGAL_V1.json",
+    "train_run_metrics_ref": "docs/engineering/hcg/train_runs/A_WF_PORTUGAL_V1/ffmc_rule_a_wf_portugal_v1/metrics.json",
+    "selected_route_id": "dag_ffmc_rule",
+    "is_selected_path": false,
+    "reference_execution_id": "RE_H_A_WF_PORTUGAL_V1_COREEXEC_dag_ffmc_rule_alt_family",
+    "final_output_spec": {
+      "schema_id": "hwa.final_artifact/v1",
+      "metric": "mae",
+      "execution_mode": "scalar",
+      "label_match": false,
+      "output_keys": [
+        "metric_name",
+        "reference_score"
+      ],
+      "consumes": "final_artifact.value_or_uri",
+      "note": "Evaluator consumes ExecutionResult.final_artifact; not raw capability dicts."
+    },
+    "baseline_eligibility": {
+      "aide": true,
+      "aide_reason": "Eligible: tabular supervised mae task; exportable train/val/test via g2_tabular_common dataset='portugal'; aide_goal and aide_eval defined.",
+      "mle_star": true,
+      "mle_star_reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='portugal' with metric='MAE'.",
+      "rd_agent": true,
+      "rd_agent_reason": "Eligible: tabular secondary scope for R&D-Agent; same data_dir protocol as AIDE when baseline_eligibility.rd_agent=true.",
+      "automl_agent": true,
+      "automl_agent_reason": "Eligible: tabular secondary scope for AutoML-Agent; same data_dir protocol as AIDE when baseline_eligibility.automl_agent=true."
+    },
+    "source_g6_task_id": "H_A_WF_PORTUGAL_V1_COREEXEC_dag_ffmc_rule_alt_family",
+    "source_pack": "g6_hard_v1"
+  },
+  "metadata": {
+    "generator": "hwb_g6_hard_taskpack_v1",
+    "g6_task_id": "H_A_WF_PORTUGAL_V1_COREEXEC_dag_ffmc_rule_alt_family",
+    "legacy": true
+  }
+}

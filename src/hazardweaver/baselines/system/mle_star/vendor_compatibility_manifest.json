@@ -1,0 +1,82 @@
+{
+  "schema_version": "HWB_MLE_STAR_MB_COMPATIBILITY_v1",
+  "pin_sha": "7d187b6f97522915a153b1cdc30a8f4a164c7b5a",
+  "fidelity_class": "capability_fidelity",
+  "frozen_budgets": {
+    "MLE_WEB_SEARCH_CALLS": 10,
+    "MLE_REFINEMENT_ROUNDS": 8,
+    "note": "Vendor has no web_search_calls constant; HWB adapter enforces budget via gate + task prompt."
+  },
+  "vendor_audit": {
+    "import_blocker": "machine_learning_engineering/__init__.py calls google.auth.default() unconditionally",
+    "root_agent_model": "os.getenv('ROOT_AGENT_MODEL', 'gemini-2.5-flash')",
+    "sub_agent_model": "config.CONFIG.agent_model from ROOT_AGENT_MODEL default gemini-2.0-flash-001",
+    "search_hook_points": [
+      "sub_agents/initialization/agent.py tools=[google_search]",
+      "shared_libraries/debug_util.py tools=[google_search]"
+    ],
+    "loop_budgets": "config.py inner_loop_round, outer_loop_round, ensemble_loop_round (algorithmic — UNCHANGED)"
+  },
+  "modifications": [
+    {
+      "component": "azure_apim_util",
+      "path": "experiments/benchmark/baselines/system/mle_star/azure_apim_util.py",
+      "classification": "COMPATIBILITY MODIFICATION",
+      "rationale": "Route LiteLLM to ORD Azure APIM Anthropic Messages API (claude-sonnet-4-6) per AZURE_APIM_QUICKREF"
+    },
+    {
+      "component": "official_invoke",
+      "path": "experiments/benchmark/baselines/system/mle_star/official_invoke.py",
+      "classification": "COMPATIBILITY MODIFICATION",
+      "rationale": "Use official adk run AGENT QUERY (run_once_cli) + HITL auto-resume; avoid interactive stdin Aborted"
+    },
+    {
+      "component": "vendor_response_shim",
+      "path": "experiments/benchmark/baselines/system/mle_star/compat/vendor_response_shim.py",
+      "classification": "COMPATIBILITY MODIFICATION",
+      "rationale": "Tolerate Bedrock/LiteLLM responses with None part.text in common_util.get_text_from_response"
+    },
+    {
+      "component": "hwb_task_shim",
+      "path": "experiments/benchmark/baselines/system/mle_star/compat/hwb_task_shim.py",
+      "classification": "COMPATIBILITY MODIFICATION",
+      "rationale": "Inject HWB data_dir/task_name/workspace and task prompt into vendor prepare_task state"
+    },
+    {
+      "component": "google_auth_shim",
+      "path": "experiments/benchmark/baselines/system/mle_star/compat/google_auth_shim.py",
+      "classification": "COMPATIBILITY MODIFICATION",
+      "rationale": "Skip unconditional google.auth.default() when MLE_LLM_PROVIDER=bedrock"
+    },
+    {
+      "component": "llm_route",
+      "path": "experiments/benchmark/baselines/system/mle_star/compat/llm_route.py",
+      "classification": "COMPATIBILITY MODIFICATION",
+      "rationale": "Route ADK agents to LiteLLM bedrock/{BEDROCK_MODEL_ID} matched backbone"
+    },
+    {
+      "component": "search_tool",
+      "path": "experiments/benchmark/baselines/system/mle_star/compat/search_tool.py",
+      "classification": "COMPATIBILITY MODIFICATION",
+      "rationale": "Replace Gemini-only GoogleSearchTool with Tavily FunctionTool"
+    },
+    {
+      "component": "hwb_config",
+      "path": "experiments/benchmark/baselines/system/mle_star/compat/hwb_config.py",
+      "classification": "COMPATIBILITY MODIFICATION",
+      "rationale": "Wire HWB_RUN_CONFIG task prompt and budgets without changing agent topology"
+    },
+    {
+      "component": "bootstrap",
+      "path": "experiments/benchmark/baselines/system/mle_star/compat/bootstrap.py",
+      "classification": "COMPATIBILITY MODIFICATION",
+      "rationale": "PYTHONSTARTUP entry activating shims before vendor import"
+    }
+  ],
+  "unchanged": [
+    "agent topology and roles",
+    "original prompts (search, refinement, ablation, ensemble)",
+    "refinement/ablation/debug/check/ensemble algorithm logic",
+    "stopping and failure recovery"
+  ]
+}

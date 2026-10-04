@@ -1,0 +1,133 @@
+version: mh4_v2
+task_id: MH-4
+canonical_output: mh4_building_structural_loss_usd_2023_v1
+description: Gate B scientific ready (DL-053); R04 runtime blocked on HPG Linux
+status: ACQUIRING
+draft_only: false
+families:
+- family_id: substrate
+  task_id: MH-4
+  distinctness_axis: nhc_hazard_substrate
+  canonical_output: mh4_building_structural_loss_usd_2023_v1
+  description: NHC/IBTrACS hazard substrate (integrity only)
+  assumptions:
+  - nhc_products_v1
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: gate_b_dl053
+  capability_ids:
+  - CAP-MH4-R01
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-MH4-R01/ValidationReport.json
+- family_id: RF-MH4-INDEPENDENT
+  task_id: MH-4
+  distinctness_axis: ncei_marginal_independent
+  canonical_output: mh4_building_structural_loss_usd_2023_v1
+  description: Independent NCEI wind+surge marginals
+  assumptions:
+  - ncei_stormevents_property_v1
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-MH4-R02
+  admission_level: L2
+  tier: C
+  validation_report: runs/carp/validation/CAP-MH4-R02/ValidationReport.json
+- family_id: RF-MH4-DEPENDENCE
+  task_id: MH-4
+  distinctness_axis: ncei_dependence_joint
+  canonical_output: mh4_building_structural_loss_usd_2023_v1
+  description: Dependence-aware joint on NCEI marginals
+  assumptions:
+  - ncei_marginal_copula_v1
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-MH4-R03
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-MH4-R03/ValidationReport.json
+- family_id: RF-MH4-ENGINEERING-COMBINED
+  task_id: MH-4
+  distinctness_axis: hazus_hurricane_combined
+  canonical_output: mh4_building_structural_loss_usd_2023_v1
+  description: Hazus Hurricane combined (runtime blocked Linux)
+  assumptions:
+  - RUNTIME_BLOCKED_WINDOWS_ARCGIS
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: proposed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-MH4-R04
+- family_id: RF-MH4-LEARNED-HYBRID
+  task_id: MH-4
+  distinctness_axis: climada_tc_framework
+  canonical_output: mh4_building_structural_loss_usd_2023_v1
+  description: CLIMADA TC impact framework route
+  assumptions:
+  - climada_tc_impact_v1
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 300
+    ram_mb: 16384
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-MH4-R06
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-MH4-R06/ValidationReport.json
+- family_id: RF-MH4-DEFERRED-P2
+  task_id: MH-4
+  distinctness_axis: deferred_p2_coupled_chain
+  canonical_output: mh4_building_structural_loss_usd_2023_v1
+  description: DEFERRED_P2 coupled model-chain (PI boundary)
+  assumptions:
+  - DEFERRED_P2
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: proposed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-MH4-R05
+draft_families: []

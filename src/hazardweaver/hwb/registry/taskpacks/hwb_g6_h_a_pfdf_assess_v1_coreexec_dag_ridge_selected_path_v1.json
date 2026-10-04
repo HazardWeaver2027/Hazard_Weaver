@@ -1,0 +1,126 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_g6_h_a_pfdf_assess_v1_coreexec_dag_ridge_selected_path_v1",
+  "headline_target": "MH-1",
+  "coverage_tier": "W-covered",
+  "hib_is_grader": false,
+  "source": {
+    "pack_id": "g6_hard_v1",
+    "g6_task_id": "H_A_PFDF_ASSESS_V1_COREEXEC_dag_ridge_selected_path",
+    "anchor_id": "A_PFDF_ASSESS_V1",
+    "stratum": "CoreExec"
+  },
+  "solver_view": {
+    "user_goal": "Execute a legal short DAG to solve the post-fire debris-flow volume assessment task for anchor A_PFDF_ASSESS_V1. Multiple accepted routes exist under the validation-selected protocol; do not assume there is a unique gold edge.",
+    "allowed_tools": [
+      "inspect_artifact",
+      "run_capability",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "pfdf_record_to_event_rainfall_v1",
+      "gorr_a_pfdf_assess_v1",
+      "ridge_a_pfdf_assess_v1",
+      "rf_a_pfdf_assess_v1"
+    ],
+    "data_dir": "hwb/registry/aide_data/A_PFDF_ASSESS_V1",
+    "aide_goal": "Build a regressor to predict log post-fire debris-flow volume from burn, terrain, and rainfall features (USGS PFDF tabular subset).",
+    "aide_eval": "MAE"
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "accepted_witnesses": [
+      {
+        "witness_id": "w_dag_gorr",
+        "route_id": "dag_gorr",
+        "family": "formula",
+        "edges": [
+          "pfdf_record_to_event_rainfall_v1",
+          "gorr_a_pfdf_assess_v1"
+        ],
+        "capability_ids": [
+          "gorr_a_pfdf_assess_v1"
+        ]
+      },
+      {
+        "witness_id": "w_dag_ridge",
+        "route_id": "dag_ridge",
+        "family": "tabular_linear",
+        "edges": [
+          "pfdf_record_to_event_rainfall_v1",
+          "ridge_a_pfdf_assess_v1"
+        ],
+        "capability_ids": [
+          "ridge_a_pfdf_assess_v1"
+        ]
+      },
+      {
+        "witness_id": "w_dag_rf",
+        "route_id": "dag_rf",
+        "family": "tabular_tree",
+        "edges": [
+          "pfdf_record_to_event_rainfall_v1",
+          "rf_a_pfdf_assess_v1"
+        ],
+        "capability_ids": [
+          "rf_a_pfdf_assess_v1"
+        ]
+      }
+    ],
+    "outputs": {
+      "reference_score": 1.848178992616026,
+      "metric_name": "mae"
+    },
+    "tolerance": {
+      "metric": "mae",
+      "max_abs_error": 3.696357985232052,
+      "label_match": false
+    },
+    "checker": {
+      "structure": {
+        "checker_id": "hard_checker_g6_v1"
+      },
+      "execution": {
+        "mode": "scalar",
+        "forbid_reference_score_fallback": true
+      }
+    },
+    "certificate_ref": "docs/engineering/hcg/certificates_v1/A_PFDF_ASSESS_V1/ExecutableAnchorCertificate.json",
+    "multidag_certificate_ref": "docs/engineering/hcg/certificates_v1/A_PFDF_ASSESS_V1/MultiDAGAnchorCertificate.json",
+    "reference_run_ref": "docs/engineering/hcg/reference_runs/A_PFDF_ASSESS_V1/reference_run.json",
+    "path_log_ref": "docs/engineering/hcg/g2_path_logs/A_PFDF_ASSESS_V1.json",
+    "train_run_metrics_ref": "docs/engineering/hcg/train_runs/A_PFDF_ASSESS_V1/ridge_a_pfdf_assess_v1/metrics.json",
+    "selected_route_id": "dag_ridge",
+    "is_selected_path": true,
+    "reference_execution_id": "RE_H_A_PFDF_ASSESS_V1_COREEXEC_dag_ridge_selected_path",
+    "final_output_spec": {
+      "schema_id": "hwa.final_artifact/v1",
+      "metric": "mae",
+      "execution_mode": "scalar",
+      "label_match": false,
+      "output_keys": [
+        "metric_name",
+        "reference_score"
+      ],
+      "consumes": "final_artifact.value_or_uri",
+      "note": "Evaluator consumes ExecutionResult.final_artifact; not raw capability dicts."
+    },
+    "baseline_eligibility": {
+      "aide": true,
+      "aide_reason": "Eligible: tabular supervised mae task; exportable train/val/test via g2_tabular_common dataset='usgs_pfdf'; aide_goal and aide_eval defined.",
+      "mle_star": true,
+      "mle_star_reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='usgs_pfdf' with metric='MAE'.",
+      "rd_agent": true,
+      "rd_agent_reason": "Eligible: tabular secondary scope for R&D-Agent; same data_dir protocol as AIDE when baseline_eligibility.rd_agent=true.",
+      "automl_agent": true,
+      "automl_agent_reason": "Eligible: tabular secondary scope for AutoML-Agent; same data_dir protocol as AIDE when baseline_eligibility.automl_agent=true."
+    },
+    "source_g6_task_id": "H_A_PFDF_ASSESS_V1_COREEXEC_dag_ridge_selected_path",
+    "source_pack": "g6_hard_v1"
+  },
+  "metadata": {
+    "generator": "hwb_g6_hard_taskpack_v1",
+    "g6_task_id": "H_A_PFDF_ASSESS_V1_COREEXEC_dag_ridge_selected_path",
+    "legacy": true
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hwa/contracts/hwa_route_control_action_v1.schema.json",
+  "title": "HWA_ROUTE_CONTROL_ACTION_v1",
+  "type": "object",
+  "required": ["action"],
+  "properties": {
+    "action": {
+      "enum": ["commit_route", "clarify", "abstain", "tie_break", "repair"]
+    },
+    "route_id": { "type": "string" },
+    "segment_id": { "type": "string" },
+    "rationale": { "type": "string" },
+    "repair_level": { "type": "string" },
+    "slot_id": { "type": "string" },
+    "abstain_reason_code": { "type": "string" }
+  }
+}

@@ -1,0 +1,105 @@
+schema_version: vendor_tool_to_cap_v1
+description: Frozen deterministic vendor tool/op → HWB CAP edge mapping (auditable).
+
+tracks:
+  WF-3:
+    earth_agent:
+      - pattern: "wildfire.*spread|spread.*mask|aspp"
+        cap: CAP-WF3-03
+      - pattern: "firms|activity|weekly"
+        cap: CAP-WF3-01
+      - pattern: "burn.*severity|nbr|dnbr"
+        cap: CAP-WF3-02
+      - pattern: "fuel|landfire"
+        cap: CAP-WF3-04
+      - pattern: "perimeter|fire.*polygon"
+        cap: CAP-WF3-05
+    hieraplan:
+      - pattern: "buffer|overlay|spatial.*join"
+        cap: CAP-WF3-03
+      - pattern: "object_count|containment"
+        cap: CAP-WF3-01
+      - pattern: "remotesam|segment"
+        cap: CAP-WF3-02
+      # spread_fixture allowed list uses schema edges, not CAP-WF3-xx
+      - pattern: "buffer|overlap"
+        cap: eval_wf_spread_to_mask_v0
+    gisclaw:
+      - pattern: "rasterize|zonal|clip|raster"
+        cap: CAP-WF3-03
+      - pattern: "buffer|overlay|spatial_join"
+        cap: CAP-WF3-04
+      - pattern: "reproject|dissolve"
+        cap: CAP-WF3-05
+
+  MH-3:
+    gisclaw:
+      - pattern: "align|timeseries|coops|usgs"
+        cap: CAP-MH3-05
+      - pattern: "ridge|temporal|regression"
+        cap: CAP-MH3-06
+      - pattern: "persist|operational"
+        cap: CAP-MH3-01
+      - pattern: "random.?forest|rf_"
+        cap: CAP-MH3-02
+    hieraplan:
+      - pattern: "align|timeseries"
+        cap: CAP-MH3-05
+      - pattern: "ridge|temporal"
+        cap: CAP-MH3-06
+      - pattern: "persist"
+        cap: CAP-MH3-01
+
+  E1-E3:
+    hieraplan:
+      - pattern: "buffer|overlap|distance_calculation"
+        cap: CAP-E1E3-01
+      - pattern: "containment|area_measurement"
+        cap: CAP-E1E3-02
+      - pattern: "segment|remotesam|classification"
+        cap: CAP-E1E3-03
+
+  TC-TRK:
+    hieraplan:
+      - pattern: "buffer|overlap|distance_calculation"
+        cap: CAP-TCTRK-01
+      - pattern: "sar_detection|sar_classification"
+        cap: CAP-TCTRK-02
+      - pattern: "object_count|containment"
+        cap: CAP-TCTRK-03
+
+  FL-2:
+    hieraplan:
+      - pattern: "buffer|overlap|containment"
+        cap: CAP-FL2-04
+      - pattern: "segment|remotesam|change_detection"
+        cap: CAP-FL2-05
+      - pattern: "area_measurement|distance_calculation"
+        cap: CAP-FL2-06
+
+  DR-OUT:
+    earth_agent:
+      - pattern: "drought|sdo|usdm|cpc"
+        cap: CAP-DROUT-01
+      - pattern: "persistence|baseline"
+        cap: CAP-DROUT-02
+      - pattern: "statistical|tendency|objective"
+        cap: CAP-DROUT-03
+    hieraplan:
+      - pattern: "operational|synthesis|expert"
+        cap: CAP-DROUT-01
+      - pattern: "persistence"
+        cap: CAP-DROUT-02
+      - pattern: "statistical|tendency"
+        cap: CAP-DROUT-03
+    gisclaw:
+      - pattern: "tabular|csv|join"
+        cap: CAP-DROUT-01
+      - pattern: "persistence|baseline"
+        cap: CAP-DROUT-02
+      - pattern: "statistical|regression"
+        cap: CAP-DROUT-03
+
+# Direct capability hints from vendor planner (explicit edge_id in trace)
+direct_cap_patterns:
+  - "CAP-[A-Z0-9]+-\\d+"

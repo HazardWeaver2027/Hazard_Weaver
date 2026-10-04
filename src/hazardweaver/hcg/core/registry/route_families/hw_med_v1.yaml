@@ -1,0 +1,136 @@
+version: hw_med_v1
+task_id: HW-MED
+canonical_output: hw_med_forecast_bundle_v1
+families:
+- family_id: RF-DETERMINISTIC-NEURAL-WEATHER
+  task_id: HW-MED
+  distinctness_axis: manifest_rf_rf_deterministic_neural_weather
+  canonical_output: hw_med_forecast_bundle_v1
+  description: Manifest-native route family (RF-DETERMINISTIC-NEURAL-WEATHER)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-HWMED-03
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-HWMED-03/ValidationReport.json
+- family_id: RF-GRAPH-NEURAL-WEATHER-MODEL
+  task_id: HW-MED
+  distinctness_axis: manifest_rf_rf_graph_neural_weather_model
+  canonical_output: hw_med_forecast_bundle_v1
+  description: Manifest-native route family (RF-GRAPH-NEURAL-WEATHER-MODEL)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-HWMED-04
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-HWMED-04/ValidationReport.json
+- family_id: RF-OPERATIONAL-PHYSICS-NWP
+  task_id: HW-MED
+  distinctness_axis: manifest_rf_rf_operational_physics_nwp
+  canonical_output: hw_med_forecast_bundle_v1
+  description: Manifest-native route family (RF-OPERATIONAL-PHYSICS-NWP)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-HWMED-01
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-HWMED-01/ValidationReport.json
+- family_id: RF-PROBABILISTIC-DIFFUSION-WEAT
+  task_id: HW-MED
+  distinctness_axis: manifest_rf_rf_probabilistic_diffusion_weat
+  canonical_output: hw_med_forecast_bundle_v1
+  description: Manifest-native route family (RF-PROBABILISTIC-DIFFUSION-WEAT)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-HWMED-05
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-HWMED-05/ValidationReport.json
+- family_id: RF-SPECTRAL-NEURAL-WEATHER-MODE
+  task_id: HW-MED
+  distinctness_axis: manifest_rf_rf_spectral_neural_weather_mode
+  canonical_output: hw_med_forecast_bundle_v1
+  description: Manifest-native route family (RF-SPECTRAL-NEURAL-WEATHER-MODE)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-HWMED-02
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-HWMED-02/ValidationReport.json
+- family_id: RF-STATISTICAL-BASELINE
+  task_id: HW-MED
+  distinctness_axis: manifest_rf_rf_statistical_baseline
+  canonical_output: hw_med_forecast_bundle_v1
+  description: Manifest-native route family (RF-STATISTICAL-BASELINE)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: null
+  capability_ids:
+  - CAP-HWMED-06
+  admission_level: L2
+  tier: C
+  validation_report: runs/carp/validation/CAP-HWMED-06/ValidationReport.json

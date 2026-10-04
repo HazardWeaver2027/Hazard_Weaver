@@ -1,0 +1,337 @@
+version: mh3_v1
+task_id: MH-3
+canonical_output: mh3_inundation_grid_v1
+families:
+- family_id: mh3_overlay_v1
+  task_id: MH-3
+  distinctness_axis: overlay
+  canonical_output: mh3_inundation_grid_v1
+  description: Independent peril overlay on common grid (max/envelope)
+  assumptions:
+  - independence
+  - common_grid
+  - max_envelope
+  applicability:
+    perils:
+    - surge
+    - rainfall
+    - river
+    coupling: none
+  slots:
+  - slot_id: ingest_forcings
+    role: observation_source
+    produces:
+    - mh3_surge_proxy_v1
+    - mh3_rainfall_proxy_v1
+    - mh3_river_stage_v1
+    requires:
+      modality: raster
+      semantic_role: observation
+  - slot_id: overlay_model
+    role: overlay_solver
+    consumes:
+    - mh3_surge_proxy_v1
+    - mh3_rainfall_proxy_v1
+    - mh3_river_stage_v1
+    produces:
+    - mh3_inundation_grid_v1
+    requires:
+      modality: raster
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 30
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: mh3_dependence_jpm_v1
+  task_id: MH-3
+  distinctness_axis: dependence
+  canonical_output: mh3_inundation_grid_v1
+  description: Statistical dependence / JPM sampling for compound flood
+  assumptions:
+  - joint_probability
+  - copula_or_jpm
+  - statistical_dependence
+  applicability:
+    perils:
+    - surge
+    - rainfall
+    dependence: required
+  slots:
+  - slot_id: ingest_forcings
+    role: observation_source
+    produces:
+    - mh3_surge_proxy_v1
+    - mh3_rainfall_proxy_v1
+    requires:
+      modality: raster
+      semantic_role: observation
+  - slot_id: dependence_model
+    role: dependence_solver
+    consumes:
+    - mh3_surge_proxy_v1
+    - mh3_rainfall_proxy_v1
+    produces:
+    - mh3_inundation_grid_v1
+    requires:
+      modality: raster
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 512
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: mh3_one_way_coupled_v1
+  task_id: MH-3
+  distinctness_axis: one_way_coupled
+  canonical_output: mh3_inundation_grid_v1
+  description: One-way coupled surge to flood routing
+  assumptions:
+  - surge_drives_flood
+  - one_way_coupling
+  - hydrologic_routing
+  applicability:
+    perils:
+    - surge
+    - river
+    coupling: one_way
+  slots:
+  - slot_id: ingest_forcings
+    role: observation_source
+    produces:
+    - mh3_surge_proxy_v1
+    - mh3_river_stage_v1
+    requires:
+      modality: raster
+      semantic_role: observation
+  - slot_id: coupled_model
+    role: one_way_coupled_solver
+    consumes:
+    - mh3_surge_proxy_v1
+    - mh3_river_stage_v1
+    produces:
+    - mh3_inundation_grid_v1
+    requires:
+      modality: raster
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 120
+    ram_mb: 1024
+  admission: replayed
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: mh3_physics_surrogate_v1
+  task_id: MH-3
+  distinctness_axis: learned_surrogate
+  canonical_output: mh3_inundation_grid_v1
+  description: Physics-informed surrogate (NOT full hydrodynamic coupling)
+  assumptions:
+  - full_coupling
+  - surrogate_model
+  - four_forcing_sync
+  applicability:
+    perils:
+    - surge
+    - tide
+    - rain
+    - river
+    coupling: full
+  slots:
+  - slot_id: ingest_forcings
+    role: observation_source
+    produces:
+    - mh3_surge_proxy_v1
+    - mh3_rainfall_proxy_v1
+    - mh3_river_stage_v1
+    requires:
+      modality: raster
+      semantic_role: observation
+  - slot_id: coupled_surrogate
+    role: coupled_surrogate_solver
+    consumes:
+    - mh3_surge_proxy_v1
+    - mh3_rainfall_proxy_v1
+    - mh3_river_stage_v1
+    produces:
+    - mh3_inundation_grid_v1
+    requires:
+      modality: raster
+      semantic_role: prediction
+  resources:
+    min_gpu_s: 60
+    typical_cpu_s: 60
+    ram_mb: 2048
+  admission: replayed
+  admission_level: L1
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: mh3_fully_coupled_v1
+  task_id: MH-3
+  distinctness_axis: fully_coupled
+  canonical_output: mh3_inundation_grid_v1
+  description: Real SFINCS/Delft-class fully coupled hydrodynamic solver
+  assumptions:
+  - full_coupling
+  - hydrodynamic_solver
+  applicability:
+    coupling: full
+  slots:
+  - slot_id: ingest_forcings
+    role: observation_source
+    produces:
+    - mh3_surge_proxy_v1
+    - mh3_rainfall_proxy_v1
+    - mh3_river_stage_v1
+  - slot_id: coupled_solver
+    role: coupled_hydro_solver
+    consumes:
+    - mh3_surge_proxy_v1
+    - mh3_rainfall_proxy_v1
+    - mh3_river_stage_v1
+    produces:
+    - mh3_inundation_grid_v1
+  resources:
+    min_gpu_s: 120
+    typical_cpu_s: 3600
+    ram_mb: 8192
+  admission: proposed
+  admission_level: L0
+  version: v1
+  provenance: iclr_headline_v1
+- family_id: RF-HYDRAULIC-SHALLOW-WATER-SOLV
+  task_id: MH-3
+  distinctness_axis: manifest_rf_rf_hydraulic_shallow_water_solv
+  canonical_output: mh3_inundation_grid_v1
+  description: Manifest-native route family (RF-HYDRAULIC-SHALLOW-WATER-SOLV)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: mh3_overlay_v1
+  capability_ids:
+  - CAP-MH3-02
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-MH3-02/ValidationReport.json
+- family_id: RF-INERTIAL-HYDRODYNAMIC-SOLVER
+  task_id: MH-3
+  distinctness_axis: manifest_rf_rf_inertial_hydrodynamic_solver
+  canonical_output: mh3_inundation_grid_v1
+  description: Manifest-native route family (RF-INERTIAL-HYDRODYNAMIC-SOLVER)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: mh3_one_way_coupled_v1
+  capability_ids:
+  - CAP-MH3-03
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-MH3-03/ValidationReport.json
+- family_id: RF-MULTIVARIATE-STATISTICAL-EXT
+  task_id: MH-3
+  distinctness_axis: manifest_rf_rf_multivariate_statistical_ext
+  canonical_output: mh3_inundation_grid_v1
+  description: Manifest-native route family (RF-MULTIVARIATE-STATISTICAL-EXT)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: mh3_dependence_jpm_v1
+  capability_ids:
+  - CAP-MH3-05
+  admission_level: L2
+  tier: C
+  validation_report: runs/carp/validation/CAP-MH3-05/ValidationReport.json
+- family_id: RF-ONE-WAY-COUPLED-COASTAL-INLA
+  task_id: MH-3
+  distinctness_axis: manifest_rf_rf_one_way_coupled_coastal_inla
+  canonical_output: mh3_inundation_grid_v1
+  description: Manifest-native route family (RF-ONE-WAY-COUPLED-COASTAL-INLA)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: mh3_one_way_coupled_v1
+  capability_ids:
+  - CAP-MH3-04
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-MH3-04/ValidationReport.json
+- family_id: RF-REDUCED-PHYSICS-COUPLED-INUN
+  task_id: MH-3
+  distinctness_axis: manifest_rf_rf_reduced_physics_coupled_inun
+  canonical_output: mh3_inundation_grid_v1
+  description: Manifest-native route family (RF-REDUCED-PHYSICS-COUPLED-INUN)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: mh3_fully_coupled_v1
+  capability_ids:
+  - CAP-MH3-01
+  admission_level: L2
+  tier: A
+  validation_report: runs/carp/validation/CAP-MH3-01/ValidationReport.json
+- family_id: RF-VALIDATED-PHYSICS-SURROGATE
+  task_id: MH-3
+  distinctness_axis: manifest_rf_rf_validated_physics_surrogate
+  canonical_output: mh3_inundation_grid_v1
+  description: Manifest-native route family (RF-VALIDATED-PHYSICS-SURROGATE)
+  assumptions:
+  - manifest_rf_v1_bridge
+  applicability: {}
+  slots: []
+  resources:
+    min_gpu_s: 0
+    typical_cpu_s: 60
+    ram_mb: 256
+  admission: replayed
+  version: v1
+  provenance: manifest_rf_v1
+  legacy_alias: mh3_physics_surrogate_v1
+  capability_ids:
+  - CAP-MH3-06
+  admission_level: L2
+  tier: B
+  validation_report: runs/carp/validation/CAP-MH3-06/ValidationReport.json

@@ -1,0 +1,300 @@
+{
+  "schema": "rq3_main_table_v1",
+  "denominator": 141,
+  "primary_metric": "dca_v2_unified",
+  "eq_vq_eval_path": "unified_layers_for_cell + aligned eval_report (hwa_unified_dual_gate_v1) or bound replay",
+  "row_order": [
+    "hwa_olmo32b",
+    "hwa_mixtral8x22",
+    "hwa_gemma31b",
+    "hwa_deepseek",
+    "hwa_llama70b"
+  ],
+  "rows": [
+    {
+      "arm_id": "hwa_olmo32b",
+      "label": "OLMo",
+      "label_long": "OLMo-3.1-32B",
+      "dca": {
+        "k": 85,
+        "n": 141,
+        "rate_pct": 60.28,
+        "wilson_ci95_pct": [
+          52.04,
+          67.98
+        ]
+      },
+      "dca_replay": {
+        "k": 85,
+        "n": 141,
+        "rate_pct": 60.28,
+        "wilson_ci95_pct": [
+          52.04,
+          67.98
+        ]
+      },
+      "macro_dca": {
+        "rate_pct": 61.87,
+        "wilson_ci95_pct": [
+          54.4,
+          71.2
+        ]
+      },
+      "E_q": {
+        "k": 110,
+        "n": 141,
+        "rate_pct": 78.01,
+        "wilson_ci95_pct": [
+          70.49,
+          84.06
+        ]
+      },
+      "V_q": {
+        "k": 129,
+        "n": 141,
+        "rate_pct": 91.49,
+        "wilson_ci95_pct": [
+          85.71,
+          95.06
+        ]
+      },
+      "dual_gate_solve": {
+        "k": 110,
+        "n": 141,
+        "rate_pct": 78.01,
+        "wilson_ci95_pct": [
+          70.49,
+          84.06
+        ]
+      }
+    },
+    {
+      "arm_id": "hwa_mixtral8x22",
+      "label": "Mixtral",
+      "label_long": "Mixtral-8x22B",
+      "dca": {
+        "k": 99,
+        "n": 141,
+        "rate_pct": 70.21,
+        "wilson_ci95_pct": [
+          62.21,
+          77.14
+        ]
+      },
+      "dca_replay": {
+        "k": 99,
+        "n": 141,
+        "rate_pct": 70.21,
+        "wilson_ci95_pct": [
+          62.21,
+          77.14
+        ]
+      },
+      "macro_dca": {
+        "rate_pct": 70.82,
+        "wilson_ci95_pct": [
+          57.6,
+          83.9
+        ]
+      },
+      "E_q": {
+        "k": 112,
+        "n": 141,
+        "rate_pct": 79.43,
+        "wilson_ci95_pct": [
+          72.02,
+          85.28
+        ]
+      },
+      "V_q": {
+        "k": 130,
+        "n": 141,
+        "rate_pct": 92.2,
+        "wilson_ci95_pct": [
+          86.57,
+          95.59
+        ]
+      },
+      "dual_gate_solve": {
+        "k": 112,
+        "n": 141,
+        "rate_pct": 79.43,
+        "wilson_ci95_pct": [
+          72.02,
+          85.28
+        ]
+      }
+    },
+    {
+      "arm_id": "hwa_gemma31b",
+      "label": "Gemma",
+      "label_long": "Gemma-4-31B-it",
+      "dca": {
+        "k": 112,
+        "n": 141,
+        "rate_pct": 79.43,
+        "wilson_ci95_pct": [
+          72.02,
+          85.28
+        ]
+      },
+      "dca_replay": {
+        "k": 112,
+        "n": 141,
+        "rate_pct": 79.43,
+        "wilson_ci95_pct": [
+          72.02,
+          85.28
+        ]
+      },
+      "macro_dca": {
+        "rate_pct": 78.61,
+        "wilson_ci95_pct": [
+          65.2,
+          91.5
+        ]
+      },
+      "E_q": {
+        "k": 122,
+        "n": 141,
+        "rate_pct": 86.52,
+        "wilson_ci95_pct": [
+          79.91,
+          91.2
+        ]
+      },
+      "V_q": {
+        "k": 131,
+        "n": 141,
+        "rate_pct": 92.91,
+        "wilson_ci95_pct": [
+          87.44,
+          96.1
+        ]
+      },
+      "dual_gate_solve": {
+        "k": 122,
+        "n": 141,
+        "rate_pct": 86.52,
+        "wilson_ci95_pct": [
+          79.91,
+          91.2
+        ]
+      }
+    },
+    {
+      "arm_id": "hwa_deepseek",
+      "label": "DeepSeek",
+      "label_long": "DeepSeek-V4.1-Flash",
+      "dca": {
+        "k": 122,
+        "n": 141,
+        "rate_pct": 86.52,
+        "wilson_ci95_pct": [
+          79.91,
+          91.2
+        ]
+      },
+      "dca_replay": {
+        "k": 122,
+        "n": 141,
+        "rate_pct": 86.52,
+        "wilson_ci95_pct": [
+          79.91,
+          91.2
+        ]
+      },
+      "macro_dca": {
+        "rate_pct": 86.57,
+        "wilson_ci95_pct": [
+          77.2,
+          94.3
+        ]
+      },
+      "E_q": {
+        "k": 128,
+        "n": 141,
+        "rate_pct": 90.78,
+        "wilson_ci95_pct": [
+          84.86,
+          94.53
+        ]
+      },
+      "V_q": {
+        "k": 130,
+        "n": 141,
+        "rate_pct": 92.2,
+        "wilson_ci95_pct": [
+          86.57,
+          95.59
+        ]
+      },
+      "dual_gate_solve": {
+        "k": 127,
+        "n": 141,
+        "rate_pct": 90.07,
+        "wilson_ci95_pct": [
+          84.02,
+          93.99
+        ]
+      }
+    },
+    {
+      "arm_id": "hwa_llama70b",
+      "label": "Llama",
+      "label_long": "Llama-3.3-70B",
+      "dca": {
+        "k": 126,
+        "n": 141,
+        "rate_pct": 89.36,
+        "wilson_ci95_pct": [
+          83.19,
+          93.45
+        ]
+      },
+      "dca_replay": {
+        "k": 126,
+        "n": 141,
+        "rate_pct": 89.36,
+        "wilson_ci95_pct": [
+          83.19,
+          93.45
+        ]
+      },
+      "macro_dca": {
+        "rate_pct": 89.49,
+        "wilson_ci95_pct": [
+          79.7,
+          97.0
+        ]
+      },
+      "E_q": {
+        "k": 130,
+        "n": 141,
+        "rate_pct": 92.2,
+        "wilson_ci95_pct": [
+          86.57,
+          95.59
+        ]
+      },
+      "V_q": {
+        "k": 134,
+        "n": 141,
+        "rate_pct": 95.04,
+        "wilson_ci95_pct": [
+          90.11,
+          97.57
+        ]
+      },
+      "dual_gate_solve": {
+        "k": 130,
+        "n": 141,
+        "rate_pct": 92.2,
+        "wilson_ci95_pct": [
+          86.57,
+          95.59
+        ]
+      }
+    }
+  ]
+}

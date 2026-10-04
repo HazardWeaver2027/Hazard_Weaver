@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hwa.local/schemas/route_family_spec.v1.json",
+  "title": "RouteFamilySpec",
+  "type": "object",
+  "required": [
+    "family_id",
+    "task_id",
+    "distinctness_axis",
+    "canonical_output",
+    "slots"
+  ],
+  "properties": {
+    "family_id": {"type": "string"},
+    "task_id": {"type": "string"},
+    "distinctness_axis": {"type": "string"},
+    "canonical_output": {"type": "string"},
+    "description": {"type": "string"},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "applicability": {"type": "object"},
+    "slots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["slot_id", "role"],
+        "properties": {
+          "slot_id": {"type": "string"},
+          "role": {"type": "string"},
+          "consumes": {"type": "array", "items": {"type": "string"}},
+          "produces": {"type": "array", "items": {"type": "string"}},
+          "requires": {"type": "object"}
+        }
+      }
+    },
+    "resources": {
+      "type": "object",
+      "properties": {
+        "min_gpu_s": {"type": "number"},
+        "typical_cpu_s": {"type": "number"},
+        "ram_mb": {"type": "number"}
+      }
+    },
+    "admission": {
+      "type": "string",
+      "enum": ["proposed", "quarantined", "replayed", "active"]
+    },
+    "version": {"type": "string"},
+    "provenance": {"type": "string"}
+  }
+}

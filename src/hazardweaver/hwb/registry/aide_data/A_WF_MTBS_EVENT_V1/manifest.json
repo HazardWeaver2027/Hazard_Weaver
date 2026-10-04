@@ -1,0 +1,20 @@
+{
+  "anchor_id": "A_WF_MTBS_EVENT_V1",
+  "dataset_key": "mtbs",
+  "task_type": "classification",
+  "feature_columns": [
+    "ACRES",
+    "LATITUDE",
+    "LONGITUDE",
+    "YEAR"
+  ],
+  "target_column": "target",
+  "original_ycol": "_y",
+  "group_column": "YEAR",
+  "split_seed": 0,
+  "n_train": 166,
+  "n_val": 127,
+  "n_test": 107,
+  "aide_eval": "accuracy",
+  "metric_name": "accuracy"
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "unified_141_rq3_figure_suite_v1",
+  "denominator": 141,
+  "figures_main": [
+    "/workspace/hazardweaver",
+    "/workspace/hazardweaver",
+    "/workspace/hazardweaver",
+    "/workspace/hazardweaver"
+  ],
+  "figures_appendix": [
+    "/workspace/hazardweaver"
+  ]
+}

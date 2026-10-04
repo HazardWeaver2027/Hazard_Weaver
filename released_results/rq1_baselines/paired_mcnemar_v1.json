@@ -1,0 +1,268 @@
+{
+  "schema": "unified_141_paired_mcnemar_v1",
+  "built_utc": "2026-09-23T20:20:57Z",
+  "denominator": 141,
+  "inventory": "runs/hwb/iclr_benchmark/unified_benchmark_v1_submit.jsonl",
+  "hwa_arm": "hwa_llama70b",
+  "hwa_out_root": "runs/hwa/unified_benchmark_full_llama70b_unified_v1",
+  "baseline_out_root": "runs/benchmark/unified_baselines_v4_1_vllm70b_v4_1",
+  "metric": "unified_dca_valid",
+  "primary_effect_size": "discordant_counts",
+  "significance_caveat": "Baselines are far below HWA (22-58/141 vs 106/141); McNemar p is near-zero for every arm. Report hw_only, baseline_only, and discordant n as effect size; p-values are confirmatory only.",
+  "recompute": {
+    "script": "scripts/benchmark/build_unified_141_paired_mcnemar_v1.py",
+    "module": "scripts.benchmark.stats_significance_v1.mcnemar_p"
+  },
+  "comparisons": [
+    {
+      "baseline_slug": "plan_execute_faithful_v1",
+      "label": "Plan-and-Execute faithful",
+      "table": "table1_adapted",
+      "n_paired": 141,
+      "hwa_pass": 126,
+      "baseline_pass": 58,
+      "contingency_2x2": {
+        "rows": "HazardWeaver PASS",
+        "cols": "Plan-and-Execute faithful PASS",
+        "cells": {
+          "hwa_pass_bl_pass": 51,
+          "hwa_pass_bl_fail": 75,
+          "hwa_fail_bl_pass": 7,
+          "hwa_fail_bl_fail": 8
+        }
+      },
+      "discordant": {
+        "hwa_only": 75,
+        "baseline_only": 7,
+        "n_discordant": 82
+      },
+      "mcnemar_p_value": 1.373045452489631e-13,
+      "significant_005": true
+    },
+    {
+      "baseline_slug": "self_consistency_faithful_v1",
+      "label": "Self-Consistency faithful",
+      "table": "table1_adapted",
+      "n_paired": 141,
+      "hwa_pass": 126,
+      "baseline_pass": 50,
+      "contingency_2x2": {
+        "rows": "HazardWeaver PASS",
+        "cols": "Self-Consistency faithful PASS",
+        "cells": {
+          "hwa_pass_bl_pass": 46,
+          "hwa_pass_bl_fail": 80,
+          "hwa_fail_bl_pass": 4,
+          "hwa_fail_bl_fail": 11
+        }
+      },
+      "discordant": {
+        "hwa_only": 80,
+        "baseline_only": 4,
+        "n_discordant": 84
+      },
+      "mcnemar_p_value": 2.7647066558557526e-16,
+      "significant_005": true
+    },
+    {
+      "baseline_slug": "disasterbench_tot_faithful_v1",
+      "label": "DisasterBench-ToT faithful",
+      "table": "table1_adapted",
+      "n_paired": 141,
+      "hwa_pass": 126,
+      "baseline_pass": 50,
+      "contingency_2x2": {
+        "rows": "HazardWeaver PASS",
+        "cols": "DisasterBench-ToT faithful PASS",
+        "cells": {
+          "hwa_pass_bl_pass": 46,
+          "hwa_pass_bl_fail": 80,
+          "hwa_fail_bl_pass": 4,
+          "hwa_fail_bl_fail": 11
+        }
+      },
+      "discordant": {
+        "hwa_only": 80,
+        "baseline_only": 4,
+        "n_discordant": 84
+      },
+      "mcnemar_p_value": 2.7647066558557526e-16,
+      "significant_005": true
+    },
+    {
+      "baseline_slug": "mle_star",
+      "label": "MLE-STAR faithful",
+      "table": "table1_adapted",
+      "n_paired": 141,
+      "hwa_pass": 126,
+      "baseline_pass": 47,
+      "contingency_2x2": {
+        "rows": "HazardWeaver PASS",
+        "cols": "MLE-STAR faithful PASS",
+        "cells": {
+          "hwa_pass_bl_pass": 46,
+          "hwa_pass_bl_fail": 80,
+          "hwa_fail_bl_pass": 1,
+          "hwa_fail_bl_fail": 14
+        }
+      },
+      "discordant": {
+        "hwa_only": 80,
+        "baseline_only": 1,
+        "n_discordant": 81
+      },
+      "mcnemar_p_value": 4.4495519570208766e-18,
+      "significant_005": true
+    },
+    {
+      "baseline_slug": "automl_agent",
+      "label": "AutoML-Agent faithful",
+      "table": "table1_adapted",
+      "n_paired": 141,
+      "hwa_pass": 126,
+      "baseline_pass": 38,
+      "contingency_2x2": {
+        "rows": "HazardWeaver PASS",
+        "cols": "AutoML-Agent faithful PASS",
+        "cells": {
+          "hwa_pass_bl_pass": 33,
+          "hwa_pass_bl_fail": 93,
+          "hwa_fail_bl_pass": 5,
+          "hwa_fail_bl_fail": 10
+        }
+      },
+      "discordant": {
+        "hwa_only": 93,
+        "baseline_only": 5,
+        "n_discordant": 98
+      },
+      "mcnemar_p_value": 1.5180338867862278e-18,
+      "significant_005": true
+    },
+    {
+      "baseline_slug": "reflexion_faithful_v1",
+      "label": "Reflexion faithful",
+      "table": "table1_adapted",
+      "n_paired": 141,
+      "hwa_pass": 126,
+      "baseline_pass": 45,
+      "contingency_2x2": {
+        "rows": "HazardWeaver PASS",
+        "cols": "Reflexion faithful PASS",
+        "cells": {
+          "hwa_pass_bl_pass": 37,
+          "hwa_pass_bl_fail": 89,
+          "hwa_fail_bl_pass": 8,
+          "hwa_fail_bl_fail": 7
+        }
+      },
+      "discordant": {
+        "hwa_only": 89,
+        "baseline_only": 8,
+        "n_discordant": 97
+      },
+      "mcnemar_p_value": 4.556648867160559e-16,
+      "significant_005": true
+    },
+    {
+      "baseline_slug": "aide",
+      "label": "AIDE faithful",
+      "table": "table2_control",
+      "n_paired": 141,
+      "hwa_pass": 126,
+      "baseline_pass": 32,
+      "contingency_2x2": {
+        "rows": "HazardWeaver PASS",
+        "cols": "AIDE faithful PASS",
+        "cells": {
+          "hwa_pass_bl_pass": 32,
+          "hwa_pass_bl_fail": 94,
+          "hwa_fail_bl_pass": 0,
+          "hwa_fail_bl_fail": 15
+        }
+      },
+      "discordant": {
+        "hwa_only": 94,
+        "baseline_only": 0,
+        "n_discordant": 94
+      },
+      "mcnemar_p_value": 8.62117789262011e-22,
+      "significant_005": true
+    },
+    {
+      "baseline_slug": "ds_agent",
+      "label": "DS-Agent faithful",
+      "table": "table2_control",
+      "n_paired": 141,
+      "hwa_pass": 126,
+      "baseline_pass": 47,
+      "contingency_2x2": {
+        "rows": "HazardWeaver PASS",
+        "cols": "DS-Agent faithful PASS",
+        "cells": {
+          "hwa_pass_bl_pass": 44,
+          "hwa_pass_bl_fail": 82,
+          "hwa_fail_bl_pass": 3,
+          "hwa_fail_bl_fail": 12
+        }
+      },
+      "discordant": {
+        "hwa_only": 82,
+        "baseline_only": 3,
+        "n_discordant": 85
+      },
+      "mcnemar_p_value": 2.667183358227489e-17,
+      "significant_005": true
+    },
+    {
+      "baseline_slug": "rd_agent",
+      "label": "R&D-Agent faithful",
+      "table": "table2_control",
+      "n_paired": 141,
+      "hwa_pass": 126,
+      "baseline_pass": 48,
+      "contingency_2x2": {
+        "rows": "HazardWeaver PASS",
+        "cols": "R&D-Agent faithful PASS",
+        "cells": {
+          "hwa_pass_bl_pass": 44,
+          "hwa_pass_bl_fail": 82,
+          "hwa_fail_bl_pass": 4,
+          "hwa_fail_bl_fail": 11
+        }
+      },
+      "discordant": {
+        "hwa_only": 82,
+        "baseline_only": 4,
+        "n_discordant": 86
+      },
+      "mcnemar_p_value": 1.014093343148572e-16,
+      "significant_005": true
+    },
+    {
+      "baseline_slug": "react_same_tool",
+      "label": "ReAct same-tool",
+      "table": "table2_control",
+      "n_paired": 141,
+      "hwa_pass": 126,
+      "baseline_pass": 42,
+      "contingency_2x2": {
+        "rows": "HazardWeaver PASS",
+        "cols": "ReAct same-tool PASS",
+        "cells": {
+          "hwa_pass_bl_pass": 42,
+          "hwa_pass_bl_fail": 84,
+          "hwa_fail_bl_pass": 0,
+          "hwa_fail_bl_fail": 15
+        }
+      },
+      "discordant": {
+        "hwa_only": 84,
+        "baseline_only": 0,
+        "n_discordant": 84
+      },
+      "mcnemar_p_value": 1.3526945495274322e-19,
+      "significant_005": true
+    }
+  ]
+}

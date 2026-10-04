@@ -1,0 +1,74 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_mh1_atlas_state_variant_v1",
+  "headline_target": "MH-1",
+  "coverage_tier": "W-covered",
+  "hib_is_grader": false,
+  "solver_view": {
+    "user_goal": "Given an MH-1 burn-preconditioning StateVariant (CRC pilot), produce log_volume_v1 via pfdf_burn_volume_cascade.",
+    "parameters": {
+      "scenario_id": "mh1_thomas_montecito_2017_baseline",
+      "split": "cases"
+    },
+    "allowed_tools": [
+      "inspect_artifact",
+      "run_capability",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "pfdf_burn_volume_cascade",
+      "pfdf_volume_gorr_v2",
+      "burn_state_net_prithvi_v1"
+    ],
+    "forbidden_substitutions": [
+      "mh1_crc_substitute_for_mh1_main_table"
+    ]
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "refs_sidecar": "hwb_mh1_atlas_state_variant_v1_refs.json",
+    "accepted_witnesses": [
+      {
+        "witness_id": "w_mh1_crc_burn_volume_cascade",
+        "route_id": "route:pfdf:burn_volume_cascade",
+        "family": "RF-TABULAR-PORTFOLIO",
+        "edges": [
+          "pfdf_burn_volume_cascade"
+        ],
+        "capability_ids": [
+          "pfdf_volume_gorr_v2"
+        ]
+      }
+    ],
+    "outputs": {
+      "metric_name": "log_volume_v1",
+      "reference_score": 16.19778353912423,
+      "log_volume_v1": 16.19778353912423,
+      "scenario_id": "mh1_thomas_montecito_2017_baseline"
+    },
+    "tolerance": {
+      "metric": "log_volume_v1",
+      "max_abs_error": 1.0
+    },
+    "trajectory_constraints": {
+      "required_adapters": [],
+      "required_capability_edges": [],
+      "forbidden_shortcuts": [
+        "direct_submit_without_capability",
+        "mh1_crc_substitute"
+      ],
+      "provenance": {
+        "scenario_id": "mh1_thomas_montecito_2017_baseline",
+        "split": "cases",
+        "claim_tier": "mh1_atlas_exploratory",
+        "not_headline_pass": true
+      }
+    }
+  },
+  "metadata": {
+    "mh1_atlas_l4": true,
+    "mh1_atlas_exploratory": true,
+    "not_headline_pass": true,
+    "crc_job_id": "40648858"
+  }
+}

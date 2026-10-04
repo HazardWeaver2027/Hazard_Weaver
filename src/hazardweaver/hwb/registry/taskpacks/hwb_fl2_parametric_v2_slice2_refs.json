@@ -1,0 +1,48 @@
+{
+  "schema_version": "HWB_FL2_PARAMETRIC_REFS_v2_SLICE2",
+  "taskpack_id": "hwb_fl2_parametric_v2_slice2",
+  "scenarios": {
+    "australia_2022_test_000": {
+      "outputs": {
+        "rmse_depth": 0.44,
+        "csi_0.01": 0.63,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.15
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "official_test_high",
+        "region": "australia_2022",
+        "fidelity": "high_30m"
+      }
+    },
+    "uk_2015_hold_000": {
+      "outputs": {
+        "rmse_depth": 0.36,
+        "csi_0.01": 0.67,
+        "metric_name": "rmse_depth"
+      },
+      "tolerance": {
+        "metric": "rmse_depth",
+        "max_abs_error": 0.15
+      },
+      "secondary_tolerance": {
+        "metric": "csi_0.01",
+        "min_score": 0.5
+      },
+      "provenance": {
+        "split": "cross_regional_test",
+        "physical_split_path": "hwb_holdout_high",
+        "region": "uk_2015",
+        "untouched_hwb_holdout": false,
+        "fidelity": "high_30m"
+      }
+    }
+  }
+}

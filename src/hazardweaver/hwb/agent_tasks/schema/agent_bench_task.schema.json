@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hwa.local/schemas/agent_bench_task.schema.json",
+  "title": "AgentBenchTask",
+  "description": "HWB-emitted agent bench task consumed by Hazard Weaver Agent. Gold is for external eval only; solver views must omit gold.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "domain",
+    "task_family",
+    "diversity_bucket",
+    "user_facing_goal",
+    "solver_visible",
+    "success_criteria",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "agent_bench_task/v1"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_\\-]{2,127}$",
+      "description": "Stable unique id, e.g. wf_danger_tabular_0001"
+    },
+    "domain": {
+      "type": "string",
+      "enum": ["wildfire", "pfdf"],
+      "description": "wildfire single-hazard or pfdf water–fire cascade"
+    },
+    "task_family": {
+      "type": "string",
+      "enum": [
+        "danger",
+        "spread",
+        "multi_step_compose",
+        "factual_compose",
+        "counterfactual_compose"
+      ]
+    },
+    "diversity_bucket": {
+      "type": "string",
+      "enum": [
+        "A_single_danger",
+        "B_single_spread",
+        "C_model_choice",
+        "D_constrained",
+        "E_multi_step",
+        "direct_inference",
+        "asset_discovery",
+        "schema_adapter",
+        "model_choice",
+        "multi_step_compose",
+        "failure_recovery",
+        "compare_interpret",
+        "clarification",
+        "factual_compose",
+        "factual_compose_tool",
+        "factual_asset_discovery",
+        "counterfactual_burn",
+        "counterfactual_rainfall",
+        "counterfactual_oracle_burn"
+      ]
+    },
+    "user_facing_goal": {
+      "type": "string",
+      "minLength": 20,
+      "description": "Natural-language instruction the agent sees"
+    },
+    "solver_visible": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inputs", "allowed_inventory"],
+      "properties": {
+        "inputs": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["sample_refs"],
+          "properties": {
+            "sample_refs": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["dataset_id", "sample_id"],
+                "properties": {
+                  "dataset_id": { "type": "string" },
+                  "sample_id": { "type": "string" },
+                  "split": { "type": "string" },
+                  "notes": { "type": "string" }
+                }
+              }
+            },
+            "constraints": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "e.g. restricted inventory, missing preferred model"
+            },
+            "hints": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Non-authoritative hints; may be wrong in bucket D"
+            }
+          }
+        },
+        "allowed_inventory": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["dataset_ids", "model_ids", "tool_ids"],
+          "properties": {
+            "dataset_ids": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "model_ids": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "tool_ids": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "pack_refs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Relative paths under the domain agent pack (wildfire or pfdf_waterfire)"
+        }
+      }
+    },
+    "success_criteria": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["answer_type", "description"],
+      "properties": {
+        "answer_type": {
+          "type": "string",
+          "enum": ["class_id", "class_label", "vector", "raster_summary", "text_report", "abstain_or_explain", "log_volume"]
+        },
+        "description": { "type": "string" },
+        "metric": {
+          "type": "string",
+          "description": "External eval metric id, e.g. exact_match, mae, iou"
+        }
+      }
+    },
+    "gold": {
+      "type": "object",
+      "description": "HIDDEN from solver. Present in HWB full task files only.",
+      "additionalProperties": false,
+      "properties": {
+        "answer": {},
+        "label": {},
+        "preferred_model_id": { "type": "string" },
+        "gold_type": {
+          "type": "string",
+          "enum": [
+            "observed_label",
+            "oracle_tool_result",
+            "abstain_reference",
+            "counterfactual_oracle"
+          ]
+        },
+        "eval_notes": { "type": "string" }
+      }
+    },
+    "theory_or_card_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generator_id", "generator_version", "created_utc"],
+      "properties": {
+        "generator_id": { "type": "string" },
+        "generator_version": { "type": "string" },
+        "created_utc": { "type": "string", "format": "date-time" },
+        "seed": { "type": "integer" },
+        "generation_mode": {
+          "type": "string",
+          "enum": [
+            "template_reverse_qa",
+            "llm_back_instruct",
+            "handwrite",
+            "pfdf_factual_compose",
+            "pfdf_counterfactual"
+          ],
+          "description": "How the task was produced (W2a / W2b / PFDF MW2–MW3)"
+        },
+        "llm_provider": {
+          "type": "string",
+          "description": "e.g. vllm or mock"
+        },
+        "llm_model_id": {
+          "type": "string",
+          "description": "HF / served model id used for back-instruct"
+        },
+        "bootstrap_note": {
+          "type": "string",
+          "description": "Optional offline bootstrap lineage; must not imply runtime pyhazards dependency"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_pfdf_parametric_v1",
+  "headline_target": "PFDF",
+  "coverage_tier": "W-covered",
+  "hib_is_grader": false,
+  "solver_view": {
+    "user_goal": "Given a USGS PFDF watershed record, produce log_volume_v1 via a legal SRC-bound portfolio route (pfdf_volume_gorr_v2 terminal).",
+    "parameters": {
+      "scenario_id": "Thomas_Thomas1_208",
+      "record_id": "Thomas_Thomas1_208",
+      "split": "official_test"
+    },
+    "allowed_tools": [
+      "inspect_artifact",
+      "run_capability",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "burn_state_net_prithvi_v1",
+      "pfdf_volume_gorr_v2"
+    ],
+    "forbidden_substitutions": [
+      "mh1_crc_substitute_for_pfdf_main_table"
+    ]
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "refs_sidecar": "hwb_pfdf_parametric_v1_refs.json",
+    "accepted_witnesses": [
+      {
+        "witness_id": "w_gorr_portfolio_src",
+        "route_id": "route:pfdf:terminal:pfdf_volume_gorr_v2",
+        "family": "RF-TABULAR-PORTFOLIO",
+        "edges": [
+          "pfdf_volume_gorr_v2"
+        ],
+        "capability_ids": [
+          "pfdf_volume_gorr_v2"
+        ]
+      }
+    ],
+    "outputs": {
+      "metric_name": "log_volume_v1",
+      "reference_score": 15.003651406437369,
+      "log_volume_v1": 15.003651406437369,
+      "scenario_id": "Thomas_Thomas1_208"
+    },
+    "tolerance": {
+      "metric": "log_volume_v1",
+      "max_abs_error": 1.0
+    },
+    "trajectory_constraints": {
+      "required_adapters": [],
+      "required_capability_edges": [],
+      "forbidden_shortcuts": [
+        "direct_submit_without_capability",
+        "mh1_crc_substitute"
+      ],
+      "provenance": {
+        "scenario_id": "Thomas_Thomas1_208",
+        "record_id": "Thomas_Thomas1_208",
+        "split": "official_test",
+        "claim_tier": "pilot4_src_binding"
+      }
+    }
+  },
+  "metadata": {
+    "pilot4_src_binding": true,
+    "not_headline_pass": true
+  }
+}

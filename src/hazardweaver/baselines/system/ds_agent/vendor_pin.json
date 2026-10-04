@@ -1,0 +1,22 @@
+{
+  "schema_version": "HWB_DS_AGENT_VENDOR_PIN_v1",
+  "baseline_id": "ds_agent",
+  "repo_url": "https://github.com/guosyjlu/DS-Agent",
+  "license": "MIT (verify LICENSE in vendor clone)",
+  "paper": "ICML 2024 — DS-Agent: Automated Data Science with Case-Based Reasoning",
+  "pin_sha": "2fb901007d62dc496c7bee1ed02cf139ea41bf85",
+  "pin_date": "2026-09-02",
+  "clone_root": "vendor/baselines/ds_agent",
+  "official_entry": {
+    "deployment_generate": "deployment/generate.py",
+    "deployment_retrieval": "deployment/retrieval.py",
+    "development_runner": "development/MLAgentBench/runner.py"
+  },
+  "llm_shim": {
+    "openai_base_env": "OPENAI_BASE_URL",
+    "openai_key_env": "OPENAI_API_KEY",
+    "default_local_model": "meta-llama/Llama-3.1-8B-Instruct",
+    "vllm_port": 8000
+  },
+  "pin_policy": "Checkout pin_sha exactly; HWB case bank is separate from Kaggle insight bank"
+}

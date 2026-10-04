@@ -1,0 +1,69 @@
+{
+  "schema_version": "HWB_SEVEN_TRACK_PARAMETRIC_REFS_v1",
+  "taskpack_id": "hwb_mh3_parametric_v1",
+  "scenarios": {
+    "CAP-MH3-01": {
+      "capability_id": "CAP-MH3-01",
+      "outputs": {
+        "metric_name": "depth_rmse",
+        "reference_score": 1.838295858976245,
+        "scenario_id": "CAP-MH3-01",
+        "depth_rmse": 1.838295858976245
+      },
+      "tolerance": {
+        "metric": "depth_rmse",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-MH3-01",
+        "hcg_scientific_dir": "runs/carp/scientific/MH-3/CAP-MH3-01",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-MH3-05": {
+      "capability_id": "CAP-MH3-05",
+      "outputs": {
+        "metric_name": "depth_rmse",
+        "reference_score": 1.0553883298597255,
+        "scenario_id": "CAP-MH3-05",
+        "depth_rmse": 1.0553883298597255
+      },
+      "tolerance": {
+        "metric": "depth_rmse",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-MH3-05",
+        "hcg_scientific_dir": "runs/carp/scientific/MH-3/CAP-MH3-05",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    },
+    "CAP-MH3-06": {
+      "capability_id": "CAP-MH3-06",
+      "outputs": {
+        "metric_name": "depth_rmse",
+        "reference_score": 0.03791668242746241,
+        "scenario_id": "CAP-MH3-06",
+        "depth_rmse": 0.03791668242746241
+      },
+      "tolerance": {
+        "metric": "depth_rmse",
+        "max_abs_error": 1.0
+      },
+      "provenance": {
+        "scenario_id": "CAP-MH3-06",
+        "hcg_scientific_dir": "runs/carp/scientific/MH-3/CAP-MH3-06",
+        "claim_tier": "seven_track_finish_line_c_scientific",
+        "not_headline_pass": true,
+        "hcg_scientific_authority": true,
+        "hwa_trajectory_authority": true
+      }
+    }
+  }
+}

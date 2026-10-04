@@ -1,0 +1,36 @@
+{
+  "taskpack_id": "hwb_table_a_ta_l2_cap_l2_01_scen_cap_l2_01_hwb_holdout_01_v1",
+  "headline_target": "L2",
+  "metadata": {
+    "capability_fitting_only": true,
+    "difficulty_tier": "L0",
+    "generation_mode": "capability_native_v1",
+    "table_a_instance_id": "TA_L2_CAP_L2_01_scen_cap_l2_01_hwb_holdout_01",
+    "capability_id": "CAP-L2-01",
+    "anchor_id": "AN-L-LHASA",
+    "scenario_id": "scen_cap_l2_01_hwb_holdout_01",
+    "split": "hwb_holdout"
+  },
+  "source": {
+    "pack_id": "table_a_v2",
+    "instance_id": "TA_L2_CAP_L2_01_scen_cap_l2_01_hwb_holdout_01",
+    "capability_id": "CAP-L2-01"
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "tolerance": {
+      "metric": "AUPRC"
+    },
+    "baseline_eligibility": {
+      "aide": false,
+      "mle_star": false,
+      "rd_agent": false,
+      "automl_agent": false
+    }
+  },
+  "solver_view": {},
+  "provenance": {
+    "generation_mode": "capability_native_v1",
+    "emit_utc": "2026-09-04T02:00:45Z"
+  }
+}

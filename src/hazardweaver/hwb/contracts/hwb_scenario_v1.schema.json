@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hwb/contracts/hwb_scenario_v1.schema.json",
+  "title": "HWB_SCENARIO_v1",
+  "type": "object",
+  "required": ["schema_version", "scenario_id", "track", "decision_time"],
+  "properties": {
+    "schema_version": { "const": "HWB_SCENARIO_v1" },
+    "scenario_id": { "type": "string" },
+    "track": { "type": "string" },
+    "task_definition_id": { "type": "string" },
+    "decision_time": { "type": "string" },
+    "cutoff_manifest": { "type": "object" },
+    "hazard": { "type": "string" },
+    "region": { "type": "string" },
+    "split_role": { "type": "string" },
+    "materialized": { "type": "boolean" }
+  }
+}

@@ -1,0 +1,28 @@
+recipe_id: CARP-CAP-MH3-04
+capability_id: CAP-MH3-04
+taskpack_id: MH-3
+artifact_id: ART-CAP-MH3-04
+priority: P3 heavy_reproduction
+fetch_or_checkout: plan heavy reproduction outside practical-lab gate; source=official
+  solvers/configs
+version_or_commit: BLOCKED
+environment: create isolated environment from official lock/requirements; record OS,
+  CUDA, container digest and package lock
+data_preparation: materialize only legal TaskPack inputs; freeze source versions/checksums;
+  apply train/validation/hidden split before fitting or calibration
+train_or_inference_command: "BLOCKED: ADCIRC chain P3 heavy reproduction; no vendor bundle"
+expected_artifact: model/checkpoint or deterministic configuration plus raw native
+  predictions and canonical HWB artifact
+checksum: UNKNOWN until fetched/built; SHA-256 mandatory before acceptance
+canonicalization: convert with lossless unit/CRS/time/grid adapter; retain native
+  artifact and provenance
+evaluation: run anchor evaluator and HWB hidden evaluator; record metric, split, units,
+  runtime and hardware
+failure_conditions:
+- source/license inaccessible
+- checksum drift
+- illegal input
+- official test leakage
+- canonicalization semantic loss
+- compute exceeds priority envelope
+manifest_source: docs/final_four/HCG/manifests/carp_recipes.jsonl

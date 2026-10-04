@@ -1,0 +1,249 @@
+capabilities:
+- capability_id: wildfire_fpa
+  hazard_family: wildfire
+  description: FPA DNN cause/size
+  consumes:
+  - wf_incident_features_8d
+  produces:
+  - wf_danger_class_5
+  kind: predictive_model
+  source_ref: model_cards/wildfire_fpa.yaml
+  namespaces:
+  - wildfire
+  training: null
+  implementation_ref: null
+- capability_id: wildfire_forecasting
+  hazard_family: wildfire
+  description: Weekly forecasting head
+  consumes:
+  - wf_weekly_county_tensor
+  produces:
+  - wf_weekly_activity_5d
+  kind: predictive_model
+  source_ref: model_cards/wildfire_forecasting.yaml
+  namespaces:
+  - wildfire
+  training: null
+  implementation_ref: null
+- capability_id: asufm
+  hazard_family: wildfire
+  description: ASUFM weekly TCN
+  consumes:
+  - wf_weekly_county_tensor
+  produces:
+  - wf_weekly_activity_5d
+  kind: predictive_model
+  source_ref: model_cards/asufm.yaml
+  namespaces:
+  - wildfire
+  training: null
+  implementation_ref: null
+- capability_id: wildfire_aspp
+  hazard_family: wildfire
+  description: ASPP spread
+  consumes:
+  - wf_spread_raster_frame
+  produces:
+  - wf_burned_mask
+  kind: predictive_model
+  source_ref: model_cards/wildfire_aspp.yaml
+  namespaces:
+  - wildfire
+  training: null
+  implementation_ref: null
+- capability_id: wildfirespreadts
+  hazard_family: wildfire
+  description: Temporal spread TCN
+  consumes:
+  - wf_spread_raster_history
+  produces:
+  - wf_burned_mask
+  kind: predictive_model
+  source_ref: model_cards/wildfirespreadts.yaml
+  namespaces:
+  - wildfire
+  training: null
+  implementation_ref: null
+- capability_id: firecastnet
+  hazard_family: wildfire
+  description: FireCastNet
+  consumes:
+  - wf_spread_raster_history
+  produces:
+  - wf_burned_mask
+  kind: predictive_model
+  source_ref: model_cards/firecastnet.yaml
+  namespaces:
+  - wildfire
+  training: null
+  implementation_ref: null
+- capability_id: neuralhydrology_lstm
+  hazard_family: flood
+  description: NH LSTM streamflow
+  consumes:
+  - fl_graph_temporal_x
+  produces:
+  - fl_streamflow_next
+  kind: predictive_model
+  source_ref: model_cards/neuralhydrology_lstm.yaml
+  namespaces:
+  - flood
+  training: null
+  implementation_ref: null
+- capability_id: neuralhydrology_ealstm
+  hazard_family: flood
+  description: NH EA-LSTM
+  consumes:
+  - fl_graph_temporal_x
+  produces:
+  - fl_streamflow_next
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - flood
+  training: null
+  implementation_ref: null
+- capability_id: google_flood_forecasting
+  hazard_family: flood
+  description: Google flood forecasting adapter
+  consumes:
+  - fl_graph_temporal_x
+  produces:
+  - fl_streamflow_next
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - flood
+  training: null
+  implementation_ref: null
+- capability_id: hydrographnet
+  hazard_family: flood
+  description: HydroGraphNet (needs adj)
+  consumes:
+  - fl_graph_temporal_x
+  - fl_graph_adj
+  produces:
+  - fl_streamflow_next
+  kind: predictive_model
+  source_ref: model_cards/hydrographnet.yaml
+  namespaces:
+  - flood
+  training: null
+  implementation_ref: null
+- capability_id: floodcast
+  hazard_family: flood
+  description: FloodCast inundation
+  consumes:
+  - fl_inundation_history
+  produces:
+  - fl_inundation_depth
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - flood
+  training: null
+  implementation_ref: null
+- capability_id: phasenet
+  hazard_family: earthquake
+  description: PhaseNet picks
+  consumes:
+  - eq_waveform_3c
+  produces:
+  - eq_ps_pick_indices
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - earthquake
+  training: null
+  implementation_ref: null
+- capability_id: eqtransformer
+  hazard_family: earthquake
+  description: EQTransformer
+  consumes:
+  - eq_waveform_3c
+  produces:
+  - eq_ps_pick_indices
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - earthquake
+  training: null
+  implementation_ref: null
+- capability_id: gpd
+  hazard_family: earthquake
+  description: GPD picks
+  consumes:
+  - eq_waveform_3c
+  produces:
+  - eq_ps_pick_indices
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - earthquake
+  training: null
+  implementation_ref: null
+- capability_id: wavecastnet
+  hazard_family: earthquake
+  description: WaveCastNet forecast
+  consumes:
+  - eq_wavefield_history
+  produces:
+  - eq_wavefield_forecast
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - earthquake
+  training: null
+  implementation_ref: null
+- capability_id: hurricast
+  hazard_family: tc
+  description: HurriCast
+  consumes:
+  - tc_track_history
+  produces:
+  - tc_track_forecast
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - tc
+  training: null
+  implementation_ref: null
+- capability_id: tropicalcyclone_mlp
+  hazard_family: tc
+  description: TC MLP
+  consumes:
+  - tc_track_history
+  produces:
+  - tc_track_forecast
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - tc
+  training: null
+  implementation_ref: null
+- capability_id: tcif_fusion
+  hazard_family: tc
+  description: TCIF fusion
+  consumes:
+  - tc_track_history
+  produces:
+  - tc_track_forecast
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - tc
+  training: null
+  implementation_ref: null
+- capability_id: saf_net
+  hazard_family: tc
+  description: SAF-Net
+  consumes:
+  - tc_track_history
+  produces:
+  - tc_track_forecast
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - tc
+  training: null
+  implementation_ref: null

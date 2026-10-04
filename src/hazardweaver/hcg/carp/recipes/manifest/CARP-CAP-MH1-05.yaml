@@ -1,0 +1,23 @@
+recipe_id: CARP-CAP-MH1-05
+capability_id: CAP-MH1-05
+taskpack_id: MH-1
+artifact_id: ART-CAP-MH1-05
+priority: P3 heavy_reproduction
+fetch_or_checkout: USGS ursa 1.0.0 DOI 10.5066/P15CKL9J; anchor supporting data DOI
+  10.5066/P13GYER5; PWFDF-R contract DOI 10.5066/P18RMZBB (not GT)
+version_or_commit: 1.0.0 / 10.5066/P15CKL9J
+environment: ursa CLI + Snakemake workflow; record OS and package lock
+data_preparation: four 2026 anchor reproduction cases (joint Set B); NOT hwb holdout;
+  forbid 227-inventory retrain on overlap fires
+train_or_inference_command: ursa initialize <name> ; ursa run all
+expected_artifact: postfire_debris_flow_runout_hazard_footprint (DFSI hazard map)
+checksum: SHA-256 mandatory before acceptance
+canonicalization: DFSI>0 predicted footprint vs observed mapped runout
+evaluation: primary threat_score; secondary hit_rate, FAR, bias; depth_RMSE removed
+failure_conditions:
+- source/license inaccessible
+- PWFDF-R used as ground truth
+- anchor case split into hidden holdout
+- local 227-inventory retrain upstream
+- checksum drift
+manifest_source: docs/final_four/HCG/manifests/carp_recipes.jsonl

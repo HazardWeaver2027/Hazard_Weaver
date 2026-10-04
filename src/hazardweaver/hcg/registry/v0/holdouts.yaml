@@ -1,0 +1,96 @@
+artifacts: []
+datasets:
+- dataset_id: wfigs
+  hazard_family: wildfire
+  description: WFIGS incidents (holdout)
+  provides:
+  - wf_wfigs_incident
+  source_ref: PyHazards/dataset_cards/wfigs.yaml
+  synthetic_backed: true
+  namespaces:
+  - wildfire
+- dataset_id: noaa_flood
+  hazard_family: flood
+  description: NOAA flood (holdout)
+  provides:
+  - fl_graph_temporal_x
+  - fl_graph_adj
+  - fl_streamflow_next
+  source_ref: PyHazards/dataset_cards/noaa_flood.yaml
+  synthetic_backed: true
+  namespaces:
+  - flood
+- dataset_id: aefa_forecast
+  hazard_family: earthquake
+  description: AEFA forecast (holdout)
+  provides:
+  - eq_wavefield_history
+  - eq_wavefield_forecast
+  source_ref: PyHazards/dataset_cards/aefa_forecast.yaml
+  synthetic_backed: true
+  namespaces:
+  - earthquake
+- dataset_id: tropicyclonenet_dataset
+  hazard_family: tc
+  description: TropiCycloneNet data (holdout)
+  provides:
+  - tc_track_history
+  - tc_track_forecast
+  source_ref: PyHazards/dataset_cards/tcbench_alpha.yaml
+  synthetic_backed: true
+  namespaces:
+  - tc
+capabilities:
+- capability_id: wildfire_mamba
+  hazard_family: wildfire
+  description: Wildfire Mamba (holdout)
+  consumes:
+  - wf_weekly_county_tensor
+  produces:
+  - wf_mamba_state
+  kind: predictive_model
+  source_ref: model_cards/wildfire_mamba.yaml
+  namespaces:
+  - wildfire
+  training: null
+  implementation_ref: null
+- capability_id: urbanfloodcast
+  hazard_family: flood
+  description: UrbanFloodCast (holdout)
+  consumes:
+  - fl_inundation_history
+  produces:
+  - fl_inundation_depth
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - flood
+  training: null
+  implementation_ref: null
+- capability_id: eqnet
+  hazard_family: earthquake
+  description: EQNet (holdout)
+  consumes:
+  - eq_waveform_3c
+  produces:
+  - eq_ps_pick_indices
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - earthquake
+  training: null
+  implementation_ref: null
+- capability_id: tropicyclonenet
+  hazard_family: tc
+  description: TropiCycloneNet (holdout)
+  consumes:
+  - tc_track_history
+  produces:
+  - tc_track_forecast
+  kind: predictive_model
+  source_ref: null
+  namespaces:
+  - tc
+  training: null
+  implementation_ref: null
+adapters: []

@@ -1,0 +1,23 @@
+{
+  "baseline_id": "gisclaw",
+  "official_repo": "https://github.com/geumjin99/GISclaw.git",
+  "ref": "paper-v2",
+  "tag": "v2-gsis-submission",
+  "clone_root": "experiments/benchmark/baselines/system/gisclaw/vendor/GISclaw",
+  "default_architecture": "dual_agent_plan_execute_replan",
+  "official_entry_candidates": [
+    "scripts/run_dual_agent_task.py",
+    "src/agent/react_agent.py",
+    "app/runner.py"
+  ],
+  "runtime_env": {
+    "vendor_python": "envs/gisclaw/bin/python",
+    "setup_script": "scripts/benchmark/setup_gisclaw_vendor.sh"
+  },
+  "default_budget": {
+    "wall_time_s_max": 3600,
+    "max_rounds": 15,
+    "llm_model": "google/gemma-4-31B-it"
+  },
+  "pin_policy": "paper-v2 dual-agent; main ReAct is appendix-only ablation"
+}

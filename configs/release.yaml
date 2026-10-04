@@ -1,0 +1,9 @@
+# Default release profile (anonymous ICLR review)
+profile: anonymous
+strict_identity_scan: true
+license_holder: "Anonymous Authors"
+package_authors: "Anonymous Authors"
+benchmark:
+  headline_n: 141
+  stratum_m_n: 96
+  route_update_n: 40

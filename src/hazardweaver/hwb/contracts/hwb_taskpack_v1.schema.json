@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hwb/contracts/hwb_taskpack_v1.schema.json",
+  "title": "HWB_TASKPACK_v1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "taskpack_id",
+    "headline_target",
+    "coverage_tier",
+    "solver_view",
+    "reference_view",
+    "hib_is_grader"
+  ],
+  "properties": {
+    "schema_version": { "const": "HWB_TASKPACK_v1" },
+    "taskpack_id": { "type": "string" },
+    "headline_target": { "type": "string" },
+    "coverage_tier": {
+      "type": "string",
+      "enum": ["K-covered", "W-covered", "E-validated"]
+    },
+    "solver_view": { "type": "object" },
+    "reference_view": { "type": "object" },
+    "hib_is_grader": { "const": false }
+  }
+}

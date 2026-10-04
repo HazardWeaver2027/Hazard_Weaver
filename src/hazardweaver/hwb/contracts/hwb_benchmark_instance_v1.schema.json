@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hwb/contracts/hwb_benchmark_instance_v1.schema.json",
+  "title": "HWB_BENCHMARK_INSTANCE_v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "instance_id",
+    "scenario_id",
+    "task_definition_id",
+    "solver_view",
+    "evaluator_bundle_ref"
+  ],
+  "properties": {
+    "schema_version": { "const": "HWB_BENCHMARK_INSTANCE_v1" },
+    "instance_id": { "type": "string" },
+    "scenario_id": { "type": "string" },
+    "task_definition_id": { "type": "string" },
+    "track": { "type": "string" },
+    "solver_view": { "type": "object" },
+    "evaluator_bundle_ref": { "type": "string" },
+    "cutoff_manifest": { "type": "object" },
+    "capability_snapshot_ref": { "type": "string" },
+    "tier": { "enum": ["core", "atlas", "legacy"] }
+  }
+}

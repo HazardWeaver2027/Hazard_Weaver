@@ -1,0 +1,26 @@
+{
+  "baseline_id": "rd_agent",
+  "official_repo": "https://github.com/microsoft/RD-Agent",
+  "install": "pip install rdagent",
+  "license": "MIT",
+  "paper": "arXiv:2505.14738",
+  "cli_entry": "rdagent data_science",
+  "health_check": "rdagent health_check --no-check-env",
+  "runtime_env": {
+    "rdagent_cli_env": "envs/rdagent (Python 3.11; pip install rdagent + pydantic-ai-slim[mcp,openai,prefect]==1.66.0)",
+    "adapter_env": "envs/pyhazards (adapter/eval/pytest only)",
+    "ds_scen": "rdagent.scenarios.data_science.scen.DataScienceScen",
+    "ds_local_data_path": "runs/benchmark/system_baselines/rd_agent/_hwb_competitions",
+    "ds_coder_env_type": "conda",
+    "extra_pip": ["coverage>=7.0"],
+    "setup_script": "scripts/benchmark/setup_rdagent_env.sh"
+  },
+  "pin_policy": "Record pip version + first live UTC in runs/benchmark/system_baselines/rd_agent/vendor_sha.txt",
+  "competition_shim_root": "runs/benchmark/system_baselines/rd_agent/_hwb_competitions",
+  "default_budget": {
+    "max_loops": 8,
+    "wall_time_s_max": 7200,
+    "llm_provider": "bedrock",
+    "llm_model": ""
+  }
+}

@@ -1,0 +1,13 @@
+# RQ2 route updating — W3-40 (table)
+
+W3 E12 Refresh gated/40 subset applicable to route-updating contrast; not clean @141 static_s0 neutral pool.
+
+**Denominator:** n=40 gated cells.
+
+| Backbone | Fixed initial eligibility [95% CI] | Full HWA [95% CI] |
+|----------|-----------------------------------|-------------------|
+| Mixtral-8x22B | 2/40 (5.0% [1.4, 16.5]) | 6/40 (15.0% [7.1, 29.1]) |
+| OLMo-3.1-32B | 7/40 (17.5% [8.8, 31.9]) | 10/40 (25.0% [14.2, 40.2]) |
+| DeepSeek-V4.1-Flash | 9/40 (22.5% [12.3, 37.5]) | 14/40 (35.0% [22.1, 50.5]) |
+| Gemma-4-31B-it | 8/40 (20.0% [10.5, 34.8]) | 17/40 (42.5% [28.5, 57.8]) |
+| Llama-3.3-70B | 6/40 (15.0% [7.1, 29.1]) | 36/40 (90.0% [77.0, 96.0]) |

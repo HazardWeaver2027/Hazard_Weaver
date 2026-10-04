@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hwb/contracts/hwb_task_definition_v2.schema.json",
+  "title": "HWB_TASK_DEFINITION_v2",
+  "type": "object",
+  "required": ["schema_version", "task_definition_id", "track", "hazard", "scientific_task"],
+  "properties": {
+    "schema_version": { "const": "HWB_TASK_DEFINITION_v2" },
+    "task_definition_id": { "type": "string" },
+    "track": { "type": "string" },
+    "hazard": { "type": "string" },
+    "scientific_task": { "type": "string" },
+    "canonical_output_schema_id": { "type": "string" },
+    "forecast_or_analysis": { "enum": ["forecast", "analysis", "chain"] }
+  }
+}

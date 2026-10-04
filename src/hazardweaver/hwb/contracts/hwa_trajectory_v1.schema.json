@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hwb/contracts/hwa_trajectory_v1.schema.json",
+  "title": "HWA_TRAJECTORY_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "task_id", "steps", "final_artifact"],
+  "properties": {
+    "schema_version": {
+      "const": "HWA_TRAJECTORY_v1"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/trajectory_step" }
+    },
+    "final_artifact": { "$ref": "#/$defs/final_artifact" },
+    "route_summary": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "crs": { "type": "string" },
+        "units": { "type": "string" },
+        "time_window": { "type": "string" },
+        "dataset_id": { "type": "string" }
+      }
+    },
+    "trajectory_step": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["step_index", "kind", "ok"],
+      "properties": {
+        "step_index": { "type": "integer", "minimum": 0 },
+        "kind": {
+          "type": "string",
+          "enum": ["capability", "adapter", "tool", "submit"]
+        },
+        "capability_id": { "type": "string" },
+        "adapter_id": { "type": "string" },
+        "tool": { "type": "string" },
+        "inputs": { "type": "object" },
+        "outputs": { "type": "object" },
+        "provenance": { "$ref": "#/$defs/provenance" },
+        "ok": { "type": "boolean" }
+      }
+    },
+    "final_artifact": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["schema_id", "value"],
+      "properties": {
+        "schema_id": { "type": "string" },
+        "value": {},
+        "artifact_keys": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

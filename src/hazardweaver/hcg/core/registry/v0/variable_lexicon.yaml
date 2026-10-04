@@ -1,0 +1,212 @@
+# Four-hazard controlled Variable lexicon (P3 Phase A).
+# canonical_id == graph variable_id / legacy artifact_id for this migration version.
+
+variables:
+  - canonical_id: wf_lat
+    aliases: [lat, latitude, fire_lat]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: wf_lon
+    aliases: [lon, longitude, fire_lon]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: wf_discovery_doy
+    aliases: [doy, discovery_doy, day_of_year]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: wf_firms_hotspots
+    aliases: [firms, hotspots, firms_hotspots]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: wf_landfire_fuel
+    aliases: [landfire, fuel_map, landfire_fuel]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: wf_mtbs_severity
+    aliases: [mtbs, mtbs_severity]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: wf_spread_raster_frame
+    aliases: [spread_frame, spread_raster]
+    hazard: wildfire
+    semantic_role: latent
+  - canonical_id: wf_spread_raster_history
+    aliases: [spread_history]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: wf_burned_mask
+    aliases: [burn_mask, burned_mask, fire_mask, burned_area_mask]
+    hazard: wildfire
+    semantic_role: prediction
+  - canonical_id: wf_basin_burn_fraction
+    aliases: [burn_fraction, basin_burn_fraction]
+    hazard: wildfire
+    semantic_role: prediction
+  - canonical_id: wf_weekly_county_tensor
+    aliases: [weekly_fire, weekly_county_tensor]
+    hazard: wildfire
+    semantic_role: latent
+  - canonical_id: wf_weekly_activity_5d
+    aliases: [weekly_activity, fire_activity]
+    hazard: wildfire
+    semantic_role: prediction
+  - canonical_id: wf_danger_class_5
+    aliases: [danger_class, wildfire_danger]
+    hazard: wildfire
+    semantic_role: prediction
+  - canonical_id: wf_incident_features_8d
+    aliases: [incident_features, fpa_features_8d]
+    hazard: wildfire
+    semantic_role: bundle_view
+  - canonical_id: wf_burn_severity_class
+    aliases: [burn_severity, severity_class]
+    hazard: wildfire
+    semantic_role: prediction
+  - canonical_id: wf_smoke_emission
+    aliases: [smoke_emission, emission]
+    hazard: wildfire
+    semantic_role: prediction
+  - canonical_id: wf_postfire_risk_index
+    aliases: [postfire_risk, risk_index]
+    hazard: wildfire
+    semantic_role: prediction
+  - canonical_id: fl_graph_temporal_x
+    aliases: [basin_forcings, streamflow_features, caravan, caravan_streamflow, hydrobench, waterbench]
+    hazard: flood
+    semantic_role: observation
+  - canonical_id: fl_graph_adj
+    aliases: [basin_adj, graph_adj]
+    hazard: flood
+    semantic_role: observation
+  - canonical_id: fl_streamflow_next
+    aliases: [streamflow, discharge, streamflow_next, neuralhydrology_lstm, neuralhydrology, neuralhydrology_ealstm, hydrographnet, google_flood_forecasting]
+    hazard: flood
+    semantic_role: prediction
+  - canonical_id: fl_inundation_history
+    aliases: [inundation_history]
+    hazard: flood
+    semantic_role: observation
+  - canonical_id: fl_inundation_depth
+    aliases: [inundation_depth, flood_depth]
+    hazard: flood
+    semantic_role: prediction
+  - canonical_id: fl_peak_depth
+    aliases: [peak_depth, inundation_peak]
+    hazard: flood
+    semantic_role: prediction
+  - canonical_id: eq_waveform_3c
+    aliases: [waveform, seismic_waveform, seisbench, seisbench_waveforms, pick_benchmark_waveforms]
+    hazard: earthquake
+    semantic_role: observation
+  - canonical_id: eq_ps_pick_indices
+    aliases: [picks, p_s_picks, phase_picks, phasenet, eqtransformer, gpd, eqnet]
+    hazard: earthquake
+    semantic_role: prediction
+  - canonical_id: eq_wavefield_history
+    aliases: [wavefield_history]
+    hazard: earthquake
+    semantic_role: observation
+  - canonical_id: eq_wavefield_forecast
+    aliases: [wavefield_forecast]
+    hazard: earthquake
+    semantic_role: prediction
+  - canonical_id: eq_magnitude_estimate
+    aliases: [magnitude, mag_estimate]
+    hazard: earthquake
+    semantic_role: prediction
+  - canonical_id: eq_shakemap_proxy
+    aliases: [shakemap, pga_proxy]
+    hazard: earthquake
+    semantic_role: prediction
+  - canonical_id: tc_track_history
+    aliases: [track_history, ibtracs, ibtracs_tracks]
+    hazard: tc
+    semantic_role: observation
+  - canonical_id: tc_track_forecast
+    aliases: [track_forecast, tropicyclonenet_dataset, tcbench_alpha, tcbench]
+    hazard: tc
+    semantic_role: prediction
+  - canonical_id: tc_intensity_forecast
+    aliases: [intensity_forecast, tc_intensity, hurricast_intensity]
+    hazard: tc
+    semantic_role: prediction
+  - canonical_id: forcing_era5_cube
+    aliases: [era5]
+    hazard: forcing
+    semantic_role: observation
+  - canonical_id: forcing_merra2_cube
+    aliases: [merra2]
+    hazard: forcing
+    semantic_role: observation
+  - canonical_id: forcing_goesr_scene
+    aliases: [goesr]
+    hazard: forcing
+    semantic_role: observation
+
+  # --- G0 seed 2026-07-19: composer_final ∩ codex_final stable IO (+ packing aliases) ---
+  - canonical_id: wf_ndws_meteorology_stack
+    aliases: [ndws_meteorology, ndws_meteo_stack, wf_ndws_weather_stack]
+    hazard: wildfire
+    semantic_role: bundle_view
+  - canonical_id: wf_ndws_elevation_raster
+    aliases: [ndws_elevation, wf_ndws_elevation]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: wf_ndws_vegetation_index
+    aliases: [ndws_ndvi, wf_ndws_ndvi]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: wf_ndws_population_density
+    aliases: [ndws_population, wf_ndws_pop]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: wf_ndws_fuel_component
+    aliases: [ndws_erc, wf_ndws_erc, energy_release_component]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: wf_fire_rotation_metrics
+    aliases: [fire_rotation, high_severity_rotation]
+    hazard: wildfire
+    semantic_role: latent
+  - canonical_id: wf_future_fire_scenario
+    aliases: [fire_area_scenario_2050, future_burn_scenario]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: wf_fire_deficit_estimate
+    aliases: [fire_deficit, contemporary_fire_deficit]
+    hazard: wildfire
+    semantic_role: prediction
+  - canonical_id: wf_tree_ring_fire_scars
+    aliases: [nafsn_scars, tree_ring_fire_scars]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: wf_modern_fire_perimeters
+    aliases: [mtbs_perimeters, modern_fire_perimeters]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: wf_site_coordinates
+    aliases: [nafsn_site_coords, fire_site_xy]
+    hazard: wildfire
+    semantic_role: observation
+  - canonical_id: eq_waveform_4s_window
+    aliases: [waveform_4s, eq_4s_window]
+    hazard: earthquake
+    semantic_role: observation
+  - canonical_id: fl_wadowice_lag9_feature_vector
+    aliases: [fl_wadowice_feature_vector, wadowice_lag9, skawa_lag9_features]
+    hazard: flood
+    semantic_role: bundle_view
+  - canonical_id: fl_tagus_lagged_feature_vector
+    aliases: [fl_tagus_precip_lagged, fl_tagus_station_flow_lagged, tagus_lagged_features]
+    hazard: flood
+    semantic_role: bundle_view
+  - canonical_id: fl_tagus_basin_forcing
+    aliases: [fl_tagus_meteorology, tagus_meteo_forcing]
+    hazard: flood
+    semantic_role: bundle_view
+  - canonical_id: fl_tagus_static_basin_inputs
+    aliases: [fl_tagus_dem, fl_tagus_soil, fl_tagus_landcover, fl_tagus_basin_config]
+    hazard: flood
+    semantic_role: bundle_view
+  # G0c: additional PyHazards registry aliases merged into canonicals above
+  # (tc_intensity_forecast + ibtracs_tracks / tcbench aliases; no duplicate canonical rows).

@@ -1,0 +1,45 @@
+% Auto-generated RQ3 main table @141 (Overleaf)
+\begin{table}[t]
+\centering
+\caption{\textbf{Cross-backbone performance of Full HazardWeaver.} Unified DCA v2 is the headline metric; Macro DCA assigns equal weight to the 11 tracks. Headline DCA requires route gold (when defined), artifact validity ($E_q$), and trajectory validity ($V_q$) under the sealed unified scorer; table columns report marginal component pass rates from the same per-cell evaluation. $N=141$ (PFDF excluded, DL-220).}
+\vspace{-0.3cm}
+\label{tab:rq3-main}
+\setlength{\tabcolsep}{5.0pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcccc@{}}
+\toprule
+Backbone
+& \shortstack{DCA}
+& \shortstack{Macro DCA}
+& \shortstack{Artifact validity ($E_q$)}
+& \shortstack{Trajectory validity ($V_q$)} \\
+\midrule
+OLMo
+& 60.3 [52.0, 68.0]
+& 61.9 [54.4, 71.2]
+& 78.0 [70.5, 84.1]
+& 91.5 [85.7, 95.1] \\
+Mixtral
+& 70.2 [62.2, 77.1]
+& 70.8 [57.6, 83.9]
+& 79.4 [72.0, 85.3]
+& 92.2 [86.6, 95.6] \\
+Gemma
+& 79.4 [72.0, 85.3]
+& 78.6 [65.2, 91.5]
+& 86.5 [79.9, 91.2]
+& 92.9 [87.4, 96.1] \\
+DeepSeek
+& 86.5 [79.9, 91.2]
+& 86.6 [77.2, 94.3]
+& 90.8 [84.9, 94.5]
+& 92.2 [86.6, 95.6] \\
+Llama
+& \textbf{89.4 [83.2, 93.5]}
+& \textbf{89.5 [79.7, 97.0]}
+& \textbf{92.2 [86.6, 95.6]}
+& \textbf{95.0 [90.1, 97.6]} \\
+\bottomrule
+\end{tabular*}
+\vspace{-0.3cm}
+\end{table}

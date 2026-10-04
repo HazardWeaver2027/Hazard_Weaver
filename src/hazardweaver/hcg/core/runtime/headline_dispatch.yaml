@@ -1,0 +1,91 @@
+# Headline capability dispatch bindings — manifest CAP-* → CARP native_eval entry.
+# Every cap in HCG_HEADLINE_CAPABILITY_SUBSET_v1 (64) MUST appear here (no smoke_stub fallback).
+updated: "2026-09-04"
+authority: DL-120 headline dispatch complete (66/66 incl. PFDF portfolio); MH-4 batch_9 DL-149
+
+bindings:
+  # batch_1 FL-2
+  CAP-FL2-01: {taskpack: FL-2, module: experiments.hcg.carp.native_eval.eval_fl2, fn: eval_fl2_cap}
+  CAP-FL2-02: {taskpack: FL-2, module: experiments.hcg.carp.native_eval.eval_fl2, fn: eval_fl2_cap}
+  CAP-FL2-03: {taskpack: FL-2, module: experiments.hcg.carp.native_eval.eval_fl2, fn: eval_fl2_cap}
+  CAP-FL2-04: {taskpack: FL-2, module: experiments.hcg.carp.native_eval.eval_fl2_solver_official, fn: eval_fl2_solver_official}
+  CAP-FL2-05: {taskpack: FL-2, module: experiments.hcg.carp.native_eval.eval_fl2_solver_official, fn: eval_fl2_solver_official}
+  CAP-FL2-06: {taskpack: FL-2, module: experiments.hcg.carp.native_eval.eval_fl2_solver_official, fn: eval_fl2_hand_official}
+
+  # batch_2 TC-TRK
+  CAP-TCTRK-01: {taskpack: TC-TRK, module: experiments.hcg.carp.native_eval.eval_tc_tctrk, fn: eval_tctrk_cap}
+  CAP-TCTRK-02: {taskpack: TC-TRK, module: experiments.hcg.carp.native_eval.eval_tc_tctrk, fn: eval_tctrk_cap}
+  CAP-TCTRK-03: {taskpack: TC-TRK, module: experiments.hcg.carp.native_eval.eval_tc_tctrk, fn: eval_tctrk_cap}
+  CAP-TCTRK-04: {taskpack: TC-TRK, module: experiments.hcg.carp.native_eval.eval_tc_tctrk, fn: eval_tctrk_cap}
+  CAP-TCTRK-05: {taskpack: TC-TRK, module: experiments.hcg.carp.native_eval.eval_tc_tctrk, fn: eval_tctrk_cap}
+  CAP-TCTRK-06: {taskpack: TC-TRK, module: experiments.hcg.carp.native_eval.eval_tc_tctrk, fn: eval_tctrk_cap}
+
+  # batch_3 W3 (L2 + DR-OUT + MH-1)
+  CAP-L2-01: {taskpack: L2, module: experiments.hcg.carp.native_eval.eval_l2, fn: eval_l2_cap}
+  CAP-L2-02: {taskpack: L2, module: experiments.hcg.carp.native_eval.eval_l2, fn: eval_l2_cap}
+  CAP-L2-03: {taskpack: L2, module: experiments.hcg.carp.native_eval.eval_l2, fn: eval_l2_cap}
+  CAP-L2-04: {taskpack: L2, module: experiments.hcg.carp.native_eval.eval_l2, fn: eval_l2_cap}
+  CAP-L2-05: {taskpack: L2, module: experiments.hcg.carp.native_eval.eval_l2, fn: eval_l2_cap}
+  CAP-DROUT-01: {taskpack: DR-OUT, module: experiments.hcg.carp.native_eval.eval_dr_out, fn: eval_dr_out_cap}
+  CAP-DROUT-02: {taskpack: DR-OUT, module: experiments.hcg.carp.native_eval.eval_dr_out, fn: eval_dr_out_cap}
+  CAP-DROUT-03: {taskpack: DR-OUT, module: experiments.hcg.carp.native_eval.eval_dr_out, fn: eval_dr_out_cap}
+  CAP-DROUT-04: {taskpack: DR-OUT, module: experiments.hcg.carp.native_eval.eval_dr_out, fn: eval_dr_out_cap}
+  CAP-DROUT-05: {taskpack: DR-OUT, module: experiments.hcg.carp.native_eval.eval_dr_out, fn: eval_dr_out_cap}
+  CAP-MH1-01: {taskpack: MH-1, module: experiments.hcg.carp.native_eval.eval_mh1, fn: eval_mh1_cap}
+  CAP-MH1-02: {taskpack: MH-1, module: experiments.hcg.carp.native_eval.eval_mh1, fn: eval_mh1_cap}
+  CAP-MH1-03: {taskpack: MH-1, module: experiments.hcg.carp.native_eval.eval_mh1, fn: eval_mh1_cap}
+  CAP-MH1-04: {taskpack: MH-1, module: experiments.hcg.carp.native_eval.eval_mh1, fn: eval_mh1_cap}
+  CAP-MH1-05: {taskpack: MH-1, module: experiments.hcg.carp.native_eval.eval_mh1, fn: eval_mh1_cap}
+
+  # batch_4 MH-2
+  CAP-MH2-01: {taskpack: MH-2, module: experiments.hcg.carp.native_eval.eval_mh2, fn: eval_mh2_cap}
+  CAP-MH2-02: {taskpack: MH-2, module: experiments.hcg.carp.native_eval.eval_mh2, fn: eval_mh2_cap}
+  CAP-MH2-03: {taskpack: MH-2, module: experiments.hcg.carp.native_eval.eval_mh2, fn: eval_mh2_cap}
+  CAP-MH2-04: {taskpack: MH-2, module: experiments.hcg.carp.native_eval.eval_mh2, fn: eval_mh2_cap}
+  CAP-MH2-05: {taskpack: MH-2, module: experiments.hcg.carp.native_eval.eval_mh2, fn: eval_mh2_cap}
+  CAP-MH2-06: {taskpack: MH-2, module: experiments.hcg.carp.native_eval.eval_mh2, fn: eval_mh2_cap}
+
+  # batch_5 WF-3
+  CAP-WF3-01: {taskpack: WF-3, module: experiments.hcg.carp.native_eval.eval_wf3_wsts, fn: eval_wf3_cap}
+  CAP-WF3-02: {taskpack: WF-3, module: experiments.hcg.carp.native_eval.eval_wf3_wsts, fn: eval_wf3_cap}
+  CAP-WF3-03: {taskpack: WF-3, module: experiments.hcg.carp.native_eval.eval_wf3_wsts, fn: eval_wf3_cap}
+  CAP-WF3-04: {taskpack: WF-3, module: experiments.hcg.carp.native_eval.eval_wf3_wsts, fn: eval_wf3_cap}
+  CAP-WF3-05: {taskpack: WF-3, module: experiments.hcg.carp.native_eval.eval_wf3_wsts, fn: eval_wf3_cap}
+  CAP-WF3-06: {taskpack: WF-3, module: experiments.hcg.carp.native_eval.eval_wf3_wsts, fn: eval_wf3_cap}
+
+  # batch_6 E1-E3
+  CAP-E1E3-01: {taskpack: E1-E3, module: experiments.hcg.carp.native_eval.eval_e1e3_anchor, fn: eval_e1e3_cap}
+  CAP-E1E3-02: {taskpack: E1-E3, module: experiments.hcg.carp.native_eval.eval_e1e3_anchor, fn: eval_e1e3_cap}
+  CAP-E1E3-03: {taskpack: E1-E3, module: experiments.hcg.carp.native_eval.eval_e1e3_anchor, fn: eval_e1e3_cap}
+  CAP-E1E3-04: {taskpack: E1-E3, module: experiments.hcg.carp.native_eval.eval_e1e3_anchor, fn: eval_e1e3_cap}
+  CAP-E1E3-05: {taskpack: E1-E3, module: experiments.hcg.carp.native_eval.eval_e1e3_anchor, fn: eval_e1e3_cap}
+  CAP-E1E3-06: {taskpack: E1-E3, module: experiments.hcg.carp.native_eval.eval_e1e3_anchor, fn: eval_e1e3_cap}
+  CAP-E1E3-07: {taskpack: E1-E3, module: experiments.hcg.carp.native_eval.eval_e1e3_anchor, fn: eval_e1e3_cap}
+  CAP-E1E3-08: {taskpack: E1-E3, module: experiments.hcg.carp.native_eval.eval_e1e3_anchor, fn: eval_e1e3_cap}
+
+  # batch_7 HW-MED
+  CAP-HWMED-01: {taskpack: HW-MED, module: experiments.hcg.carp.native_eval.eval_hw_med, fn: eval_hwmed_cap}
+  CAP-HWMED-02: {taskpack: HW-MED, module: experiments.hcg.carp.native_eval.eval_hw_med, fn: eval_hwmed_cap}
+  CAP-HWMED-03: {taskpack: HW-MED, module: experiments.hcg.carp.native_eval.eval_hw_med, fn: eval_hwmed_cap}
+  CAP-HWMED-04: {taskpack: HW-MED, module: experiments.hcg.carp.native_eval.eval_hw_med, fn: eval_hwmed_cap}
+  CAP-HWMED-05: {taskpack: HW-MED, module: experiments.hcg.carp.native_eval.eval_hw_med, fn: eval_hwmed_cap}
+  CAP-HWMED-06: {taskpack: HW-MED, module: experiments.hcg.carp.native_eval.eval_hw_med, fn: eval_hwmed_cap}
+
+  # batch_8 MH-3
+  CAP-MH3-01: {taskpack: MH-3, module: experiments.hcg.carp.native_eval.eval_mh3, fn: eval_mh3_cap}
+  CAP-MH3-02: {taskpack: MH-3, module: experiments.hcg.carp.native_eval.eval_mh3, fn: eval_mh3_cap}
+  CAP-MH3-03: {taskpack: MH-3, module: experiments.hcg.carp.native_eval.eval_mh3, fn: eval_mh3_cap}
+  CAP-MH3-04: {taskpack: MH-3, module: experiments.hcg.carp.native_eval.eval_mh3, fn: eval_mh3_cap}
+  CAP-MH3-05: {taskpack: MH-3, module: experiments.hcg.carp.native_eval.eval_mh3, fn: eval_mh3_cap}
+  CAP-MH3-06: {taskpack: MH-3, module: experiments.hcg.carp.native_eval.eval_mh3, fn: eval_mh3_cap}
+
+  # batch_9 MH-4 (DL-149 VCE L1 g6 execute surface)
+  CAP-MH4-R01: {taskpack: MH-4, module: experiments.hcg.carp.native_eval.eval_mh4, fn: eval_mh4_cap}
+  CAP-MH4-R02: {taskpack: MH-4, module: experiments.hcg.carp.native_eval.eval_mh4, fn: eval_mh4_cap}
+  CAP-MH4-R03: {taskpack: MH-4, module: experiments.hcg.carp.native_eval.eval_mh4, fn: eval_mh4_cap}
+  CAP-MH4-R04: {taskpack: MH-4, module: experiments.hcg.carp.native_eval.eval_mh4, fn: eval_mh4_cap}
+  CAP-MH4-R06: {taskpack: MH-4, module: experiments.hcg.carp.native_eval.eval_mh4, fn: eval_mh4_cap}
+
+  # PFDF V1 portfolio (unified HCG headline dispatch — DL-unified-pfdf)
+  burn_state_net_prithvi_v1: {taskpack: MH-1, module: experiments.hcg.carp.native_eval.eval_pfdf_portfolio, fn: eval_pfdf_portfolio_cap}
+  pfdf_volume_gorr_v2: {taskpack: MH-1, module: experiments.hcg.carp.native_eval.eval_pfdf_portfolio, fn: eval_pfdf_portfolio_cap}

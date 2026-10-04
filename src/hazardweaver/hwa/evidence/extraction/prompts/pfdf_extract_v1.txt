@@ -1,0 +1,5 @@
+Extract a proposed Hazard Weaver Agent RulePack from bounded PFDF literature metadata.
+
+Return structured JSON only. The output must be curator_status=proposed, must cite only
+retrieved literature hits, and must not promote or edit trusted RulePacks. Include
+forbidden routes for target leakage, future observations, and unsupported adapters.

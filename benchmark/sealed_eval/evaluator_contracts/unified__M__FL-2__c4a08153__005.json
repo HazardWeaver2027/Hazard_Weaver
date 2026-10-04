@@ -1,0 +1,28 @@
+{
+  "instance_id": "unified:M:FL-2:c4a08153:005",
+  "track": "FL-2",
+  "stratum": "M",
+  "scenario_id": "pakistan_2022_test_000",
+  "taskpack_id": "hwb_fl2_parametric_v1",
+  "route_eligibility": "multi_eligible",
+  "metric": "rmse_depth",
+  "tolerance_contract": "v2",
+  "min_score": null,
+  "max_abs_error": 0.3894747211572363,
+  "reference_score": null,
+  "gold_capability_id": "CAP-FL2-01",
+  "route_gold_required": true,
+  "accepted_witness_capability_ids": [
+    "CAP-FL2-01"
+  ],
+  "ablation_decoy_capability_id": "CAP-FL2-02",
+  "ablation_hcg_decoy_capability_id": null,
+  "gold_source_class": "hcg_scientific_replay",
+  "gold_dataset_note": "floodcast_official_product_via_hcg_replay",
+  "spatial_tolerance": "not_specified",
+  "temporal_tolerance": "not_specified",
+  "alternative_route_policy": "Unregistered routes that are not the inventory gold CAP fail headline DCA, even if the artifact is numerically close to gold. Multi-route acceptance is limited to the sealed eligible set.",
+  "pass_rule": "PASS iff (no gold route defined and dca_result.valid) or (picked_capability == gold_capability and dca_result.valid)",
+  "headline_denominator": 141,
+  "evaluator_version": "unified_141_v1"
+}

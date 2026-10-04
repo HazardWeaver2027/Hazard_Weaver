@@ -1,0 +1,123 @@
+{
+  "schema_version": "HWB_TASKPACK_v1",
+  "taskpack_id": "hwb_g6_h_a_dh_ghcnd_spi_v1_coreexec_dag_rf_selected_path_v1",
+  "headline_target": "DR-OUT",
+  "coverage_tier": "coreexec",
+  "hib_is_grader": false,
+  "source": {
+    "pack_id": "g6_hard_v1",
+    "g6_task_id": "H_A_DH_GHCND_SPI_V1_COREEXEC_dag_rf_selected_path",
+    "anchor_id": "A_DH_GHCND_SPI_V1",
+    "stratum": "CoreExec"
+  },
+  "solver_view": {
+    "user_goal": "Execute a legal short DAG to solve the drought SPI regression from GHCN station records task for anchor A_DH_GHCND_SPI_V1. Multiple accepted routes exist under the validation-selected protocol; do not assume there is a unique gold edge.",
+    "allowed_tools": [
+      "inspect_artifact",
+      "run_capability",
+      "submit"
+    ],
+    "allowed_edge_ids": [
+      "schema_map_ghcn_v1",
+      "spi_proxy_a_dh_ghcnd_spi_v1",
+      "heat_rule_a_dh_ghcnd_spi_v1",
+      "rf_a_dh_ghcnd_spi_v1"
+    ]
+  },
+  "reference_view": {
+    "expected_action": "solve",
+    "accepted_witnesses": [
+      {
+        "witness_id": "w_dag_spi_proxy",
+        "route_id": "dag_spi_proxy",
+        "family": "formula",
+        "edges": [
+          "schema_map_ghcn_v1",
+          "spi_proxy_a_dh_ghcnd_spi_v1"
+        ],
+        "capability_ids": [
+          "spi_proxy_a_dh_ghcnd_spi_v1"
+        ]
+      },
+      {
+        "witness_id": "w_dag_heat_rule",
+        "route_id": "dag_heat_rule",
+        "family": "rule_index",
+        "edges": [
+          "schema_map_ghcn_v1",
+          "heat_rule_a_dh_ghcnd_spi_v1"
+        ],
+        "capability_ids": [
+          "heat_rule_a_dh_ghcnd_spi_v1"
+        ]
+      },
+      {
+        "witness_id": "w_dag_rf",
+        "route_id": "dag_rf",
+        "family": "tabular_tree",
+        "edges": [
+          "schema_map_ghcn_v1",
+          "rf_a_dh_ghcnd_spi_v1"
+        ],
+        "capability_ids": [
+          "rf_a_dh_ghcnd_spi_v1"
+        ]
+      }
+    ],
+    "outputs": {
+      "reference_score": 0.37984501592966563,
+      "metric_name": "mae"
+    },
+    "tolerance": {
+      "metric": "mae",
+      "max_abs_error": 0.7596900318593313,
+      "label_match": false
+    },
+    "checker": {
+      "structure": {
+        "checker_id": "hard_checker_g6_v1"
+      },
+      "execution": {
+        "mode": "scalar",
+        "forbid_reference_score_fallback": true
+      }
+    },
+    "certificate_ref": "docs/engineering/hcg/certificates_v1/A_DH_GHCND_SPI_V1/ExecutableAnchorCertificate.json",
+    "multidag_certificate_ref": "docs/engineering/hcg/certificates_v1/A_DH_GHCND_SPI_V1/MultiDAGAnchorCertificate.json",
+    "reference_run_ref": "docs/engineering/hcg/reference_runs/A_DH_GHCND_SPI_V1/reference_run.json",
+    "path_log_ref": "docs/engineering/hcg/g2_path_logs/A_DH_GHCND_SPI_V1.json",
+    "train_run_metrics_ref": "docs/engineering/hcg/train_runs/A_DH_GHCND_SPI_V1/rf_a_dh_ghcnd_spi_v1/metrics.json",
+    "selected_route_id": "dag_rf",
+    "is_selected_path": true,
+    "reference_execution_id": "RE_H_A_DH_GHCND_SPI_V1_COREEXEC_dag_rf_selected_path",
+    "final_output_spec": {
+      "schema_id": "hwa.final_artifact/v1",
+      "metric": "mae",
+      "execution_mode": "scalar",
+      "label_match": false,
+      "output_keys": [
+        "metric_name",
+        "reference_score"
+      ],
+      "consumes": "final_artifact.value_or_uri",
+      "note": "Evaluator consumes ExecutionResult.final_artifact; not raw capability dicts."
+    },
+    "baseline_eligibility": {
+      "aide": true,
+      "aide_reason": "Eligible: tabular supervised mae task; exportable train/val/test via g2_tabular_common dataset='ghcn'; aide_goal and aide_eval defined.",
+      "mle_star": true,
+      "mle_star_reason": "Eligible: same tabular ML-engineering scope as AIDE; code-search baseline on dataset='ghcn' with metric='MAE'.",
+      "rd_agent": true,
+      "rd_agent_reason": "Eligible: tabular secondary scope for R&D-Agent; same data_dir protocol as AIDE when baseline_eligibility.rd_agent=true.",
+      "automl_agent": true,
+      "automl_agent_reason": "Eligible: tabular secondary scope for AutoML-Agent; same data_dir protocol as AIDE when baseline_eligibility.automl_agent=true."
+    },
+    "source_g6_task_id": "H_A_DH_GHCND_SPI_V1_COREEXEC_dag_rf_selected_path",
+    "source_pack": "g6_hard_v1"
+  },
+  "metadata": {
+    "generator": "hwb_g6_hard_taskpack_v1",
+    "g6_task_id": "H_A_DH_GHCND_SPI_V1_COREEXEC_dag_rf_selected_path",
+    "same_llm_pilot": true
+  }
+}
