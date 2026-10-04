@@ -47,13 +47,15 @@ pytest tests -q
 
 ### Release overview
 
-**HWB** is a decision-layer benchmark: each instance is a hazard decision task with a public solver view (instructions, route briefs, tool schema) and post-submission scoring against evaluator contracts. The inventory spans **11 tracks** (wildfire, flood, landslide, drought, hurricane, heat, earthquake–landslide chains, multi-hazard coupling MH-1–4, etc.) across **90 single-hazard** and **51 multi-hazard** cases, with **45** instances having a single admissible route at \(s_0\) and **96** multi-route at \(s_0\).
+This release makes scientific route selection inspectable and reproducible from evidence grounding to final evaluation. It provides the complete HazardWeaver decision layer, a sealed benchmark of model-backed hazard workflows, and paper-aligned artifacts that can be verified without rerunning expensive language-model experiments.
 
-**HazardWeaver (HWA)** is the headline agent: one LLM policy selects among HCG-backed capabilities under dual scientific/capability gates, with the same tool surface as the paper baselines. This repo ships the evaluation stack (HKC + HCG runtime hooks + HWB graders), **adapted planning baselines** and **shared-tool controls** from Tables 1–2, and **released aggregates** aligned with the paper tables.
+**End-to-end HazardWeaver.** The released system connects three complementary mechanisms: HKC grounds route applicability in scientific evidence, HCG represents executable models and tools through typed capability relations, and HWA selects, executes, and revises eligible workflows as the analysis state changes. The implementation exposes the same capability interface used by the submitted baselines, enabling controlled comparisons of route-selection strategies.
 
-**Data and models.** Tasks are grounded in public hazard products—WildfireSpreadTS, FloodCastBench, LHASA, SeisBench, TCBench, NOAA CPC, ExtremeWeatherBench, USGS post-fire and ground-failure layers, SFINCS, NOAA Storm Events, and related catalogs. Full rasters, HCG scientific run trees, and **Llama / vLLM weights** are downloaded or mounted separately; see [docs/benchmark.md](docs/benchmark.md) and `scripts/download_external_data.py`. CPU **fixture taskpacks** support smoke tests without multi-terabyte assets.
+**A benchmark for scientific route decisions.** HWB contains **141 sealed instances across 11 hazard tracks**, including **90 single-hazard** and **51 multi-hazard** tasks. Its **45 one-route** and **96 route-choice** instances test both reliable execution and selection among competing model-backed workflows. Each task cleanly separates the public solver context—task evidence, route descriptions, and capability interfaces—from the sealed evaluator contracts used after route commitment.
 
-**Paper artifacts.** Table and figure sources, headline JSON, and per-instance trajectory summaries live under `paper_artifacts/` and `released_results/`. Re-scoring and optional agent re-runs: [docs/reproduction.md](docs/reproduction.md).
+**Paper-complete evaluation.** The repository includes the unified DCA evaluator, all submitted adapted baselines and shared-tool controls, per-instance result records, and the exact inputs used to produce the paper’s tables and figures. Reviewers can verify benchmark integrity, replay evaluation, and regenerate the reported artifacts without model access; optional configurations support subset and full agent reruns.
+
+**Portable scientific assets.** Lightweight fixture taskpacks provide CPU-only end-to-end tests, while acquisition scripts and documented mount points connect the release to the public scientific products and model weights used in the full experiments. Dataset provenance and preparation are documented in [docs/benchmark.md](docs/benchmark.md), with complete reproduction workflows in [docs/reproduction.md](docs/reproduction.md).
 
 *Figure 1 — Global coverage of HWB.*
 
