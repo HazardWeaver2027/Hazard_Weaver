@@ -33,7 +33,23 @@ pytest tests -q
 ```
 
 - **`make smoke`** — loads a small public taskpack, runs the leakage audit (solver view must not see sealed fields), and checks core imports. No GPU.
-- **`make evaluate-released`** — reads the released per-instance JSONL and checks that headline Llama DCA still matches `released_results/` (expected **k = 126**).
+- **`make evaluate-released`** — checks released per-instance JSONL against Table 3 (DCA **126/141**, E_q **130/141**, V_q **134/141**).
+
+## Headline runner (optional, GPU/API)
+
+```bash
+export VLLM_BASE_URL=https://your-endpoint/v1
+python scripts/run_headline_benchmark.py \
+  --config configs/headline_benchmark.yaml \
+  --out-root outputs/headline_runs \
+  --cell-index 0
+```
+
+Re-score saved trajectories from a run directory:
+
+```bash
+python scripts/evaluate_runs.py --workdir-root outputs/headline_runs
+```
 
 ## Layout
 

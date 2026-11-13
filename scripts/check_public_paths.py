@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail if release tree contains cluster account or home paths."""
+"""Fail if the release tree contains absolute home or scratch paths."""
 
 from __future__ import annotations
 
@@ -10,9 +10,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PATTERNS = [
-    re.compile(r"/blue/yd24f"),
-    re.compile(r"wz26b\.fsu"),
-    re.compile(r"yd24f\.fsu"),
+    re.compile(r"/blue/"),
+    re.compile(r"/home/"),
+    re.compile(r"/orange/"),
+    re.compile(r"/scratch/"),
+    re.compile(r"/Users/"),
+    re.compile(r"\\Users\\"),
 ]
 SKIP_FILES = {"verify_release.py", "check_public_paths.py"}
 SKIP_SUFFIX = {".png", ".svg", ".pdf", ".zip", ".pyc"}

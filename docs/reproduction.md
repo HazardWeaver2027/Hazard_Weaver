@@ -14,7 +14,23 @@ Shipped SVG/TeX under `paper_artifacts/` matches the submission; the manifest do
 make evaluate-released
 ```
 
-Reads `released_results/structured_trajectories/unified_141_per_instance_v1.jsonl` and writes `outputs/evaluate_released/summary.json`. It does not modify the released bundle.
+Reads `released_results/structured_trajectories/unified_141_per_instance_v1.jsonl` and checks **DCA 126/141**, **E_q (`artifact_valid`) 130/141**, and **V_q (`trajectory_valid`) 134/141**. Writes `outputs/evaluate_released/summary.json`.
+
+To replay the same metrics from on-disk agent workdirs (requires `answer.json` per cell):
+
+```bash
+python scripts/evaluate_runs.py --workdir-root /path/to/headline/out --seed 11 --condition full_hwa
+```
+
+## Headline runner
+
+```bash
+python scripts/run_headline_benchmark.py \
+  --config configs/headline_benchmark.yaml \
+  --out-root outputs/headline_runs
+```
+
+Inventory defaults to `benchmark/public/manifest.jsonl` (141 sealed instances). Auto-commit shortcuts are off unless you set `HWA_HEADLINE_G1_AUTOCOMMIT=1` or `HWA_HCG_BIND_AUTOCOMMIT=1`.
 
 ## Re-running agents (optional)
 

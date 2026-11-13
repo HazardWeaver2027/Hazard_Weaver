@@ -1,12 +1,12 @@
 {
   "schema_version": "ICLR_MODEL_ARMS_v1",
-  "authority": "PI exemption 2026-09-02 — Qwen on HPG for ICLR model-robustness matrix",
+  "authority": "ICLR headline model arms (public release)",
   "default_seed": 11,
   "default_conditions": ["full_hwa", "react"],
   "shard_defaults": {
-    "rtx6000": {"partition": "hpg-rtx6000", "gpus": 1, "cpus": 8, "mem_gb": 48, "parallel_jobs": 1, "time": "36:00:00"},
-    "b200": {"partition": "hpg-b200", "gpus": 1, "cpus": 16, "mem_gb": 125, "parallel_jobs": 1, "time": "48:00:00"},
-    "api_cpu": {"partition": "hpg-default", "gpus": 0, "cpus": 4, "mem_gb": 16, "parallel_jobs": 2, "time": "24:00:00"}
+    "rtx6000": {"partition": "gpu", "gpus": 1, "cpus": 8, "mem_gb": 48, "parallel_jobs": 1, "time": "36:00:00"},
+    "b200": {"partition": "gpu", "gpus": 1, "cpus": 16, "mem_gb": 125, "parallel_jobs": 1, "time": "48:00:00"},
+    "api_cpu": {"partition": "cpu", "gpus": 0, "cpus": 4, "mem_gb": 16, "parallel_jobs": 2, "time": "24:00:00"}
   },
   "arms": {
     "mixtral8x22b_b200": {

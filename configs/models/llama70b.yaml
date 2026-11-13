@@ -1,0 +1,4 @@
+model_arm: llama70b
+notes: >
+  Set VLLM_BASE_URL (and VLLM_API_KEY if required) before running the headline
+  runner. Arm metadata is loaded from hwb/registry/iclr_model_arms_v1.json.

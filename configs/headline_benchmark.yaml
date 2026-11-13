@@ -1,0 +1,6 @@
+# Public headline 141-cell runner defaults (Llama-3.3-70B paper arm).
+inventory: benchmark/public/manifest.jsonl
+seed: 11
+conditions:
+  - full_hwa
+model_arm: llama70b

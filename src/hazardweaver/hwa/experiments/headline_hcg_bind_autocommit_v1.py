@@ -26,7 +26,7 @@ def is_hcg_near_miss_mechanism_cell(task: Mapping[str, Any]) -> bool:
 def hcg_bind_autocommit_enabled(task: Mapping[str, Any]) -> bool:
     if not is_hcg_near_miss_mechanism_cell(task):
         return False
-    return str(os.environ.get("HWA_HCG_BIND_AUTOCOMMIT", "1")).lower() in (
+    return str(os.environ.get("HWA_HCG_BIND_AUTOCOMMIT", "0")).lower() in (
         "1",
         "true",
         "yes",

@@ -15,10 +15,11 @@ sys.path.insert(0, str(ROOT / "src"))
 from hazardweaver.paths import BENCHMARK_PUBLIC, BENCHMARK_SEALED, REPO_ROOT, RELEASED_RESULTS  # noqa: E402
 
 IDENTITY_PATTERNS = [
-    re.compile(r"/blue/yd24f"),
-    re.compile(r"wz26b\.fsu"),
-    re.compile(r"yd24f\.fsu"),
-    re.compile(r"slurmInfo"),
+    re.compile(r"/blue/"),
+    re.compile(r"/home/"),
+    re.compile(r"/orange/"),
+    re.compile(r"/scratch/"),
+    re.compile(r"/Users/"),
 ]
 
 

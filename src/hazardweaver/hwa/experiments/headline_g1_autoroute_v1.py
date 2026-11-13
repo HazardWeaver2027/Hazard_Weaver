@@ -11,7 +11,7 @@ from hazardweaver.hwa.experiments.headline_route_profile_v1 import is_g1_profile
 def g1_autocommit_enabled() -> bool:
     if not is_g1_profile():
         return False
-    return str(os.environ.get("HWA_HEADLINE_G1_AUTOCOMMIT", "1")).lower() in (
+    return str(os.environ.get("HWA_HEADLINE_G1_AUTOCOMMIT", "0")).lower() in (
         "1",
         "true",
         "yes",

@@ -169,7 +169,7 @@ def vllm_serve_argv(arm_id: str) -> list[str]:
     extra = cfg.get("vllm_extra_args") or []
     if extra:
         args.extend([str(x) for x in extra])
-    # HPG Lustre: vLLM 0.25 auto-prefetches large checkpoints into page cache when
+    # Shared filesystem: vLLM 0.25 may prefetch large checkpoints into page cache when
     # node RAM looks ample, but SLURM cgroup (--mem) is much smaller → oom_kill ~60s.
     if "--safetensors-load-strategy" not in args:
         args.extend(["--safetensors-load-strategy", "lazy"])
